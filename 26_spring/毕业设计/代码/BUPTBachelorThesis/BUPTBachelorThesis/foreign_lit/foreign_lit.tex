@@ -1,0 +1,48 @@
+%%
+%% This is file `bare_thesis.tex',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% install/buptgraduatethesis.dtx  (with options: `bare-thesis')
+%% 
+%% This file is a part of the example of BUPTGraduateThesis.
+%% 
+
+
+\documentclass[xits]{BUPTthesis}
+\usepackage{cjkfakebold}
+\usepackage{pdfpages}
+\usepackage{tikz}
+\addbibresource{foreign_lit.bib}
+
+\input{metadata}
+
+\begin{document}
+
+\includepdf[
+    pages=1,
+    pagecommand={%
+            \thispagestyle{empty}
+            \begin{tikzpicture}[remember picture, overlay]
+                \node[font=\zihao{3}\bfseries, anchor=north, yshift=-2.5cm]
+                at (current page.north)
+                {\bheiti{\bfseries\heiti 外\hspace{1em}文\hspace{1em}资\hspace{1em}料}};
+            \end{tikzpicture}
+        }
+]{original.pdf}
+
+\includepdf[pages=2-]{original.pdf}
+
+\maketitle
+
+\input{abstract}
+
+\mainmatter
+
+\input{ch_intro}
+\include{ch_concln}
+
+\mainbib
+
+\end{document}

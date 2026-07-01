@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.admim_api.mapper.adminEnhanceinfoMapper">
+    
+    <resultMap type="adminEnhanceinfo" id="adminEnhanceinfoResult">
+        <result property="enhancementApiId"    column="enhancement_api_id"    />
+        <result property="enhancementModelName"    column="enhancement_model_name"    />
+        <result property="modelParams"    column="model_params"    />
+        <result property="modelVendor"    column="model_vendor"    />
+        <result property="additionalInfo"    column="additional_info"    />
+        <result property="apiStatus"    column="api_status"    />
+        <result property="apiQuota"    column="api_quota"    />
+        <result property="apiKey"    column="api_key"    />
+    </resultMap>
+
+    <sql id="selectadminEnhanceinfoVo">
+        select enhancement_api_id, enhancement_model_name, model_params, model_vendor, additional_info, api_status, api_quota, api_key from enhanceinfo
+    </sql>
+
+    <select id="selectadminEnhanceinfoList" parameterType="adminEnhanceinfo" resultMap="adminEnhanceinfoResult">
+        <include refid="selectadminEnhanceinfoVo"/>
+        <where>  
+            <if test="enhancementModelName != null  and enhancementModelName != ''"> and enhancement_model_name like concat('%', #{enhancementModelName}, '%')</if>
+            <if test="modelParams != null  and modelParams != ''"> and model_params like concat('%', #{modelParams}, '%')</if>
+            <if test="modelVendor != null  and modelVendor != ''"> and model_vendor like concat('%', #{modelVendor}, '%')</if>
+            <if test="additionalInfo != null  and additionalInfo != ''"> and additional_info like concat('%', #{additionalInfo}, '%')</if>
+            <if test="apiStatus != null "> and api_status = #{apiStatus}</if>
+            <if test="apiQuota != null "> and api_quota = #{apiQuota}</if>
+        </where>
+    </select>
+    
+    <select id="selectadminEnhanceinfoByEnhancementApiId" parameterType="Long" resultMap="adminEnhanceinfoResult">
+        <include refid="selectadminEnhanceinfoVo"/>
+        where enhancement_api_id = #{enhancementApiId}
+    </select>
+        
+    <insert id="insertadminEnhanceinfo" parameterType="adminEnhanceinfo" useGeneratedKeys="true" keyProperty="enhancementApiId">
+        insert into enhanceinfo
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="enhancementModelName != null and enhancementModelName != ''">enhancement_model_name,</if>
+            <if test="modelParams != null and modelParams != ''">model_params,</if>
+            <if test="modelVendor != null">model_vendor,</if>
+            <if test="additionalInfo != null">additional_info,</if>
+            <if test="apiStatus != null">api_status,</if>
+            <if test="apiQuota != null">api_quota,</if>
+            <if test="apiKey != null and apiKey != ''">api_key,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="enhancementModelName != null and enhancementModelName != ''">#{enhancementModelName},</if>
+            <if test="modelParams != null and modelParams != ''">#{modelParams},</if>
+            <if test="modelVendor != null">#{modelVendor},</if>
+            <if test="additionalInfo != null">#{additionalInfo},</if>
+            <if test="apiStatus != null">#{apiStatus},</if>
+            <if test="apiQuota != null">#{apiQuota},</if>
+            <if test="apiKey != null and apiKey != ''">#{apiKey},</if>
+         </trim>
+    </insert>
+
+    <update id="updateadminEnhanceinfo" parameterType="adminEnhanceinfo">
+        update enhanceinfo
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="enhancementModelName != null and enhancementModelName != ''">enhancement_model_name = #{enhancementModelName},</if>
+            <if test="modelParams != null and modelParams != ''">model_params = #{modelParams},</if>
+            <if test="modelVendor != null">model_vendor = #{modelVendor},</if>
+            <if test="additionalInfo != null">additional_info = #{additionalInfo},</if>
+            <if test="apiStatus != null">api_status = #{apiStatus},</if>
+            <if test="apiQuota != null">api_quota = #{apiQuota},</if>
+            <if test="apiKey != null and apiKey != ''">api_key = #{apiKey},</if>
+        </trim>
+        where enhancement_api_id = #{enhancementApiId}
+    </update>
+
+    <delete id="deleteadminEnhanceinfoByEnhancementApiId" parameterType="Long">
+        delete from enhanceinfo where enhancement_api_id = #{enhancementApiId}
+    </delete>
+
+    <delete id="deleteadminEnhanceinfoByEnhancementApiIds" parameterType="String">
+        delete from enhanceinfo where enhancement_api_id in 
+        <foreach item="enhancementApiId" collection="array" open="(" separator="," close=")">
+            #{enhancementApiId}
+        </foreach>
+    </delete>
+</mapper>

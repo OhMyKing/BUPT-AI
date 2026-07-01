@@ -1,0 +1,39 @@
+    /* #inside-div-scrollbar{
+    width: 500px;
+    background-color: powderblue;
+
+} */
+/* #api_button:focus,#api_button:active:focus,#api_button.active:focus,
+#api_button.focus,#api_button:active.focus,#api_button.active.focus {
+    outline: none;
+    
+} */
+
+#api_button{
+    box-shadow:none;
+}
+#exam_button{
+    box-shadow:none;
+}
+#add_button:focus{
+    outline:none;
+    }
+#importButton{
+    box-shadow: none;
+}
+#export_xmljson{
+    box-shadow: none;
+}
+/* 
+#nav-header{
+     display:flex    
+} */
+#add_row_button{
+    float: center;
+}
+#add_row_button_container{
+    align-content: center;
+    position:relative;
+    /* aligns the div container for the Run component buttons */
+    bottom: -2px;
+}

@@ -1,0 +1,228 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+struct HNode{
+	int weight;
+	int parent;
+	int LChild;
+	int RChild;
+};
+
+struct HCode{
+	char data;
+	string code;
+};
+
+struct MinHeap {
+    HNode* data;
+    int size;
+    int capacity;
+};
+
+void InitMinHeap(MinHeap& heap, int capacity) {
+    heap.data = new HNode[capacity];
+    heap.size = 0;
+    heap.capacity = capacity;
+}
+
+void Push(MinHeap& heap, HNode node) {
+    if (heap.size >= heap.capacity) return;
+
+    int i = heap.size;
+    while (i > 0 && node.weight < heap.data[(i - 1) / 2].weight) {
+        heap.data[i] = heap.data[(i - 1) / 2];
+        i = (i - 1) / 2;
+    }
+    heap.data[i] = node;
+    heap.size++;
+}
+
+HNode Pop(MinHeap& heap) {
+    if (heap.size <= 0) {
+        HNode emptyNode = {-1, -1, -1, -1};
+        return emptyNode;
+    }
+
+    HNode minValue = heap.data[0];
+    HNode lastValue = heap.data[heap.size - 1];
+    heap.size--;
+
+    int i = 0;
+    while (true) {
+        int minIndex = i;
+        int leftChildIndex = 2 * i + 1;
+        int rightChildIndex = 2 * i + 2;
+
+        if (leftChildIndex < heap.size && heap.data[leftChildIndex].weight < heap.data[minIndex].weight)
+            minIndex = leftChildIndex;
+
+        if (rightChildIndex < heap.size && heap.data[rightChildIndex].weight < heap.data[minIndex].weight)
+            minIndex = rightChildIndex;
+
+        if (minIndex == i) break;
+
+        heap.data[i] = heap.data[minIndex];
+        i = minIndex;
+    }
+    heap.data[i] = lastValue;
+
+    return minValue;
+}
+
+void DeleteMinHeap(MinHeap& heap) {
+    delete[] heap.data;
+}
+
+
+class Huffman{
+	private:
+		HNode *HTree;
+		HCode *HCodeTable;
+		int N;
+		void code(int i,string newcode);
+	public:
+		void CreatHTree(int a[],int n,char name[]);
+		void CreatCodeTable();
+		void Encode(char *s,char *d);
+		~Huffman();
+};
+void Huffman::code(int i, string newcode) {
+    if (i != -1) {
+        code(HTree[i].LChild, newcode + '0');
+        code(HTree[i].RChild, newcode + '1');
+        if (HTree[i].LChild == -1 && HTree[i].RChild == -1) {
+            HCodeTable[i].code = newcode;
+        }
+    }
+}
+
+void Huffman::CreatHTree(int a[], int n, char name[]) {
+    N = n;
+    HTree = new HNode[2 * N - 1];
+    HCodeTable = new HCode[N];
+
+    for (int i = 0; i < N; ++i) {
+        HTree[i].weight = a[i];
+        HCodeTable[i].data = name[i];
+        HTree[i].parent = HTree[i].LChild = HTree[i].RChild = -1;
+    }
+
+    for (int i = N; i < 2 * N - 1; ++i) {
+        int s1 = -1, s2 = -1;
+        int min_weight = INT_MAX;
+        for (int j = 0; j < i; ++j) {
+            if (HTree[j].parent == -1) {
+                if (HTree[j].weight < min_weight) {
+                    min_weight = HTree[j].weight;
+                    s1 = j;
+                }
+            }
+        }
+        min_weight = INT_MAX;
+        for (int j = 0; j < i; ++j) {
+            if (j != s1 && HTree[j].parent == -1) {
+                if (HTree[j].weight < min_weight) {
+                    min_weight = HTree[j].weight;
+                    s2 = j;
+                }
+            }
+        }
+        HTree[s1].parent = i;
+        HTree[s2].parent = i;
+        HTree[i].weight = HTree[s1].weight + HTree[s2].weight;
+        HTree[i].LChild = s1;
+        HTree[i].RChild = s2;
+        HTree[i].parent = -1;
+    }
+
+    code(2 * N - 2, "");
+}
+
+void Huffman::CreatCodeTable() {
+    for (int i = 0; i < N; ++i) {
+        string code;
+        int cur = i;
+        int parent = HTree[cur].parent;
+        while (parent != -1) {
+            if (HTree[parent].LChild == cur) {
+                code = '0' + code;
+            } else {
+                code = '1' + code;
+            }
+            cur = parent;
+            parent = HTree[cur].parent;
+        }
+        HCodeTable[i].code = code;
+    }
+}
+
+void Huffman::Encode(char *s, char *d) {
+    string result = "";
+    while (*s) {
+        for (int i = 0; i < N; ++i) {
+            if (HCodeTable[i].data == *s) {
+                result += HCodeTable[i].code;
+                break;
+            }
+        }
+        s++;
+    }
+    strcpy(d, result.c_str());
+}
+
+Huffman::~Huffman() {
+    delete[] HTree;
+    delete[] HCodeTable;
+}
+
+int main() {
+    string input = "I love data Structure, I love Computer. I will try my best to study data Structure.";
+
+    // 统计字符频率
+    int freq[128] = {0};
+    for (char c : input) {
+        freq[c]++;
+    }
+
+    int n = 0;
+    for (int i = 0; i < 128; i++) {
+        if (freq[i] > 0) {
+            n++;
+        }
+    }
+
+    int *weights = new int[n];
+    char *names = new char[n];
+    int idx = 0;
+    for (int i = 0; i < 128; i++) {
+        if (freq[i] > 0) {
+            weights[idx] = freq[i];
+            names[idx] = static_cast<char>(i);
+            idx++;
+        }
+    }
+
+    Huffman huffman;
+    huffman.CreatHTree(weights, n, names);
+    huffman.CreatCodeTable();
+
+    char *encoded = new char[input.size() * n + 1](); // 编码后的长度最多为原长度乘以字符数量再加1
+    huffman.Encode(const_cast<char *>(input.c_str()), encoded);
+
+    int originalLength = input.size() * 8; // 以8位二进制表示一个字符
+    int encodedLength = strlen(encoded);
+
+    cout << "原始字符串: " << input << endl;
+    cout << "哈夫曼编码: " << encoded << endl;
+    cout << "原始长度: " << originalLength << " bits" << endl;
+    cout << "编码后长度: " << encodedLength << " bits" << endl;
+    cout << "压缩效果: " << 100.0 * (originalLength - encodedLength) / originalLength << "%" << endl;
+
+    delete[] weights;
+    delete[] names;
+    delete[] encoded;
+
+    return 0;
+}

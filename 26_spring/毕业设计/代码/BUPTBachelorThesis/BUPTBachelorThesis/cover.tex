@@ -1,0 +1,107 @@
+\newcommand{\bupt@hide}[1]{#1}
+\newcommand{\makechinesetitle}{%
+  \cleardoublepage
+  \pagestyle{empty}
+  % 密级 保密期限
+  % \begin{flushright}
+  %   \zihao{4}
+  %   \bupt@label@classlevel
+  %   \bupt@title@sep
+  %   \hspace*{4em}
+  %   \bupt@label@classdur
+  %   \bupt@title@sep
+  %   \hspace*{4em}
+  % \end{flushright}
+  % logo
+  \vspace{0.5cm}
+  \begin{center}
+    \includegraphics[width=11.6cm]{logo/buptname}\par
+    \vspace{0.54cm}
+    \fontsize{26pt}{\baselineskip}\selectfont\CJKfakebold{\heiti
+    \bupt@label@covertitle}\par
+    \vspace{1cm}
+    \includegraphics[width=3.09cm]{logo/buptseal}
+  \end{center}
+  \newlength\bupt@titlewidth
+  % title
+  \vspace{1cm}
+  % \begin{center}
+  %   \zihao{3}
+  %   \heiti
+  %   \begin{tabular}{lp{13\ccwd}}
+  %     \CJKfakebold{\bupt@label@ctitle\bupt@title@sep} & \CJKfakebold{\uline{\bupt@meta@ctitle\hfill}}
+  %   \end{tabular}
+  % \end{center}
+  \begin{center}
+    \zihao{3}
+    \settowidth{\bupt@titlewidth}{\bheiti{\bfseries\heiti\bupt@meta@ctitle}}
+    % \setlength{\extrarowheight}{10mm}
+    \setlength{\arrayrulewidth}{0.5bp}
+    \begin{tabular}{@{}l@{}p{13\ccwd}@{}}
+      \CJKfakebold{\heiti\bupt@label@ctitle\bupt@title@sep} & %
+      \parbox[t]{13\ccwd}{%
+        \centering%
+        \rule[-4bp]{13\ccwd}{0.5bp}\\[-28.75bp]
+        \bheiti{\bfseries\heiti\bupt@meta@ctitle}%
+      }%
+      \\%
+      \ifdim\bupt@titlewidth>13\ccwd
+        \cline{2-2}
+      \fi
+    \end{tabular}
+  \end{center}
+  \vspace{0.5cm}
+  \begin{center}
+    \zihao{3}
+    \setlength\extrarowheight{5pt}
+    \begin{tabular}{lp{5cm}}
+      \CJKfakebold{\bupt@label@cauthor} & \CJKfakebold{\uline{\hfill\bupt@meta@cauthor\hfill}} \\
+      \CJKfakebold{\bupt@label@cdepartment} & \CJKfakebold{\uline{\hfill\bupt@meta@cdepartment\hfill}} \\
+      \CJKfakebold{\bupt@label@cmajor} & \CJKfakebold{\uline{\hfill\bupt@meta@cmajor\hfill}} \\
+      \CJKfakebold{\bupt@label@classid} & \textbf{\uline{\hfill\bupt@meta@classid\hfill}} \\
+      \CJKfakebold{\bupt@label@studentid} & \textbf{\uline{\hfill\bupt@meta@studentid\hfill}} \\
+      \CJKfakebold{\bupt@label@csupervisor} & \CJKfakebold{\uline{\hfill\bupt@meta@csupervisor\hfill}} \\
+    \end{tabular}
+  \end{center}
+  \vspace{0.5cm}
+  \begin{center}
+    \zihao{3}
+    \bupt@meta@cdate
+  \end{center}
+}
+
+\newcommand{\makedeclaration}{\bupt@makedeclauth}
+%% 独创性声明与授权说明
+\newcommand{\bupt@declaration}{%
+  \begin{center}
+    \CJKfakebold{\bupt@declaration@title}
+  \end{center}
+  \par{%
+    \bupt@declaration@body
+  }
+  \vspace{1.2cm}
+  \begin{center}
+    \bupt@label@authorsigniture\uline{\hspace{10\ccwd}}\hspace{3\ccwd}\bupt@label@date\uline{\hspace{10\ccwd}}\par
+  \end{center}
+}
+\newcommand{\bupt@authorization}{%
+  \begin{center}
+    \CJKfakebold{\bupt@authorization@title}
+  \end{center}
+  \par{%
+    \bupt@authorization@body
+  }
+  \vspace{1.2cm}
+  \begin{center}
+    \bupt@label@authorsigniture\uline{\hspace{10\ccwd}}\hspace{3\ccwd}\bupt@label@date\uline{\hspace{10\ccwd}}\par
+    \bupt@label@supervisorsigniture\uline{\hspace{10\ccwd}}\hspace{3\ccwd}\bupt@label@date\uline{\hspace{10\ccwd}}
+  \end{center}
+}
+\newcommand{\bupt@makedeclauth}{%
+  \cleardoublepage
+  \vfill
+  \bupt@declaration
+  \vfill
+  \bupt@authorization
+  \vfill
+}

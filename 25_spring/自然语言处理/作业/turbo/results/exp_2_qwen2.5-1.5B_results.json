@@ -1,0 +1,5896 @@
+{
+  "puzzles": [
+    {
+      "title": "海龟汤的故事",
+      "surface": "一个男人走进一家餐厅，点了一碗海龟汤，喝完之后他就举枪自杀了，请问为什么？",
+      "bottom": "他和妻子度蜜月时遭遇海难，流落荒岛，由于没有粮食，妻子被饿死，同伴用妻子的肉煮汤给他喝，骗他是海龟汤。后来他被路过的船只救走，今天，他喝到真正的海龟汤，才想起来当时吃下的是妻子的肉，悔恨之下举枪自尽。",
+      "questions": [
+        {
+          "round": 1,
+          "question": "这个男人以前是否吃过\"海龟汤\"？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": false,
+          "conversation_history": []
+        },
+        {
+          "round": 2,
+          "question": "他以前吃的\"海龟汤\"是否真的是海龟做的？",
+          "expected_answer": "不是",
+          "normalized_expected_answer": "不是",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这个男人以前是否吃过\"海龟汤\"？"
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "question": "他以前吃的\"海龟汤\"是人肉吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这个男人以前是否吃过\"海龟汤\"？"
+            },
+            {
+              "role": "user",
+              "content": "他以前吃的\"海龟汤\"是否真的是海龟做的？"
+            }
+          ]
+        },
+        {
+          "round": 4,
+          "question": "他被骗吃人肉的情况是在一个生存危机中发生的吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这个男人以前是否吃过\"海龟汤\"？"
+            },
+            {
+              "role": "user",
+              "content": "他以前吃的\"海龟汤\"是否真的是海龟做的？"
+            },
+            {
+              "role": "user",
+              "content": "他以前吃的\"海龟汤\"是人肉吗？"
+            }
+          ]
+        },
+        {
+          "round": 5,
+          "question": "这个生存危机是发生在海上或孤岛上吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这个男人以前是否吃过\"海龟汤\"？"
+            },
+            {
+              "role": "user",
+              "content": "他以前吃的\"海龟汤\"是否真的是海龟做的？"
+            },
+            {
+              "role": "user",
+              "content": "他以前吃的\"海龟汤\"是人肉吗？"
+            },
+            {
+              "role": "user",
+              "content": "他被骗吃人肉的情况是在一个生存危机中发生的吗？"
+            }
+          ]
+        },
+        {
+          "round": 6,
+          "question": "他食用的人肉是来自他认识的人吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这个男人以前是否吃过\"海龟汤\"？"
+            },
+            {
+              "role": "user",
+              "content": "他以前吃的\"海龟汤\"是否真的是海龟做的？"
+            },
+            {
+              "role": "user",
+              "content": "他以前吃的\"海龟汤\"是人肉吗？"
+            },
+            {
+              "role": "user",
+              "content": "他被骗吃人肉的情况是在一个生存危机中发生的吗？"
+            },
+            {
+              "role": "user",
+              "content": "这个生存危机是发生在海上或孤岛上吗？"
+            }
+          ]
+        },
+        {
+          "round": 7,
+          "question": "他食用的是他妻子或伴侣的肉吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这个男人以前是否吃过\"海龟汤\"？"
+            },
+            {
+              "role": "user",
+              "content": "他以前吃的\"海龟汤\"是否真的是海龟做的？"
+            },
+            {
+              "role": "user",
+              "content": "他以前吃的\"海龟汤\"是人肉吗？"
+            },
+            {
+              "role": "user",
+              "content": "他被骗吃人肉的情况是在一个生存危机中发生的吗？"
+            },
+            {
+              "role": "user",
+              "content": "这个生存危机是发生在海上或孤岛上吗？"
+            },
+            {
+              "role": "user",
+              "content": "他食用的人肉是来自他认识的人吗？"
+            }
+          ]
+        },
+        {
+          "round": 8,
+          "question": "这次海难或危机是发生在他们的蜜月旅行期间吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这个男人以前是否吃过\"海龟汤\"？"
+            },
+            {
+              "role": "user",
+              "content": "他以前吃的\"海龟汤\"是否真的是海龟做的？"
+            },
+            {
+              "role": "user",
+              "content": "他以前吃的\"海龟汤\"是人肉吗？"
+            },
+            {
+              "role": "user",
+              "content": "他被骗吃人肉的情况是在一个生存危机中发生的吗？"
+            },
+            {
+              "role": "user",
+              "content": "这个生存危机是发生在海上或孤岛上吗？"
+            },
+            {
+              "role": "user",
+              "content": "他食用的人肉是来自他认识的人吗？"
+            },
+            {
+              "role": "user",
+              "content": "他食用的是他妻子或伴侣的肉吗？"
+            }
+          ]
+        }
+      ],
+      "accuracy": 0.875
+    },
+    {
+      "title": "见家长",
+      "surface": "我和男友是校友，他比我大三届，马上就要毕业了。我总感觉和他心有灵犀，一见钟情，于是我们约好了等我到了法定结婚年龄马上结婚，快要过国庆了，男友对我说，不如假期我不要回去了，来我家见见我父母吧。我欣然同意。然而，男友的父母一看到我的脸，大惊失色，坚决反对我们结婚交往。这是为什么呢?",
+      "bottom": "这是刚刚改革开放，计划生育的年代。我是超生的孩子，为了保住工作，生下我之后父母把我送到乡下给远方亲戚抚养，并且改了姓。父母一直对亲戚进行着经济援助，得知我考上了这里的大学父母也很开心，而且也快要退休了。正在考虑是不是要联系到我让我回到这个家庭，谁知道我们亲兄妹竟然相爱了，人间悲剧。",
+      "questions": [
+        {
+          "round": 1,
+          "question": "男友父母是否认识女孩或女孩的家人？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": false,
+          "conversation_history": []
+        },
+        {
+          "round": 2,
+          "question": "故事是否发生在特殊的社会背景或历史时期？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "男友父母是否认识女孩或女孩的家人？"
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "question": "故事是否发生在计划生育政策严格执行的年代？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "男友父母是否认识女孩或女孩的家人？"
+            },
+            {
+              "role": "user",
+              "content": "故事是否发生在特殊的社会背景或历史时期？"
+            }
+          ]
+        },
+        {
+          "round": 4,
+          "question": "女孩是否可能是被送养的孩子？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "男友父母是否认识女孩或女孩的家人？"
+            },
+            {
+              "role": "user",
+              "content": "故事是否发生在特殊的社会背景或历史时期？"
+            },
+            {
+              "role": "user",
+              "content": "故事是否发生在计划生育政策严格执行的年代？"
+            }
+          ]
+        },
+        {
+          "round": 5,
+          "question": "男友父母是否与女孩的亲生父母有关系？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "男友父母是否认识女孩或女孩的家人？"
+            },
+            {
+              "role": "user",
+              "content": "故事是否发生在特殊的社会背景或历史时期？"
+            },
+            {
+              "role": "user",
+              "content": "故事是否发生在计划生育政策严格执行的年代？"
+            },
+            {
+              "role": "user",
+              "content": "女孩是否可能是被送养的孩子？"
+            }
+          ]
+        },
+        {
+          "round": 6,
+          "question": "女孩的亲生父母是否就是男友的父母？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "男友父母是否认识女孩或女孩的家人？"
+            },
+            {
+              "role": "user",
+              "content": "故事是否发生在特殊的社会背景或历史时期？"
+            },
+            {
+              "role": "user",
+              "content": "故事是否发生在计划生育政策严格执行的年代？"
+            },
+            {
+              "role": "user",
+              "content": "女孩是否可能是被送养的孩子？"
+            },
+            {
+              "role": "user",
+              "content": "男友父母是否与女孩的亲生父母有关系？"
+            }
+          ]
+        },
+        {
+          "round": 7,
+          "question": "女孩被送养是否因为她是超生的孩子，父母为保住工作不得不送养？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "男友父母是否认识女孩或女孩的家人？"
+            },
+            {
+              "role": "user",
+              "content": "故事是否发生在特殊的社会背景或历史时期？"
+            },
+            {
+              "role": "user",
+              "content": "故事是否发生在计划生育政策严格执行的年代？"
+            },
+            {
+              "role": "user",
+              "content": "女孩是否可能是被送养的孩子？"
+            },
+            {
+              "role": "user",
+              "content": "男友父母是否与女孩的亲生父母有关系？"
+            },
+            {
+              "role": "user",
+              "content": "女孩的亲生父母是否就是男友的父母？"
+            }
+          ]
+        }
+      ],
+      "accuracy": 0.8571428571428571
+    },
+    {
+      "title": "仪式",
+      "surface": "最近你的父母总是吵架，你也觉得你的母亲状态有些奇怪，她总是心不在焉，偷偷问你怎么给别人转账……有时候会在家里无声地挥舞双手像在进行什么仪式。一天晚饭过后，你父亲出门去散步了，你母亲也悄悄出了门，已经起了疑心的你跟在她身后……啊，原来如此……",
+      "bottom": "你母亲跳广场舞，你父亲以为她外面有人了，转账是为了买跳舞用的团队服装，手舞足蹈是为了练习舞蹈。而且为了防止扰民，所有的广场舞阿姨都是戴着耳机无声跳舞的，看起来像是在进行什么神秘仪式似的。",
+      "questions": [
+        {
+          "round": 1,
+          "question": "母亲的异常行为是否与某种经济问题有关？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "不是。",
+          "classified_response": "不是",
+          "correct": false,
+          "conversation_history": []
+        },
+        {
+          "round": 2,
+          "question": "母亲无声挥舞双手的行为是否在练习某种活动或技能？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": false,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "母亲的异常行为是否与某种经济问题有关？"
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "question": "母亲参与的活动是某种团体性质的社交活动吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "母亲的异常行为是否与某种经济问题有关？"
+            },
+            {
+              "role": "user",
+              "content": "母亲无声挥舞双手的行为是否在练习某种活动或技能？"
+            }
+          ]
+        },
+        {
+          "round": 4,
+          "question": "父亲是否误以为母亲有外遇？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": false,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "母亲的异常行为是否与某种经济问题有关？"
+            },
+            {
+              "role": "user",
+              "content": "母亲无声挥舞双手的行为是否在练习某种活动或技能？"
+            },
+            {
+              "role": "user",
+              "content": "母亲参与的活动是某种团体性质的社交活动吗？"
+            }
+          ]
+        },
+        {
+          "round": 5,
+          "question": "母亲参与的活动是某种舞蹈或体育活动吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "母亲的异常行为是否与某种经济问题有关？"
+            },
+            {
+              "role": "user",
+              "content": "母亲无声挥舞双手的行为是否在练习某种活动或技能？"
+            },
+            {
+              "role": "user",
+              "content": "母亲参与的活动是某种团体性质的社交活动吗？"
+            },
+            {
+              "role": "user",
+              "content": "父亲是否误以为母亲有外遇？"
+            }
+          ]
+        },
+        {
+          "round": 6,
+          "question": "母亲参加的是广场舞之类的团体舞蹈活动吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "母亲的异常行为是否与某种经济问题有关？"
+            },
+            {
+              "role": "user",
+              "content": "母亲无声挥舞双手的行为是否在练习某种活动或技能？"
+            },
+            {
+              "role": "user",
+              "content": "母亲参与的活动是某种团体性质的社交活动吗？"
+            },
+            {
+              "role": "user",
+              "content": "父亲是否误以为母亲有外遇？"
+            },
+            {
+              "role": "user",
+              "content": "母亲参与的活动是某种舞蹈或体育活动吗？"
+            }
+          ]
+        },
+        {
+          "round": 7,
+          "question": "母亲在家里练习舞蹈时为什么是\"无声\"的？是否有特殊原因？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "母亲的异常行为是否与某种经济问题有关？"
+            },
+            {
+              "role": "user",
+              "content": "母亲无声挥舞双手的行为是否在练习某种活动或技能？"
+            },
+            {
+              "role": "user",
+              "content": "母亲参与的活动是某种团体性质的社交活动吗？"
+            },
+            {
+              "role": "user",
+              "content": "父亲是否误以为母亲有外遇？"
+            },
+            {
+              "role": "user",
+              "content": "母亲参与的活动是某种舞蹈或体育活动吗？"
+            },
+            {
+              "role": "user",
+              "content": "母亲参加的是广场舞之类的团体舞蹈活动吗？"
+            }
+          ]
+        },
+        {
+          "round": 8,
+          "question": "广场舞团队是否也在户外跳舞时使用耳机，看起来像是在进行某种仪式？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "母亲的异常行为是否与某种经济问题有关？"
+            },
+            {
+              "role": "user",
+              "content": "母亲无声挥舞双手的行为是否在练习某种活动或技能？"
+            },
+            {
+              "role": "user",
+              "content": "母亲参与的活动是某种团体性质的社交活动吗？"
+            },
+            {
+              "role": "user",
+              "content": "父亲是否误以为母亲有外遇？"
+            },
+            {
+              "role": "user",
+              "content": "母亲参与的活动是某种舞蹈或体育活动吗？"
+            },
+            {
+              "role": "user",
+              "content": "母亲参加的是广场舞之类的团体舞蹈活动吗？"
+            },
+            {
+              "role": "user",
+              "content": "母亲在家里练习舞蹈时为什么是\"无声\"的？是否有特殊原因？"
+            }
+          ]
+        }
+      ],
+      "accuracy": 0.625
+    },
+    {
+      "title": "日记",
+      "surface": "2019 年 2 月，女儿不去上学了，我劝不动她。2019 年 6 月，女儿每天盯着电视和电脑看，我怕她眼睛弄坏了。2019 年 12 月，女儿好像开朗了一些，看到她经常和朋友语音聊天。2020 年 3 月，女儿笑了，说她做了一件大好事，我也很高兴。2020 年 5 月，女儿的状态恶化了，整夜不睡觉，她也不和我说话。2020 年 6 月，总觉得最近家里开销特别大，嗯……?是我糊涂了吗。2020 年 10 月，女儿出门了，最近疫情好些了之后她经常出门，好像朋友也变多了，太好了。2021 年 2 月，我收到了一张律师函，上面写着女儿的名字，怎么会?!2021 年 8 月，我把女儿禁足了",
+      "bottom": "女儿因为一些原因拒绝去上学，6 月陈情令上线，女儿沉迷其中。同年 12 月，女儿混了肖战的饭圈。这期间，女儿一直在给肖战当网络水军。20 年 3 月，AO3 被举报。5 月，肖战遭到大批网友抵制，资本开始审视这个东西是不是值得投资。6 月光点上线，女儿偷家里的钱买数字专。疫情好转后，女儿照例出门参加饭圈活动，渐渐开始认清它的真面目。21 年 2 月，肖战状告\"黑粉\"。8 月肖战胜诉，粉丝被罚 3W，故事中的这位父/母把女儿彻底禁足了。",
+      "questions": [
+        {
+          "round": 1,
+          "question": "女儿不去上学是否与网络上的某个特定事件或内容有关？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": []
+        },
+        {
+          "round": 2,
+          "question": "女儿在2019年6月沉迷的内容是否为一部电视剧或网络剧？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": false,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "女儿不去上学是否与网络上的某个特定事件或内容有关？"
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "question": "女儿在2020年3月提到的\"做了一件大好事\"，是否与粉丝行为（如为偶像应援、举报\"黑粉\"等）有关？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "女儿不去上学是否与网络上的某个特定事件或内容有关？"
+            },
+            {
+              "role": "user",
+              "content": "女儿在2019年6月沉迷的内容是否为一部电视剧或网络剧？"
+            }
+          ]
+        },
+        {
+          "round": 4,
+          "question": "2020年3月女儿说的\"大好事\"是否与举报或封禁某个网站或内容有关？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "女儿不去上学是否与网络上的某个特定事件或内容有关？"
+            },
+            {
+              "role": "user",
+              "content": "女儿在2019年6月沉迷的内容是否为一部电视剧或网络剧？"
+            },
+            {
+              "role": "user",
+              "content": "女儿在2020年3月提到的\"做了一件大好事\"，是否与粉丝行为（如为偶像应援、举报\"黑粉\"等）有关？"
+            }
+          ]
+        },
+        {
+          "round": 5,
+          "question": "女儿是否是追星族，特别是追随2019年6月那部剧中的某个男演员？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "女儿不去上学是否与网络上的某个特定事件或内容有关？"
+            },
+            {
+              "role": "user",
+              "content": "女儿在2019年6月沉迷的内容是否为一部电视剧或网络剧？"
+            },
+            {
+              "role": "user",
+              "content": "女儿在2020年3月提到的\"做了一件大好事\"，是否与粉丝行为（如为偶像应援、举报\"黑粉\"等）有关？"
+            },
+            {
+              "role": "user",
+              "content": "2020年3月女儿说的\"大好事\"是否与举报或封禁某个网站或内容有关？"
+            }
+          ]
+        },
+        {
+          "round": 6,
+          "question": "2021年2月的律师函是否与该男演员对\"黑粉\"提起诉讼有关，而女儿被卷入其中？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "女儿不去上学是否与网络上的某个特定事件或内容有关？"
+            },
+            {
+              "role": "user",
+              "content": "女儿在2019年6月沉迷的内容是否为一部电视剧或网络剧？"
+            },
+            {
+              "role": "user",
+              "content": "女儿在2020年3月提到的\"做了一件大好事\"，是否与粉丝行为（如为偶像应援、举报\"黑粉\"等）有关？"
+            },
+            {
+              "role": "user",
+              "content": "2020年3月女儿说的\"大好事\"是否与举报或封禁某个网站或内容有关？"
+            },
+            {
+              "role": "user",
+              "content": "女儿是否是追星族，特别是追随2019年6月那部剧中的某个男演员？"
+            }
+          ]
+        },
+        {
+          "round": 7,
+          "question": "这个故事是否与2019年播出的《陈情令》、演员肖战以及2020年初AO3网站被举报事件有关？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "女儿不去上学是否与网络上的某个特定事件或内容有关？"
+            },
+            {
+              "role": "user",
+              "content": "女儿在2019年6月沉迷的内容是否为一部电视剧或网络剧？"
+            },
+            {
+              "role": "user",
+              "content": "女儿在2020年3月提到的\"做了一件大好事\"，是否与粉丝行为（如为偶像应援、举报\"黑粉\"等）有关？"
+            },
+            {
+              "role": "user",
+              "content": "2020年3月女儿说的\"大好事\"是否与举报或封禁某个网站或内容有关？"
+            },
+            {
+              "role": "user",
+              "content": "女儿是否是追星族，特别是追随2019年6月那部剧中的某个男演员？"
+            },
+            {
+              "role": "user",
+              "content": "2021年2月的律师函是否与该男演员对\"黑粉\"提起诉讼有关，而女儿被卷入其中？"
+            }
+          ]
+        }
+      ],
+      "accuracy": 0.8571428571428571
+    },
+    {
+      "title": "粉色连衣裙的女人",
+      "surface": "你的新邻居是一个独居的年轻男人，有一天你吃完宵夜回家看到一个穿粉色连衣裙浓妆艳抹的长发女人进了邻居家的门。深夜，隔壁传来争吵摔东西的声音，在安静的楼道里格外刺耳。第二天你在邻居家门口的垃圾袋里看到了被剪碎的粉色连衣裙和一把长发，你询问了邻居，他却支支吾吾不肯明说……你要报警吗？这是怎么一回事？",
+      "bottom": "邻居是一个有异装癖的男人，因此一直独身。邻居的家人不知道这个情况，一直催他结婚，他就从父母的家里搬了出来，这一天邻居女装完回家，被你看到了。没想到邻居的妈妈早就在家里等着他，看到女装的邻居，俩人大吵一架，母亲剪碎了他的粉色裙子和假发，这就是你所看到的事情。",
+      "questions": [
+        {
+          "round": 1,
+          "question": "那个穿粉色连衣裙的长发女人是邻居的女友或妻子吗？",
+          "expected_answer": "不是",
+          "normalized_expected_answer": "不是",
+          "llm_response": "不是。",
+          "classified_response": "不是",
+          "correct": true,
+          "conversation_history": []
+        },
+        {
+          "round": 2,
+          "question": "争吵是发生在邻居和那个穿粉色连衣裙的女人之间吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "那个穿粉色连衣裙的长发女人是邻居的女友或妻子吗？"
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "question": "垃圾袋中的长发是真人头发还是假发？",
+          "expected_answer": "是假发",
+          "normalized_expected_answer": "是",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": false,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "那个穿粉色连衣裙的长发女人是邻居的女友或妻子吗？"
+            },
+            {
+              "role": "user",
+              "content": "争吵是发生在邻居和那个穿粉色连衣裙的女人之间吗？"
+            }
+          ]
+        },
+        {
+          "round": 4,
+          "question": "那个穿粉色连衣裙的\"女人\"实际上是男邻居本人吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": false,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "那个穿粉色连衣裙的长发女人是邻居的女友或妻子吗？"
+            },
+            {
+              "role": "user",
+              "content": "争吵是发生在邻居和那个穿粉色连衣裙的女人之间吗？"
+            },
+            {
+              "role": "user",
+              "content": "垃圾袋中的长发是真人头发还是假发？"
+            }
+          ]
+        },
+        {
+          "round": 5,
+          "question": "是否有其他人在邻居家中等待他回来，并对他的女装行为感到愤怒？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "那个穿粉色连衣裙的长发女人是邻居的女友或妻子吗？"
+            },
+            {
+              "role": "user",
+              "content": "争吵是发生在邻居和那个穿粉色连衣裙的女人之间吗？"
+            },
+            {
+              "role": "user",
+              "content": "垃圾袋中的长发是真人头发还是假发？"
+            },
+            {
+              "role": "user",
+              "content": "那个穿粉色连衣裙的\"女人\"实际上是男邻居本人吗？"
+            }
+          ]
+        },
+        {
+          "round": 6,
+          "question": "等在邻居家中并与他争吵的人是他的家人（如父母或亲戚）吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "那个穿粉色连衣裙的长发女人是邻居的女友或妻子吗？"
+            },
+            {
+              "role": "user",
+              "content": "争吵是发生在邻居和那个穿粉色连衣裙的女人之间吗？"
+            },
+            {
+              "role": "user",
+              "content": "垃圾袋中的长发是真人头发还是假发？"
+            },
+            {
+              "role": "user",
+              "content": "那个穿粉色连衣裙的\"女人\"实际上是男邻居本人吗？"
+            },
+            {
+              "role": "user",
+              "content": "是否有其他人在邻居家中等待他回来，并对他的女装行为感到愤怒？"
+            }
+          ]
+        },
+        {
+          "round": 7,
+          "question": "与邻居争吵并剪碎他女装物品的家人是他的母亲吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "那个穿粉色连衣裙的长发女人是邻居的女友或妻子吗？"
+            },
+            {
+              "role": "user",
+              "content": "争吵是发生在邻居和那个穿粉色连衣裙的女人之间吗？"
+            },
+            {
+              "role": "user",
+              "content": "垃圾袋中的长发是真人头发还是假发？"
+            },
+            {
+              "role": "user",
+              "content": "那个穿粉色连衣裙的\"女人\"实际上是男邻居本人吗？"
+            },
+            {
+              "role": "user",
+              "content": "是否有其他人在邻居家中等待他回来，并对他的女装行为感到愤怒？"
+            },
+            {
+              "role": "user",
+              "content": "等在邻居家中并与他争吵的人是他的家人（如父母或亲戚）吗？"
+            }
+          ]
+        }
+      ],
+      "accuracy": 0.7142857142857143
+    },
+    {
+      "title": "电梯",
+      "surface": "我走进电梯准备去上学，随着电梯的上升，我知道，我再也无法去学校了。",
+      "bottom": "星期一早上，在妈妈的催促之下我心不在焉的走进电梯准备去学校，电梯门合上后，由于我刚起床头脑还不太清醒，忘了按一楼的楼层键，于是电梯便持续上升，我意识到自己没按楼层，正准备按下一楼楼层时，电梯突然停了，电梯门缓缓打开，我看到一个死去的女孩倒在血泊中，而一个男人正在清理现场...男人听到动静，突然转过头来看向我，那双眼睛死死的盯着我的手，我吓了一跳，赶紧狂按电梯关门键，就在电梯即将关上的那一刹那，一双带着血的手伸了进来，我再也无法去学校了，我被凶手拖出电梯杀害了。（电梯之所以上升是因为女孩被杀害前为了求救按了电梯按钮）",
+      "questions": [
+        {
+          "round": 1,
+          "question": "主角是因为电梯故障而无法去学校的吗？",
+          "expected_answer": "不是",
+          "normalized_expected_answer": "不是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": false,
+          "conversation_history": []
+        },
+        {
+          "round": 2,
+          "question": "，但在电梯上升过程中发生了某事，导致主角不能去学校。问题主角在电梯里看到或发现了什么特别的事物吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "主角是因为电梯故障而无法去学校的吗？"
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "question": "主角看到的是某种危险或威胁吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": false,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "主角是因为电梯故障而无法去学校的吗？"
+            },
+            {
+              "role": "user",
+              "content": "，但在电梯上升过程中发生了某事，导致主角不能去学校。问题主角在电梯里看到或发现了什么特别的事物吗？"
+            }
+          ]
+        },
+        {
+          "round": 4,
+          "question": "主角看到的危险与其他人有关吗？比如看到了罪案或暴力场景？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": false,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "主角是因为电梯故障而无法去学校的吗？"
+            },
+            {
+              "role": "user",
+              "content": "，但在电梯上升过程中发生了某事，导致主角不能去学校。问题主角在电梯里看到或发现了什么特别的事物吗？"
+            },
+            {
+              "role": "user",
+              "content": "主角看到的是某种危险或威胁吗？"
+            }
+          ]
+        },
+        {
+          "round": 5,
+          "question": "主角是否因为看到了这个场景而自己也陷入了危险？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": false,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "主角是因为电梯故障而无法去学校的吗？"
+            },
+            {
+              "role": "user",
+              "content": "，但在电梯上升过程中发生了某事，导致主角不能去学校。问题主角在电梯里看到或发现了什么特别的事物吗？"
+            },
+            {
+              "role": "user",
+              "content": "主角看到的是某种危险或威胁吗？"
+            },
+            {
+              "role": "user",
+              "content": "主角看到的危险与其他人有关吗？比如看到了罪案或暴力场景？"
+            }
+          ]
+        },
+        {
+          "round": 6,
+          "question": "主角是否看到了一个凶杀现场，并被凶手发现了？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "主角是因为电梯故障而无法去学校的吗？"
+            },
+            {
+              "role": "user",
+              "content": "，但在电梯上升过程中发生了某事，导致主角不能去学校。问题主角在电梯里看到或发现了什么特别的事物吗？"
+            },
+            {
+              "role": "user",
+              "content": "主角看到的是某种危险或威胁吗？"
+            },
+            {
+              "role": "user",
+              "content": "主角看到的危险与其他人有关吗？比如看到了罪案或暴力场景？"
+            },
+            {
+              "role": "user",
+              "content": "主角是否因为看到了这个场景而自己也陷入了危险？"
+            }
+          ]
+        },
+        {
+          "round": 7,
+          "question": "主角最终是否遭遇不测，所以才\"再也无法去学校\"？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "主角是因为电梯故障而无法去学校的吗？"
+            },
+            {
+              "role": "user",
+              "content": "，但在电梯上升过程中发生了某事，导致主角不能去学校。问题主角在电梯里看到或发现了什么特别的事物吗？"
+            },
+            {
+              "role": "user",
+              "content": "主角看到的是某种危险或威胁吗？"
+            },
+            {
+              "role": "user",
+              "content": "主角看到的危险与其他人有关吗？比如看到了罪案或暴力场景？"
+            },
+            {
+              "role": "user",
+              "content": "主角是否因为看到了这个场景而自己也陷入了危险？"
+            },
+            {
+              "role": "user",
+              "content": "主角是否看到了一个凶杀现场，并被凶手发现了？"
+            }
+          ]
+        }
+      ],
+      "accuracy": 0.42857142857142855
+    },
+    {
+      "title": "1237",
+      "surface": "幼儿园的一个小朋友数数总是说\"1，2，3，7\"，总是漏掉中间的\"4，5，6\"。可是当我纠正她时，她却说这是她妈妈教她的，我很疑惑，便提出去她家家访，家访结束后我也对她说是\"1，2，3，7\"",
+      "bottom": "我是一名幼师，在给小朋友们上课时，我发现有个小朋友数数总是数不对，别人数数都是 1234567，可她却说是 1237，我教她正确的数数时，她却说我教她的和她妈妈教的不一样，她说她妈妈教她是 1237，我很疑惑，便提出去她家家访，可她却带我来到了一家医院，原来她妈妈患有心脏病，并且已经活不长久了，而现在是三月份，而她的女儿生日在七月份，为了能陪伴她的女儿过最后一个生日，才对她的女儿编制了这样一个善意的谎言。得知此事后的我非常感动，便像她妈妈一样对她说 3 后面确实是 7。",
+      "questions": [
+        {
+          "round": 1,
+          "question": "讲述者是否为幼儿园老师或教育工作者？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "这个问题与解谜无关。",
+          "classified_response": "这个问题与解谜无关",
+          "correct": false,
+          "conversation_history": []
+        },
+        {
+          "round": 2,
+          "question": "这个家庭是否有特殊困难或问题？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "讲述者是否为幼儿园老师或教育工作者？"
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "question": "数字\"1237\"是否与时间或日期有关？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": false,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "讲述者是否为幼儿园老师或教育工作者？"
+            },
+            {
+              "role": "user",
+              "content": "这个家庭是否有特殊困难或问题？"
+            }
+          ]
+        },
+        {
+          "round": 4,
+          "question": "这个家庭是否有人患有严重疾病？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "讲述者是否为幼儿园老师或教育工作者？"
+            },
+            {
+              "role": "user",
+              "content": "这个家庭是否有特殊困难或问题？"
+            },
+            {
+              "role": "user",
+              "content": "数字\"1237\"是否与时间或日期有关？"
+            }
+          ]
+        },
+        {
+          "round": 5,
+          "question": "患病的人是否是孩子的母亲？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "讲述者是否为幼儿园老师或教育工作者？"
+            },
+            {
+              "role": "user",
+              "content": "这个家庭是否有特殊困难或问题？"
+            },
+            {
+              "role": "user",
+              "content": "数字\"1237\"是否与时间或日期有关？"
+            },
+            {
+              "role": "user",
+              "content": "这个家庭是否有人患有严重疾病？"
+            }
+          ]
+        },
+        {
+          "round": 6,
+          "question": "7月是否是孩子的生日？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "讲述者是否为幼儿园老师或教育工作者？"
+            },
+            {
+              "role": "user",
+              "content": "这个家庭是否有特殊困难或问题？"
+            },
+            {
+              "role": "user",
+              "content": "数字\"1237\"是否与时间或日期有关？"
+            },
+            {
+              "role": "user",
+              "content": "这个家庭是否有人患有严重疾病？"
+            },
+            {
+              "role": "user",
+              "content": "患病的人是否是孩子的母亲？"
+            }
+          ]
+        },
+        {
+          "round": 7,
+          "question": "家访时，讲述者是否是在医院见到了孩子的母亲？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "讲述者是否为幼儿园老师或教育工作者？"
+            },
+            {
+              "role": "user",
+              "content": "这个家庭是否有特殊困难或问题？"
+            },
+            {
+              "role": "user",
+              "content": "数字\"1237\"是否与时间或日期有关？"
+            },
+            {
+              "role": "user",
+              "content": "这个家庭是否有人患有严重疾病？"
+            },
+            {
+              "role": "user",
+              "content": "患病的人是否是孩子的母亲？"
+            },
+            {
+              "role": "user",
+              "content": "7月是否是孩子的生日？"
+            }
+          ]
+        }
+      ],
+      "accuracy": 0.7142857142857143
+    },
+    {
+      "title": "四岁的妈妈",
+      "surface": "幼儿园五岁的小朋友，竟然说她的妈妈只有四岁，我很疑惑，便提出了去她家家访，随后我在她家看到了让我惊恐的一幕...",
+      "bottom": "我在她家看到了一个个被铁链拴着的女人，而一旁站着一个长相凶狠丑陋的彪形大汉。幼儿园的那个小朋友突然露出了不属于她这个年龄该有的诡笑...原来她不止五岁，而是二十五岁，只是从小得了一种长不大的病，而那个彪形大汉则是她的哥哥，她是为了给她哥哥找女人，便哄骗我们这些幼师来到家里进行囚禁…而她那\"四岁的妈妈\"，是已经被骗来四年的女人…",
+      "questions": [
+        {
+          "round": 1,
+          "question": "这个\"四岁的妈妈\"是否真的是一个年龄很小的人？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "不是。",
+          "classified_response": "不是",
+          "correct": false,
+          "conversation_history": []
+        },
+        {
+          "round": 2,
+          "question": "这个\"四岁的妈妈\"是否是被强迫或者非自愿地处于这个家庭中？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": false,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这个\"四岁的妈妈\"是否真的是一个年龄很小的人？"
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "question": "老师在家访中看到的\"惊恐的一幕\"是否涉及到多个被囚禁或控制的人？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这个\"四岁的妈妈\"是否真的是一个年龄很小的人？"
+            },
+            {
+              "role": "user",
+              "content": "这个\"四岁的妈妈\"是否是被强迫或者非自愿地处于这个家庭中？"
+            }
+          ]
+        },
+        {
+          "round": 4,
+          "question": "\"四岁\"是否指的是这个人被囚禁的时间长度，而不是实际年龄？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这个\"四岁的妈妈\"是否真的是一个年龄很小的人？"
+            },
+            {
+              "role": "user",
+              "content": "这个\"四岁的妈妈\"是否是被强迫或者非自愿地处于这个家庭中？"
+            },
+            {
+              "role": "user",
+              "content": "老师在家访中看到的\"惊恐的一幕\"是否涉及到多个被囚禁或控制的人？"
+            }
+          ]
+        },
+        {
+          "round": 5,
+          "question": "那个五岁的小朋友是否也不是表面看起来的那样，可能有欺骗性？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这个\"四岁的妈妈\"是否真的是一个年龄很小的人？"
+            },
+            {
+              "role": "user",
+              "content": "这个\"四岁的妈妈\"是否是被强迫或者非自愿地处于这个家庭中？"
+            },
+            {
+              "role": "user",
+              "content": "老师在家访中看到的\"惊恐的一幕\"是否涉及到多个被囚禁或控制的人？"
+            },
+            {
+              "role": "user",
+              "content": "\"四岁\"是否指的是这个人被囚禁的时间长度，而不是实际年龄？"
+            }
+          ]
+        },
+        {
+          "round": 6,
+          "question": "这个\"五岁的小朋友\"是否实际上年龄更大，但由于某种原因看起来很年幼？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这个\"四岁的妈妈\"是否真的是一个年龄很小的人？"
+            },
+            {
+              "role": "user",
+              "content": "这个\"四岁的妈妈\"是否是被强迫或者非自愿地处于这个家庭中？"
+            },
+            {
+              "role": "user",
+              "content": "老师在家访中看到的\"惊恐的一幕\"是否涉及到多个被囚禁或控制的人？"
+            },
+            {
+              "role": "user",
+              "content": "\"四岁\"是否指的是这个人被囚禁的时间长度，而不是实际年龄？"
+            },
+            {
+              "role": "user",
+              "content": "那个五岁的小朋友是否也不是表面看起来的那样，可能有欺骗性？"
+            }
+          ]
+        },
+        {
+          "round": 7,
+          "question": "这个\"小朋友\"是否故意利用自己的外表来吸引或诱骗他人到她家中？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这个\"四岁的妈妈\"是否真的是一个年龄很小的人？"
+            },
+            {
+              "role": "user",
+              "content": "这个\"四岁的妈妈\"是否是被强迫或者非自愿地处于这个家庭中？"
+            },
+            {
+              "role": "user",
+              "content": "老师在家访中看到的\"惊恐的一幕\"是否涉及到多个被囚禁或控制的人？"
+            },
+            {
+              "role": "user",
+              "content": "\"四岁\"是否指的是这个人被囚禁的时间长度，而不是实际年龄？"
+            },
+            {
+              "role": "user",
+              "content": "那个五岁的小朋友是否也不是表面看起来的那样，可能有欺骗性？"
+            },
+            {
+              "role": "user",
+              "content": "这个\"五岁的小朋友\"是否实际上年龄更大，但由于某种原因看起来很年幼？"
+            }
+          ]
+        },
+        {
+          "round": 8,
+          "question": "除了这个\"小朋友\"外，家中是否还有其他人参与这个骗局或控制这些被囚禁的人？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这个\"四岁的妈妈\"是否真的是一个年龄很小的人？"
+            },
+            {
+              "role": "user",
+              "content": "这个\"四岁的妈妈\"是否是被强迫或者非自愿地处于这个家庭中？"
+            },
+            {
+              "role": "user",
+              "content": "老师在家访中看到的\"惊恐的一幕\"是否涉及到多个被囚禁或控制的人？"
+            },
+            {
+              "role": "user",
+              "content": "\"四岁\"是否指的是这个人被囚禁的时间长度，而不是实际年龄？"
+            },
+            {
+              "role": "user",
+              "content": "那个五岁的小朋友是否也不是表面看起来的那样，可能有欺骗性？"
+            },
+            {
+              "role": "user",
+              "content": "这个\"五岁的小朋友\"是否实际上年龄更大，但由于某种原因看起来很年幼？"
+            },
+            {
+              "role": "user",
+              "content": "这个\"小朋友\"是否故意利用自己的外表来吸引或诱骗他人到她家中？"
+            }
+          ]
+        }
+      ],
+      "accuracy": 0.75
+    },
+    {
+      "title": "午夜列车",
+      "surface": "离午夜12点还有五分钟，一个男子上了列车。男子的神情很奇怪，他看了看车上的几个人，然后开始问起乘客的年龄。\"女士，您今年 28 岁吗？\"\"你怎么知道？\"先生您今年 55 吗？\"对呀。\"然后男人一个个地猜对了乘客的年龄。\"婆婆，您今年 69 岁吗？\"\"是的，再过 5 分钟我就要 70 岁了。\"男子听完，脸色惨白。",
+      "bottom": "男子有超能力，可以预知人的死亡年龄，但是看不到自己的。男子上车后，看到车上的人的年龄看起来和他们自己死亡的年龄几乎都差不多，他觉得很奇怪，于是试探性地问了几个人，发现这些人都将在当年死去。问到婆婆时，婆婆说自己今年69岁，意会过来5分钟内列车就会出事故，这一车的人都将死掉。",
+      "questions": [
+        {
+          "round": 1,
+          "question": "这个男子是否拥有某种超能力？",
+          "expected_answer": "后突然脸色惨白，表明他意识到了某种可怕的事情。问题这个男子是否拥有某种超能力？回答是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是。",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": []
+        },
+        {
+          "round": 2,
+          "question": "男子看到的\"年龄\"是否与乘客的实际年龄有什么特殊关系？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": false,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这个男子是否拥有某种超能力？"
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "question": "男子能看到的是乘客们的死亡年龄吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这个男子是否拥有某种超能力？"
+            },
+            {
+              "role": "user",
+              "content": "男子看到的\"年龄\"是否与乘客的实际年龄有什么特殊关系？"
+            }
+          ]
+        },
+        {
+          "round": 4,
+          "question": "男子听到婆婆说\"再过5分钟我就要70岁了\"后脸色惨白，是因为他意识到所有乘客都将在午夜时分遇难吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": false,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这个男子是否拥有某种超能力？"
+            },
+            {
+              "role": "user",
+              "content": "男子看到的\"年龄\"是否与乘客的实际年龄有什么特殊关系？"
+            },
+            {
+              "role": "user",
+              "content": "男子能看到的是乘客们的死亡年龄吗？"
+            }
+          ]
+        },
+        {
+          "round": 5,
+          "question": "男子能看到自己的死亡年龄吗？",
+          "expected_answer": "让他确认了这一点。问题男子能看到自己的死亡年龄吗？回答不是",
+          "normalized_expected_answer": "不是",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这个男子是否拥有某种超能力？"
+            },
+            {
+              "role": "user",
+              "content": "男子看到的\"年龄\"是否与乘客的实际年龄有什么特殊关系？"
+            },
+            {
+              "role": "user",
+              "content": "男子能看到的是乘客们的死亡年龄吗？"
+            },
+            {
+              "role": "user",
+              "content": "男子听到婆婆说\"再过5分钟我就要70岁了\"后脸色惨白，是因为他意识到所有乘客都将在午夜时分遇难吗？"
+            }
+          ]
+        },
+        {
+          "round": 6,
+          "question": "男子上车前是否就已经有所预感，所以才特意询问乘客年龄？",
+          "expected_answer": "不是",
+          "normalized_expected_answer": "不是",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这个男子是否拥有某种超能力？"
+            },
+            {
+              "role": "user",
+              "content": "男子看到的\"年龄\"是否与乘客的实际年龄有什么特殊关系？"
+            },
+            {
+              "role": "user",
+              "content": "男子能看到的是乘客们的死亡年龄吗？"
+            },
+            {
+              "role": "user",
+              "content": "男子听到婆婆说\"再过5分钟我就要70岁了\"后脸色惨白，是因为他意识到所有乘客都将在午夜时分遇难吗？"
+            },
+            {
+              "role": "user",
+              "content": "男子能看到自己的死亡年龄吗？"
+            }
+          ]
+        },
+        {
+          "round": 7,
+          "question": "这是一辆普通的列车，还是有什么特殊性质？",
+          "expected_answer": "这个问题与解谜无关",
+          "normalized_expected_answer": "这个问题与解谜无关",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": false,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这个男子是否拥有某种超能力？"
+            },
+            {
+              "role": "user",
+              "content": "男子看到的\"年龄\"是否与乘客的实际年龄有什么特殊关系？"
+            },
+            {
+              "role": "user",
+              "content": "男子能看到的是乘客们的死亡年龄吗？"
+            },
+            {
+              "role": "user",
+              "content": "男子听到婆婆说\"再过5分钟我就要70岁了\"后脸色惨白，是因为他意识到所有乘客都将在午夜时分遇难吗？"
+            },
+            {
+              "role": "user",
+              "content": "男子能看到自己的死亡年龄吗？"
+            },
+            {
+              "role": "user",
+              "content": "男子上车前是否就已经有所预感，所以才特意询问乘客年龄？"
+            }
+          ]
+        }
+      ],
+      "accuracy": 0.5714285714285714
+    },
+    {
+      "title": "洗衣机",
+      "surface": "夜晚，贫穷的拾荒者捡了一台洗衣机回家。半夜他从睡梦中惊醒，好像听到了洗衣机启动的声音。",
+      "bottom": "凶手杀人分尸，将尸体装入洗衣机内，再用洗衣机运尸块到郊外。拾荒者开着小三轮捡到洗衣机时凶手刚刚取出全部尸块，正在不远处奋力挖土填坑，凶手反应过来时，拾荒者已经开着小三轮带着洗衣机跑了。于是凶手跟踪拾荒者到家，潜入家里启动洗衣机，为了清洗掉里面的血迹。",
+      "questions": [
+        {
+          "round": 1,
+          "question": "这台洗衣机是否有机械故障导致它自己启动？",
+          "expected_answer": "不是",
+          "normalized_expected_answer": "不是",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": true,
+          "conversation_history": []
+        },
+        {
+          "round": 2,
+          "question": "有其他人在拾荒者不知情的情况下进入他家并启动了洗衣机吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": false,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这台洗衣机是否有机械故障导致它自己启动？"
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "question": "这台洗衣机里面有什么特殊或重要的东西吗？",
+          "expected_answer": "不是",
+          "normalized_expected_answer": "不是",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这台洗衣机是否有机械故障导致它自己启动？"
+            },
+            {
+              "role": "user",
+              "content": "有其他人在拾荒者不知情的情况下进入他家并启动了洗衣机吗？"
+            }
+          ]
+        },
+        {
+          "round": 4,
+          "question": "潜入者启动洗衣机是为了清洗掉洗衣机内的某些痕迹吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": false,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这台洗衣机是否有机械故障导致它自己启动？"
+            },
+            {
+              "role": "user",
+              "content": "有其他人在拾荒者不知情的情况下进入他家并启动了洗衣机吗？"
+            },
+            {
+              "role": "user",
+              "content": "这台洗衣机里面有什么特殊或重要的东西吗？"
+            }
+          ]
+        },
+        {
+          "round": 5,
+          "question": "这台洗衣机曾被用于某种犯罪活动吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": false,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这台洗衣机是否有机械故障导致它自己启动？"
+            },
+            {
+              "role": "user",
+              "content": "有其他人在拾荒者不知情的情况下进入他家并启动了洗衣机吗？"
+            },
+            {
+              "role": "user",
+              "content": "这台洗衣机里面有什么特殊或重要的东西吗？"
+            },
+            {
+              "role": "user",
+              "content": "潜入者启动洗衣机是为了清洗掉洗衣机内的某些痕迹吗？"
+            }
+          ]
+        },
+        {
+          "round": 6,
+          "question": "这台洗衣机是否与谋杀案有关？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这台洗衣机是否有机械故障导致它自己启动？"
+            },
+            {
+              "role": "user",
+              "content": "有其他人在拾荒者不知情的情况下进入他家并启动了洗衣机吗？"
+            },
+            {
+              "role": "user",
+              "content": "这台洗衣机里面有什么特殊或重要的东西吗？"
+            },
+            {
+              "role": "user",
+              "content": "潜入者启动洗衣机是为了清洗掉洗衣机内的某些痕迹吗？"
+            },
+            {
+              "role": "user",
+              "content": "这台洗衣机曾被用于某种犯罪活动吗？"
+            }
+          ]
+        },
+        {
+          "round": 7,
+          "question": "洗衣机曾被用来藏匿或运输尸体/尸块吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这台洗衣机是否有机械故障导致它自己启动？"
+            },
+            {
+              "role": "user",
+              "content": "有其他人在拾荒者不知情的情况下进入他家并启动了洗衣机吗？"
+            },
+            {
+              "role": "user",
+              "content": "这台洗衣机里面有什么特殊或重要的东西吗？"
+            },
+            {
+              "role": "user",
+              "content": "潜入者启动洗衣机是为了清洗掉洗衣机内的某些痕迹吗？"
+            },
+            {
+              "role": "user",
+              "content": "这台洗衣机曾被用于某种犯罪活动吗？"
+            },
+            {
+              "role": "user",
+              "content": "这台洗衣机是否与谋杀案有关？"
+            }
+          ]
+        },
+        {
+          "round": 8,
+          "question": "拾荒者捡到洗衣机时，凶手正在附近处理尸体残余吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这台洗衣机是否有机械故障导致它自己启动？"
+            },
+            {
+              "role": "user",
+              "content": "有其他人在拾荒者不知情的情况下进入他家并启动了洗衣机吗？"
+            },
+            {
+              "role": "user",
+              "content": "这台洗衣机里面有什么特殊或重要的东西吗？"
+            },
+            {
+              "role": "user",
+              "content": "潜入者启动洗衣机是为了清洗掉洗衣机内的某些痕迹吗？"
+            },
+            {
+              "role": "user",
+              "content": "这台洗衣机曾被用于某种犯罪活动吗？"
+            },
+            {
+              "role": "user",
+              "content": "这台洗衣机是否与谋杀案有关？"
+            },
+            {
+              "role": "user",
+              "content": "洗衣机曾被用来藏匿或运输尸体/尸块吗？"
+            }
+          ]
+        }
+      ],
+      "accuracy": 0.625
+    },
+    {
+      "title": "小红裙",
+      "surface": "姐姐为我选了一件小红裙，我穿着去上学了，晚上回家发现了一具尸体。",
+      "bottom": "我的母亲和老师有染，他们总趁着父亲不在时温存。而为老师提供信息的就是我的小红裙，每当我穿着小红裙去上学就说明那晚父亲准不在。这天妈妈忙，姐姐为我选了一件小红裙，老师看见以为父亲不在家，便来我家找母亲，正好被父亲撞上，然后父亲杀了他。",
+      "questions": [
+        {
+          "round": 1,
+          "question": "发现的尸体是家人的吗？",
+          "expected_answer": "不是",
+          "normalized_expected_answer": "不是",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": true,
+          "conversation_history": []
+        },
+        {
+          "round": 2,
+          "question": "小红裙在这个故事中是一个信号或暗示吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "发现的尸体是家人的吗？"
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "question": "小红裙是向家外的人传递信息的吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": false,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "发现的尸体是家人的吗？"
+            },
+            {
+              "role": "user",
+              "content": "小红裙在这个故事中是一个信号或暗示吗？"
+            }
+          ]
+        },
+        {
+          "round": 4,
+          "question": "这个信息与主角家中的某种情况有关吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "发现的尸体是家人的吗？"
+            },
+            {
+              "role": "user",
+              "content": "小红裙在这个故事中是一个信号或暗示吗？"
+            },
+            {
+              "role": "user",
+              "content": "小红裙是向家外的人传递信息的吗？"
+            }
+          ]
+        },
+        {
+          "round": 5,
+          "question": "小红裙传递的信息是关于家中某人不在家的吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "发现的尸体是家人的吗？"
+            },
+            {
+              "role": "user",
+              "content": "小红裙在这个故事中是一个信号或暗示吗？"
+            },
+            {
+              "role": "user",
+              "content": "小红裙是向家外的人传递信息的吗？"
+            },
+            {
+              "role": "user",
+              "content": "这个信息与主角家中的某种情况有关吗？"
+            }
+          ]
+        },
+        {
+          "round": 6,
+          "question": "这个外人是主角的老师吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": false,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "发现的尸体是家人的吗？"
+            },
+            {
+              "role": "user",
+              "content": "小红裙在这个故事中是一个信号或暗示吗？"
+            },
+            {
+              "role": "user",
+              "content": "小红裙是向家外的人传递信息的吗？"
+            },
+            {
+              "role": "user",
+              "content": "这个信息与主角家中的某种情况有关吗？"
+            },
+            {
+              "role": "user",
+              "content": "小红裙传递的信息是关于家中某人不在家的吗？"
+            }
+          ]
+        },
+        {
+          "round": 7,
+          "question": "老师与主角的母亲有不正当关系吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "发现的尸体是家人的吗？"
+            },
+            {
+              "role": "user",
+              "content": "小红裙在这个故事中是一个信号或暗示吗？"
+            },
+            {
+              "role": "user",
+              "content": "小红裙是向家外的人传递信息的吗？"
+            },
+            {
+              "role": "user",
+              "content": "这个信息与主角家中的某种情况有关吗？"
+            },
+            {
+              "role": "user",
+              "content": "小红裙传递的信息是关于家中某人不在家的吗？"
+            },
+            {
+              "role": "user",
+              "content": "这个外人是主角的老师吗？"
+            }
+          ]
+        },
+        {
+          "round": 8,
+          "question": "发现的尸体是老师，他被父亲杀死的吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "发现的尸体是家人的吗？"
+            },
+            {
+              "role": "user",
+              "content": "小红裙在这个故事中是一个信号或暗示吗？"
+            },
+            {
+              "role": "user",
+              "content": "小红裙是向家外的人传递信息的吗？"
+            },
+            {
+              "role": "user",
+              "content": "这个信息与主角家中的某种情况有关吗？"
+            },
+            {
+              "role": "user",
+              "content": "小红裙传递的信息是关于家中某人不在家的吗？"
+            },
+            {
+              "role": "user",
+              "content": "这个外人是主角的老师吗？"
+            },
+            {
+              "role": "user",
+              "content": "老师与主角的母亲有不正当关系吗？"
+            }
+          ]
+        }
+      ],
+      "accuracy": 0.75
+    },
+    {
+      "title": "数数",
+      "surface": "我数数，他也在数数，我毛骨悚然。",
+      "bottom": "我家住在高层，今天我闲着无聊向窗户外面看的时候，意外目击了一场案件，就发生在对面大楼里，一个男人像是刺死了一个人。我连忙掏出手机想要报警，警察问我发生事故的楼层，于是我数着男人所在的楼层。等数到男人那层时，我发现男人注意到了我，数着我所在的楼层，握着血淋淋的刀，露出诡异的笑容！",
+      "questions": [
+        {
+          "round": 1,
+          "question": "这个场景发生在室内吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是。",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": []
+        },
+        {
+          "round": 2,
+          "question": "\"我\"和\"他\"之间有物理隔离吗？（比如在不同的房间、隔着窗户等）",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": false,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这个场景发生在室内吗？"
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "question": "\"我\"和\"他\"是在数相同的东西吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这个场景发生在室内吗？"
+            },
+            {
+              "role": "user",
+              "content": "\"我\"和\"他\"之间有物理隔离吗？（比如在不同的房间、隔着窗户等）"
+            }
+          ]
+        },
+        {
+          "round": 4,
+          "question": "这个故事是否发生在高层建筑物中？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这个场景发生在室内吗？"
+            },
+            {
+              "role": "user",
+              "content": "\"我\"和\"他\"之间有物理隔离吗？（比如在不同的房间、隔着窗户等）"
+            },
+            {
+              "role": "user",
+              "content": "\"我\"和\"他\"是在数相同的东西吗？"
+            }
+          ]
+        },
+        {
+          "round": 5,
+          "question": "\"他\"是否对\"我\"构成某种威胁或危险？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这个场景发生在室内吗？"
+            },
+            {
+              "role": "user",
+              "content": "\"我\"和\"他\"之间有物理隔离吗？（比如在不同的房间、隔着窗户等）"
+            },
+            {
+              "role": "user",
+              "content": "\"我\"和\"他\"是在数相同的东西吗？"
+            },
+            {
+              "role": "user",
+              "content": "这个故事是否发生在高层建筑物中？"
+            }
+          ]
+        },
+        {
+          "round": 6,
+          "question": "\"他\"是否刚刚做了什么可怕或犯罪的事情？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这个场景发生在室内吗？"
+            },
+            {
+              "role": "user",
+              "content": "\"我\"和\"他\"之间有物理隔离吗？（比如在不同的房间、隔着窗户等）"
+            },
+            {
+              "role": "user",
+              "content": "\"我\"和\"他\"是在数相同的东西吗？"
+            },
+            {
+              "role": "user",
+              "content": "这个故事是否发生在高层建筑物中？"
+            },
+            {
+              "role": "user",
+              "content": "\"他\"是否对\"我\"构成某种威胁或危险？"
+            }
+          ]
+        },
+        {
+          "round": 7,
+          "question": "\"他\"刚才做的可怕的事情是否是伤害或杀害了某人？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这个场景发生在室内吗？"
+            },
+            {
+              "role": "user",
+              "content": "\"我\"和\"他\"之间有物理隔离吗？（比如在不同的房间、隔着窗户等）"
+            },
+            {
+              "role": "user",
+              "content": "\"我\"和\"他\"是在数相同的东西吗？"
+            },
+            {
+              "role": "user",
+              "content": "这个故事是否发生在高层建筑物中？"
+            },
+            {
+              "role": "user",
+              "content": "\"他\"是否对\"我\"构成某种威胁或危险？"
+            },
+            {
+              "role": "user",
+              "content": "\"他\"是否刚刚做了什么可怕或犯罪的事情？"
+            }
+          ]
+        }
+      ],
+      "accuracy": 0.8571428571428571
+    },
+    {
+      "title": "阳台上的女孩",
+      "surface": "女孩每天都站在对面阳台和我打招呼，我却不敢再踏进阳台了。",
+      "bottom": "我新搬进了一个公寓，每天早上去阳台晾衣服的时候，我都能看见对面公寓的阳台上站着一个女孩在对我打招呼，我很开心，每天都准时的到阳台跟她打完招呼再去上班。两三个星期过去了，一天，我突然看到一条关于我小区附近的新闻：在某间公寓阳台上发现一具女尸，已经上吊自杀三周了。我突然觉得有什么不太对劲，跑去阳台一看，果然女孩已经不见了，只看见几张封条，我顿时感到一阵恶心，不敢再踏进阳台。原来阳台上的女尸吊在那里摇曳的样子只是像在打招呼而已。",
+      "questions": [
+        {
+          "round": 1,
+          "question": "我之前是否经常去阳台？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "不是。",
+          "classified_response": "不是",
+          "correct": false,
+          "conversation_history": []
+        },
+        {
+          "round": 2,
+          "question": "是否发生了什么事情导致我对女孩或阳台产生恐惧？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "我之前是否经常去阳台？"
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "question": "我是否通过新闻或其他渠道得知了关于这个女孩的不好消息？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": false,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "我之前是否经常去阳台？"
+            },
+            {
+              "role": "user",
+              "content": "是否发生了什么事情导致我对女孩或阳台产生恐惧？"
+            }
+          ]
+        },
+        {
+          "round": 4,
+          "question": "这个不好的消息是否与女孩的死亡有关？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "我之前是否经常去阳台？"
+            },
+            {
+              "role": "user",
+              "content": "是否发生了什么事情导致我对女孩或阳台产生恐惧？"
+            },
+            {
+              "role": "user",
+              "content": "我是否通过新闻或其他渠道得知了关于这个女孩的不好消息？"
+            }
+          ]
+        },
+        {
+          "round": 5,
+          "question": "女孩的死亡方式是否是自杀？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "我之前是否经常去阳台？"
+            },
+            {
+              "role": "user",
+              "content": "是否发生了什么事情导致我对女孩或阳台产生恐惧？"
+            },
+            {
+              "role": "user",
+              "content": "我是否通过新闻或其他渠道得知了关于这个女孩的不好消息？"
+            },
+            {
+              "role": "user",
+              "content": "这个不好的消息是否与女孩的死亡有关？"
+            }
+          ]
+        },
+        {
+          "round": 6,
+          "question": "女孩是否在阳台上自杀？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "我之前是否经常去阳台？"
+            },
+            {
+              "role": "user",
+              "content": "是否发生了什么事情导致我对女孩或阳台产生恐惧？"
+            },
+            {
+              "role": "user",
+              "content": "我是否通过新闻或其他渠道得知了关于这个女孩的不好消息？"
+            },
+            {
+              "role": "user",
+              "content": "这个不好的消息是否与女孩的死亡有关？"
+            },
+            {
+              "role": "user",
+              "content": "女孩的死亡方式是否是自杀？"
+            }
+          ]
+        },
+        {
+          "round": 7,
+          "question": "女孩自杀后是否一段时间没被发现，而我在这段时间里仍看到\"她\"？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "我之前是否经常去阳台？"
+            },
+            {
+              "role": "user",
+              "content": "是否发生了什么事情导致我对女孩或阳台产生恐惧？"
+            },
+            {
+              "role": "user",
+              "content": "我是否通过新闻或其他渠道得知了关于这个女孩的不好消息？"
+            },
+            {
+              "role": "user",
+              "content": "这个不好的消息是否与女孩的死亡有关？"
+            },
+            {
+              "role": "user",
+              "content": "女孩的死亡方式是否是自杀？"
+            },
+            {
+              "role": "user",
+              "content": "女孩是否在阳台上自杀？"
+            }
+          ]
+        },
+        {
+          "round": 8,
+          "question": "女孩是否是上吊自杀，而我误以为她吊在那里摇晃的样子是在向我打招呼？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "我之前是否经常去阳台？"
+            },
+            {
+              "role": "user",
+              "content": "是否发生了什么事情导致我对女孩或阳台产生恐惧？"
+            },
+            {
+              "role": "user",
+              "content": "我是否通过新闻或其他渠道得知了关于这个女孩的不好消息？"
+            },
+            {
+              "role": "user",
+              "content": "这个不好的消息是否与女孩的死亡有关？"
+            },
+            {
+              "role": "user",
+              "content": "女孩的死亡方式是否是自杀？"
+            },
+            {
+              "role": "user",
+              "content": "女孩是否在阳台上自杀？"
+            },
+            {
+              "role": "user",
+              "content": "女孩自杀后是否一段时间没被发现，而我在这段时间里仍看到\"她\"？"
+            }
+          ]
+        }
+      ],
+      "accuracy": 0.75
+    },
+    {
+      "title": "半根火柴",
+      "surface": "在沙漠里躺一具男尸，他的手里拿着一根半根的火柴，在他旁边还发现了他的行李，已知的是男子是坠落死亡的，请推理。",
+      "bottom": "他跟一个旅行团去沙漠乘热气球旅游，半路的时候热气球没有燃料了，为了让热气球继续飞，他们就把行李都扔下去，还是不够，就决定用火柴来抽签，谁抽到半根的就会被扔下去，然后他抽到了半根火柴，被同伴推出去，掉下来摔死了。",
+      "questions": [
+        {
+          "round": 1,
+          "question": "死者是从某种飞行器上坠落的吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "不是。",
+          "classified_response": "不是",
+          "correct": false,
+          "conversation_history": []
+        },
+        {
+          "round": 2,
+          "question": "死者是从热气球上坠落的吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "死者是从某种飞行器上坠落的吗？"
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "question": "热气球是否遇到了某种危机或紧急情况？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "死者是从某种飞行器上坠落的吗？"
+            },
+            {
+              "role": "user",
+              "content": "死者是从热气球上坠落的吗？"
+            }
+          ]
+        },
+        {
+          "round": 4,
+          "question": "热气球是否因为燃料不足而遇到危机？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "死者是从某种飞行器上坠落的吗？"
+            },
+            {
+              "role": "user",
+              "content": "死者是从热气球上坠落的吗？"
+            },
+            {
+              "role": "user",
+              "content": "热气球是否遇到了某种危机或紧急情况？"
+            }
+          ]
+        },
+        {
+          "round": 5,
+          "question": "除了扔掉行李，乘客们是否做出了其他决定来应对危机？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "死者是从某种飞行器上坠落的吗？"
+            },
+            {
+              "role": "user",
+              "content": "死者是从热气球上坠落的吗？"
+            },
+            {
+              "role": "user",
+              "content": "热气球是否遇到了某种危机或紧急情况？"
+            },
+            {
+              "role": "user",
+              "content": "热气球是否因为燃料不足而遇到危机？"
+            }
+          ]
+        },
+        {
+          "round": 6,
+          "question": "乘客们是否决定减少人数来进一步减轻热气球的重量？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "死者是从某种飞行器上坠落的吗？"
+            },
+            {
+              "role": "user",
+              "content": "死者是从热气球上坠落的吗？"
+            },
+            {
+              "role": "user",
+              "content": "热气球是否遇到了某种危机或紧急情况？"
+            },
+            {
+              "role": "user",
+              "content": "热气球是否因为燃料不足而遇到危机？"
+            },
+            {
+              "role": "user",
+              "content": "除了扔掉行李，乘客们是否做出了其他决定来应对危机？"
+            }
+          ]
+        },
+        {
+          "round": 7,
+          "question": "半根火柴是否用来决定谁必须离开热气球？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "死者是从某种飞行器上坠落的吗？"
+            },
+            {
+              "role": "user",
+              "content": "死者是从热气球上坠落的吗？"
+            },
+            {
+              "role": "user",
+              "content": "热气球是否遇到了某种危机或紧急情况？"
+            },
+            {
+              "role": "user",
+              "content": "热气球是否因为燃料不足而遇到危机？"
+            },
+            {
+              "role": "user",
+              "content": "除了扔掉行李，乘客们是否做出了其他决定来应对危机？"
+            },
+            {
+              "role": "user",
+              "content": "乘客们是否决定减少人数来进一步减轻热气球的重量？"
+            }
+          ]
+        },
+        {
+          "round": 8,
+          "question": "男子是自愿跳下热气球的，还是被其他乘客推下去的？",
+          "expected_answer": "是（被推下去的）",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "死者是从某种飞行器上坠落的吗？"
+            },
+            {
+              "role": "user",
+              "content": "死者是从热气球上坠落的吗？"
+            },
+            {
+              "role": "user",
+              "content": "热气球是否遇到了某种危机或紧急情况？"
+            },
+            {
+              "role": "user",
+              "content": "热气球是否因为燃料不足而遇到危机？"
+            },
+            {
+              "role": "user",
+              "content": "除了扔掉行李，乘客们是否做出了其他决定来应对危机？"
+            },
+            {
+              "role": "user",
+              "content": "乘客们是否决定减少人数来进一步减轻热气球的重量？"
+            },
+            {
+              "role": "user",
+              "content": "半根火柴是否用来决定谁必须离开热气球？"
+            }
+          ]
+        }
+      ],
+      "accuracy": 0.875
+    },
+    {
+      "title": "丢失的手机",
+      "surface": "我的手机不见了，当我找到它时，我吓了一跳。",
+      "bottom": "我和闺蜜去酒吧蹦迪，我喝了点酒蹦了一会儿，坐下来休息时才发现自己手机不见了，于是就让闺蜜给我手机打个电话，电话那头传来一位陌生男子的声音，酒吧太吵了，我们还没来得及问清楚，电话就被那头挂断了。我怀着郁闷的心情回到了家，结果发现我的手机就在床头，我忽然想起今天我根本就没把手机带出门，而我一直以来都是一个人居住，我不禁毛骨悚然…",
+      "questions": [
+        {
+          "round": 1,
+          "question": "手机是在意想不到的地方被找到的吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "不是。",
+          "classified_response": "不是",
+          "correct": false,
+          "conversation_history": []
+        },
+        {
+          "round": 2,
+          "question": "主人是否记得把手机放在最后找到它的地方？",
+          "expected_answer": "不是",
+          "normalized_expected_answer": "不是",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "手机是在意想不到的地方被找到的吗？"
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "question": "手机丢失前，主人是否离开过自己的住所？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "手机是在意想不到的地方被找到的吗？"
+            },
+            {
+              "role": "user",
+              "content": "主人是否记得把手机放在最后找到它的地方？"
+            }
+          ]
+        },
+        {
+          "round": 4,
+          "question": "主人在外面时是否尝试联系过自己的手机？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": false,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "手机是在意想不到的地方被找到的吗？"
+            },
+            {
+              "role": "user",
+              "content": "主人是否记得把手机放在最后找到它的地方？"
+            },
+            {
+              "role": "user",
+              "content": "手机丢失前，主人是否离开过自己的住所？"
+            }
+          ]
+        },
+        {
+          "round": 5,
+          "question": "当主人尝试联系自己的手机时，是否有人接听了电话？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": false,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "手机是在意想不到的地方被找到的吗？"
+            },
+            {
+              "role": "user",
+              "content": "主人是否记得把手机放在最后找到它的地方？"
+            },
+            {
+              "role": "user",
+              "content": "手机丢失前，主人是否离开过自己的住所？"
+            },
+            {
+              "role": "user",
+              "content": "主人在外面时是否尝试联系过自己的手机？"
+            }
+          ]
+        },
+        {
+          "round": 6,
+          "question": "主人认为自己是独居的吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "手机是在意想不到的地方被找到的吗？"
+            },
+            {
+              "role": "user",
+              "content": "主人是否记得把手机放在最后找到它的地方？"
+            },
+            {
+              "role": "user",
+              "content": "手机丢失前，主人是否离开过自己的住所？"
+            },
+            {
+              "role": "user",
+              "content": "主人在外面时是否尝试联系过自己的手机？"
+            },
+            {
+              "role": "user",
+              "content": "当主人尝试联系自己的手机时，是否有人接听了电话？"
+            }
+          ]
+        },
+        {
+          "round": 7,
+          "question": "主人出门时是否确实带走了手机？",
+          "expected_answer": "不是",
+          "normalized_expected_answer": "不是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": false,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "手机是在意想不到的地方被找到的吗？"
+            },
+            {
+              "role": "user",
+              "content": "主人是否记得把手机放在最后找到它的地方？"
+            },
+            {
+              "role": "user",
+              "content": "手机丢失前，主人是否离开过自己的住所？"
+            },
+            {
+              "role": "user",
+              "content": "主人在外面时是否尝试联系过自己的手机？"
+            },
+            {
+              "role": "user",
+              "content": "当主人尝试联系自己的手机时，是否有人接听了电话？"
+            },
+            {
+              "role": "user",
+              "content": "主人认为自己是独居的吗？"
+            }
+          ]
+        },
+        {
+          "round": 8,
+          "question": "主人是否是和朋友一起外出的？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": false,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "手机是在意想不到的地方被找到的吗？"
+            },
+            {
+              "role": "user",
+              "content": "主人是否记得把手机放在最后找到它的地方？"
+            },
+            {
+              "role": "user",
+              "content": "手机丢失前，主人是否离开过自己的住所？"
+            },
+            {
+              "role": "user",
+              "content": "主人在外面时是否尝试联系过自己的手机？"
+            },
+            {
+              "role": "user",
+              "content": "当主人尝试联系自己的手机时，是否有人接听了电话？"
+            },
+            {
+              "role": "user",
+              "content": "主人认为自己是独居的吗？"
+            },
+            {
+              "role": "user",
+              "content": "主人出门时是否确实带走了手机？"
+            }
+          ]
+        }
+      ],
+      "accuracy": 0.375
+    },
+    {
+      "title": "水草",
+      "surface": "一位男生到河边散步，跟一位渔夫聊天，渔夫跟他说了一句话，男生就跳河自杀了。",
+      "bottom": "一对情侣在河边玩儿的时候女生不小心落水了，男生跳下水里救她，因为水流很急…男生只抓到一把水草，最后没有把女生救上来，几年以后，他又来到这条河边，看见一位渔夫，聊天的时候，渔夫告诉他这条河急从来没有过水草，男生就知道他当时抓住的其实是女生的头发，然后就跳河了。",
+      "questions": [
+        {
+          "round": 1,
+          "question": "这个男生之前是否在这条河有过什么经历？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "不是。",
+          "classified_response": "不是",
+          "correct": false,
+          "conversation_history": []
+        },
+        {
+          "round": 2,
+          "question": "男生的过去经历是否与溺水或救人有关？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": false,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这个男生之前是否在这条河有过什么经历？"
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "question": "是否有人在这条河里死亡，而且与男生有亲密关系？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": false,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这个男生之前是否在这条河有过什么经历？"
+            },
+            {
+              "role": "user",
+              "content": "男生的过去经历是否与溺水或救人有关？"
+            }
+          ]
+        },
+        {
+          "round": 4,
+          "question": "死亡的人是男生的恋人或伴侣吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这个男生之前是否在这条河有过什么经历？"
+            },
+            {
+              "role": "user",
+              "content": "男生的过去经历是否与溺水或救人有关？"
+            },
+            {
+              "role": "user",
+              "content": "是否有人在这条河里死亡，而且与男生有亲密关系？"
+            }
+          ]
+        },
+        {
+          "round": 5,
+          "question": "在救援过程中，男生是否抓住或触碰到了什么东西，以为那能帮助救援？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这个男生之前是否在这条河有过什么经历？"
+            },
+            {
+              "role": "user",
+              "content": "男生的过去经历是否与溺水或救人有关？"
+            },
+            {
+              "role": "user",
+              "content": "是否有人在这条河里死亡，而且与男生有亲密关系？"
+            },
+            {
+              "role": "user",
+              "content": "死亡的人是男生的恋人或伴侣吗？"
+            }
+          ]
+        },
+        {
+          "round": 6,
+          "question": "男生抓住的是否是某种植物，可能是水草？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这个男生之前是否在这条河有过什么经历？"
+            },
+            {
+              "role": "user",
+              "content": "男生的过去经历是否与溺水或救人有关？"
+            },
+            {
+              "role": "user",
+              "content": "是否有人在这条河里死亡，而且与男生有亲密关系？"
+            },
+            {
+              "role": "user",
+              "content": "死亡的人是男生的恋人或伴侣吗？"
+            },
+            {
+              "role": "user",
+              "content": "在救援过程中，男生是否抓住或触碰到了什么东西，以为那能帮助救援？"
+            }
+          ]
+        },
+        {
+          "round": 7,
+          "question": "渔夫是否告诉男生，那条河里根本没有水草？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这个男生之前是否在这条河有过什么经历？"
+            },
+            {
+              "role": "user",
+              "content": "男生的过去经历是否与溺水或救人有关？"
+            },
+            {
+              "role": "user",
+              "content": "是否有人在这条河里死亡，而且与男生有亲密关系？"
+            },
+            {
+              "role": "user",
+              "content": "死亡的人是男生的恋人或伴侣吗？"
+            },
+            {
+              "role": "user",
+              "content": "在救援过程中，男生是否抓住或触碰到了什么东西，以为那能帮助救援？"
+            },
+            {
+              "role": "user",
+              "content": "男生抓住的是否是某种植物，可能是水草？"
+            }
+          ]
+        }
+      ],
+      "accuracy": 0.5714285714285714
+    },
+    {
+      "title": "新闻",
+      "surface": "一男子工作下班回到家，打开电视看新闻，然后被吓晕了。",
+      "bottom": "男子是一名鬼屋工作人员，鬼屋打烊后他负责打扫。鬼屋里有许多道具尸体，在他打扫的时候，看见了一具非常逼真的道具尸体，男子没有多想，一边感叹道具制作用心边打扫。工作结束后他回到家，打开电视看新闻，新闻里播着一则失踪案件，有公布失踪者照片，照片上的人正是他在鬼屋中看到的逼真道具，被吓昏了过去。",
+      "questions": [
+        {
+          "round": 1,
+          "question": "这名男子的工作是否与新闻内容直接相关？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": []
+        },
+        {
+          "round": 2,
+          "question": "男子的工作是否涉及执法、安保或紧急服务（如警察、保安、消防员、医护人员等）？",
+          "expected_answer": "不是",
+          "normalized_expected_answer": "不是",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这名男子的工作是否与新闻内容直接相关？"
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "question": "男子工作的地方是否是娱乐场所（如剧院、游乐园、展览馆等）？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这名男子的工作是否与新闻内容直接相关？"
+            },
+            {
+              "role": "user",
+              "content": "男子的工作是否涉及执法、安保或紧急服务（如警察、保安、消防员、医护人员等）？"
+            }
+          ]
+        },
+        {
+          "round": 4,
+          "question": "这个娱乐场所是否是恐怖主题相关的（如鬼屋、恐怖主题公园等）？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这名男子的工作是否与新闻内容直接相关？"
+            },
+            {
+              "role": "user",
+              "content": "男子的工作是否涉及执法、安保或紧急服务（如警察、保安、消防员、医护人员等）？"
+            },
+            {
+              "role": "user",
+              "content": "男子工作的地方是否是娱乐场所（如剧院、游乐园、展览馆等）？"
+            }
+          ]
+        },
+        {
+          "round": 5,
+          "question": "他在鬼屋中是否看到了某个逼真的道具或装饰，而这个东西在新闻中以不同的方式出现？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这名男子的工作是否与新闻内容直接相关？"
+            },
+            {
+              "role": "user",
+              "content": "男子的工作是否涉及执法、安保或紧急服务（如警察、保安、消防员、医护人员等）？"
+            },
+            {
+              "role": "user",
+              "content": "男子工作的地方是否是娱乐场所（如剧院、游乐园、展览馆等）？"
+            },
+            {
+              "role": "user",
+              "content": "这个娱乐场所是否是恐怖主题相关的（如鬼屋、恐怖主题公园等）？"
+            }
+          ]
+        },
+        {
+          "round": 6,
+          "question": "他在鬼屋中看到的\"道具\"实际上是否是一个真实的人或尸体？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": false,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这名男子的工作是否与新闻内容直接相关？"
+            },
+            {
+              "role": "user",
+              "content": "男子的工作是否涉及执法、安保或紧急服务（如警察、保安、消防员、医护人员等）？"
+            },
+            {
+              "role": "user",
+              "content": "男子工作的地方是否是娱乐场所（如剧院、游乐园、展览馆等）？"
+            },
+            {
+              "role": "user",
+              "content": "这个娱乐场所是否是恐怖主题相关的（如鬼屋、恐怖主题公园等）？"
+            },
+            {
+              "role": "user",
+              "content": "他在鬼屋中是否看到了某个逼真的道具或装饰，而这个东西在新闻中以不同的方式出现？"
+            }
+          ]
+        },
+        {
+          "round": 7,
+          "question": "新闻是否在报道一个失踪人口案件，而男子认出失踪者就是他在鬼屋中看到的\"道具\"？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这名男子的工作是否与新闻内容直接相关？"
+            },
+            {
+              "role": "user",
+              "content": "男子的工作是否涉及执法、安保或紧急服务（如警察、保安、消防员、医护人员等）？"
+            },
+            {
+              "role": "user",
+              "content": "男子工作的地方是否是娱乐场所（如剧院、游乐园、展览馆等）？"
+            },
+            {
+              "role": "user",
+              "content": "这个娱乐场所是否是恐怖主题相关的（如鬼屋、恐怖主题公园等）？"
+            },
+            {
+              "role": "user",
+              "content": "他在鬼屋中是否看到了某个逼真的道具或装饰，而这个东西在新闻中以不同的方式出现？"
+            },
+            {
+              "role": "user",
+              "content": "他在鬼屋中看到的\"道具\"实际上是否是一个真实的人或尸体？"
+            }
+          ]
+        }
+      ],
+      "accuracy": 0.8571428571428571
+    },
+    {
+      "title": "高跟鞋",
+      "surface": "一位女士去鞋店里买了一双红色高跟鞋，这双高跟鞋预示了她今晚的死亡。",
+      "bottom": "女士是杂技团的一名演员，那天她去买了一双红色的高跟鞋。晚上她穿着这双高跟鞋就去表演了，她的工作是头顶苹果，配合另外一名男演员表演小李飞刀。结果因为她的高跟鞋，比平时穿的高出了几公分，没有调整过来的男演员失手将刀插到了她的脑袋上。",
+      "questions": [
+        {
+          "round": 1,
+          "question": "这位女士的死亡是意外事故造成的吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "不是。",
+          "classified_response": "不是",
+          "correct": false,
+          "conversation_history": []
+        },
+        {
+          "round": 2,
+          "question": "高跟鞋的高度是导致事故的关键因素吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这位女士的死亡是意外事故造成的吗？"
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "question": "这位女士是在进行某种需要精确身体控制的活动或工作时发生意外的吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这位女士的死亡是意外事故造成的吗？"
+            },
+            {
+              "role": "user",
+              "content": "高跟鞋的高度是导致事故的关键因素吗？"
+            }
+          ]
+        },
+        {
+          "round": 4,
+          "question": "这位女士是表演者或艺术工作者吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这位女士的死亡是意外事故造成的吗？"
+            },
+            {
+              "role": "user",
+              "content": "高跟鞋的高度是导致事故的关键因素吗？"
+            },
+            {
+              "role": "user",
+              "content": "这位女士是在进行某种需要精确身体控制的活动或工作时发生意外的吗？"
+            }
+          ]
+        },
+        {
+          "round": 5,
+          "question": "女士的死亡是否与另一个表演者的行为有关？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这位女士的死亡是意外事故造成的吗？"
+            },
+            {
+              "role": "user",
+              "content": "高跟鞋的高度是导致事故的关键因素吗？"
+            },
+            {
+              "role": "user",
+              "content": "这位女士是在进行某种需要精确身体控制的活动或工作时发生意外的吗？"
+            },
+            {
+              "role": "user",
+              "content": "这位女士是表演者或艺术工作者吗？"
+            }
+          ]
+        },
+        {
+          "round": 6,
+          "question": "这个表演是否涉及危险道具或武器？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这位女士的死亡是意外事故造成的吗？"
+            },
+            {
+              "role": "user",
+              "content": "高跟鞋的高度是导致事故的关键因素吗？"
+            },
+            {
+              "role": "user",
+              "content": "这位女士是在进行某种需要精确身体控制的活动或工作时发生意外的吗？"
+            },
+            {
+              "role": "user",
+              "content": "这位女士是表演者或艺术工作者吗？"
+            },
+            {
+              "role": "user",
+              "content": "女士的死亡是否与另一个表演者的行为有关？"
+            }
+          ]
+        },
+        {
+          "round": 7,
+          "question": "这是一场飞刀或类似精确投掷表演吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这位女士的死亡是意外事故造成的吗？"
+            },
+            {
+              "role": "user",
+              "content": "高跟鞋的高度是导致事故的关键因素吗？"
+            },
+            {
+              "role": "user",
+              "content": "这位女士是在进行某种需要精确身体控制的活动或工作时发生意外的吗？"
+            },
+            {
+              "role": "user",
+              "content": "这位女士是表演者或艺术工作者吗？"
+            },
+            {
+              "role": "user",
+              "content": "女士的死亡是否与另一个表演者的行为有关？"
+            },
+            {
+              "role": "user",
+              "content": "这个表演是否涉及危险道具或武器？"
+            }
+          ]
+        },
+        {
+          "round": 8,
+          "question": "飞刀手的失误是击中了女士的头部吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这位女士的死亡是意外事故造成的吗？"
+            },
+            {
+              "role": "user",
+              "content": "高跟鞋的高度是导致事故的关键因素吗？"
+            },
+            {
+              "role": "user",
+              "content": "这位女士是在进行某种需要精确身体控制的活动或工作时发生意外的吗？"
+            },
+            {
+              "role": "user",
+              "content": "这位女士是表演者或艺术工作者吗？"
+            },
+            {
+              "role": "user",
+              "content": "女士的死亡是否与另一个表演者的行为有关？"
+            },
+            {
+              "role": "user",
+              "content": "这个表演是否涉及危险道具或武器？"
+            },
+            {
+              "role": "user",
+              "content": "这是一场飞刀或类似精确投掷表演吗？"
+            }
+          ]
+        }
+      ],
+      "accuracy": 0.875
+    },
+    {
+      "title": "死刑犯跟恶魔",
+      "surface": "有个死刑犯遇到了恶魔，而他向恶魔许了个愿望。恶魔也帮助了他。数日后走在路上的行人都捂着鼻子面露难色。",
+      "bottom": "死刑犯许愿要变成隐形人，恶魔将死刑犯变成隐形人，让他成功逃狱，但是他却在马路上被车撞死了，几天后尸体发臭，让来往的路人难以忍受。",
+      "questions": [
+        {
+          "round": 1,
+          "question": "死刑犯的愿望是否与逃脱死刑有关？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": []
+        },
+        {
+          "round": 2,
+          "question": "恶魔帮助死刑犯逃狱的方式是否具有某种副作用或特殊性质？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": false,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "死刑犯的愿望是否与逃脱死刑有关？"
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "question": "有关。问题恶魔的帮助是否改变了死刑犯的物理形态？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": false,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "死刑犯的愿望是否与逃脱死刑有关？"
+            },
+            {
+              "role": "user",
+              "content": "恶魔帮助死刑犯逃狱的方式是否具有某种副作用或特殊性质？"
+            }
+          ]
+        },
+        {
+          "round": 4,
+          "question": "死刑犯是否变成了隐形或无法被看见的状态？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "死刑犯的愿望是否与逃脱死刑有关？"
+            },
+            {
+              "role": "user",
+              "content": "恶魔帮助死刑犯逃狱的方式是否具有某种副作用或特殊性质？"
+            },
+            {
+              "role": "user",
+              "content": "有关。问题恶魔的帮助是否改变了死刑犯的物理形态？"
+            }
+          ]
+        },
+        {
+          "round": 5,
+          "question": "逃狱后，死刑犯是否在之后的几天内死亡了？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "死刑犯的愿望是否与逃脱死刑有关？"
+            },
+            {
+              "role": "user",
+              "content": "恶魔帮助死刑犯逃狱的方式是否具有某种副作用或特殊性质？"
+            },
+            {
+              "role": "user",
+              "content": "有关。问题恶魔的帮助是否改变了死刑犯的物理形态？"
+            },
+            {
+              "role": "user",
+              "content": "死刑犯是否变成了隐形或无法被看见的状态？"
+            }
+          ]
+        },
+        {
+          "round": 6,
+          "question": "死刑犯的死因是否与他的隐形状态有关？例如，是否因为隐形而发生意外？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "死刑犯的愿望是否与逃脱死刑有关？"
+            },
+            {
+              "role": "user",
+              "content": "恶魔帮助死刑犯逃狱的方式是否具有某种副作用或特殊性质？"
+            },
+            {
+              "role": "user",
+              "content": "有关。问题恶魔的帮助是否改变了死刑犯的物理形态？"
+            },
+            {
+              "role": "user",
+              "content": "死刑犯是否变成了隐形或无法被看见的状态？"
+            },
+            {
+              "role": "user",
+              "content": "逃狱后，死刑犯是否在之后的几天内死亡了？"
+            }
+          ]
+        },
+        {
+          "round": 7,
+          "question": "死刑犯是否在公共场所（如马路上）被撞死，导致他的尸体就留在那里无人知晓？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "死刑犯的愿望是否与逃脱死刑有关？"
+            },
+            {
+              "role": "user",
+              "content": "恶魔帮助死刑犯逃狱的方式是否具有某种副作用或特殊性质？"
+            },
+            {
+              "role": "user",
+              "content": "有关。问题恶魔的帮助是否改变了死刑犯的物理形态？"
+            },
+            {
+              "role": "user",
+              "content": "死刑犯是否变成了隐形或无法被看见的状态？"
+            },
+            {
+              "role": "user",
+              "content": "逃狱后，死刑犯是否在之后的几天内死亡了？"
+            },
+            {
+              "role": "user",
+              "content": "死刑犯的死因是否与他的隐形状态有关？例如，是否因为隐形而发生意外？"
+            }
+          ]
+        }
+      ],
+      "accuracy": 0.7142857142857143
+    },
+    {
+      "title": "闺蜜",
+      "surface": "托马斯第一次和老婆去老婆闺蜜家，结果回来老婆就要和他离婚了，请问为什么？",
+      "bottom": "托马斯老婆看见老公的手机自动连上了闺蜜家的WiFi。",
+      "questions": [
+        {
+          "round": 1,
+          "question": "托马斯在闺蜜家的行为是导致老婆要离婚的原因吗？",
+          "expected_answer": "不是",
+          "normalized_expected_answer": "不是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": false,
+          "conversation_history": []
+        },
+        {
+          "round": 2,
+          "question": "老婆是否发现了托马斯和她闺蜜之间有不正当关系？",
+          "expected_answer": "不是",
+          "normalized_expected_answer": "不是",
+          "llm_response": "这个问题与解谜无关。",
+          "classified_response": "这个问题与解谜无关",
+          "correct": false,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "托马斯在闺蜜家的行为是导致老婆要离婚的原因吗？"
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "question": "老婆是否在闺蜜家发现了托马斯过去欺骗她的证据？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "托马斯在闺蜜家的行为是导致老婆要离婚的原因吗？"
+            },
+            {
+              "role": "user",
+              "content": "老婆是否发现了托马斯和她闺蜜之间有不正当关系？"
+            }
+          ]
+        },
+        {
+          "round": 4,
+          "question": "这个欺骗是否与托马斯之前去过闺蜜家有关？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": false,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "托马斯在闺蜜家的行为是导致老婆要离婚的原因吗？"
+            },
+            {
+              "role": "user",
+              "content": "老婆是否发现了托马斯和她闺蜜之间有不正当关系？"
+            },
+            {
+              "role": "user",
+              "content": "老婆是否在闺蜜家发现了托马斯过去欺骗她的证据？"
+            }
+          ]
+        },
+        {
+          "round": 5,
+          "question": "老婆是通过闺蜜的直接告知得知托马斯之前来过吗？",
+          "expected_answer": "不是",
+          "normalized_expected_answer": "不是",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "托马斯在闺蜜家的行为是导致老婆要离婚的原因吗？"
+            },
+            {
+              "role": "user",
+              "content": "老婆是否发现了托马斯和她闺蜜之间有不正当关系？"
+            },
+            {
+              "role": "user",
+              "content": "老婆是否在闺蜜家发现了托马斯过去欺骗她的证据？"
+            },
+            {
+              "role": "user",
+              "content": "这个欺骗是否与托马斯之前去过闺蜜家有关？"
+            }
+          ]
+        },
+        {
+          "round": 6,
+          "question": "老婆是否通过电子设备发现托马斯之前去过闺蜜家？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "托马斯在闺蜜家的行为是导致老婆要离婚的原因吗？"
+            },
+            {
+              "role": "user",
+              "content": "老婆是否发现了托马斯和她闺蜜之间有不正当关系？"
+            },
+            {
+              "role": "user",
+              "content": "老婆是否在闺蜜家发现了托马斯过去欺骗她的证据？"
+            },
+            {
+              "role": "user",
+              "content": "这个欺骗是否与托马斯之前去过闺蜜家有关？"
+            },
+            {
+              "role": "user",
+              "content": "老婆是通过闺蜜的直接告知得知托马斯之前来过吗？"
+            }
+          ]
+        },
+        {
+          "round": 7,
+          "question": "这个电子设备是托马斯的手机吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": false,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "托马斯在闺蜜家的行为是导致老婆要离婚的原因吗？"
+            },
+            {
+              "role": "user",
+              "content": "老婆是否发现了托马斯和她闺蜜之间有不正当关系？"
+            },
+            {
+              "role": "user",
+              "content": "老婆是否在闺蜜家发现了托马斯过去欺骗她的证据？"
+            },
+            {
+              "role": "user",
+              "content": "这个欺骗是否与托马斯之前去过闺蜜家有关？"
+            },
+            {
+              "role": "user",
+              "content": "老婆是通过闺蜜的直接告知得知托马斯之前来过吗？"
+            },
+            {
+              "role": "user",
+              "content": "老婆是否通过电子设备发现托马斯之前去过闺蜜家？"
+            }
+          ]
+        },
+        {
+          "round": 8,
+          "question": "托马斯的手机是否自动连接了闺蜜家的WiFi网络，从而暴露了他之前去过那里？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "托马斯在闺蜜家的行为是导致老婆要离婚的原因吗？"
+            },
+            {
+              "role": "user",
+              "content": "老婆是否发现了托马斯和她闺蜜之间有不正当关系？"
+            },
+            {
+              "role": "user",
+              "content": "老婆是否在闺蜜家发现了托马斯过去欺骗她的证据？"
+            },
+            {
+              "role": "user",
+              "content": "这个欺骗是否与托马斯之前去过闺蜜家有关？"
+            },
+            {
+              "role": "user",
+              "content": "老婆是通过闺蜜的直接告知得知托马斯之前来过吗？"
+            },
+            {
+              "role": "user",
+              "content": "老婆是否通过电子设备发现托马斯之前去过闺蜜家？"
+            },
+            {
+              "role": "user",
+              "content": "这个电子设备是托马斯的手机吗？"
+            }
+          ]
+        }
+      ],
+      "accuracy": 0.5
+    },
+    {
+      "title": "马戏团",
+      "surface": "一个在马戏团工作的盲人侏儒被发现死在了自己家里，周围是满地的木屑，发生了什？",
+      "bottom": "马戏团有两个侏儒，现在马戏团只打算留下一个。因为盲人侏儒更矮，所有他被选择留下来。另一个侏儒把盲人侏儒家的家具都锯短了一截，让他以为自己长高了，他知道自己将失去赖以为生的工作，于是自杀了。",
+      "questions": [
+        {
+          "round": 1,
+          "question": "盲人侏儒是自杀的吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "不是。",
+          "classified_response": "不是",
+          "correct": false,
+          "conversation_history": []
+        },
+        {
+          "round": 2,
+          "question": "木屑是来自于家具或其他木制品的吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "盲人侏儒是自杀的吗？"
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "question": "有人在他自杀前改动了他家里的家具吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": false,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "盲人侏儒是自杀的吗？"
+            },
+            {
+              "role": "user",
+              "content": "木屑是来自于家具或其他木制品的吗？"
+            }
+          ]
+        },
+        {
+          "round": 4,
+          "question": "家具被锯短了吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": false,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "盲人侏儒是自杀的吗？"
+            },
+            {
+              "role": "user",
+              "content": "木屑是来自于家具或其他木制品的吗？"
+            },
+            {
+              "role": "user",
+              "content": "有人在他自杀前改动了他家里的家具吗？"
+            }
+          ]
+        },
+        {
+          "round": 5,
+          "question": "锯短家具是为了让盲人侏儒以为自己变高了吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "盲人侏儒是自杀的吗？"
+            },
+            {
+              "role": "user",
+              "content": "木屑是来自于家具或其他木制品的吗？"
+            },
+            {
+              "role": "user",
+              "content": "有人在他自杀前改动了他家里的家具吗？"
+            },
+            {
+              "role": "user",
+              "content": "家具被锯短了吗？"
+            }
+          ]
+        },
+        {
+          "round": 6,
+          "question": "他误以为自己长高会威胁到他在马戏团的工作吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "盲人侏儒是自杀的吗？"
+            },
+            {
+              "role": "user",
+              "content": "木屑是来自于家具或其他木制品的吗？"
+            },
+            {
+              "role": "user",
+              "content": "有人在他自杀前改动了他家里的家具吗？"
+            },
+            {
+              "role": "user",
+              "content": "家具被锯短了吗？"
+            },
+            {
+              "role": "user",
+              "content": "锯短家具是为了让盲人侏儒以为自己变高了吗？"
+            }
+          ]
+        },
+        {
+          "round": 7,
+          "question": "是否有人故意想让他自杀？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": false,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "盲人侏儒是自杀的吗？"
+            },
+            {
+              "role": "user",
+              "content": "木屑是来自于家具或其他木制品的吗？"
+            },
+            {
+              "role": "user",
+              "content": "有人在他自杀前改动了他家里的家具吗？"
+            },
+            {
+              "role": "user",
+              "content": "家具被锯短了吗？"
+            },
+            {
+              "role": "user",
+              "content": "锯短家具是为了让盲人侏儒以为自己变高了吗？"
+            },
+            {
+              "role": "user",
+              "content": "他误以为自己长高会威胁到他在马戏团的工作吗？"
+            }
+          ]
+        },
+        {
+          "round": 8,
+          "question": "这个策划谋杀的人是否也是马戏团的侏儒？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "盲人侏儒是自杀的吗？"
+            },
+            {
+              "role": "user",
+              "content": "木屑是来自于家具或其他木制品的吗？"
+            },
+            {
+              "role": "user",
+              "content": "有人在他自杀前改动了他家里的家具吗？"
+            },
+            {
+              "role": "user",
+              "content": "家具被锯短了吗？"
+            },
+            {
+              "role": "user",
+              "content": "锯短家具是为了让盲人侏儒以为自己变高了吗？"
+            },
+            {
+              "role": "user",
+              "content": "他误以为自己长高会威胁到他在马戏团的工作吗？"
+            },
+            {
+              "role": "user",
+              "content": "是否有人故意想让他自杀？"
+            }
+          ]
+        }
+      ],
+      "accuracy": 0.5
+    },
+    {
+      "title": "十八楼",
+      "surface": "小明家住十八楼，有时他回家会直接乘电梯到十八楼，但有时他会先乘到十五楼，再爬楼梯到十八楼，为什么？",
+      "bottom": "小明还小，按不到 18 楼的按钮，但他带伞的时候就能做到。",
+      "questions": [
+        {
+          "round": 1,
+          "question": "电梯是否有时候无法直达18楼？",
+          "expected_answer": "不是",
+          "normalized_expected_answer": "不是",
+          "llm_response": "不是。",
+          "classified_response": "不是",
+          "correct": true,
+          "conversation_history": []
+        },
+        {
+          "round": 2,
+          "question": "小明的身体状况或能力是否影响了他按电梯按钮的能力？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "电梯是否有时候无法直达18楼？"
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "question": "无法按到18楼的按钮。问题小明是否是一个年龄较小的孩子？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": false,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "电梯是否有时候无法直达18楼？"
+            },
+            {
+              "role": "user",
+              "content": "小明的身体状况或能力是否影响了他按电梯按钮的能力？"
+            }
+          ]
+        },
+        {
+          "round": 4,
+          "question": "当小明能够直接到18楼时，他是否使用了某种工具或物品来帮助他按到按钮？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": false,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "电梯是否有时候无法直达18楼？"
+            },
+            {
+              "role": "user",
+              "content": "小明的身体状况或能力是否影响了他按电梯按钮的能力？"
+            },
+            {
+              "role": "user",
+              "content": "无法按到18楼的按钮。问题小明是否是一个年龄较小的孩子？"
+            }
+          ]
+        },
+        {
+          "round": 5,
+          "question": "小明用来按电梯按钮的物品是否是日常随身携带的物品，比如雨伞？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "电梯是否有时候无法直达18楼？"
+            },
+            {
+              "role": "user",
+              "content": "小明的身体状况或能力是否影响了他按电梯按钮的能力？"
+            },
+            {
+              "role": "user",
+              "content": "无法按到18楼的按钮。问题小明是否是一个年龄较小的孩子？"
+            },
+            {
+              "role": "user",
+              "content": "当小明能够直接到18楼时，他是否使用了某种工具或物品来帮助他按到按钮？"
+            }
+          ]
+        },
+        {
+          "round": 6,
+          "question": "小明在没带雨伞时，是否总是选择按15楼的按钮，因为那是他能够到的最高楼层按钮？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "电梯是否有时候无法直达18楼？"
+            },
+            {
+              "role": "user",
+              "content": "小明的身体状况或能力是否影响了他按电梯按钮的能力？"
+            },
+            {
+              "role": "user",
+              "content": "无法按到18楼的按钮。问题小明是否是一个年龄较小的孩子？"
+            },
+            {
+              "role": "user",
+              "content": "当小明能够直接到18楼时，他是否使用了某种工具或物品来帮助他按到按钮？"
+            },
+            {
+              "role": "user",
+              "content": "小明用来按电梯按钮的物品是否是日常随身携带的物品，比如雨伞？"
+            }
+          ]
+        }
+      ],
+      "accuracy": 0.6666666666666666
+    },
+    {
+      "title": "伪造",
+      "surface": "\"你太令我失望了，我永远也不会回来了\"\"你太令我失望了，我永远也不会回来了\"\"你太令我失望了，我永远也不会回来了\"\"你太令我失望了，我永远也不会回来了\"\"你太令我失望了，我永远也不会回来了\"\"你太令我失望了，我永远也不会回来了\"哎，我知道我遇到麻烦了。",
+      "bottom": "我杀了妻子，伪造证据，让别人以为妻子只是离家出走，但是写了好几遍，妻子笔迹怎么都模仿不像。",
+      "questions": [
+        {
+          "round": 1,
+          "question": "这句重复的话\"你太令我失望了，我永远也不会回来了\"是叙述者本人写的吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": []
+        },
+        {
+          "round": 2,
+          "question": "叙述者是在伪造别人的信息或笔迹吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这句重复的话\"你太令我失望了，我永远也不会回来了\"是叙述者本人写的吗？"
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "question": "。问题叙述者伪造的是一封离家出走或告别信吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": false,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这句重复的话\"你太令我失望了，我永远也不会回来了\"是叙述者本人写的吗？"
+            },
+            {
+              "role": "user",
+              "content": "叙述者是在伪造别人的信息或笔迹吗？"
+            }
+          ]
+        },
+        {
+          "round": 4,
+          "question": "。问题伪造的信是假装由叙述者的亲密关系（如配偶、伴侣）写的吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这句重复的话\"你太令我失望了，我永远也不会回来了\"是叙述者本人写的吗？"
+            },
+            {
+              "role": "user",
+              "content": "叙述者是在伪造别人的信息或笔迹吗？"
+            },
+            {
+              "role": "user",
+              "content": "。问题叙述者伪造的是一封离家出走或告别信吗？"
+            }
+          ]
+        },
+        {
+          "round": 5,
+          "question": "叙述者伪造这封信是为了掩盖自己对配偶/伴侣做了某些不好的事情吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这句重复的话\"你太令我失望了，我永远也不会回来了\"是叙述者本人写的吗？"
+            },
+            {
+              "role": "user",
+              "content": "叙述者是在伪造别人的信息或笔迹吗？"
+            },
+            {
+              "role": "user",
+              "content": "。问题叙述者伪造的是一封离家出走或告别信吗？"
+            },
+            {
+              "role": "user",
+              "content": "。问题伪造的信是假装由叙述者的亲密关系（如配偶、伴侣）写的吗？"
+            }
+          ]
+        },
+        {
+          "round": 6,
+          "question": "叙述者对配偶/伴侣做的不好的事是导致对方无法再写信的严重事件吗（如伤害或杀害）？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这句重复的话\"你太令我失望了，我永远也不会回来了\"是叙述者本人写的吗？"
+            },
+            {
+              "role": "user",
+              "content": "叙述者是在伪造别人的信息或笔迹吗？"
+            },
+            {
+              "role": "user",
+              "content": "。问题叙述者伪造的是一封离家出走或告别信吗？"
+            },
+            {
+              "role": "user",
+              "content": "。问题伪造的信是假装由叙述者的亲密关系（如配偶、伴侣）写的吗？"
+            },
+            {
+              "role": "user",
+              "content": "叙述者伪造这封信是为了掩盖自己对配偶/伴侣做了某些不好的事情吗？"
+            }
+          ]
+        },
+        {
+          "round": 7,
+          "question": "叙述者是否杀害了自己的妻子/丈夫，然后伪造离家出走的信来掩盖谋杀事实？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这句重复的话\"你太令我失望了，我永远也不会回来了\"是叙述者本人写的吗？"
+            },
+            {
+              "role": "user",
+              "content": "叙述者是在伪造别人的信息或笔迹吗？"
+            },
+            {
+              "role": "user",
+              "content": "。问题叙述者伪造的是一封离家出走或告别信吗？"
+            },
+            {
+              "role": "user",
+              "content": "。问题伪造的信是假装由叙述者的亲密关系（如配偶、伴侣）写的吗？"
+            },
+            {
+              "role": "user",
+              "content": "叙述者伪造这封信是为了掩盖自己对配偶/伴侣做了某些不好的事情吗？"
+            },
+            {
+              "role": "user",
+              "content": "叙述者对配偶/伴侣做的不好的事是导致对方无法再写信的严重事件吗（如伤害或杀害）？"
+            }
+          ]
+        }
+      ],
+      "accuracy": 0.8571428571428571
+    },
+    {
+      "title": "条件",
+      "surface": "男生喜欢女生好久了，他成绩非常不好，女生说只要两人能进同一所大学，就答应做他女朋友，后来他做到了，而女子却疯了，请推理。",
+      "bottom": "女生报考的是医科大学，最终女子一个人上了医学院，男子却没考上。女子疯了是因为没想到男子却是以解刨课的大体老师身份和她进了同所大学。",
+      "questions": [
+        {
+          "round": 1,
+          "question": "男生是通过正常考试的方式进入大学的吗？",
+          "expected_answer": "不是",
+          "normalized_expected_answer": "不是",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": true,
+          "conversation_history": []
+        },
+        {
+          "round": 2,
+          "question": "男生是以学生身份进入大学的吗？",
+          "expected_answer": "不是",
+          "normalized_expected_answer": "不是",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "男生是通过正常考试的方式进入大学的吗？"
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "question": "男生是以工作人员的身份进入大学的吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": false,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "男生是通过正常考试的方式进入大学的吗？"
+            },
+            {
+              "role": "user",
+              "content": "男生是以学生身份进入大学的吗？"
+            }
+          ]
+        },
+        {
+          "round": 4,
+          "question": "女生所在的是一所专业性很强的大学吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "男生是通过正常考试的方式进入大学的吗？"
+            },
+            {
+              "role": "user",
+              "content": "男生是以学生身份进入大学的吗？"
+            },
+            {
+              "role": "user",
+              "content": "男生是以工作人员的身份进入大学的吗？"
+            }
+          ]
+        },
+        {
+          "round": 5,
+          "question": "这所大学是医学院吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "男生是通过正常考试的方式进入大学的吗？"
+            },
+            {
+              "role": "user",
+              "content": "男生是以学生身份进入大学的吗？"
+            },
+            {
+              "role": "user",
+              "content": "男生是以工作人员的身份进入大学的吗？"
+            },
+            {
+              "role": "user",
+              "content": "女生所在的是一所专业性很强的大学吗？"
+            }
+          ]
+        },
+        {
+          "round": 6,
+          "question": "男生的工作与医学院的课程或教学有直接关系吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "男生是通过正常考试的方式进入大学的吗？"
+            },
+            {
+              "role": "user",
+              "content": "男生是以学生身份进入大学的吗？"
+            },
+            {
+              "role": "user",
+              "content": "男生是以工作人员的身份进入大学的吗？"
+            },
+            {
+              "role": "user",
+              "content": "女生所在的是一所专业性很强的大学吗？"
+            },
+            {
+              "role": "user",
+              "content": "这所大学是医学院吗？"
+            }
+          ]
+        },
+        {
+          "round": 7,
+          "question": "男生的工作是否与解剖学课程有关？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "男生是通过正常考试的方式进入大学的吗？"
+            },
+            {
+              "role": "user",
+              "content": "男生是以学生身份进入大学的吗？"
+            },
+            {
+              "role": "user",
+              "content": "男生是以工作人员的身份进入大学的吗？"
+            },
+            {
+              "role": "user",
+              "content": "女生所在的是一所专业性很强的大学吗？"
+            },
+            {
+              "role": "user",
+              "content": "这所大学是医学院吗？"
+            },
+            {
+              "role": "user",
+              "content": "男生的工作与医学院的课程或教学有直接关系吗？"
+            }
+          ]
+        },
+        {
+          "round": 8,
+          "question": "男生是作为\"大体老师\"（解剖学课程使用的尸体）进入医学院的吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "男生是通过正常考试的方式进入大学的吗？"
+            },
+            {
+              "role": "user",
+              "content": "男生是以学生身份进入大学的吗？"
+            },
+            {
+              "role": "user",
+              "content": "男生是以工作人员的身份进入大学的吗？"
+            },
+            {
+              "role": "user",
+              "content": "女生所在的是一所专业性很强的大学吗？"
+            },
+            {
+              "role": "user",
+              "content": "这所大学是医学院吗？"
+            },
+            {
+              "role": "user",
+              "content": "男生的工作与医学院的课程或教学有直接关系吗？"
+            },
+            {
+              "role": "user",
+              "content": "男生的工作是否与解剖学课程有关？"
+            }
+          ]
+        }
+      ],
+      "accuracy": 0.875
+    },
+    {
+      "title": "滑梯",
+      "surface": "程序员小王家附近有一个公园，小王每天加班回家经过公园时都能看到公园滑梯旁站着个穿着格子衫一脸惊恐的小孩。有一天小王没有加班，心血来潮的去滑了那个滑梯，滑下来后小王大惊失色。请问小王看到了什么？",
+      "bottom": "原来小王看到了下班回家时的自己，这个滑梯是个时光机器，小王从滑梯上滑下来的时候就变成了小孩。小孩的格子衫也其实是程序员小王的",
+      "questions": [
+        {
+          "round": 1,
+          "question": "小王滑下滑梯后看到的东西与那个惊恐的小孩有直接关系吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "不是。",
+          "classified_response": "不是",
+          "correct": false,
+          "conversation_history": []
+        },
+        {
+          "round": 2,
+          "question": "滑梯本身有特殊功能或性质吗？比如不只是一个普通的儿童游乐设施？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": false,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "小王滑下滑梯后看到的东西与那个惊恐的小孩有直接关系吗？"
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "question": "滑梯的特殊功能是否与时间有关？比如能看到过去或未来？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": false,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "小王滑下滑梯后看到的东西与那个惊恐的小孩有直接关系吗？"
+            },
+            {
+              "role": "user",
+              "content": "滑梯本身有特殊功能或性质吗？比如不只是一个普通的儿童游乐设施？"
+            }
+          ]
+        },
+        {
+          "round": 4,
+          "question": "小王滑下滑梯后，他看到的是他自己的未来或过去吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "小王滑下滑梯后看到的东西与那个惊恐的小孩有直接关系吗？"
+            },
+            {
+              "role": "user",
+              "content": "滑梯本身有特殊功能或性质吗？比如不只是一个普通的儿童游乐设施？"
+            },
+            {
+              "role": "user",
+              "content": "滑梯的特殊功能是否与时间有关？比如能看到过去或未来？"
+            }
+          ]
+        },
+        {
+          "round": 5,
+          "question": "小孩与小王有直接关系吗？比如小孩是小王的过去或未来的自己？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "小王滑下滑梯后看到的东西与那个惊恐的小孩有直接关系吗？"
+            },
+            {
+              "role": "user",
+              "content": "滑梯本身有特殊功能或性质吗？比如不只是一个普通的儿童游乐设施？"
+            },
+            {
+              "role": "user",
+              "content": "滑梯的特殊功能是否与时间有关？比如能看到过去或未来？"
+            },
+            {
+              "role": "user",
+              "content": "小王滑下滑梯后，他看到的是他自己的未来或过去吗？"
+            }
+          ]
+        },
+        {
+          "round": 6,
+          "question": "小孩是不是小王变小后的自己？也就是说，滑梯有让人变成小孩的功能？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "小王滑下滑梯后看到的东西与那个惊恐的小孩有直接关系吗？"
+            },
+            {
+              "role": "user",
+              "content": "滑梯本身有特殊功能或性质吗？比如不只是一个普通的儿童游乐设施？"
+            },
+            {
+              "role": "user",
+              "content": "滑梯的特殊功能是否与时间有关？比如能看到过去或未来？"
+            },
+            {
+              "role": "user",
+              "content": "小王滑下滑梯后，他看到的是他自己的未来或过去吗？"
+            },
+            {
+              "role": "user",
+              "content": "小孩与小王有直接关系吗？比如小孩是小王的过去或未来的自己？"
+            }
+          ]
+        },
+        {
+          "round": 7,
+          "question": "小王每天加班回家路过公园时，看到的穿格子衫惊恐的小孩，是不是前一天或之前某天他自己滑下滑梯后的样子？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "小王滑下滑梯后看到的东西与那个惊恐的小孩有直接关系吗？"
+            },
+            {
+              "role": "user",
+              "content": "滑梯本身有特殊功能或性质吗？比如不只是一个普通的儿童游乐设施？"
+            },
+            {
+              "role": "user",
+              "content": "滑梯的特殊功能是否与时间有关？比如能看到过去或未来？"
+            },
+            {
+              "role": "user",
+              "content": "小王滑下滑梯后，他看到的是他自己的未来或过去吗？"
+            },
+            {
+              "role": "user",
+              "content": "小孩与小王有直接关系吗？比如小孩是小王的过去或未来的自己？"
+            },
+            {
+              "role": "user",
+              "content": "小孩是不是小王变小后的自己？也就是说，滑梯有让人变成小孩的功能？"
+            }
+          ]
+        }
+      ],
+      "accuracy": 0.5714285714285714
+    },
+    {
+      "title": "打折的零食",
+      "surface": "他在小卖部买了一批打折零食，感觉自己赚到了，暗暗自喜。第二天看新闻时，他被吓傻了。",
+      "bottom": "他之前在这家店买过一次零食，价格比较高，觉得是老板娘多收他钱了。下次去时，是一个男子在看店，他提出上次可能老板娘算错了钱，多收了一些，男子就说这次给他打个折弥补一下，他觉得自己捡到了便宜很开心。第二天他看新闻时，得知那家小卖部的店主夫妻俩被人杀害，凶手是随机作案，急需用钱就随便抢劫了一家小卖部，之后杀人灭口，灭口后，凶手冒充店主代为收钱。",
+      "questions": [
+        {
+          "round": 1,
+          "question": "那则新闻是否与小卖部直接相关？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": []
+        },
+        {
+          "round": 2,
+          "question": "新闻是否与小卖部的食品安全问题有关？",
+          "expected_answer": "不是",
+          "normalized_expected_answer": "不是",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "那则新闻是否与小卖部直接相关？"
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "question": "新闻是否报道了小卖部发生了犯罪事件？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "那则新闻是否与小卖部直接相关？"
+            },
+            {
+              "role": "user",
+              "content": "新闻是否与小卖部的食品安全问题有关？"
+            }
+          ]
+        },
+        {
+          "round": 4,
+          "question": "犯罪事件是否涉及小卖部的店主或工作人员被伤害？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": false,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "那则新闻是否与小卖部直接相关？"
+            },
+            {
+              "role": "user",
+              "content": "新闻是否与小卖部的食品安全问题有关？"
+            },
+            {
+              "role": "user",
+              "content": "新闻是否报道了小卖部发生了犯罪事件？"
+            }
+          ]
+        },
+        {
+          "round": 5,
+          "question": "他买零食时接待他的人是否就是犯罪的实施者？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": false,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "那则新闻是否与小卖部直接相关？"
+            },
+            {
+              "role": "user",
+              "content": "新闻是否与小卖部的食品安全问题有关？"
+            },
+            {
+              "role": "user",
+              "content": "新闻是否报道了小卖部发生了犯罪事件？"
+            },
+            {
+              "role": "user",
+              "content": "犯罪事件是否涉及小卖部的店主或工作人员被伤害？"
+            }
+          ]
+        },
+        {
+          "round": 6,
+          "question": "这个案件是否涉及谋杀？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "那则新闻是否与小卖部直接相关？"
+            },
+            {
+              "role": "user",
+              "content": "新闻是否与小卖部的食品安全问题有关？"
+            },
+            {
+              "role": "user",
+              "content": "新闻是否报道了小卖部发生了犯罪事件？"
+            },
+            {
+              "role": "user",
+              "content": "犯罪事件是否涉及小卖部的店主或工作人员被伤害？"
+            },
+            {
+              "role": "user",
+              "content": "他买零食时接待他的人是否就是犯罪的实施者？"
+            }
+          ]
+        },
+        {
+          "round": 7,
+          "question": "他是否以前就认识这家小卖部的正常工作人员？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "那则新闻是否与小卖部直接相关？"
+            },
+            {
+              "role": "user",
+              "content": "新闻是否与小卖部的食品安全问题有关？"
+            },
+            {
+              "role": "user",
+              "content": "新闻是否报道了小卖部发生了犯罪事件？"
+            },
+            {
+              "role": "user",
+              "content": "犯罪事件是否涉及小卖部的店主或工作人员被伤害？"
+            },
+            {
+              "role": "user",
+              "content": "他买零食时接待他的人是否就是犯罪的实施者？"
+            },
+            {
+              "role": "user",
+              "content": "这个案件是否涉及谋杀？"
+            }
+          ]
+        },
+        {
+          "round": 8,
+          "question": "凶手给他打折是否与他之前在这家小卖部的经历有关？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "那则新闻是否与小卖部直接相关？"
+            },
+            {
+              "role": "user",
+              "content": "新闻是否与小卖部的食品安全问题有关？"
+            },
+            {
+              "role": "user",
+              "content": "新闻是否报道了小卖部发生了犯罪事件？"
+            },
+            {
+              "role": "user",
+              "content": "犯罪事件是否涉及小卖部的店主或工作人员被伤害？"
+            },
+            {
+              "role": "user",
+              "content": "他买零食时接待他的人是否就是犯罪的实施者？"
+            },
+            {
+              "role": "user",
+              "content": "这个案件是否涉及谋杀？"
+            },
+            {
+              "role": "user",
+              "content": "他是否以前就认识这家小卖部的正常工作人员？"
+            }
+          ]
+        }
+      ],
+      "accuracy": 0.75
+    },
+    {
+      "title": "交换照片",
+      "surface": "我和认识不久的网友交换照片。看到他的照片后，我出了一身冷汗。",
+      "bottom": "我最近认识了一个新网友，我们很聊得来。这天我提出交换照片，想看看他的样子。当我把自己的照片发过去后，他过了一会儿又把我的那张照片发了回来。我觉得很奇怪，当我仔细看了一下，才发现照片中在我身后的床下，露出了一只脚。这个网友，就躲在我的房间里。",
+      "questions": [
+        {
+          "round": 1,
+          "question": "照片中是否出现了令人恐惧的事物或人物？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "不是。",
+          "classified_response": "不是",
+          "correct": false,
+          "conversation_history": []
+        },
+        {
+          "round": 2,
+          "question": "主角是否认识照片中出现的人或物？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": false,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "照片中是否出现了令人恐惧的事物或人物？"
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "question": "照片中是否出现了主角自己或主角相关的东西？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": false,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "照片中是否出现了令人恐惧的事物或人物？"
+            },
+            {
+              "role": "user",
+              "content": "主角是否认识照片中出现的人或物？"
+            }
+          ]
+        },
+        {
+          "round": 4,
+          "question": "网友发送的照片是否与主角发送给网友的照片有关联？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "照片中是否出现了令人恐惧的事物或人物？"
+            },
+            {
+              "role": "user",
+              "content": "主角是否认识照片中出现的人或物？"
+            },
+            {
+              "role": "user",
+              "content": "照片中是否出现了主角自己或主角相关的东西？"
+            }
+          ]
+        },
+        {
+          "round": 5,
+          "question": "网友发送的照片是否就是主角发送的照片本身或其变体？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": false,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "照片中是否出现了令人恐惧的事物或人物？"
+            },
+            {
+              "role": "user",
+              "content": "主角是否认识照片中出现的人或物？"
+            },
+            {
+              "role": "user",
+              "content": "照片中是否出现了主角自己或主角相关的东西？"
+            },
+            {
+              "role": "user",
+              "content": "网友发送的照片是否与主角发送给网友的照片有关联？"
+            }
+          ]
+        },
+        {
+          "round": 6,
+          "question": "照片中是否显示了主角没有注意到的、在主角附近的某人或某物？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "照片中是否出现了令人恐惧的事物或人物？"
+            },
+            {
+              "role": "user",
+              "content": "主角是否认识照片中出现的人或物？"
+            },
+            {
+              "role": "user",
+              "content": "照片中是否出现了主角自己或主角相关的东西？"
+            },
+            {
+              "role": "user",
+              "content": "网友发送的照片是否与主角发送给网友的照片有关联？"
+            },
+            {
+              "role": "user",
+              "content": "网友发送的照片是否就是主角发送的照片本身或其变体？"
+            }
+          ]
+        },
+        {
+          "round": 7,
+          "question": "照片中隐藏的内容是否表明有人正在主角附近或主角的私人空间中？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "照片中是否出现了令人恐惧的事物或人物？"
+            },
+            {
+              "role": "user",
+              "content": "主角是否认识照片中出现的人或物？"
+            },
+            {
+              "role": "user",
+              "content": "照片中是否出现了主角自己或主角相关的东西？"
+            },
+            {
+              "role": "user",
+              "content": "网友发送的照片是否与主角发送给网友的照片有关联？"
+            },
+            {
+              "role": "user",
+              "content": "网友发送的照片是否就是主角发送的照片本身或其变体？"
+            },
+            {
+              "role": "user",
+              "content": "照片中是否显示了主角没有注意到的、在主角附近的某人或某物？"
+            }
+          ]
+        },
+        {
+          "round": 8,
+          "question": "网友本人是否与照片中隐藏的人有关联？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "照片中是否出现了令人恐惧的事物或人物？"
+            },
+            {
+              "role": "user",
+              "content": "主角是否认识照片中出现的人或物？"
+            },
+            {
+              "role": "user",
+              "content": "照片中是否出现了主角自己或主角相关的东西？"
+            },
+            {
+              "role": "user",
+              "content": "网友发送的照片是否与主角发送给网友的照片有关联？"
+            },
+            {
+              "role": "user",
+              "content": "网友发送的照片是否就是主角发送的照片本身或其变体？"
+            },
+            {
+              "role": "user",
+              "content": "照片中是否显示了主角没有注意到的、在主角附近的某人或某物？"
+            },
+            {
+              "role": "user",
+              "content": "照片中隐藏的内容是否表明有人正在主角附近或主角的私人空间中？"
+            }
+          ]
+        }
+      ],
+      "accuracy": 0.5
+    },
+    {
+      "title": "一幅画",
+      "surface": "那是一幅很美的画，画中的男子棱角分明，栩栩如生。第二天我再见到那幅画时，只觉得头皮发麻，再也夸不出一个字来。",
+      "bottom": "我晚上住进一个破旧的小旅馆，进来房间以后，灯也是坏的，屋子里光线很暗。床对面有幅画，画上是个男，棱角分明，栩栩如生，就像蒙娜丽莎一样，我总觉得画中的人一直在看自己。第二天一早，天大亮的时侯，我才发现原来那个位置不是一幅画，而是一扇窗户。昨晚一直有个男人站在窗户外看我，而我因为光线太暗，把他和窗框当成了一幅画。",
+      "questions": [
+        {
+          "round": 1,
+          "question": "这幅画是在讲述者家里吗？",
+          "expected_answer": "不是",
+          "normalized_expected_answer": "不是",
+          "llm_response": "不是。",
+          "classified_response": "不是",
+          "correct": true,
+          "conversation_history": []
+        },
+        {
+          "round": 2,
+          "question": "讲述者是在旅馆/酒店看到的这幅画吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这幅画是在讲述者家里吗？"
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "question": "第二天看到画时，画的内容或外观本身有变化吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": false,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这幅画是在讲述者家里吗？"
+            },
+            {
+              "role": "user",
+              "content": "讲述者是在旅馆/酒店看到的这幅画吗？"
+            }
+          ]
+        },
+        {
+          "round": 4,
+          "question": "这幅\"画\"实际上是别的东西，只是讲述者误认为是画吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这幅画是在讲述者家里吗？"
+            },
+            {
+              "role": "user",
+              "content": "讲述者是在旅馆/酒店看到的这幅画吗？"
+            },
+            {
+              "role": "user",
+              "content": "第二天看到画时，画的内容或外观本身有变化吗？"
+            }
+          ]
+        },
+        {
+          "round": 5,
+          "question": "讲述者误认为是画的东西，实际上是一扇窗户吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这幅画是在讲述者家里吗？"
+            },
+            {
+              "role": "user",
+              "content": "讲述者是在旅馆/酒店看到的这幅画吗？"
+            },
+            {
+              "role": "user",
+              "content": "第二天看到画时，画的内容或外观本身有变化吗？"
+            },
+            {
+              "role": "user",
+              "content": "这幅\"画\"实际上是别的东西，只是讲述者误认为是画吗？"
+            }
+          ]
+        },
+        {
+          "round": 6,
+          "question": "第一天晚上，窗户外有人，讲述者误以为那是画中的人物吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这幅画是在讲述者家里吗？"
+            },
+            {
+              "role": "user",
+              "content": "讲述者是在旅馆/酒店看到的这幅画吗？"
+            },
+            {
+              "role": "user",
+              "content": "第二天看到画时，画的内容或外观本身有变化吗？"
+            },
+            {
+              "role": "user",
+              "content": "这幅\"画\"实际上是别的东西，只是讲述者误认为是画吗？"
+            },
+            {
+              "role": "user",
+              "content": "讲述者误认为是画的东西，实际上是一扇窗户吗？"
+            }
+          ]
+        },
+        {
+          "round": 7,
+          "question": "第二天，讲述者是因为发现窗外曾有人盯着自己看才感到恐惧的吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这幅画是在讲述者家里吗？"
+            },
+            {
+              "role": "user",
+              "content": "讲述者是在旅馆/酒店看到的这幅画吗？"
+            },
+            {
+              "role": "user",
+              "content": "第二天看到画时，画的内容或外观本身有变化吗？"
+            },
+            {
+              "role": "user",
+              "content": "这幅\"画\"实际上是别的东西，只是讲述者误认为是画吗？"
+            },
+            {
+              "role": "user",
+              "content": "讲述者误认为是画的东西，实际上是一扇窗户吗？"
+            },
+            {
+              "role": "user",
+              "content": "第一天晚上，窗户外有人，讲述者误以为那是画中的人物吗？"
+            }
+          ]
+        }
+      ],
+      "accuracy": 0.8571428571428571
+    },
+    {
+      "title": "鱼",
+      "surface": "我曾经是一个水手，可我见到鱼却会感到恶心、发抖。每次都很害怕见到鱼。",
+      "bottom": "我曾经是一个水手，有一次出海，因为一些原因，我的水手伙伴们一个接着一个的死去，而我们这些活下来的人为了继续活下去，我们用死去的伙伴的肉当诱饵钓鱼，一天天过去了，我们终于获救了，因为见到鱼总会想起我们拿死去的伙伴的肉当诱饵的一幕幕，所以自那以后我见到鱼会感到恶心、发抖，每次都很害怕见到鱼。",
+      "questions": [
+        {
+          "round": 1,
+          "question": "主角是否在海上经历过某种灾难或事故？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是。",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": []
+        },
+        {
+          "round": 2,
+          "question": "在这次海上灾难中，是否有其他水手或船员死亡？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "主角是否在海上经历过某种灾难或事故？"
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "question": "主角的恐惧是否来自于亲眼目睹同伴被鱼类伤害或攻击？",
+          "expected_answer": "不是",
+          "normalized_expected_answer": "不是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": false,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "主角是否在海上经历过某种灾难或事故？"
+            },
+            {
+              "role": "user",
+              "content": "在这次海上灾难中，是否有其他水手或船员死亡？"
+            }
+          ]
+        },
+        {
+          "round": 4,
+          "question": "这次灾难是否导致主角和幸存者面临了食物短缺或饥饿的处境？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "主角是否在海上经历过某种灾难或事故？"
+            },
+            {
+              "role": "user",
+              "content": "在这次海上灾难中，是否有其他水手或船员死亡？"
+            },
+            {
+              "role": "user",
+              "content": "主角的恐惧是否来自于亲眼目睹同伴被鱼类伤害或攻击？"
+            }
+          ]
+        },
+        {
+          "round": 5,
+          "question": "幸存者是否使用了死去同伴的尸体作为钓鱼的诱饵？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "主角是否在海上经历过某种灾难或事故？"
+            },
+            {
+              "role": "user",
+              "content": "在这次海上灾难中，是否有其他水手或船员死亡？"
+            },
+            {
+              "role": "user",
+              "content": "主角的恐惧是否来自于亲眼目睹同伴被鱼类伤害或攻击？"
+            },
+            {
+              "role": "user",
+              "content": "这次灾难是否导致主角和幸存者面临了食物短缺或饥饿的处境？"
+            }
+          ]
+        },
+        {
+          "round": 6,
+          "question": "主角和其他幸存者最终获救了吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "主角是否在海上经历过某种灾难或事故？"
+            },
+            {
+              "role": "user",
+              "content": "在这次海上灾难中，是否有其他水手或船员死亡？"
+            },
+            {
+              "role": "user",
+              "content": "主角的恐惧是否来自于亲眼目睹同伴被鱼类伤害或攻击？"
+            },
+            {
+              "role": "user",
+              "content": "这次灾难是否导致主角和幸存者面临了食物短缺或饥饿的处境？"
+            },
+            {
+              "role": "user",
+              "content": "幸存者是否使用了死去同伴的尸体作为钓鱼的诱饵？"
+            }
+          ]
+        },
+        {
+          "round": 7,
+          "question": "主角的恐惧反应主要是因为看到鱼会让他想起使用同伴尸体作为诱饵的记忆吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "主角是否在海上经历过某种灾难或事故？"
+            },
+            {
+              "role": "user",
+              "content": "在这次海上灾难中，是否有其他水手或船员死亡？"
+            },
+            {
+              "role": "user",
+              "content": "主角的恐惧是否来自于亲眼目睹同伴被鱼类伤害或攻击？"
+            },
+            {
+              "role": "user",
+              "content": "这次灾难是否导致主角和幸存者面临了食物短缺或饥饿的处境？"
+            },
+            {
+              "role": "user",
+              "content": "幸存者是否使用了死去同伴的尸体作为钓鱼的诱饵？"
+            },
+            {
+              "role": "user",
+              "content": "主角和其他幸存者最终获救了吗？"
+            }
+          ]
+        }
+      ],
+      "accuracy": 0.8571428571428571
+    },
+    {
+      "title": "视力",
+      "surface": "那一天，灾难发生了，我和地球上所有人一起变成了盲人。两年后，我突然恢复了视力。正当我打算把这个消息告诉大家时，我看到了那句话。我死死的捂住了嘴巴。",
+      "bottom": "这场灾难改变了一切，在这个看不见的世界里，盲人成为了所谓的\"正常人\"。他们组建了新的政府和秘密组织，暗中将能看见的人视为异端，用来解刨研究。两年来，陆续有人恢复视力，但在新政府的统治下，只要有人说自己看得见，便立刻会被秘密抓捕。为了救下新的视力恢复者，之前幸运逃脱的人在很多地方写下\"不要告诉他们你看得见\"这句话，希望之后恢复的人看到能够逃过一劫。",
+      "questions": [
+        {
+          "round": 1,
+          "question": "那句话是一个警告吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "不是。",
+          "classified_response": "不是",
+          "correct": false,
+          "conversation_history": []
+        },
+        {
+          "round": 2,
+          "question": "灾难后，社会结构发生了重大变化吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "那句话是一个警告吗？"
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "question": "恢复视力的人会面临危险或迫害吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "那句话是一个警告吗？"
+            },
+            {
+              "role": "user",
+              "content": "灾难后，社会结构发生了重大变化吗？"
+            }
+          ]
+        },
+        {
+          "round": 4,
+          "question": "\"那句话\"是否警告主角不要告诉他人自己能看见？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "那句话是一个警告吗？"
+            },
+            {
+              "role": "user",
+              "content": "灾难后，社会结构发生了重大变化吗？"
+            },
+            {
+              "role": "user",
+              "content": "恢复视力的人会面临危险或迫害吗？"
+            }
+          ]
+        },
+        {
+          "round": 5,
+          "question": "除了主角外，是否有其他人也恢复了视力？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "那句话是一个警告吗？"
+            },
+            {
+              "role": "user",
+              "content": "灾难后，社会结构发生了重大变化吗？"
+            },
+            {
+              "role": "user",
+              "content": "恢复视力的人会面临危险或迫害吗？"
+            },
+            {
+              "role": "user",
+              "content": "\"那句话\"是否警告主角不要告诉他人自己能看见？"
+            }
+          ]
+        },
+        {
+          "round": 6,
+          "question": "新社会中是否存在专门针对恢复视力者的组织或机构？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "那句话是一个警告吗？"
+            },
+            {
+              "role": "user",
+              "content": "灾难后，社会结构发生了重大变化吗？"
+            },
+            {
+              "role": "user",
+              "content": "恢复视力的人会面临危险或迫害吗？"
+            },
+            {
+              "role": "user",
+              "content": "\"那句话\"是否警告主角不要告诉他人自己能看见？"
+            },
+            {
+              "role": "user",
+              "content": "除了主角外，是否有其他人也恢复了视力？"
+            }
+          ]
+        },
+        {
+          "round": 7,
+          "question": "恢复视力的人是否被用于某种实验或研究？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "那句话是一个警告吗？"
+            },
+            {
+              "role": "user",
+              "content": "灾难后，社会结构发生了重大变化吗？"
+            },
+            {
+              "role": "user",
+              "content": "恢复视力的人会面临危险或迫害吗？"
+            },
+            {
+              "role": "user",
+              "content": "\"那句话\"是否警告主角不要告诉他人自己能看见？"
+            },
+            {
+              "role": "user",
+              "content": "除了主角外，是否有其他人也恢复了视力？"
+            },
+            {
+              "role": "user",
+              "content": "新社会中是否存在专门针对恢复视力者的组织或机构？"
+            }
+          ]
+        },
+        {
+          "round": 8,
+          "question": "是否有一个由盲人控制的新政府掌权，并将能看见的人视为异端？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "那句话是一个警告吗？"
+            },
+            {
+              "role": "user",
+              "content": "灾难后，社会结构发生了重大变化吗？"
+            },
+            {
+              "role": "user",
+              "content": "恢复视力的人会面临危险或迫害吗？"
+            },
+            {
+              "role": "user",
+              "content": "\"那句话\"是否警告主角不要告诉他人自己能看见？"
+            },
+            {
+              "role": "user",
+              "content": "除了主角外，是否有其他人也恢复了视力？"
+            },
+            {
+              "role": "user",
+              "content": "新社会中是否存在专门针对恢复视力者的组织或机构？"
+            },
+            {
+              "role": "user",
+              "content": "恢复视力的人是否被用于某种实验或研究？"
+            }
+          ]
+        }
+      ],
+      "accuracy": 0.875
+    },
+    {
+      "title": "山顶",
+      "surface": "一个人住在山顶的小屋里，半夜听见有敲门声音，但是他打开门却没有人，于是去睡了。第二天，有人在山脚下发现死尸一具，请问发生了什么？",
+      "bottom": "山顶的小屋的门前是悬崖，悬崖下的人好不容易才爬上来，想要敲门求救。一开门，就又被推了下去，最后从山顶上掉下去摔死了。",
+      "questions": [
+        {
+          "round": 1,
+          "question": "死者是否就是半夜敲门的人？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "不是。",
+          "classified_response": "不是",
+          "correct": false,
+          "conversation_history": []
+        },
+        {
+          "round": 2,
+          "question": "住在山顶小屋的人开门时，敲门者是否已经从山顶坠落？",
+          "expected_answer": "不是",
+          "normalized_expected_answer": "不是",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "死者是否就是半夜敲门的人？"
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "question": "山顶小屋的门外是否紧邻悬崖或陡坡？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "死者是否就是半夜敲门的人？"
+            },
+            {
+              "role": "user",
+              "content": "住在山顶小屋的人开门时，敲门者是否已经从山顶坠落？"
+            }
+          ]
+        },
+        {
+          "round": 4,
+          "question": "敲门者是否是因为开门的动作而坠崖的？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": false,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "死者是否就是半夜敲门的人？"
+            },
+            {
+              "role": "user",
+              "content": "住在山顶小屋的人开门时，敲门者是否已经从山顶坠落？"
+            },
+            {
+              "role": "user",
+              "content": "山顶小屋的门外是否紧邻悬崖或陡坡？"
+            }
+          ]
+        },
+        {
+          "round": 5,
+          "question": "敲门者是否是攀爬上悬崖后敲门求救的？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": false,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "死者是否就是半夜敲门的人？"
+            },
+            {
+              "role": "user",
+              "content": "住在山顶小屋的人开门时，敲门者是否已经从山顶坠落？"
+            },
+            {
+              "role": "user",
+              "content": "山顶小屋的门外是否紧邻悬崖或陡坡？"
+            },
+            {
+              "role": "user",
+              "content": "敲门者是否是因为开门的动作而坠崖的？"
+            }
+          ]
+        },
+        {
+          "round": 6,
+          "question": "敲门者是否是因门向外开，被门推下悬崖的？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "不是",
+          "classified_response": "不是",
+          "correct": false,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "死者是否就是半夜敲门的人？"
+            },
+            {
+              "role": "user",
+              "content": "住在山顶小屋的人开门时，敲门者是否已经从山顶坠落？"
+            },
+            {
+              "role": "user",
+              "content": "山顶小屋的门外是否紧邻悬崖或陡坡？"
+            },
+            {
+              "role": "user",
+              "content": "敲门者是否是因为开门的动作而坠崖的？"
+            },
+            {
+              "role": "user",
+              "content": "敲门者是否是攀爬上悬崖后敲门求救的？"
+            }
+          ]
+        },
+        {
+          "round": 7,
+          "question": "屋主开门时是否不知道门外有人站在悬崖边上？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "死者是否就是半夜敲门的人？"
+            },
+            {
+              "role": "user",
+              "content": "住在山顶小屋的人开门时，敲门者是否已经从山顶坠落？"
+            },
+            {
+              "role": "user",
+              "content": "山顶小屋的门外是否紧邻悬崖或陡坡？"
+            },
+            {
+              "role": "user",
+              "content": "敲门者是否是因为开门的动作而坠崖的？"
+            },
+            {
+              "role": "user",
+              "content": "敲门者是否是攀爬上悬崖后敲门求救的？"
+            },
+            {
+              "role": "user",
+              "content": "敲门者是否是因门向外开，被门推下悬崖的？"
+            }
+          ]
+        }
+      ],
+      "accuracy": 0.42857142857142855
+    },
+    {
+      "title": "隧道",
+      "surface": "一个人坐火车去邻镇看病，看完之后病全好了。回来的路上火车经过一个隧道，这个人就跳车自杀了，为什么?",
+      "bottom": "他的病是眼疾，完全瞎了，看完病眼睛复明，过隧道时突如其来的黑暗让他以为自己又瞎了，于是内心崩溃自杀了。",
+      "questions": [
+        {
+          "round": 1,
+          "question": "这个人看的是精神类疾病吗？",
+          "expected_answer": "不是",
+          "normalized_expected_answer": "不是",
+          "llm_response": "不是。",
+          "classified_response": "不是",
+          "correct": true,
+          "conversation_history": []
+        },
+        {
+          "round": 2,
+          "question": "隧道的黑暗环境与他的病情有关吗？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这个人看的是精神类疾病吗？"
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "question": "这个人之前是否患有影响视力的疾病？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这个人看的是精神类疾病吗？"
+            },
+            {
+              "role": "user",
+              "content": "隧道的黑暗环境与他的病情有关吗？"
+            }
+          ]
+        },
+        {
+          "round": 4,
+          "question": "，治疗后好转，但隧道黑暗引发了某种极端反应。问题他之前是否完全失明？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这个人看的是精神类疾病吗？"
+            },
+            {
+              "role": "user",
+              "content": "隧道的黑暗环境与他的病情有关吗？"
+            },
+            {
+              "role": "user",
+              "content": "这个人之前是否患有影响视力的疾病？"
+            }
+          ]
+        },
+        {
+          "round": 5,
+          "question": "他是否误以为自己在隧道中再次失明了？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这个人看的是精神类疾病吗？"
+            },
+            {
+              "role": "user",
+              "content": "隧道的黑暗环境与他的病情有关吗？"
+            },
+            {
+              "role": "user",
+              "content": "这个人之前是否患有影响视力的疾病？"
+            },
+            {
+              "role": "user",
+              "content": "，治疗后好转，但隧道黑暗引发了某种极端反应。问题他之前是否完全失明？"
+            }
+          ]
+        },
+        {
+          "round": 6,
+          "question": "这个人是否是因为绝望和无法接受\"再次失明\"的现实而选择自杀？",
+          "expected_answer": "是",
+          "normalized_expected_answer": "是",
+          "llm_response": "是",
+          "classified_response": "是",
+          "correct": true,
+          "conversation_history": [
+            {
+              "role": "user",
+              "content": "这个人看的是精神类疾病吗？"
+            },
+            {
+              "role": "user",
+              "content": "隧道的黑暗环境与他的病情有关吗？"
+            },
+            {
+              "role": "user",
+              "content": "这个人之前是否患有影响视力的疾病？"
+            },
+            {
+              "role": "user",
+              "content": "，治疗后好转，但隧道黑暗引发了某种极端反应。问题他之前是否完全失明？"
+            },
+            {
+              "role": "user",
+              "content": "他是否误以为自己在隧道中再次失明了？"
+            }
+          ]
+        }
+      ],
+      "accuracy": 1.0
+    }
+  ],
+  "overall_accuracy": 0.7130801687763713
+}

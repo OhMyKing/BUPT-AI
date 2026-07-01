@@ -1,0 +1,231 @@
+<svg viewBox="0 0 1400 1100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.2"/>
+    </filter>
+    <linearGradient id="rosGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#E3F2FD;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#BBDEFB;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="sensorGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#E8F5E9;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#C8E6C9;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="voiceGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFF3E0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFE0B2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="visionGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#F3E5F5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E1BEE7;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="navGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#E8EAF6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#C5CAE9;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="actionGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFEBEE;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFCDD2;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <style>
+    .title { font-family: Arial, sans-serif; font-size: 24px; font-weight: bold; }
+    .subtitle { font-family: Arial, sans-serif; font-size: 18px; font-weight: bold; }
+    .component { font-family: Arial, sans-serif; font-size: 14px; }
+    .small { font-family: Arial, sans-serif; font-size: 12px; }
+    .layer-title { font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; }
+    .code { font-family: 'Courier New', monospace; font-size: 11px; fill: #555; }
+  </style>
+  
+  <!-- 标题 -->
+  <text x="700" y="40" text-anchor="middle" class="title">YouGuide 机器人子系统架构</text>
+  
+  <!-- 感知层 -->
+  <rect x="50" y="80" width="1300" height="200" fill="url(#sensorGrad)" stroke="#388E3C" stroke-width="2" rx="10" filter="url(#shadow)"/>
+  <text x="100" y="110" class="layer-title">感知层</text>
+  
+  <!-- 音频采集 -->
+  <rect x="100" y="130" width="250" height="120" fill="#F1F8E9" stroke="#689F38" stroke-width="1" rx="5"/>
+  <text x="225" y="155" text-anchor="middle" class="component">音频采集模块</text>
+  <line x1="110" y1="165" x2="340" y2="165" stroke="#999" stroke-width="1"/>
+  <text x="225" y="185" text-anchor="middle" class="small">ROS音频节点</text>
+  <text x="225" y="200" text-anchor="middle" class="small">16kHz采样 | VAD检测</text>
+  <text x="225" y="215" text-anchor="middle" class="small">唤醒词: "你好小优"</text>
+  <text x="225" y="235" text-anchor="middle" class="code">VoiceActivityDetector</text>
+  
+  <!-- 图像采集 -->
+  <rect x="380" y="130" width="250" height="120" fill="#F1F8E9" stroke="#689F38" stroke-width="1" rx="5"/>
+  <text x="505" y="155" text-anchor="middle" class="component">图像采集模块</text>
+  <line x1="390" y1="165" x2="620" y2="165" stroke="#999" stroke-width="1"/>
+  <text x="505" y="185" text-anchor="middle" class="small">RGB摄像头</text>
+  <text x="505" y="200" text-anchor="middle" class="small">深度相机 | 人脸检测</text>
+  <text x="505" y="215" text-anchor="middle" class="small">稳定性检测: 3秒</text>
+  <text x="505" y="235" text-anchor="middle" class="code">ImageCapture</text>
+  
+  <!-- GPS定位 -->
+  <rect x="660" y="130" width="250" height="120" fill="#F1F8E9" stroke="#689F38" stroke-width="1" rx="5"/>
+  <text x="785" y="155" text-anchor="middle" class="component">GPS定位模块</text>
+  <line x1="670" y1="165" x2="900" y2="165" stroke="#999" stroke-width="1"/>
+  <text x="785" y="185" text-anchor="middle" class="small">实时位置获取</text>
+  <text x="785" y="200" text-anchor="middle" class="small">经纬度坐标</text>
+  <text x="785" y="215" text-anchor="middle" class="small">精度: ±5米</text>
+  <text x="785" y="235" text-anchor="middle" class="code">gps_publisher</text>
+  
+  <!-- 激光雷达 -->
+  <rect x="940" y="130" width="250" height="120" fill="#F1F8E9" stroke="#689F38" stroke-width="1" rx="5"/>
+  <text x="1065" y="155" text-anchor="middle" class="component">激光雷达模块</text>
+  <line x1="950" y1="165" x2="1180" y2="165" stroke="#999" stroke-width="1"/>
+  <text x="1065" y="185" text-anchor="middle" class="small">障碍物检测</text>
+  <text x="1065" y="200" text-anchor="middle" class="small">距离测量</text>
+  <text x="1065" y="215" text-anchor="middle" class="small">安全距离: 500mm</text>
+  <text x="1065" y="235" text-anchor="middle" class="code">/scan_filtered</text>
+  
+  <!-- 决策层 -->
+  <rect x="50" y="310" width="1300" height="200" fill="url(#rosGrad)" stroke="#1976D2" stroke-width="2" rx="10" filter="url(#shadow)"/>
+  <text x="100" y="340" class="layer-title">决策层 (ROS + Flask)</text>
+  
+  <!-- 智能体客户端 -->
+  <rect x="100" y="360" width="400" height="120" fill="#E1F5FE" stroke="#0288D1" stroke-width="1" rx="5"/>
+  <text x="300" y="385" text-anchor="middle" class="component">智能体客户端</text>
+  <line x1="110" y1="395" x2="490" y2="395" stroke="#999" stroke-width="1"/>
+  <text x="300" y="415" text-anchor="middle" class="small">VoiceAssistant核心类</text>
+  <text x="300" y="430" text-anchor="middle" class="small">感知-理解-决策-执行闭环</text>
+  <text x="300" y="445" text-anchor="middle" class="small">流式处理架构 | 首字延迟1.5秒</text>
+  <text x="300" y="465" text-anchor="middle" class="code">process_llm_stream() | StreamingSentenceSplitter</text>
+  
+  <!-- Flask服务器 -->
+  <rect x="530" y="360" width="350" height="120" fill="#E1F5FE" stroke="#0288D1" stroke-width="1" rx="5"/>
+  <text x="705" y="385" text-anchor="middle" class="component">Flask HTTP服务</text>
+  <line x1="540" y1="395" x2="870" y2="395" stroke="#999" stroke-width="1"/>
+  <text x="705" y="415" text-anchor="middle" class="small">RESTful API接口</text>
+  <text x="705" y="430" text-anchor="middle" class="small">/action/&lt;name&gt; | /face_recognize</text>
+  <text x="705" y="445" text-anchor="middle" class="small">/navigate | /get_student_info</text>
+  <text x="705" y="465" text-anchor="middle" class="code">app.route() | jsonify()</text>
+  
+  <!-- ROS节点管理 -->
+  <rect x="910" y="360" width="380" height="120" fill="#E1F5FE" stroke="#0288D1" stroke-width="1" rx="5"/>
+  <text x="1100" y="385" text-anchor="middle" class="component">ROS节点管理</text>
+  <line x1="920" y1="395" x2="1280" y2="395" stroke="#999" stroke-width="1"/>
+  <text x="1100" y="415" text-anchor="middle" class="small">话题发布/订阅</text>
+  <text x="1100" y="430" text-anchor="middle" class="small">/asr_result | /tts_text | /cmd_vel</text>
+  <text x="1100" y="445" text-anchor="middle" class="small">服务调用 | 参数服务器</text>
+  <text x="1100" y="465" text-anchor="middle" class="code">rospy.Publisher() | rospy.Subscriber()</text>
+  
+  <!-- 功能模块层 -->
+  <rect x="50" y="540" width="1300" height="200" fill="#FFF" stroke="#666" stroke-width="2" rx="10" filter="url(#shadow)"/>
+  <text x="100" y="570" class="layer-title">功能模块层</text>
+  
+  <!-- 语音交互 -->
+  <rect x="100" y="590" width="250" height="120" fill="url(#voiceGrad)" stroke="#F57C00" stroke-width="1" rx="5"/>
+  <text x="225" y="615" text-anchor="middle" class="component">语音交互模块</text>
+  <line x1="110" y1="625" x2="340" y2="625" stroke="#999" stroke-width="1"/>
+  <text x="225" y="645" text-anchor="middle" class="small">流式ASR (字节)</text>
+  <text x="225" y="660" text-anchor="middle" class="small">流式TTS (火山)</text>
+  <text x="225" y="675" text-anchor="middle" class="small">队列机制 | 流水线处理</text>
+  <text x="225" y="695" text-anchor="middle" class="code">ASRListener | TTSNode</text>
+  
+  <!-- 人脸识别 -->
+  <rect x="380" y="590" width="250" height="120" fill="url(#visionGrad)" stroke="#7B1FA2" stroke-width="1" rx="5"/>
+  <text x="505" y="615" text-anchor="middle" class="component">人脸识别模块</text>
+  <line x1="390" y1="625" x2="620" y2="625" stroke="#999" stroke-width="1"/>
+  <text x="505" y="645" text-anchor="middle" class="small">百度AI接口</text>
+  <text x="505" y="660" text-anchor="middle" class="small">检测-追踪-识别</text>
+  <text x="505" y="675" text-anchor="middle" class="small">稳定性验证</text>
+  <text x="505" y="695" text-anchor="middle" class="code">check_face_stability()</text>
+  
+  <!-- GPS导航 -->
+  <rect x="660" y="590" width="250" height="120" fill="url(#navGrad)" stroke="#3F51B5" stroke-width="1" rx="5"/>
+  <text x="785" y="615" text-anchor="middle" class="component">GPS导航模块</text>
+  <line x1="670" y1="625" x2="900" y2="625" stroke="#999" stroke-width="1"/>
+  <text x="785" y="645" text-anchor="middle" class="small">全局路径规划</text>
+  <text x="785" y="660" text-anchor="middle" class="small">局部避障</text>
+  <text x="785" y="675" text-anchor="middle" class="small">自适应速度</text>
+  <text x="785" y="695" text-anchor="middle" class="code">ObstacleAvoidanceNavigator</text>
+  
+  <!-- 动作执行 -->
+  <rect x="940" y="590" width="250" height="120" fill="url(#actionGrad)" stroke="#D32F2F" stroke-width="1" rx="5"/>
+  <text x="1065" y="615" text-anchor="middle" class="component">动作执行模块</text>
+  <line x1="950" y1="625" x2="1180" y2="625" stroke="#999" stroke-width="1"/>
+  <text x="1065" y="645" text-anchor="middle" class="small">预定义动作库</text>
+  <text x="1065" y="660" text-anchor="middle" class="small">异步非阻塞执行</text>
+  <text x="1065" y="675" text-anchor="middle" class="small">动作组合编排</text>
+  <text x="1065" y="695" text-anchor="middle" class="code">ACTIONS dict | subprocess.Popen()</text>
+  
+  <!-- 执行层 -->
+  <rect x="50" y="770" width="1300" height="150" fill="#FAFAFA" stroke="#757575" stroke-width="2" rx="10" filter="url(#shadow)"/>
+  <text x="100" y="800" class="layer-title">执行层 (硬件接口)</text>
+  
+  <!-- 电机控制 -->
+  <rect x="100" y="820" width="200" height="80" fill="#F5F5F5" stroke="#616161" stroke-width="1" rx="5"/>
+  <text x="200" y="845" text-anchor="middle" class="component">电机控制</text>
+  <text x="200" y="865" text-anchor="middle" class="small">前进/后退/转向</text>
+  <text x="200" y="885" text-anchor="middle" class="code">/cmd_vel</text>
+  
+  <!-- 音频输出 -->
+  <rect x="330" y="820" width="200" height="80" fill="#F5F5F5" stroke="#616161" stroke-width="1" rx="5"/>
+  <text x="430" y="845" text-anchor="middle" class="component">音频输出</text>
+  <text x="430" y="865" text-anchor="middle" class="small">扬声器播放</text>
+  <text x="430" y="885" text-anchor="middle" class="code">pygame.mixer</text>
+  
+  <!-- 舵机控制 -->
+  <rect x="560" y="820" width="200" height="80" fill="#F5F5F5" stroke="#616161" stroke-width="1" rx="5"/>
+  <text x="660" y="845" text-anchor="middle" class="component">舵机控制</text>
+  <text x="660" y="865" text-anchor="middle" class="small">关节运动</text>
+  <text x="660" y="885" text-anchor="middle" class="code">servo_control</text>
+  
+  <!-- LED显示 -->
+  <rect x="790" y="820" width="200" height="80" fill="#F5F5F5" stroke="#616161" stroke-width="1" rx="5"/>
+  <text x="890" y="845" text-anchor="middle" class="component">LED显示</text>
+  <text x="890" y="865" text-anchor="middle" class="small">状态指示</text>
+  <text x="890" y="885" text-anchor="middle" class="code">led_controller</text>
+  
+  <!-- 底盘控制 -->
+  <rect x="1020" y="820" width="200" height="80" fill="#F5F5F5" stroke="#616161" stroke-width="1" rx="5"/>
+  <text x="1120" y="845" text-anchor="middle" class="component">底盘控制</text>
+  <text x="1120" y="865" text-anchor="middle" class="small">差速驱动</text>
+  <text x="1120" y="885" text-anchor="middle" class="code">mobile_base</text>
+  
+  <!-- 数据流箭头 -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+    </marker>
+  </defs>
+  
+  <!-- 感知到决策 -->
+  <line x1="225" y1="250" x2="300" y2="360" stroke="#388E3C" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="505" y1="250" x2="300" y2="360" stroke="#388E3C" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="785" y1="250" x2="705" y2="360" stroke="#388E3C" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="1065" y1="250" x2="1100" y2="360" stroke="#388E3C" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- 决策到功能 -->
+  <line x1="300" y1="480" x2="225" y2="590" stroke="#1976D2" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="300" y1="480" x2="505" y2="590" stroke="#1976D2" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="705" y1="480" x2="785" y2="590" stroke="#1976D2" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="1100" y1="480" x2="1065" y2="590" stroke="#1976D2" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- 功能到执行 -->
+  <line x1="225" y1="710" x2="430" y2="820" stroke="#F57C00" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="785" y1="710" x2="200" y2="820" stroke="#3F51B5" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="1065" y1="710" x2="660" y2="820" stroke="#D32F2F" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- 特性标注 -->
+  <rect x="50" y="950" width="400" height="100" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2" rx="5" filter="url(#shadow)"/>
+  <text x="250" y="975" text-anchor="middle" class="component" font-weight="bold">核心设计特点</text>
+  <text x="250" y="1000" text-anchor="middle" class="small">端侧最小计算 | 模块化设计</text>
+  <text x="250" y="1020" text-anchor="middle" class="small">流式处理架构 | 异步非阻塞</text>
+  <text x="250" y="1040" text-anchor="middle" class="small">三阶段处理流程 | 分层架构</text>
+  
+  <rect x="500" y="950" width="400" height="100" fill="#FFF3E0" stroke="#F57C00" stroke-width="2" rx="5" filter="url(#shadow)"/>
+  <text x="700" y="975" text-anchor="middle" class="component" font-weight="bold">关键性能指标</text>
+  <text x="700" y="1000" text-anchor="middle" class="small">语音首字延迟: 1.5秒</text>
+  <text x="700" y="1020" text-anchor="middle" class="small">人脸识别稳定时间: 3秒</text>
+  <text x="700" y="1040" text-anchor="middle" class="small">避障安全距离: 500mm</text>
+  
+  <rect x="950" y="950" width="400" height="100" fill="#E1F5FE" stroke="#0288D1" stroke-width="2" rx="5" filter="url(#shadow)"/>
+  <text x="1150" y="975" text-anchor="middle" class="component" font-weight="bold">通信协议</text>
+  <text x="1150" y="1000" text-anchor="middle" class="small">ROS话题: 内部通信</text>
+  <text x="1150" y="1020" text-anchor="middle" class="small">HTTP REST: 外部接口</text>
+  <text x="1150" y="1040" text-anchor="middle" class="small">WebSocket: 实时数据</text>
+</svg>

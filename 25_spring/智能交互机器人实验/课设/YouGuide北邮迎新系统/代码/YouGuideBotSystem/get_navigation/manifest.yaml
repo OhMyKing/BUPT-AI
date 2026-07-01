@@ -1,0 +1,53 @@
+version: 0.0.1
+type: plugin
+author: ohmyking
+name: get_navigation
+label:
+  en_US: get_navigation
+  ja_JP: get_navigation
+  zh_Hans: 获取步行导航建议
+  pt_BR: get_navigation
+description:
+  en_US: A tool for obtaining a walking plan from the current GPS to the specified GPS
+  ja_JP: A tool for obtaining a walking plan from the current GPS to the specified GPS
+  zh_Hans: 一个用于获取从当前位置（南门）到指定地点的步行导航建议的工具
+  pt_BR: A tool for obtaining a walking plan from the current GPS to the specified GPS
+icon: icon.svg
+resource:
+  memory: 268435456
+  permission:
+    tool:
+      enabled: false
+    model:
+      enabled: false
+      llm: false
+      text_embedding: false
+      rerank: false
+      tts: false
+      speech2text: false
+      moderation: false
+    node:
+      enabled: false
+    endpoint:
+      enabled: false
+    app:
+      enabled: false
+    storage:
+      enabled: false
+      size: 1024
+plugins:
+  tools:
+    - provider/get_navigation.yaml
+meta:
+  version: 0.0.1
+  arch:
+    - amd64
+    - arm64
+  runner:
+    language: python
+    version: "3.12"
+    entrypoint: main
+  minimum_dify_version: 0.0.1
+created_at: 2025-06-14T12:07:42.615857+08:00
+privacy: PRIVACY.md
+verified: false

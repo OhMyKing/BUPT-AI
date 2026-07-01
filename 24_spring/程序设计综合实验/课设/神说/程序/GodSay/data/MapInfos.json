@@ -1,0 +1,277 @@
+[
+  null,
+  {
+    "id": 1,
+    "expanded": true,
+    "name": "template_enemies",
+    "order": 1,
+    "parentId": 0,
+    "scrollX": 428.72727272727275,
+    "scrollY": 273.09090909090907
+  },
+  {
+    "id": 2,
+    "expanded": true,
+    "name": "小型公寓",
+    "order": 26,
+    "parentId": 36,
+    "scrollX": 1010.5714285714286,
+    "scrollY": 630,
+    "quick": false
+  },
+  {
+    "id": 3,
+    "expanded": true,
+    "name": "世界地图",
+    "order": 4,
+    "parentId": 0,
+    "scrollX": 5001.428571428572,
+    "scrollY": 3955.7142857142853,
+    "quick": false
+  },
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  {
+    "id": 10,
+    "expanded": false,
+    "name": "template_skill",
+    "order": 2,
+    "parentId": 1,
+    "scrollX": 786.6666666666666,
+    "scrollY": 548
+  },
+  null,
+  null,
+  {
+    "id": 13,
+    "expanded": false,
+    "name": "森林小镇剧情",
+    "order": 10,
+    "parentId": 19,
+    "scrollX": 1038,
+    "scrollY": 1075.7142857142856,
+    "quick": false
+  },
+  null,
+  {
+    "id": 15,
+    "expanded": true,
+    "name": "template_other",
+    "order": 3,
+    "parentId": 1,
+    "scrollX": 1010.5714285714286,
+    "scrollY": 630
+  },
+  null,
+  null,
+  null,
+  {
+    "id": 19,
+    "expanded": true,
+    "name": "木元素地区",
+    "order": 5,
+    "parentId": 3,
+    "scrollX": 1024.2857142857142,
+    "scrollY": 643.7142857142857,
+    "quick": false
+  },
+  {
+    "id": 20,
+    "expanded": true,
+    "name": "冰元素地区",
+    "order": 13,
+    "parentId": 3,
+    "scrollX": 1024.2857142857142,
+    "scrollY": 643.7142857142857,
+    "quick": false
+  },
+  {
+    "id": 21,
+    "expanded": false,
+    "name": "雪中要塞",
+    "order": 14,
+    "parentId": 20,
+    "scrollX": 1314,
+    "scrollY": 844.2857142857142,
+    "quick": false
+  },
+  {
+    "id": 22,
+    "expanded": false,
+    "name": "塔2",
+    "order": 20,
+    "parentId": 24,
+    "scrollX": 1327.7142857142856,
+    "scrollY": 1699.7142857142856,
+    "quick": false
+  },
+  {
+    "id": 23,
+    "expanded": false,
+    "name": "转移大厅",
+    "order": 15,
+    "parentId": 20,
+    "scrollX": 1024.2857142857142,
+    "scrollY": 657.4285714285713,
+    "quick": false
+  },
+  {
+    "id": 24,
+    "expanded": true,
+    "name": "最终地图",
+    "order": 16,
+    "parentId": 3,
+    "scrollX": 1500,
+    "scrollY": 844.2857142857142,
+    "quick": false
+  },
+  {
+    "id": 25,
+    "expanded": true,
+    "name": "火元素地区",
+    "order": 11,
+    "parentId": 3,
+    "scrollX": 1024.2857142857142,
+    "scrollY": 657.4285714285713,
+    "quick": false
+  },
+  {
+    "id": 26,
+    "expanded": false,
+    "name": "火山",
+    "order": 12,
+    "parentId": 25,
+    "scrollX": 1362,
+    "scrollY": 1084.2857142857142,
+    "quick": false
+  },
+  {
+    "id": 27,
+    "expanded": false,
+    "name": "塔3",
+    "order": 21,
+    "parentId": 24,
+    "scrollX": 1327.7142857142856,
+    "scrollY": 1223.142857142857,
+    "quick": false
+  },
+  null,
+  null,
+  null,
+  null,
+  null,
+  {
+    "id": 33,
+    "expanded": true,
+    "name": "迷失森林剧情",
+    "order": 6,
+    "parentId": 19,
+    "scrollX": 1024.2857142857142,
+    "scrollY": 835.7142857142857,
+    "quick": false
+  },
+  {
+    "id": 34,
+    "expanded": false,
+    "name": "塔楼",
+    "order": 17,
+    "parentId": 24,
+    "scrollX": 1038,
+    "scrollY": 844.2857142857142,
+    "quick": false
+  },
+  {
+    "id": 35,
+    "expanded": false,
+    "name": "空中神殿",
+    "order": 18,
+    "parentId": 24,
+    "scrollX": 1024.2857142857142,
+    "scrollY": 1178.5714285714284,
+    "quick": false
+  },
+  {
+    "id": 36,
+    "expanded": true,
+    "name": "现实",
+    "order": 22,
+    "parentId": 0,
+    "scrollX": 1024.2857142857142,
+    "scrollY": 643.7142857142857,
+    "quick": false
+  },
+  {
+    "id": 37,
+    "expanded": true,
+    "name": "小型公寓",
+    "order": 23,
+    "parentId": 36,
+    "scrollX": 884.25,
+    "scrollY": 563.25,
+    "quick": false
+  },
+  {
+    "id": 38,
+    "expanded": true,
+    "name": "小型公寓",
+    "order": 24,
+    "parentId": 36,
+    "scrollX": 524,
+    "scrollY": 649.3333333333334,
+    "quick": false
+  },
+  {
+    "id": 39,
+    "expanded": true,
+    "name": "小型公寓",
+    "order": 25,
+    "parentId": 36,
+    "scrollX": 1500,
+    "scrollY": 844.2857142857142,
+    "quick": false
+  },
+  {
+    "id": 40,
+    "expanded": true,
+    "name": "转移大厅",
+    "order": 7,
+    "parentId": 19,
+    "scrollX": 1024.2857142857142,
+    "scrollY": 657.4285714285713,
+    "quick": false
+  },
+  {
+    "id": 41,
+    "expanded": true,
+    "name": "森林小镇战斗",
+    "order": 8,
+    "parentId": 19,
+    "scrollX": 1024.2857142857142,
+    "scrollY": 1041.4285714285713,
+    "quick": false
+  },
+  {
+    "id": 42,
+    "expanded": true,
+    "name": "迷失森林战斗",
+    "order": 9,
+    "parentId": 19,
+    "scrollX": 1375.7142857142856,
+    "scrollY": 844.2857142857142,
+    "quick": false
+  },
+  {
+    "id": 43,
+    "expanded": false,
+    "name": "塔 1楼",
+    "order": 19,
+    "parentId": 24,
+    "scrollX": 1024.2857142857142,
+    "scrollY": 799.7142857142857,
+    "quick": false
+  }
+]

@@ -1,0 +1,29 @@
+identity:
+  name: face_recognition_student
+  author: ohmyking
+  label:
+    en_US: Face Recognition Student Query
+    zh_Hans: 人脸识别学生查询
+    pt_BR: Face Recognition Student Query
+description:
+  human:
+    en_US: Recognize face and retrieve student information automatically
+    zh_Hans: 自动进行人脸识别并获取学生信息
+    pt_BR: Recognize face and retrieve student information automatically
+  llm: A tool that performs face recognition to identify a student and then retrieves their information from the student database. The tool will first call the face recognition API to get the student ID, then query the student information API to get detailed student information.
+parameters: []  # 此工具不需要输入参数，自动进行人脸识别
+extra:
+  python:
+    source: tools/face_recognition_student.py
+output_schema:
+  type: object
+  properties:
+    student_info:
+      type: string
+      description: The student information retrieved from the system
+    student_id:
+      type: integer
+      description: The student ID identified through face recognition
+    status:
+      type: string
+      description: The status of the operation (success or error)

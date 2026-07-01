@@ -1,0 +1,7939 @@
+{
+  "autoplayBgm": false,
+  "autoplayBgs": false,
+  "battleback1Name": "",
+  "battleback2Name": "",
+  "bgm": {
+    "name": "",
+    "pan": 0,
+    "pitch": 100,
+    "volume": 90
+  },
+  "bgs": {
+    "name": "",
+    "pan": 0,
+    "pitch": 100,
+    "volume": 90
+  },
+  "disableDashing": false,
+  "displayName": "",
+  "encounterList": [],
+  "encounterStep": 30,
+  "height": 13,
+  "note": "",
+  "parallaxLoopX": false,
+  "parallaxLoopY": false,
+  "parallaxName": "",
+  "parallaxShow": true,
+  "parallaxSx": 0,
+  "parallaxSy": 0,
+  "scrollType": 0,
+  "specifyBattleback": false,
+  "tilesetId": 1,
+  "width": 17,
+  "data": [
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    2816,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "events": [
+    null,
+    {
+      "id": 1,
+      "name": "enemy3",
+      "note": "",
+      "pages": [
+        {
+          "conditions": {
+            "actorId": 1,
+            "actorValid": false,
+            "itemId": 1,
+            "itemValid": false,
+            "selfSwitchCh": "A",
+            "selfSwitchValid": false,
+            "switch1Id": 2,
+            "switch1Valid": true,
+            "switch2Id": 1,
+            "switch2Valid": false,
+            "variableId": 1,
+            "variableValid": false,
+            "variableValue": 0
+          },
+          "directionFix": false,
+          "image": {
+            "tileId": 0,
+            "characterName": "Monster",
+            "direction": 2,
+            "pattern": 1,
+            "characterIndex": 7
+          },
+          "list": [
+            {
+              "code": 108,
+              "indent": 0,
+              "parameters": [
+                "<imageExAllPagesApply>"
+              ]
+            },
+            {
+              "code": 408,
+              "indent": 0,
+              "parameters": [
+                "<subpri: 110>"
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 0,
+              "parameters": [
+                "<et: enemy>"
+              ]
+            },
+            {
+              "code": 357,
+              "indent": 0,
+              "parameters": [
+                "build/ARPG_Core",
+                "SetupEnemy",
+                "Setup Enemy",
+                {
+                  "CharacterSpecification": "{\"CharacterKind\":\"thisEvent\",\"EventIdOrName\":\"1\",\"EventIdByVariable\":\"0\",\"FollowerIndex\":\"1\",\"VehicleKind\":\"boat\"}",
+                  "EnemyId": "1",
+                  "CollideAttackSkillId": "0",
+                  "DamageCommonEventId": "0",
+                  "DefeatEnemyCommonEventId": "0",
+                  "HpGauge": "normal"
+                }
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Character specification = {\"CharacterKind\":\"thisEvent\",\"Eve…"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Enemy ID = 1"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Collision Attack Skill ID = 0"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Enemy damage common event ID = 0"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Defeat Enemy Common Event ID = 0"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "HP gauge = normal"
+              ]
+            },
+            {
+              "code": 357,
+              "indent": 0,
+              "parameters": [
+                "build/ARPG_Core",
+                "SetHitBox",
+                "SetHitBox",
+                {
+                  "CharacterSpecification": "{\"CharacterKind\":\"thisEvent\",\"EventIdOrName\":\"1\",\"EventIdByVariable\":\"0\",\"FollowerIndex\":\"1\",\"VehicleKind\":\"boat\"}",
+                  "HitBoxType": "attack",
+                  "CustomHitBoxTag": "",
+                  "HitBoxList": "[\"{\\\"X\\\":\\\"0\\\",\\\"Y\\\":\\\"0\\\",\\\"Width\\\":\\\"1\\\",\\\"Height\\\":\\\"1\\\"}\"]"
+                }
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Character specification = {\"CharacterKind\":\"thisEvent\",\"Eve…"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "HitBoxType = attack"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "custom hit box tag = "
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "HitBoxList = [\"{\\\"X\\\":\\\"0\\\",\\\"Y\\\":\\\"0\\\",\\\"Width\\\":\\\"1\\\",\\\"H…"
+              ]
+            },
+            {
+              "code": 357,
+              "indent": 0,
+              "parameters": [
+                "build/ARPG_Core",
+                "SetHitBox",
+                "SetHitBox",
+                {
+                  "CharacterSpecification": "{\"CharacterKind\":\"thisEvent\",\"EventIdOrName\":\"1\",\"EventIdByVariable\":\"0\",\"FollowerIndex\":\"1\",\"VehicleKind\":\"boat\"}",
+                  "HitBoxType": "damage",
+                  "CustomHitBoxTag": "",
+                  "HitBoxList": "[\"{\\\"X\\\":\\\"0.25\\\",\\\"Y\\\":\\\"0.25\\\",\\\"Width\\\":\\\"0.50\\\",\\\"Height\\\":\\\"0.50\\\"}\"]"
+                }
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Character specification = {\"CharacterKind\":\"thisEvent\",\"Eve…"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "HitBoxType = damage"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "custom hit box tag = "
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "HitBoxList = [\"{\\\"X\\\":\\\"0.25\\\",\\\"Y\\\":\\\"0.25\\\",\\\"Width\\\":\\\"0…"
+              ]
+            },
+            {
+              "code": 357,
+              "indent": 0,
+              "parameters": [
+                "build/CharacterCollisionEx",
+                "SetThroughPlayer",
+                "SetThroughPlayer",
+                {
+                  "CharacterSpecification": "{\"CharacterKind\":\"thisEvent\",\"EventIdOrName\":\"1\",\"EventIdByVariable\":\"0\",\"FollowerIndex\":\"1\",\"VehicleKind\":\"boat\"}",
+                  "EnableOrDisable": "true"
+                }
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Character specification = {\"CharacterKind\":\"thisEvent\",\"Eve…"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "enable/disable = true"
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 0,
+              "parameters": [
+                21,
+                21,
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 0,
+              "parameters": []
+            }
+          ],
+          "moveFrequency": 3,
+          "moveRoute": {
+            "list": [
+              {
+                "code": 0,
+                "parameters": []
+              }
+            ],
+            "repeat": true,
+            "skippable": false,
+            "wait": false
+          },
+          "moveSpeed": 3,
+          "moveType": 0,
+          "priorityType": 1,
+          "stepAnime": true,
+          "through": false,
+          "trigger": 3,
+          "walkAnime": true
+        },
+        {
+          "conditions": {
+            "actorId": 1,
+            "actorValid": false,
+            "itemId": 1,
+            "itemValid": false,
+            "selfSwitchCh": "A",
+            "selfSwitchValid": false,
+            "switch1Id": 21,
+            "switch1Valid": true,
+            "switch2Id": 1,
+            "switch2Valid": false,
+            "variableId": 1,
+            "variableValid": false,
+            "variableValue": 0
+          },
+          "directionFix": false,
+          "image": {
+            "tileId": 0,
+            "characterName": "Monster",
+            "direction": 2,
+            "pattern": 1,
+            "characterIndex": 7
+          },
+          "list": [
+            {
+              "code": 357,
+              "indent": 0,
+              "parameters": [
+                "build/ARPG_Core",
+                "CheckInTheScreen",
+                "Check if the character is in the screen",
+                {
+                  "CharacterSpecification": "{\"CharacterKind\":\"thisEvent\",\"EventIdOrName\":\"1\",\"EventIdByVariable\":\"0\",\"FollowerIndex\":\"1\",\"VehicleKind\":\"boat\"}",
+                  "XMargin": "2",
+                  "YMargin": "2",
+                  "StoreResultSwitchId": "5"
+                }
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Character specification = {\"CharacterKind\":\"thisEvent\",\"Eve…"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "X-axis margin = 2"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Y-axis margin = 2"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Result store switch ID = 5"
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 0,
+              "parameters": [
+                0,
+                5,
+                0
+              ]
+            },
+            {
+              "code": 357,
+              "indent": 1,
+              "parameters": [
+                "build/ARPG_Core",
+                "CalcFar",
+                "Get distance between characters",
+                {
+                  "SubjectCharacterSpecification": "{\"CharacterKind\":\"thisEvent\",\"EventIdOrName\":\"1\",\"EventIdByVariable\":\"0\",\"FollowerIndex\":\"1\",\"VehicleKind\":\"boat\"}",
+                  "TargetCharacterSpecification": "{\"CharacterKind\":\"player\",\"EventIdOrName\":\"1\",\"EventIdByVariable\":\"0\",\"FollowerIndex\":\"1\",\"VehicleKind\":\"boat\"}",
+                  "StoreFarVariableId": "28"
+                }
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 1,
+              "parameters": [
+                "Subject character specification = {\"CharacterKind\":\"thisEve…"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 1,
+              "parameters": [
+                "Target character specification = {\"CharacterKind\":\"player\",…"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 1,
+              "parameters": [
+                "Distance store variable ID = 28"
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 1,
+              "parameters": [
+                1,
+                28,
+                0,
+                3,
+                2
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 2,
+              "parameters": [
+                1,
+                28,
+                0,
+                2,
+                2
+              ]
+            },
+            {
+              "code": 205,
+              "indent": 3,
+              "parameters": [
+                0,
+                {
+                  "list": [
+                    {
+                      "code": 10,
+                      "indent": null
+                    },
+                    {
+                      "code": 0
+                    }
+                  ],
+                  "repeat": false,
+                  "skippable": true,
+                  "wait": true
+                }
+              ]
+            },
+            {
+              "code": 505,
+              "indent": 3,
+              "parameters": [
+                {
+                  "code": 10,
+                  "indent": null
+                }
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 3,
+              "parameters": []
+            },
+            {
+              "code": 411,
+              "indent": 2,
+              "parameters": []
+            },
+            {
+              "code": 205,
+              "indent": 3,
+              "parameters": [
+                0,
+                {
+                  "list": [
+                    {
+                      "code": 11,
+                      "indent": null
+                    },
+                    {
+                      "code": 0
+                    }
+                  ],
+                  "repeat": false,
+                  "skippable": true,
+                  "wait": true
+                }
+              ]
+            },
+            {
+              "code": 505,
+              "indent": 3,
+              "parameters": [
+                {
+                  "code": 11,
+                  "indent": null
+                }
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 3,
+              "parameters": []
+            },
+            {
+              "code": 412,
+              "indent": 2,
+              "parameters": []
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": []
+            },
+            {
+              "code": 411,
+              "indent": 1,
+              "parameters": []
+            },
+            {
+              "code": 205,
+              "indent": 2,
+              "parameters": [
+                0,
+                {
+                  "list": [
+                    {
+                      "code": 10,
+                      "indent": null
+                    },
+                    {
+                      "code": 0
+                    }
+                  ],
+                  "repeat": false,
+                  "skippable": true,
+                  "wait": true
+                }
+              ]
+            },
+            {
+              "code": 505,
+              "indent": 2,
+              "parameters": [
+                {
+                  "code": 10,
+                  "indent": null
+                }
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 2,
+              "parameters": [
+                36,
+                36,
+                0,
+                2,
+                0,
+                99
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 2,
+              "parameters": [
+                1,
+                36,
+                0,
+                50,
+                4
+              ]
+            },
+            {
+              "code": 205,
+              "indent": 3,
+              "parameters": [
+                0,
+                {
+                  "list": [
+                    {
+                      "code": 25,
+                      "indent": null
+                    },
+                    {
+                      "code": 0
+                    }
+                  ],
+                  "repeat": false,
+                  "skippable": true,
+                  "wait": true
+                }
+              ]
+            },
+            {
+              "code": 505,
+              "indent": 3,
+              "parameters": [
+                {
+                  "code": 25,
+                  "indent": null
+                }
+              ]
+            },
+            {
+              "code": 357,
+              "indent": 3,
+              "parameters": [
+                "build/ARPG_Core",
+                "UseSkill",
+                "Use Skill",
+                {
+                  "SkillId": "9",
+                  "SkillByName": "",
+                  "SkillIdByVariable": "0"
+                }
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 3,
+              "parameters": [
+                "Skill ID = 9"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 3,
+              "parameters": [
+                "Skill (specify name) = "
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 3,
+              "parameters": [
+                "Skill ID (variable specification) = 0"
+              ]
+            },
+            {
+              "code": 230,
+              "indent": 3,
+              "parameters": [
+                10
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 3,
+              "parameters": []
+            },
+            {
+              "code": 412,
+              "indent": 2,
+              "parameters": []
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": []
+            },
+            {
+              "code": 412,
+              "indent": 1,
+              "parameters": []
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": []
+            },
+            {
+              "code": 412,
+              "indent": 0,
+              "parameters": []
+            },
+            {
+              "code": 0,
+              "indent": 0,
+              "parameters": []
+            }
+          ],
+          "moveFrequency": 5,
+          "moveRoute": {
+            "list": [
+              {
+                "code": 0,
+                "parameters": []
+              }
+            ],
+            "repeat": true,
+            "skippable": false,
+            "wait": false
+          },
+          "moveSpeed": 3,
+          "moveType": 0,
+          "priorityType": 1,
+          "stepAnime": true,
+          "through": false,
+          "trigger": 4,
+          "walkAnime": true
+        },
+        {
+          "conditions": {
+            "actorId": 1,
+            "actorValid": false,
+            "itemId": 1,
+            "itemValid": false,
+            "selfSwitchCh": "A",
+            "selfSwitchValid": false,
+            "switch1Id": 24,
+            "switch1Valid": true,
+            "switch2Id": 1,
+            "switch2Valid": false,
+            "variableId": 1,
+            "variableValid": false,
+            "variableValue": 0
+          },
+          "directionFix": false,
+          "image": {
+            "tileId": 0,
+            "characterName": "Monster",
+            "direction": 2,
+            "pattern": 1,
+            "characterIndex": 7
+          },
+          "list": [
+            {
+              "code": 0,
+              "indent": 0,
+              "parameters": []
+            }
+          ],
+          "moveFrequency": 5,
+          "moveRoute": {
+            "list": [
+              {
+                "code": 0,
+                "parameters": []
+              }
+            ],
+            "repeat": true,
+            "skippable": false,
+            "wait": false
+          },
+          "moveSpeed": 3,
+          "moveType": 0,
+          "priorityType": 1,
+          "stepAnime": true,
+          "through": false,
+          "trigger": 4,
+          "walkAnime": true
+        },
+        {
+          "conditions": {
+            "actorId": 1,
+            "actorValid": false,
+            "itemId": 1,
+            "itemValid": false,
+            "selfSwitchCh": "D",
+            "selfSwitchValid": false,
+            "switch1Id": 23,
+            "switch1Valid": true,
+            "switch2Id": 1,
+            "switch2Valid": false,
+            "variableId": 12,
+            "variableValid": false,
+            "variableValue": 1
+          },
+          "directionFix": false,
+          "image": {
+            "characterIndex": 0,
+            "characterName": "",
+            "direction": 2,
+            "pattern": 0,
+            "tileId": 0
+          },
+          "list": [
+            {
+              "code": 214,
+              "indent": 0,
+              "parameters": []
+            },
+            {
+              "code": 0,
+              "indent": 0,
+              "parameters": []
+            }
+          ],
+          "moveFrequency": 3,
+          "moveRoute": {
+            "list": [
+              {
+                "code": 0,
+                "parameters": []
+              }
+            ],
+            "repeat": true,
+            "skippable": false,
+            "wait": false
+          },
+          "moveSpeed": 3,
+          "moveType": 0,
+          "priorityType": 0,
+          "stepAnime": false,
+          "through": false,
+          "trigger": 4,
+          "walkAnime": true
+        },
+        {
+          "conditions": {
+            "actorId": 1,
+            "actorValid": false,
+            "itemId": 1,
+            "itemValid": false,
+            "selfSwitchCh": "D",
+            "selfSwitchValid": false,
+            "switch1Id": 22,
+            "switch1Valid": true,
+            "switch2Id": 1,
+            "switch2Valid": false,
+            "variableId": 12,
+            "variableValid": false,
+            "variableValue": 1
+          },
+          "directionFix": false,
+          "image": {
+            "characterIndex": 0,
+            "characterName": "",
+            "direction": 2,
+            "pattern": 0,
+            "tileId": 0
+          },
+          "list": [
+            {
+              "code": 121,
+              "indent": 0,
+              "parameters": [
+                24,
+                24,
+                1
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 0,
+              "parameters": [
+                21,
+                21,
+                1
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 0,
+              "parameters": [
+                22,
+                22,
+                1
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 0,
+              "parameters": []
+            }
+          ],
+          "moveFrequency": 3,
+          "moveRoute": {
+            "list": [
+              {
+                "code": 0,
+                "parameters": []
+              }
+            ],
+            "repeat": true,
+            "skippable": false,
+            "wait": false
+          },
+          "moveSpeed": 3,
+          "moveType": 0,
+          "priorityType": 0,
+          "stepAnime": false,
+          "through": false,
+          "trigger": 3,
+          "walkAnime": true
+        }
+      ],
+      "x": 5,
+      "y": 3
+    },
+    null,
+    {
+      "id": 3,
+      "name": "enemy_TR1",
+      "note": "",
+      "pages": [
+        {
+          "conditions": {
+            "actorId": 1,
+            "actorValid": false,
+            "itemId": 1,
+            "itemValid": false,
+            "selfSwitchCh": "A",
+            "selfSwitchValid": false,
+            "switch1Id": 1,
+            "switch1Valid": false,
+            "switch2Id": 1,
+            "switch2Valid": false,
+            "variableId": 1,
+            "variableValid": false,
+            "variableValue": 0
+          },
+          "directionFix": false,
+          "image": {
+            "tileId": 0,
+            "characterName": "Monster",
+            "direction": 2,
+            "pattern": 1,
+            "characterIndex": 2
+          },
+          "list": [
+            {
+              "code": 108,
+              "indent": 0,
+              "parameters": [
+                "<imageExAllPagesApply>"
+              ]
+            },
+            {
+              "code": 408,
+              "indent": 0,
+              "parameters": [
+                "<subpri: 110>"
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 0,
+              "parameters": [
+                "<et: enemy>"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 0,
+              "parameters": []
+            }
+          ],
+          "moveFrequency": 3,
+          "moveRoute": {
+            "list": [
+              {
+                "code": 0,
+                "parameters": []
+              }
+            ],
+            "repeat": true,
+            "skippable": false,
+            "wait": false
+          },
+          "moveSpeed": 3,
+          "moveType": 0,
+          "priorityType": 1,
+          "stepAnime": true,
+          "through": false,
+          "trigger": 0,
+          "walkAnime": true
+        },
+        {
+          "conditions": {
+            "actorId": 1,
+            "actorValid": false,
+            "itemId": 1,
+            "itemValid": false,
+            "selfSwitchCh": "A",
+            "selfSwitchValid": false,
+            "switch1Id": 41,
+            "switch1Valid": true,
+            "switch2Id": 1,
+            "switch2Valid": false,
+            "variableId": 1,
+            "variableValid": false,
+            "variableValue": 0
+          },
+          "directionFix": false,
+          "image": {
+            "tileId": 0,
+            "characterName": "Monster",
+            "direction": 2,
+            "pattern": 1,
+            "characterIndex": 2
+          },
+          "list": [
+            {
+              "code": 357,
+              "indent": 0,
+              "parameters": [
+                "build/ARPG_Core",
+                "SetupEnemy",
+                "Setup Enemy",
+                {
+                  "CharacterSpecification": "{\"CharacterKind\":\"thisEvent\",\"EventIdOrName\":\"1\",\"EventIdByVariable\":\"0\",\"FollowerIndex\":\"1\",\"VehicleKind\":\"boat\"}",
+                  "EnemyId": "1",
+                  "CollideAttackSkillId": "0",
+                  "DamageCommonEventId": "0",
+                  "DefeatEnemyCommonEventId": "0",
+                  "HpGauge": "normal"
+                }
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Character specification = {\"CharacterKind\":\"thisEvent\",\"Eve…"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Enemy ID = 1"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Collision Attack Skill ID = 0"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Enemy damage common event ID = 0"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Defeat Enemy Common Event ID = 0"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "HP gauge = normal"
+              ]
+            },
+            {
+              "code": 357,
+              "indent": 0,
+              "parameters": [
+                "build/ARPG_Core",
+                "SetHitBox",
+                "SetHitBox",
+                {
+                  "CharacterSpecification": "{\"CharacterKind\":\"thisEvent\",\"EventIdOrName\":\"1\",\"EventIdByVariable\":\"0\",\"FollowerIndex\":\"1\",\"VehicleKind\":\"boat\"}",
+                  "HitBoxType": "attack",
+                  "CustomHitBoxTag": "",
+                  "HitBoxList": "[\"{\\\"X\\\":\\\"0\\\",\\\"Y\\\":\\\"0\\\",\\\"Width\\\":\\\"1\\\",\\\"Height\\\":\\\"1\\\"}\"]"
+                }
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Character specification = {\"CharacterKind\":\"thisEvent\",\"Eve…"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "HitBoxType = attack"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "custom hit box tag = "
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "HitBoxList = [\"{\\\"X\\\":\\\"0\\\",\\\"Y\\\":\\\"0\\\",\\\"Width\\\":\\\"1\\\",\\\"H…"
+              ]
+            },
+            {
+              "code": 357,
+              "indent": 0,
+              "parameters": [
+                "build/ARPG_Core",
+                "SetHitBox",
+                "SetHitBox",
+                {
+                  "CharacterSpecification": "{\"CharacterKind\":\"thisEvent\",\"EventIdOrName\":\"1\",\"EventIdByVariable\":\"0\",\"FollowerIndex\":\"1\",\"VehicleKind\":\"boat\"}",
+                  "HitBoxType": "damage",
+                  "CustomHitBoxTag": "",
+                  "HitBoxList": "[\"{\\\"X\\\":\\\"0.25\\\",\\\"Y\\\":\\\"0.25\\\",\\\"Width\\\":\\\"0.50\\\",\\\"Height\\\":\\\"0.50\\\"}\"]"
+                }
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Character specification = {\"CharacterKind\":\"thisEvent\",\"Eve…"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "HitBoxType = damage"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "custom hit box tag = "
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "HitBoxList = [\"{\\\"X\\\":\\\"0.25\\\",\\\"Y\\\":\\\"0.25\\\",\\\"Width\\\":\\\"0…"
+              ]
+            },
+            {
+              "code": 357,
+              "indent": 0,
+              "parameters": [
+                "build/CharacterCollisionEx",
+                "SetThroughPlayer",
+                "SetThroughPlayer",
+                {
+                  "CharacterSpecification": "{\"CharacterKind\":\"thisEvent\",\"EventIdOrName\":\"1\",\"EventIdByVariable\":\"0\",\"FollowerIndex\":\"1\",\"VehicleKind\":\"boat\"}",
+                  "EnableOrDisable": "true"
+                }
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Character specification = {\"CharacterKind\":\"thisEvent\",\"Eve…"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "enable/disable = true"
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 0,
+              "parameters": [
+                21,
+                21,
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 0,
+              "parameters": []
+            }
+          ],
+          "moveFrequency": 3,
+          "moveRoute": {
+            "list": [
+              {
+                "code": 0,
+                "parameters": []
+              }
+            ],
+            "repeat": true,
+            "skippable": false,
+            "wait": false
+          },
+          "moveSpeed": 3,
+          "moveType": 0,
+          "priorityType": 1,
+          "stepAnime": false,
+          "through": false,
+          "trigger": 3,
+          "walkAnime": true
+        },
+        {
+          "conditions": {
+            "actorId": 1,
+            "actorValid": false,
+            "itemId": 1,
+            "itemValid": false,
+            "selfSwitchCh": "A",
+            "selfSwitchValid": false,
+            "switch1Id": 21,
+            "switch1Valid": true,
+            "switch2Id": 1,
+            "switch2Valid": false,
+            "variableId": 1,
+            "variableValid": false,
+            "variableValue": 0
+          },
+          "directionFix": false,
+          "image": {
+            "tileId": 0,
+            "characterName": "Monster",
+            "direction": 2,
+            "pattern": 1,
+            "characterIndex": 2
+          },
+          "list": [
+            {
+              "code": 205,
+              "indent": 0,
+              "parameters": [
+                0,
+                {
+                  "list": [
+                    {
+                      "code": 9,
+                      "indent": null
+                    },
+                    {
+                      "code": 10,
+                      "indent": null
+                    },
+                    {
+                      "code": 10,
+                      "indent": null
+                    },
+                    {
+                      "code": 0
+                    }
+                  ],
+                  "repeat": false,
+                  "skippable": false,
+                  "wait": true
+                }
+              ]
+            },
+            {
+              "code": 505,
+              "indent": 0,
+              "parameters": [
+                {
+                  "code": 9,
+                  "indent": null
+                }
+              ]
+            },
+            {
+              "code": 505,
+              "indent": 0,
+              "parameters": [
+                {
+                  "code": 10,
+                  "indent": null
+                }
+              ]
+            },
+            {
+              "code": 505,
+              "indent": 0,
+              "parameters": [
+                {
+                  "code": 10,
+                  "indent": null
+                }
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 0,
+              "parameters": []
+            }
+          ],
+          "moveFrequency": 5,
+          "moveRoute": {
+            "list": [
+              {
+                "code": 0,
+                "parameters": []
+              }
+            ],
+            "repeat": true,
+            "skippable": false,
+            "wait": false
+          },
+          "moveSpeed": 3,
+          "moveType": 0,
+          "priorityType": 1,
+          "stepAnime": true,
+          "through": false,
+          "trigger": 4,
+          "walkAnime": true
+        },
+        {
+          "conditions": {
+            "actorId": 1,
+            "actorValid": false,
+            "itemId": 1,
+            "itemValid": false,
+            "selfSwitchCh": "A",
+            "selfSwitchValid": false,
+            "switch1Id": 24,
+            "switch1Valid": true,
+            "switch2Id": 1,
+            "switch2Valid": false,
+            "variableId": 1,
+            "variableValid": false,
+            "variableValue": 0
+          },
+          "directionFix": false,
+          "image": {
+            "tileId": 0,
+            "characterName": "Monster",
+            "direction": 2,
+            "pattern": 1,
+            "characterIndex": 2
+          },
+          "list": [
+            {
+              "code": 0,
+              "indent": 0,
+              "parameters": []
+            }
+          ],
+          "moveFrequency": 5,
+          "moveRoute": {
+            "list": [
+              {
+                "code": 0,
+                "parameters": []
+              }
+            ],
+            "repeat": true,
+            "skippable": false,
+            "wait": false
+          },
+          "moveSpeed": 3,
+          "moveType": 0,
+          "priorityType": 1,
+          "stepAnime": true,
+          "through": false,
+          "trigger": 4,
+          "walkAnime": true
+        },
+        {
+          "conditions": {
+            "actorId": 1,
+            "actorValid": false,
+            "itemId": 1,
+            "itemValid": false,
+            "selfSwitchCh": "D",
+            "selfSwitchValid": false,
+            "switch1Id": 23,
+            "switch1Valid": true,
+            "switch2Id": 1,
+            "switch2Valid": false,
+            "variableId": 12,
+            "variableValid": false,
+            "variableValue": 1
+          },
+          "directionFix": false,
+          "image": {
+            "characterIndex": 0,
+            "characterName": "",
+            "direction": 2,
+            "pattern": 0,
+            "tileId": 0
+          },
+          "list": [
+            {
+              "code": 121,
+              "indent": 0,
+              "parameters": [
+                42,
+                42,
+                0
+              ]
+            },
+            {
+              "code": 214,
+              "indent": 0,
+              "parameters": []
+            },
+            {
+              "code": 0,
+              "indent": 0,
+              "parameters": []
+            }
+          ],
+          "moveFrequency": 3,
+          "moveRoute": {
+            "list": [
+              {
+                "code": 0,
+                "parameters": []
+              }
+            ],
+            "repeat": true,
+            "skippable": false,
+            "wait": false
+          },
+          "moveSpeed": 3,
+          "moveType": 0,
+          "priorityType": 0,
+          "stepAnime": false,
+          "through": false,
+          "trigger": 4,
+          "walkAnime": true
+        }
+      ],
+      "x": 1,
+      "y": 1
+    },
+    {
+      "id": 4,
+      "name": "enemy_TR3",
+      "note": "",
+      "pages": [
+        {
+          "conditions": {
+            "actorId": 1,
+            "actorValid": false,
+            "itemId": 1,
+            "itemValid": false,
+            "selfSwitchCh": "A",
+            "selfSwitchValid": false,
+            "switch1Id": 1,
+            "switch1Valid": false,
+            "switch2Id": 1,
+            "switch2Valid": false,
+            "variableId": 1,
+            "variableValid": false,
+            "variableValue": 0
+          },
+          "directionFix": false,
+          "image": {
+            "tileId": 0,
+            "characterName": "Monster",
+            "direction": 2,
+            "pattern": 1,
+            "characterIndex": 2
+          },
+          "list": [
+            {
+              "code": 108,
+              "indent": 0,
+              "parameters": [
+                "<imageExAllPagesApply>"
+              ]
+            },
+            {
+              "code": 408,
+              "indent": 0,
+              "parameters": [
+                "<subpri: 110>"
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 0,
+              "parameters": [
+                "<et: enemy>"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 0,
+              "parameters": []
+            }
+          ],
+          "moveFrequency": 3,
+          "moveRoute": {
+            "list": [
+              {
+                "code": 0,
+                "parameters": []
+              }
+            ],
+            "repeat": true,
+            "skippable": false,
+            "wait": false
+          },
+          "moveSpeed": 3,
+          "moveType": 0,
+          "priorityType": 1,
+          "stepAnime": true,
+          "through": false,
+          "trigger": 0,
+          "walkAnime": true
+        },
+        {
+          "conditions": {
+            "actorId": 1,
+            "actorValid": false,
+            "itemId": 1,
+            "itemValid": false,
+            "selfSwitchCh": "A",
+            "selfSwitchValid": false,
+            "switch1Id": 47,
+            "switch1Valid": true,
+            "switch2Id": 1,
+            "switch2Valid": false,
+            "variableId": 1,
+            "variableValid": false,
+            "variableValue": 0
+          },
+          "directionFix": false,
+          "image": {
+            "tileId": 0,
+            "characterName": "Monster",
+            "direction": 2,
+            "pattern": 1,
+            "characterIndex": 2
+          },
+          "list": [
+            {
+              "code": 357,
+              "indent": 0,
+              "parameters": [
+                "build/ARPG_Core",
+                "SetupEnemy",
+                "Setup Enemy",
+                {
+                  "CharacterSpecification": "{\"CharacterKind\":\"thisEvent\",\"EventIdOrName\":\"1\",\"EventIdByVariable\":\"0\",\"FollowerIndex\":\"1\",\"VehicleKind\":\"boat\"}",
+                  "EnemyId": "1",
+                  "CollideAttackSkillId": "0",
+                  "DamageCommonEventId": "0",
+                  "DefeatEnemyCommonEventId": "0",
+                  "HpGauge": "normal"
+                }
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Character specification = {\"CharacterKind\":\"thisEvent\",\"Eve…"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Enemy ID = 1"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Collision Attack Skill ID = 0"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Enemy damage common event ID = 0"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Defeat Enemy Common Event ID = 0"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "HP gauge = normal"
+              ]
+            },
+            {
+              "code": 357,
+              "indent": 0,
+              "parameters": [
+                "build/ARPG_Core",
+                "SetHitBox",
+                "SetHitBox",
+                {
+                  "CharacterSpecification": "{\"CharacterKind\":\"thisEvent\",\"EventIdOrName\":\"1\",\"EventIdByVariable\":\"0\",\"FollowerIndex\":\"1\",\"VehicleKind\":\"boat\"}",
+                  "HitBoxType": "attack",
+                  "CustomHitBoxTag": "",
+                  "HitBoxList": "[\"{\\\"X\\\":\\\"0\\\",\\\"Y\\\":\\\"0\\\",\\\"Width\\\":\\\"1\\\",\\\"Height\\\":\\\"1\\\"}\"]"
+                }
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Character specification = {\"CharacterKind\":\"thisEvent\",\"Eve…"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "HitBoxType = attack"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "custom hit box tag = "
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "HitBoxList = [\"{\\\"X\\\":\\\"0\\\",\\\"Y\\\":\\\"0\\\",\\\"Width\\\":\\\"1\\\",\\\"H…"
+              ]
+            },
+            {
+              "code": 357,
+              "indent": 0,
+              "parameters": [
+                "build/ARPG_Core",
+                "SetHitBox",
+                "SetHitBox",
+                {
+                  "CharacterSpecification": "{\"CharacterKind\":\"thisEvent\",\"EventIdOrName\":\"1\",\"EventIdByVariable\":\"0\",\"FollowerIndex\":\"1\",\"VehicleKind\":\"boat\"}",
+                  "HitBoxType": "damage",
+                  "CustomHitBoxTag": "",
+                  "HitBoxList": "[\"{\\\"X\\\":\\\"0.25\\\",\\\"Y\\\":\\\"0.25\\\",\\\"Width\\\":\\\"0.50\\\",\\\"Height\\\":\\\"0.50\\\"}\"]"
+                }
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Character specification = {\"CharacterKind\":\"thisEvent\",\"Eve…"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "HitBoxType = damage"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "custom hit box tag = "
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "HitBoxList = [\"{\\\"X\\\":\\\"0.25\\\",\\\"Y\\\":\\\"0.25\\\",\\\"Width\\\":\\\"0…"
+              ]
+            },
+            {
+              "code": 357,
+              "indent": 0,
+              "parameters": [
+                "build/CharacterCollisionEx",
+                "SetThroughPlayer",
+                "SetThroughPlayer",
+                {
+                  "CharacterSpecification": "{\"CharacterKind\":\"thisEvent\",\"EventIdOrName\":\"1\",\"EventIdByVariable\":\"0\",\"FollowerIndex\":\"1\",\"VehicleKind\":\"boat\"}",
+                  "EnableOrDisable": "true"
+                }
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Character specification = {\"CharacterKind\":\"thisEvent\",\"Eve…"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "enable/disable = true"
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 0,
+              "parameters": [
+                21,
+                21,
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 0,
+              "parameters": []
+            }
+          ],
+          "moveFrequency": 3,
+          "moveRoute": {
+            "list": [
+              {
+                "code": 0,
+                "parameters": []
+              }
+            ],
+            "repeat": true,
+            "skippable": false,
+            "wait": false
+          },
+          "moveSpeed": 3,
+          "moveType": 0,
+          "priorityType": 1,
+          "stepAnime": false,
+          "through": false,
+          "trigger": 3,
+          "walkAnime": true
+        },
+        {
+          "conditions": {
+            "actorId": 1,
+            "actorValid": false,
+            "itemId": 1,
+            "itemValid": false,
+            "selfSwitchCh": "A",
+            "selfSwitchValid": false,
+            "switch1Id": 21,
+            "switch1Valid": true,
+            "switch2Id": 1,
+            "switch2Valid": false,
+            "variableId": 1,
+            "variableValid": false,
+            "variableValue": 0
+          },
+          "directionFix": false,
+          "image": {
+            "tileId": 0,
+            "characterName": "Monster",
+            "direction": 2,
+            "pattern": 1,
+            "characterIndex": 2
+          },
+          "list": [
+            {
+              "code": 205,
+              "indent": 0,
+              "parameters": [
+                0,
+                {
+                  "list": [
+                    {
+                      "code": 9,
+                      "indent": null
+                    },
+                    {
+                      "code": 0
+                    }
+                  ],
+                  "repeat": false,
+                  "skippable": false,
+                  "wait": true
+                }
+              ]
+            },
+            {
+              "code": 505,
+              "indent": 0,
+              "parameters": [
+                {
+                  "code": 9,
+                  "indent": null
+                }
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 0,
+              "parameters": []
+            }
+          ],
+          "moveFrequency": 5,
+          "moveRoute": {
+            "list": [
+              {
+                "code": 0,
+                "parameters": []
+              }
+            ],
+            "repeat": true,
+            "skippable": false,
+            "wait": false
+          },
+          "moveSpeed": 3,
+          "moveType": 0,
+          "priorityType": 1,
+          "stepAnime": true,
+          "through": false,
+          "trigger": 4,
+          "walkAnime": true
+        },
+        {
+          "conditions": {
+            "actorId": 1,
+            "actorValid": false,
+            "itemId": 1,
+            "itemValid": false,
+            "selfSwitchCh": "A",
+            "selfSwitchValid": false,
+            "switch1Id": 24,
+            "switch1Valid": true,
+            "switch2Id": 1,
+            "switch2Valid": false,
+            "variableId": 1,
+            "variableValid": false,
+            "variableValue": 0
+          },
+          "directionFix": false,
+          "image": {
+            "tileId": 0,
+            "characterName": "Monster",
+            "direction": 2,
+            "pattern": 1,
+            "characterIndex": 2
+          },
+          "list": [
+            {
+              "code": 0,
+              "indent": 0,
+              "parameters": []
+            }
+          ],
+          "moveFrequency": 5,
+          "moveRoute": {
+            "list": [
+              {
+                "code": 0,
+                "parameters": []
+              }
+            ],
+            "repeat": true,
+            "skippable": false,
+            "wait": false
+          },
+          "moveSpeed": 3,
+          "moveType": 0,
+          "priorityType": 1,
+          "stepAnime": true,
+          "through": false,
+          "trigger": 4,
+          "walkAnime": true
+        },
+        {
+          "conditions": {
+            "actorId": 1,
+            "actorValid": false,
+            "itemId": 1,
+            "itemValid": false,
+            "selfSwitchCh": "D",
+            "selfSwitchValid": false,
+            "switch1Id": 23,
+            "switch1Valid": true,
+            "switch2Id": 1,
+            "switch2Valid": false,
+            "variableId": 12,
+            "variableValid": false,
+            "variableValue": 1
+          },
+          "directionFix": false,
+          "image": {
+            "characterIndex": 0,
+            "characterName": "",
+            "direction": 2,
+            "pattern": 0,
+            "tileId": 0
+          },
+          "list": [
+            {
+              "code": 122,
+              "indent": 0,
+              "parameters": [
+                41,
+                41,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 0,
+              "parameters": [
+                1,
+                41,
+                0,
+                3,
+                1
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 1,
+              "parameters": [
+                48,
+                48,
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": []
+            },
+            {
+              "code": 412,
+              "indent": 0,
+              "parameters": []
+            },
+            {
+              "code": 214,
+              "indent": 0,
+              "parameters": []
+            },
+            {
+              "code": 0,
+              "indent": 0,
+              "parameters": []
+            }
+          ],
+          "moveFrequency": 3,
+          "moveRoute": {
+            "list": [
+              {
+                "code": 0,
+                "parameters": []
+              }
+            ],
+            "repeat": true,
+            "skippable": false,
+            "wait": false
+          },
+          "moveSpeed": 3,
+          "moveType": 0,
+          "priorityType": 0,
+          "stepAnime": false,
+          "through": false,
+          "trigger": 4,
+          "walkAnime": true
+        }
+      ],
+      "x": 5,
+      "y": 1
+    },
+    {
+      "id": 5,
+      "name": "enemy_TR2",
+      "note": "",
+      "pages": [
+        {
+          "conditions": {
+            "actorId": 1,
+            "actorValid": false,
+            "itemId": 1,
+            "itemValid": false,
+            "selfSwitchCh": "A",
+            "selfSwitchValid": false,
+            "switch1Id": 1,
+            "switch1Valid": false,
+            "switch2Id": 1,
+            "switch2Valid": false,
+            "variableId": 1,
+            "variableValid": false,
+            "variableValue": 0
+          },
+          "directionFix": false,
+          "image": {
+            "tileId": 0,
+            "characterName": "Monster",
+            "direction": 2,
+            "pattern": 1,
+            "characterIndex": 4
+          },
+          "list": [
+            {
+              "code": 108,
+              "indent": 0,
+              "parameters": [
+                "<imageExAllPagesApply>"
+              ]
+            },
+            {
+              "code": 408,
+              "indent": 0,
+              "parameters": [
+                "<subpri: 110>"
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 0,
+              "parameters": [
+                "<et: enemy>"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 0,
+              "parameters": []
+            }
+          ],
+          "moveFrequency": 3,
+          "moveRoute": {
+            "list": [
+              {
+                "code": 0,
+                "parameters": []
+              }
+            ],
+            "repeat": true,
+            "skippable": false,
+            "wait": false
+          },
+          "moveSpeed": 3,
+          "moveType": 0,
+          "priorityType": 1,
+          "stepAnime": true,
+          "through": false,
+          "trigger": 0,
+          "walkAnime": true
+        },
+        {
+          "conditions": {
+            "actorId": 1,
+            "actorValid": false,
+            "itemId": 1,
+            "itemValid": false,
+            "selfSwitchCh": "A",
+            "selfSwitchValid": false,
+            "switch1Id": 44,
+            "switch1Valid": true,
+            "switch2Id": 1,
+            "switch2Valid": false,
+            "variableId": 1,
+            "variableValid": false,
+            "variableValue": 0
+          },
+          "directionFix": false,
+          "image": {
+            "tileId": 0,
+            "characterName": "Monster",
+            "direction": 2,
+            "pattern": 1,
+            "characterIndex": 4
+          },
+          "list": [
+            {
+              "code": 357,
+              "indent": 0,
+              "parameters": [
+                "build/ARPG_Core",
+                "SetupEnemy",
+                "Setup Enemy",
+                {
+                  "CharacterSpecification": "{\"CharacterKind\":\"thisEvent\",\"EventIdOrName\":\"1\",\"EventIdByVariable\":\"0\",\"FollowerIndex\":\"1\",\"VehicleKind\":\"boat\"}",
+                  "EnemyId": "2",
+                  "CollideAttackSkillId": "0",
+                  "DamageCommonEventId": "0",
+                  "DefeatEnemyCommonEventId": "0",
+                  "HpGauge": "normal"
+                }
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Character specification = {\"CharacterKind\":\"thisEvent\",\"Eve…"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Enemy ID = 2"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Collision Attack Skill ID = 0"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Enemy damage common event ID = 0"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Defeat Enemy Common Event ID = 0"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "HP gauge = normal"
+              ]
+            },
+            {
+              "code": 357,
+              "indent": 0,
+              "parameters": [
+                "build/ARPG_Core",
+                "SetHitBox",
+                "SetHitBox",
+                {
+                  "CharacterSpecification": "{\"CharacterKind\":\"thisEvent\",\"EventIdOrName\":\"1\",\"EventIdByVariable\":\"0\",\"FollowerIndex\":\"1\",\"VehicleKind\":\"boat\"}",
+                  "HitBoxType": "attack",
+                  "CustomHitBoxTag": "",
+                  "HitBoxList": "[\"{\\\"X\\\":\\\"0\\\",\\\"Y\\\":\\\"0\\\",\\\"Width\\\":\\\"1\\\",\\\"Height\\\":\\\"1\\\"}\"]"
+                }
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Character specification = {\"CharacterKind\":\"thisEvent\",\"Eve…"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "HitBoxType = attack"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "custom hit box tag = "
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "HitBoxList = [\"{\\\"X\\\":\\\"0\\\",\\\"Y\\\":\\\"0\\\",\\\"Width\\\":\\\"1\\\",\\\"H…"
+              ]
+            },
+            {
+              "code": 357,
+              "indent": 0,
+              "parameters": [
+                "build/ARPG_Core",
+                "SetHitBox",
+                "SetHitBox",
+                {
+                  "CharacterSpecification": "{\"CharacterKind\":\"thisEvent\",\"EventIdOrName\":\"1\",\"EventIdByVariable\":\"0\",\"FollowerIndex\":\"1\",\"VehicleKind\":\"boat\"}",
+                  "HitBoxType": "damage",
+                  "CustomHitBoxTag": "",
+                  "HitBoxList": "[\"{\\\"X\\\":\\\"0.25\\\",\\\"Y\\\":\\\"0.25\\\",\\\"Width\\\":\\\"0.50\\\",\\\"Height\\\":\\\"0.50\\\"}\"]"
+                }
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Character specification = {\"CharacterKind\":\"thisEvent\",\"Eve…"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "HitBoxType = damage"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "custom hit box tag = "
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "HitBoxList = [\"{\\\"X\\\":\\\"0.25\\\",\\\"Y\\\":\\\"0.25\\\",\\\"Width\\\":\\\"0…"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 0,
+              "parameters": [
+                "this.event().setMoveUnit(0.5);"
+              ]
+            },
+            {
+              "code": 357,
+              "indent": 0,
+              "parameters": [
+                "build/CharacterCollisionEx",
+                "SetThroughPlayer",
+                "SetThroughPlayer",
+                {
+                  "CharacterSpecification": "{\"CharacterKind\":\"thisEvent\",\"EventIdOrName\":\"1\",\"EventIdByVariable\":\"0\",\"FollowerIndex\":\"1\",\"VehicleKind\":\"boat\"}",
+                  "EnableOrDisable": "true"
+                }
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Character specification = {\"CharacterKind\":\"thisEvent\",\"Eve…"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "enable/disable = true"
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 0,
+              "parameters": [
+                21,
+                21,
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 0,
+              "parameters": []
+            }
+          ],
+          "moveFrequency": 3,
+          "moveRoute": {
+            "list": [
+              {
+                "code": 0,
+                "parameters": []
+              }
+            ],
+            "repeat": true,
+            "skippable": false,
+            "wait": false
+          },
+          "moveSpeed": 3,
+          "moveType": 0,
+          "priorityType": 1,
+          "stepAnime": false,
+          "through": false,
+          "trigger": 3,
+          "walkAnime": true
+        },
+        {
+          "conditions": {
+            "actorId": 1,
+            "actorValid": false,
+            "itemId": 1,
+            "itemValid": false,
+            "selfSwitchCh": "A",
+            "selfSwitchValid": false,
+            "switch1Id": 21,
+            "switch1Valid": true,
+            "switch2Id": 1,
+            "switch2Valid": false,
+            "variableId": 1,
+            "variableValid": false,
+            "variableValue": 0
+          },
+          "directionFix": false,
+          "image": {
+            "tileId": 0,
+            "characterName": "Monster",
+            "direction": 2,
+            "pattern": 1,
+            "characterIndex": 4
+          },
+          "list": [
+            {
+              "code": 357,
+              "indent": 0,
+              "parameters": [
+                "build/ARPG_Core",
+                "CheckInTheScreen",
+                "Check if the character is in the screen",
+                {
+                  "CharacterSpecification": "{\"CharacterKind\":\"thisEvent\",\"CharacterKindByVariable\":\"0\",\"EventIdOrName\":\"1\",\"EventIdByVariable\":\"0\",\"FollowerIndex\":\"1\",\"FollowerIndexByVariable\":\"0\",\"VehicleKind\":\"boat\",\"VehicleKindByVariable\":\"0\"}",
+                  "XMargin": "2",
+                  "YMargin": "2",
+                  "StoreResultSwitchId": "5"
+                }
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Character specification = {\"CharacterKind\":\"thisEvent\",\"Cha…"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "X-axis margin = 2"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Y-axis margin = 2"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Result store switch ID = 5"
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 0,
+              "parameters": [
+                0,
+                5,
+                0
+              ]
+            },
+            {
+              "code": 357,
+              "indent": 1,
+              "parameters": [
+                "build/ARPG_Core",
+                "CalcFar",
+                "Get distance between characters",
+                {
+                  "SubjectCharacterSpecification": "{\"CharacterKind\":\"thisEvent\",\"EventIdOrName\":\"1\",\"EventIdByVariable\":\"0\",\"FollowerIndex\":\"1\",\"VehicleKind\":\"boat\"}",
+                  "TargetCharacterSpecification": "{\"CharacterKind\":\"player\",\"EventIdOrName\":\"1\",\"EventIdByVariable\":\"0\",\"FollowerIndex\":\"1\",\"VehicleKind\":\"boat\"}",
+                  "StoreFarVariableId": "28"
+                }
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 1,
+              "parameters": [
+                "Subject character specification = {\"CharacterKind\":\"thisEve…"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 1,
+              "parameters": [
+                "Target character specification = {\"CharacterKind\":\"player\",…"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 1,
+              "parameters": [
+                "Distance store variable ID = 28"
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 1,
+              "parameters": [
+                1,
+                28,
+                0,
+                3,
+                2
+              ]
+            },
+            {
+              "code": 205,
+              "indent": 2,
+              "parameters": [
+                0,
+                {
+                  "list": [
+                    {
+                      "code": 11,
+                      "indent": null
+                    },
+                    {
+                      "code": 0
+                    }
+                  ],
+                  "repeat": false,
+                  "skippable": true,
+                  "wait": true
+                }
+              ]
+            },
+            {
+              "code": 505,
+              "indent": 2,
+              "parameters": [
+                {
+                  "code": 11,
+                  "indent": null
+                }
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": []
+            },
+            {
+              "code": 411,
+              "indent": 1,
+              "parameters": []
+            },
+            {
+              "code": 205,
+              "indent": 2,
+              "parameters": [
+                0,
+                {
+                  "list": [
+                    {
+                      "code": 10,
+                      "indent": null
+                    },
+                    {
+                      "code": 0
+                    }
+                  ],
+                  "repeat": false,
+                  "skippable": true,
+                  "wait": true
+                }
+              ]
+            },
+            {
+              "code": 505,
+              "indent": 2,
+              "parameters": [
+                {
+                  "code": 10,
+                  "indent": null
+                }
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 2,
+              "parameters": [
+                36,
+                36,
+                0,
+                2,
+                0,
+                99
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 2,
+              "parameters": [
+                1,
+                36,
+                0,
+                50,
+                4
+              ]
+            },
+            {
+              "code": 205,
+              "indent": 3,
+              "parameters": [
+                0,
+                {
+                  "list": [
+                    {
+                      "code": 45,
+                      "parameters": [
+                        "this.smartJump(0, 0);"
+                      ],
+                      "indent": null
+                    },
+                    {
+                      "code": 0
+                    }
+                  ],
+                  "repeat": false,
+                  "skippable": false,
+                  "wait": true
+                }
+              ]
+            },
+            {
+              "code": 505,
+              "indent": 3,
+              "parameters": [
+                {
+                  "code": 45,
+                  "parameters": [
+                    "this.smartJump(0, 0);"
+                  ],
+                  "indent": null
+                }
+              ]
+            },
+            {
+              "code": 357,
+              "indent": 3,
+              "parameters": [
+                "build/ARPG_Core",
+                "UseSkill",
+                "Use Skill",
+                {
+                  "SkillId": "10",
+                  "SkillByName": "",
+                  "SkillIdByVariable": "0"
+                }
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 3,
+              "parameters": [
+                "Skill ID = 10"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 3,
+              "parameters": [
+                "Skill (specify name) = "
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 3,
+              "parameters": [
+                "Skill ID (variable specification) = 0"
+              ]
+            },
+            {
+              "code": 230,
+              "indent": 3,
+              "parameters": [
+                10
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 3,
+              "parameters": []
+            },
+            {
+              "code": 412,
+              "indent": 2,
+              "parameters": []
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": []
+            },
+            {
+              "code": 412,
+              "indent": 1,
+              "parameters": []
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": []
+            },
+            {
+              "code": 412,
+              "indent": 0,
+              "parameters": []
+            },
+            {
+              "code": 0,
+              "indent": 0,
+              "parameters": []
+            }
+          ],
+          "moveFrequency": 5,
+          "moveRoute": {
+            "list": [
+              {
+                "code": 0,
+                "parameters": []
+              }
+            ],
+            "repeat": true,
+            "skippable": false,
+            "wait": false
+          },
+          "moveSpeed": 3,
+          "moveType": 0,
+          "priorityType": 1,
+          "stepAnime": true,
+          "through": false,
+          "trigger": 4,
+          "walkAnime": true
+        },
+        {
+          "conditions": {
+            "actorId": 1,
+            "actorValid": false,
+            "itemId": 1,
+            "itemValid": false,
+            "selfSwitchCh": "A",
+            "selfSwitchValid": false,
+            "switch1Id": 24,
+            "switch1Valid": true,
+            "switch2Id": 1,
+            "switch2Valid": false,
+            "variableId": 1,
+            "variableValid": false,
+            "variableValue": 0
+          },
+          "directionFix": false,
+          "image": {
+            "tileId": 0,
+            "characterName": "Monster",
+            "direction": 2,
+            "pattern": 1,
+            "characterIndex": 4
+          },
+          "list": [
+            {
+              "code": 0,
+              "indent": 0,
+              "parameters": []
+            }
+          ],
+          "moveFrequency": 5,
+          "moveRoute": {
+            "list": [
+              {
+                "code": 0,
+                "parameters": []
+              }
+            ],
+            "repeat": true,
+            "skippable": false,
+            "wait": false
+          },
+          "moveSpeed": 3,
+          "moveType": 0,
+          "priorityType": 1,
+          "stepAnime": true,
+          "through": false,
+          "trigger": 4,
+          "walkAnime": true
+        },
+        {
+          "conditions": {
+            "actorId": 1,
+            "actorValid": false,
+            "itemId": 1,
+            "itemValid": false,
+            "selfSwitchCh": "D",
+            "selfSwitchValid": false,
+            "switch1Id": 23,
+            "switch1Valid": true,
+            "switch2Id": 1,
+            "switch2Valid": false,
+            "variableId": 1,
+            "variableValid": false,
+            "variableValue": 0
+          },
+          "directionFix": false,
+          "image": {
+            "characterIndex": 0,
+            "characterName": "",
+            "direction": 2,
+            "pattern": 0,
+            "tileId": 0
+          },
+          "list": [
+            {
+              "code": 121,
+              "indent": 0,
+              "parameters": [
+                45,
+                45,
+                0
+              ]
+            },
+            {
+              "code": 214,
+              "indent": 0,
+              "parameters": []
+            },
+            {
+              "code": 0,
+              "indent": 0,
+              "parameters": []
+            }
+          ],
+          "moveFrequency": 3,
+          "moveRoute": {
+            "list": [
+              {
+                "code": 0,
+                "parameters": []
+              }
+            ],
+            "repeat": true,
+            "skippable": false,
+            "wait": false
+          },
+          "moveSpeed": 3,
+          "moveType": 0,
+          "priorityType": 0,
+          "stepAnime": false,
+          "through": false,
+          "trigger": 4,
+          "walkAnime": true
+        }
+      ],
+      "x": 3,
+      "y": 1
+    },
+    {
+      "id": 6,
+      "name": "enemy1",
+      "note": "",
+      "pages": [
+        {
+          "conditions": {
+            "actorId": 1,
+            "actorValid": false,
+            "itemId": 1,
+            "itemValid": false,
+            "selfSwitchCh": "A",
+            "selfSwitchValid": false,
+            "switch1Id": 2,
+            "switch1Valid": true,
+            "switch2Id": 1,
+            "switch2Valid": false,
+            "variableId": 1,
+            "variableValid": false,
+            "variableValue": 0
+          },
+          "directionFix": false,
+          "image": {
+            "tileId": 0,
+            "characterName": "Monster",
+            "direction": 2,
+            "pattern": 1,
+            "characterIndex": 2
+          },
+          "list": [
+            {
+              "code": 108,
+              "indent": 0,
+              "parameters": [
+                "<imageExAllPagesApply>"
+              ]
+            },
+            {
+              "code": 408,
+              "indent": 0,
+              "parameters": [
+                "<subpri: 110>"
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 0,
+              "parameters": [
+                "<et: enemy>"
+              ]
+            },
+            {
+              "code": 357,
+              "indent": 0,
+              "parameters": [
+                "build/ARPG_Core",
+                "SetupEnemy",
+                "Setup Enemy",
+                {
+                  "CharacterSpecification": "{\"CharacterKind\":\"thisEvent\",\"EventIdOrName\":\"1\",\"EventIdByVariable\":\"0\",\"FollowerIndex\":\"1\",\"VehicleKind\":\"boat\"}",
+                  "EnemyId": "1",
+                  "CollideAttackSkillId": "0",
+                  "DamageCommonEventId": "0",
+                  "DefeatEnemyCommonEventId": "0",
+                  "HpGauge": "normal"
+                }
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Character specification = {\"CharacterKind\":\"thisEvent\",\"Eve…"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Enemy ID = 1"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Collision Attack Skill ID = 0"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Enemy damage common event ID = 0"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Defeat Enemy Common Event ID = 0"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "HP gauge = normal"
+              ]
+            },
+            {
+              "code": 357,
+              "indent": 0,
+              "parameters": [
+                "build/ARPG_Core",
+                "SetHitBox",
+                "SetHitBox",
+                {
+                  "CharacterSpecification": "{\"CharacterKind\":\"thisEvent\",\"EventIdOrName\":\"1\",\"EventIdByVariable\":\"0\",\"FollowerIndex\":\"1\",\"VehicleKind\":\"boat\"}",
+                  "HitBoxType": "attack",
+                  "CustomHitBoxTag": "",
+                  "HitBoxList": "[\"{\\\"X\\\":\\\"0\\\",\\\"Y\\\":\\\"0\\\",\\\"Width\\\":\\\"1\\\",\\\"Height\\\":\\\"1\\\"}\"]"
+                }
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Character specification = {\"CharacterKind\":\"thisEvent\",\"Eve…"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "HitBoxType = attack"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "custom hit box tag = "
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "HitBoxList = [\"{\\\"X\\\":\\\"0\\\",\\\"Y\\\":\\\"0\\\",\\\"Width\\\":\\\"1\\\",\\\"H…"
+              ]
+            },
+            {
+              "code": 357,
+              "indent": 0,
+              "parameters": [
+                "build/ARPG_Core",
+                "SetHitBox",
+                "SetHitBox",
+                {
+                  "CharacterSpecification": "{\"CharacterKind\":\"thisEvent\",\"EventIdOrName\":\"1\",\"EventIdByVariable\":\"0\",\"FollowerIndex\":\"1\",\"VehicleKind\":\"boat\"}",
+                  "HitBoxType": "damage",
+                  "CustomHitBoxTag": "",
+                  "HitBoxList": "[\"{\\\"X\\\":\\\"0.25\\\",\\\"Y\\\":\\\"0.25\\\",\\\"Width\\\":\\\"0.50\\\",\\\"Height\\\":\\\"0.50\\\"}\"]"
+                }
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Character specification = {\"CharacterKind\":\"thisEvent\",\"Eve…"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "HitBoxType = damage"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "custom hit box tag = "
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "HitBoxList = [\"{\\\"X\\\":\\\"0.25\\\",\\\"Y\\\":\\\"0.25\\\",\\\"Width\\\":\\\"0…"
+              ]
+            },
+            {
+              "code": 357,
+              "indent": 0,
+              "parameters": [
+                "build/CharacterCollisionEx",
+                "SetThroughPlayer",
+                "SetThroughPlayer",
+                {
+                  "CharacterSpecification": "{\"CharacterKind\":\"thisEvent\",\"EventIdOrName\":\"1\",\"EventIdByVariable\":\"0\",\"FollowerIndex\":\"1\",\"VehicleKind\":\"boat\"}",
+                  "EnableOrDisable": "true"
+                }
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Character specification = {\"CharacterKind\":\"thisEvent\",\"Eve…"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "enable/disable = true"
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 0,
+              "parameters": [
+                21,
+                21,
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 0,
+              "parameters": []
+            }
+          ],
+          "moveFrequency": 3,
+          "moveRoute": {
+            "list": [
+              {
+                "code": 0,
+                "parameters": []
+              }
+            ],
+            "repeat": true,
+            "skippable": false,
+            "wait": false
+          },
+          "moveSpeed": 3,
+          "moveType": 0,
+          "priorityType": 1,
+          "stepAnime": true,
+          "through": false,
+          "trigger": 3,
+          "walkAnime": true
+        },
+        {
+          "conditions": {
+            "actorId": 1,
+            "actorValid": false,
+            "itemId": 1,
+            "itemValid": false,
+            "selfSwitchCh": "A",
+            "selfSwitchValid": false,
+            "switch1Id": 21,
+            "switch1Valid": true,
+            "switch2Id": 1,
+            "switch2Valid": false,
+            "variableId": 1,
+            "variableValid": false,
+            "variableValue": 0
+          },
+          "directionFix": false,
+          "image": {
+            "tileId": 0,
+            "characterName": "Monster",
+            "direction": 2,
+            "pattern": 1,
+            "characterIndex": 2
+          },
+          "list": [
+            {
+              "code": 205,
+              "indent": 0,
+              "parameters": [
+                0,
+                {
+                  "list": [
+                    {
+                      "code": 9,
+                      "indent": null
+                    },
+                    {
+                      "code": 10,
+                      "indent": null
+                    },
+                    {
+                      "code": 10,
+                      "indent": null
+                    },
+                    {
+                      "code": 0
+                    }
+                  ],
+                  "repeat": false,
+                  "skippable": false,
+                  "wait": true
+                }
+              ]
+            },
+            {
+              "code": 505,
+              "indent": 0,
+              "parameters": [
+                {
+                  "code": 9,
+                  "indent": null
+                }
+              ]
+            },
+            {
+              "code": 505,
+              "indent": 0,
+              "parameters": [
+                {
+                  "code": 10,
+                  "indent": null
+                }
+              ]
+            },
+            {
+              "code": 505,
+              "indent": 0,
+              "parameters": [
+                {
+                  "code": 10,
+                  "indent": null
+                }
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 0,
+              "parameters": []
+            }
+          ],
+          "moveFrequency": 5,
+          "moveRoute": {
+            "list": [
+              {
+                "code": 0,
+                "parameters": []
+              }
+            ],
+            "repeat": true,
+            "skippable": false,
+            "wait": false
+          },
+          "moveSpeed": 3,
+          "moveType": 0,
+          "priorityType": 1,
+          "stepAnime": true,
+          "through": false,
+          "trigger": 4,
+          "walkAnime": true
+        },
+        {
+          "conditions": {
+            "actorId": 1,
+            "actorValid": false,
+            "itemId": 1,
+            "itemValid": false,
+            "selfSwitchCh": "A",
+            "selfSwitchValid": false,
+            "switch1Id": 24,
+            "switch1Valid": true,
+            "switch2Id": 1,
+            "switch2Valid": false,
+            "variableId": 1,
+            "variableValid": false,
+            "variableValue": 0
+          },
+          "directionFix": false,
+          "image": {
+            "tileId": 0,
+            "characterName": "Monster",
+            "direction": 2,
+            "pattern": 1,
+            "characterIndex": 2
+          },
+          "list": [
+            {
+              "code": 0,
+              "indent": 0,
+              "parameters": []
+            }
+          ],
+          "moveFrequency": 5,
+          "moveRoute": {
+            "list": [
+              {
+                "code": 0,
+                "parameters": []
+              }
+            ],
+            "repeat": true,
+            "skippable": false,
+            "wait": false
+          },
+          "moveSpeed": 3,
+          "moveType": 0,
+          "priorityType": 1,
+          "stepAnime": true,
+          "through": false,
+          "trigger": 4,
+          "walkAnime": true
+        },
+        {
+          "conditions": {
+            "actorId": 1,
+            "actorValid": false,
+            "itemId": 1,
+            "itemValid": false,
+            "selfSwitchCh": "D",
+            "selfSwitchValid": false,
+            "switch1Id": 23,
+            "switch1Valid": true,
+            "switch2Id": 1,
+            "switch2Valid": false,
+            "variableId": 12,
+            "variableValid": false,
+            "variableValue": 1
+          },
+          "directionFix": false,
+          "image": {
+            "characterIndex": 0,
+            "characterName": "",
+            "direction": 2,
+            "pattern": 0,
+            "tileId": 0
+          },
+          "list": [
+            {
+              "code": 214,
+              "indent": 0,
+              "parameters": []
+            },
+            {
+              "code": 0,
+              "indent": 0,
+              "parameters": []
+            }
+          ],
+          "moveFrequency": 3,
+          "moveRoute": {
+            "list": [
+              {
+                "code": 0,
+                "parameters": []
+              }
+            ],
+            "repeat": true,
+            "skippable": false,
+            "wait": false
+          },
+          "moveSpeed": 3,
+          "moveType": 0,
+          "priorityType": 0,
+          "stepAnime": false,
+          "through": false,
+          "trigger": 4,
+          "walkAnime": true
+        },
+        {
+          "conditions": {
+            "actorId": 1,
+            "actorValid": false,
+            "itemId": 1,
+            "itemValid": false,
+            "selfSwitchCh": "D",
+            "selfSwitchValid": false,
+            "switch1Id": 22,
+            "switch1Valid": true,
+            "switch2Id": 1,
+            "switch2Valid": false,
+            "variableId": 12,
+            "variableValid": false,
+            "variableValue": 1
+          },
+          "directionFix": false,
+          "image": {
+            "characterIndex": 0,
+            "characterName": "",
+            "direction": 2,
+            "pattern": 0,
+            "tileId": 0
+          },
+          "list": [
+            {
+              "code": 121,
+              "indent": 0,
+              "parameters": [
+                24,
+                24,
+                1
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 0,
+              "parameters": [
+                21,
+                21,
+                1
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 0,
+              "parameters": [
+                22,
+                22,
+                1
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 0,
+              "parameters": []
+            }
+          ],
+          "moveFrequency": 3,
+          "moveRoute": {
+            "list": [
+              {
+                "code": 0,
+                "parameters": []
+              }
+            ],
+            "repeat": true,
+            "skippable": false,
+            "wait": false
+          },
+          "moveSpeed": 3,
+          "moveType": 0,
+          "priorityType": 0,
+          "stepAnime": false,
+          "through": false,
+          "trigger": 3,
+          "walkAnime": true
+        }
+      ],
+      "x": 1,
+      "y": 3
+    },
+    {
+      "id": 7,
+      "name": "enemy_TR4",
+      "note": "",
+      "pages": [
+        {
+          "conditions": {
+            "actorId": 1,
+            "actorValid": false,
+            "itemId": 1,
+            "itemValid": false,
+            "selfSwitchCh": "A",
+            "selfSwitchValid": false,
+            "switch1Id": 1,
+            "switch1Valid": false,
+            "switch2Id": 1,
+            "switch2Valid": false,
+            "variableId": 1,
+            "variableValid": false,
+            "variableValue": 0
+          },
+          "directionFix": false,
+          "image": {
+            "tileId": 0,
+            "characterName": "Monster",
+            "direction": 2,
+            "pattern": 1,
+            "characterIndex": 2
+          },
+          "list": [
+            {
+              "code": 108,
+              "indent": 0,
+              "parameters": [
+                "<imageExAllPagesApply>"
+              ]
+            },
+            {
+              "code": 408,
+              "indent": 0,
+              "parameters": [
+                "<subpri: 110>"
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 0,
+              "parameters": [
+                "<et: enemy>"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 0,
+              "parameters": []
+            }
+          ],
+          "moveFrequency": 3,
+          "moveRoute": {
+            "list": [
+              {
+                "code": 0,
+                "parameters": []
+              }
+            ],
+            "repeat": true,
+            "skippable": false,
+            "wait": false
+          },
+          "moveSpeed": 3,
+          "moveType": 0,
+          "priorityType": 1,
+          "stepAnime": true,
+          "through": false,
+          "trigger": 0,
+          "walkAnime": true
+        },
+        {
+          "conditions": {
+            "actorId": 1,
+            "actorValid": false,
+            "itemId": 1,
+            "itemValid": false,
+            "selfSwitchCh": "A",
+            "selfSwitchValid": false,
+            "switch1Id": 52,
+            "switch1Valid": true,
+            "switch2Id": 1,
+            "switch2Valid": false,
+            "variableId": 1,
+            "variableValid": false,
+            "variableValue": 0
+          },
+          "directionFix": false,
+          "image": {
+            "tileId": 0,
+            "characterName": "Monster",
+            "direction": 2,
+            "pattern": 1,
+            "characterIndex": 2
+          },
+          "list": [
+            {
+              "code": 357,
+              "indent": 0,
+              "parameters": [
+                "build/ARPG_Core",
+                "SetupEnemy",
+                "Setup Enemy",
+                {
+                  "CharacterSpecification": "{\"CharacterKind\":\"thisEvent\",\"EventIdOrName\":\"1\",\"EventIdByVariable\":\"0\",\"FollowerIndex\":\"1\",\"VehicleKind\":\"boat\"}",
+                  "EnemyId": "1",
+                  "CollideAttackSkillId": "0",
+                  "DamageCommonEventId": "0",
+                  "DefeatEnemyCommonEventId": "0",
+                  "HpGauge": "normal"
+                }
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Character specification = {\"CharacterKind\":\"thisEvent\",\"Eve…"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Enemy ID = 1"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Collision Attack Skill ID = 0"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Enemy damage common event ID = 0"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Defeat Enemy Common Event ID = 0"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "HP gauge = normal"
+              ]
+            },
+            {
+              "code": 357,
+              "indent": 0,
+              "parameters": [
+                "build/ARPG_Core",
+                "SetHitBox",
+                "SetHitBox",
+                {
+                  "CharacterSpecification": "{\"CharacterKind\":\"thisEvent\",\"EventIdOrName\":\"1\",\"EventIdByVariable\":\"0\",\"FollowerIndex\":\"1\",\"VehicleKind\":\"boat\"}",
+                  "HitBoxType": "attack",
+                  "CustomHitBoxTag": "",
+                  "HitBoxList": "[\"{\\\"X\\\":\\\"0\\\",\\\"Y\\\":\\\"0\\\",\\\"Width\\\":\\\"1\\\",\\\"Height\\\":\\\"1\\\"}\"]"
+                }
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Character specification = {\"CharacterKind\":\"thisEvent\",\"Eve…"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "HitBoxType = attack"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "custom hit box tag = "
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "HitBoxList = [\"{\\\"X\\\":\\\"0\\\",\\\"Y\\\":\\\"0\\\",\\\"Width\\\":\\\"1\\\",\\\"H…"
+              ]
+            },
+            {
+              "code": 357,
+              "indent": 0,
+              "parameters": [
+                "build/ARPG_Core",
+                "SetHitBox",
+                "SetHitBox",
+                {
+                  "CharacterSpecification": "{\"CharacterKind\":\"thisEvent\",\"EventIdOrName\":\"1\",\"EventIdByVariable\":\"0\",\"FollowerIndex\":\"1\",\"VehicleKind\":\"boat\"}",
+                  "HitBoxType": "damage",
+                  "CustomHitBoxTag": "",
+                  "HitBoxList": "[\"{\\\"X\\\":\\\"0.25\\\",\\\"Y\\\":\\\"0.25\\\",\\\"Width\\\":\\\"0.50\\\",\\\"Height\\\":\\\"0.50\\\"}\"]"
+                }
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Character specification = {\"CharacterKind\":\"thisEvent\",\"Eve…"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "HitBoxType = damage"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "custom hit box tag = "
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "HitBoxList = [\"{\\\"X\\\":\\\"0.25\\\",\\\"Y\\\":\\\"0.25\\\",\\\"Width\\\":\\\"0…"
+              ]
+            },
+            {
+              "code": 357,
+              "indent": 0,
+              "parameters": [
+                "build/CharacterCollisionEx",
+                "SetThroughPlayer",
+                "SetThroughPlayer",
+                {
+                  "CharacterSpecification": "{\"CharacterKind\":\"thisEvent\",\"EventIdOrName\":\"1\",\"EventIdByVariable\":\"0\",\"FollowerIndex\":\"1\",\"VehicleKind\":\"boat\"}",
+                  "EnableOrDisable": "true"
+                }
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Character specification = {\"CharacterKind\":\"thisEvent\",\"Eve…"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "enable/disable = true"
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 0,
+              "parameters": [
+                21,
+                21,
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 0,
+              "parameters": []
+            }
+          ],
+          "moveFrequency": 3,
+          "moveRoute": {
+            "list": [
+              {
+                "code": 0,
+                "parameters": []
+              }
+            ],
+            "repeat": true,
+            "skippable": false,
+            "wait": false
+          },
+          "moveSpeed": 3,
+          "moveType": 0,
+          "priorityType": 1,
+          "stepAnime": false,
+          "through": false,
+          "trigger": 3,
+          "walkAnime": true
+        },
+        {
+          "conditions": {
+            "actorId": 1,
+            "actorValid": false,
+            "itemId": 1,
+            "itemValid": false,
+            "selfSwitchCh": "A",
+            "selfSwitchValid": false,
+            "switch1Id": 21,
+            "switch1Valid": true,
+            "switch2Id": 1,
+            "switch2Valid": false,
+            "variableId": 1,
+            "variableValid": false,
+            "variableValue": 0
+          },
+          "directionFix": false,
+          "image": {
+            "tileId": 0,
+            "characterName": "Monster",
+            "direction": 2,
+            "pattern": 1,
+            "characterIndex": 2
+          },
+          "list": [
+            {
+              "code": 205,
+              "indent": 0,
+              "parameters": [
+                0,
+                {
+                  "list": [
+                    {
+                      "code": 9,
+                      "indent": null
+                    },
+                    {
+                      "code": 0
+                    }
+                  ],
+                  "repeat": false,
+                  "skippable": false,
+                  "wait": true
+                }
+              ]
+            },
+            {
+              "code": 505,
+              "indent": 0,
+              "parameters": [
+                {
+                  "code": 9,
+                  "indent": null
+                }
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 0,
+              "parameters": []
+            }
+          ],
+          "moveFrequency": 5,
+          "moveRoute": {
+            "list": [
+              {
+                "code": 0,
+                "parameters": []
+              }
+            ],
+            "repeat": true,
+            "skippable": false,
+            "wait": false
+          },
+          "moveSpeed": 3,
+          "moveType": 0,
+          "priorityType": 1,
+          "stepAnime": true,
+          "through": false,
+          "trigger": 4,
+          "walkAnime": true
+        },
+        {
+          "conditions": {
+            "actorId": 1,
+            "actorValid": false,
+            "itemId": 1,
+            "itemValid": false,
+            "selfSwitchCh": "A",
+            "selfSwitchValid": false,
+            "switch1Id": 24,
+            "switch1Valid": true,
+            "switch2Id": 1,
+            "switch2Valid": false,
+            "variableId": 1,
+            "variableValid": false,
+            "variableValue": 0
+          },
+          "directionFix": false,
+          "image": {
+            "tileId": 0,
+            "characterName": "Monster",
+            "direction": 2,
+            "pattern": 1,
+            "characterIndex": 2
+          },
+          "list": [
+            {
+              "code": 0,
+              "indent": 0,
+              "parameters": []
+            }
+          ],
+          "moveFrequency": 5,
+          "moveRoute": {
+            "list": [
+              {
+                "code": 0,
+                "parameters": []
+              }
+            ],
+            "repeat": true,
+            "skippable": false,
+            "wait": false
+          },
+          "moveSpeed": 3,
+          "moveType": 0,
+          "priorityType": 1,
+          "stepAnime": true,
+          "through": false,
+          "trigger": 4,
+          "walkAnime": true
+        },
+        {
+          "conditions": {
+            "actorId": 1,
+            "actorValid": false,
+            "itemId": 1,
+            "itemValid": false,
+            "selfSwitchCh": "D",
+            "selfSwitchValid": false,
+            "switch1Id": 23,
+            "switch1Valid": true,
+            "switch2Id": 1,
+            "switch2Valid": false,
+            "variableId": 12,
+            "variableValid": false,
+            "variableValue": 1
+          },
+          "directionFix": false,
+          "image": {
+            "characterIndex": 0,
+            "characterName": "",
+            "direction": 2,
+            "pattern": 0,
+            "tileId": 0
+          },
+          "list": [
+            {
+              "code": 122,
+              "indent": 0,
+              "parameters": [
+                42,
+                42,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 0,
+              "parameters": [
+                1,
+                42,
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 1,
+              "parameters": [
+                53,
+                53,
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": []
+            },
+            {
+              "code": 412,
+              "indent": 0,
+              "parameters": []
+            },
+            {
+              "code": 214,
+              "indent": 0,
+              "parameters": []
+            },
+            {
+              "code": 0,
+              "indent": 0,
+              "parameters": []
+            }
+          ],
+          "moveFrequency": 3,
+          "moveRoute": {
+            "list": [
+              {
+                "code": 0,
+                "parameters": []
+              }
+            ],
+            "repeat": true,
+            "skippable": false,
+            "wait": false
+          },
+          "moveSpeed": 3,
+          "moveType": 0,
+          "priorityType": 0,
+          "stepAnime": false,
+          "through": false,
+          "trigger": 4,
+          "walkAnime": true
+        }
+      ],
+      "x": 7,
+      "y": 1
+    },
+    {
+      "id": 8,
+      "name": "boss",
+      "note": "",
+      "pages": [
+        {
+          "conditions": {
+            "actorId": 1,
+            "actorValid": false,
+            "itemId": 1,
+            "itemValid": false,
+            "selfSwitchCh": "A",
+            "selfSwitchValid": false,
+            "switch1Id": 26,
+            "switch1Valid": false,
+            "switch2Id": 1,
+            "switch2Valid": false,
+            "variableId": 1,
+            "variableValid": false,
+            "variableValue": 0
+          },
+          "directionFix": true,
+          "image": {
+            "tileId": 0,
+            "characterName": "$BigMonster1",
+            "direction": 8,
+            "pattern": 1,
+            "characterIndex": 0
+          },
+          "list": [
+            {
+              "code": 108,
+              "indent": 0,
+              "parameters": [
+                "<imageExAllPagesApply>"
+              ]
+            },
+            {
+              "code": 408,
+              "indent": 0,
+              "parameters": [
+                "<subpri: 110>"
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 0,
+              "parameters": [
+                "<et: enemy>"
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 0,
+              "parameters": [
+                "<offsetX: 1.5>"
+              ]
+            },
+            {
+              "code": 408,
+              "indent": 0,
+              "parameters": [
+                "<offsetY: 3>"
+              ]
+            },
+            {
+              "code": 408,
+              "indent": 0,
+              "parameters": [
+                "<width: 4>"
+              ]
+            },
+            {
+              "code": 408,
+              "indent": 0,
+              "parameters": [
+                "<height: 4>"
+              ]
+            },
+            {
+              "code": 408,
+              "indent": 0,
+              "parameters": [
+                "<scaleX: 2>"
+              ]
+            },
+            {
+              "code": 408,
+              "indent": 0,
+              "parameters": [
+                "<scaleY: 2>"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 0,
+              "parameters": []
+            }
+          ],
+          "moveFrequency": 3,
+          "moveRoute": {
+            "list": [
+              {
+                "code": 0,
+                "parameters": []
+              }
+            ],
+            "repeat": true,
+            "skippable": false,
+            "wait": false
+          },
+          "moveSpeed": 4,
+          "moveType": 0,
+          "priorityType": 1,
+          "stepAnime": true,
+          "through": false,
+          "trigger": 3,
+          "walkAnime": true
+        },
+        {
+          "conditions": {
+            "actorId": 1,
+            "actorValid": false,
+            "itemId": 1,
+            "itemValid": false,
+            "selfSwitchCh": "A",
+            "selfSwitchValid": false,
+            "switch1Id": 63,
+            "switch1Valid": true,
+            "switch2Id": 1,
+            "switch2Valid": false,
+            "variableId": 1,
+            "variableValid": false,
+            "variableValue": 0
+          },
+          "directionFix": true,
+          "image": {
+            "tileId": 0,
+            "characterName": "$BigMonster1",
+            "direction": 8,
+            "pattern": 1,
+            "characterIndex": 0
+          },
+          "list": [
+            {
+              "code": 357,
+              "indent": 0,
+              "parameters": [
+                "build/ARPG_Core",
+                "SetupEnemy",
+                "Setup Enemy",
+                {
+                  "CharacterSpecification": "{\"CharacterKind\":\"thisEvent\",\"EventIdOrName\":\"1\",\"EventIdByVariable\":\"0\",\"FollowerIndex\":\"1\",\"VehicleKind\":\"boat\"}",
+                  "EnemyId": "5",
+                  "CollideAttackSkillId": "0",
+                  "DamageCommonEventId": "0",
+                  "DefeatEnemyCommonEventId": "42",
+                  "HpGauge": "boss"
+                }
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Character specification = {\"CharacterKind\":\"thisEvent\",\"Eve…"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Enemy ID = 5"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Collision Attack Skill ID = 0"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Enemy damage common event ID = 0"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Defeat Enemy Common Event ID = 42"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "HP gauge = boss"
+              ]
+            },
+            {
+              "code": 357,
+              "indent": 0,
+              "parameters": [
+                "build/CharacterCollisionEx",
+                "SetThroughPlayer",
+                "SetThroughPlayer",
+                {
+                  "CharacterSpecification": "{\"CharacterKind\":\"thisEvent\",\"CharacterKindByVariable\":\"0\",\"EventIdOrName\":\"1\",\"EventIdByVariable\":\"0\",\"FollowerIndex\":\"1\",\"FollowerIndexByVariable\":\"0\",\"VehicleKind\":\"boat\",\"VehicleKindByVariable\":\"0\"}",
+                  "EnableOrDisable": "true"
+                }
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Character specification = {\"CharacterKind\":\"thisEvent\",\"Cha…"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "enable/disable = true"
+              ]
+            },
+            {
+              "code": 357,
+              "indent": 0,
+              "parameters": [
+                "build/CharacterCollisionEx",
+                "SetThroughTerrain",
+                "Set the terrain through terrain",
+                {
+                  "CharacterSpecification": "{\"CharacterKind\":\"thisEvent\",\"CharacterKindByVariable\":\"0\",\"EventIdOrName\":\"1\",\"EventIdByVariable\":\"0\",\"FollowerIndex\":\"1\",\"FollowerIndexByVariable\":\"0\",\"VehicleKind\":\"boat\",\"VehicleKindByVariable\":\"0\"}",
+                  "EnableOrDisable": "true"
+                }
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Character specification = {\"CharacterKind\":\"thisEvent\",\"Cha…"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "enable/disable = true"
+              ]
+            },
+            {
+              "code": 357,
+              "indent": 0,
+              "parameters": [
+                "build/CharacterCollisionEx",
+                "SetThroughEventTags",
+                "SetThroughEventTags",
+                {
+                  "CharacterSpecification": "{\"CharacterKind\":\"thisEvent\",\"EventIdOrName\":\"1\",\"EventIdByVariable\":\"0\",\"FollowerIndex\":\"1\",\"VehicleKind\":\"boat\"}",
+                  "EventTags": "[\"noThroughSkillObject\"]"
+                }
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Character specification = {\"CharacterKind\":\"thisEvent\",\"Eve…"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Event Tags = [\"noThroughSkillObject\"]"
+              ]
+            },
+            {
+              "code": 357,
+              "indent": 0,
+              "parameters": [
+                "build/ARPG_Core",
+                "SetHitBox",
+                "SetHitBox",
+                {
+                  "CharacterSpecification": "{\"CharacterKind\":\"thisEvent\",\"CharacterKindByVariable\":\"0\",\"EventIdOrName\":\"1\",\"EventIdByVariable\":\"0\",\"FollowerIndex\":\"1\",\"FollowerIndexByVariable\":\"0\",\"VehicleKind\":\"boat\",\"VehicleKindByVariable\":\"0\"}",
+                  "HitBoxType": "attack",
+                  "CustomHitBoxTag": "",
+                  "HitBoxList": "[\"{\\\"X\\\":\\\"0\\\",\\\"Y\\\":\\\"0\\\",\\\"Width\\\":\\\"4.00\\\",\\\"Height\\\":\\\"4.00\\\"}\"]"
+                }
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Character specification = {\"CharacterKind\":\"thisEvent\",\"Cha…"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "HitBoxType = attack"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "custom hit box tag = "
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "HitBoxList = [\"{\\\"X\\\":\\\"0\\\",\\\"Y\\\":\\\"0\\\",\\\"Width\\\":\\\"4.00\\\",…"
+              ]
+            },
+            {
+              "code": 357,
+              "indent": 0,
+              "parameters": [
+                "build/ARPG_Core",
+                "SetHitBox",
+                "SetHitBox",
+                {
+                  "CharacterSpecification": "{\"CharacterKind\":\"thisEvent\",\"CharacterKindByVariable\":\"0\",\"EventIdOrName\":\"1\",\"EventIdByVariable\":\"0\",\"FollowerIndex\":\"1\",\"FollowerIndexByVariable\":\"0\",\"VehicleKind\":\"boat\",\"VehicleKindByVariable\":\"0\"}",
+                  "HitBoxType": "damage",
+                  "CustomHitBoxTag": "",
+                  "HitBoxList": "[\"{\\\"X\\\":\\\"0.25\\\",\\\"Y\\\":\\\"0.25\\\",\\\"Width\\\":\\\"3.50\\\",\\\"Height\\\":\\\"3.50\\\"}\"]"
+                }
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Character specification = {\"CharacterKind\":\"thisEvent\",\"Cha…"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "HitBoxType = damage"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "custom hit box tag = "
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "HitBoxList = [\"{\\\"X\\\":\\\"0.25\\\",\\\"Y\\\":\\\"0.25\\\",\\\"Width\\\":\\\"3…"
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 0,
+              "parameters": [
+                43,
+                43,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 0,
+              "parameters": [
+                25,
+                25,
+                0
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 0,
+              "parameters": [
+                21,
+                21,
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 0,
+              "parameters": []
+            }
+          ],
+          "moveFrequency": 3,
+          "moveRoute": {
+            "list": [
+              {
+                "code": 0,
+                "parameters": []
+              }
+            ],
+            "repeat": true,
+            "skippable": false,
+            "wait": false
+          },
+          "moveSpeed": 4,
+          "moveType": 0,
+          "priorityType": 1,
+          "stepAnime": true,
+          "through": false,
+          "trigger": 3,
+          "walkAnime": true
+        },
+        {
+          "conditions": {
+            "actorId": 1,
+            "actorValid": false,
+            "itemId": 1,
+            "itemValid": false,
+            "selfSwitchCh": "A",
+            "selfSwitchValid": false,
+            "switch1Id": 21,
+            "switch1Valid": true,
+            "switch2Id": 1,
+            "switch2Valid": false,
+            "variableId": 43,
+            "variableValid": true,
+            "variableValue": 0
+          },
+          "directionFix": true,
+          "image": {
+            "tileId": 0,
+            "characterName": "$BigMonster1",
+            "direction": 8,
+            "pattern": 1,
+            "characterIndex": 0
+          },
+          "list": [
+            {
+              "code": 205,
+              "indent": 0,
+              "parameters": [
+                0,
+                {
+                  "list": [
+                    {
+                      "code": 45,
+                      "parameters": [
+                        "this.moveToTarget(this._realX - 3, this._realY + 1);"
+                      ],
+                      "indent": null
+                    },
+                    {
+                      "code": 0
+                    }
+                  ],
+                  "repeat": false,
+                  "skippable": false,
+                  "wait": true
+                }
+              ]
+            },
+            {
+              "code": 505,
+              "indent": 0,
+              "parameters": [
+                {
+                  "code": 45,
+                  "parameters": [
+                    "this.moveToTarget(this._realX - 3, this._realY + 1);"
+                  ],
+                  "indent": null
+                }
+              ]
+            },
+            {
+              "code": 357,
+              "indent": 0,
+              "parameters": [
+                "build/ARPG_Core",
+                "UseSkill",
+                "Use Skill",
+                {
+                  "SkillId": "6",
+                  "SkillByName": "",
+                  "SkillIdByVariable": "0"
+                }
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Skill ID = 6"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Skill (specify name) = "
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Skill ID (variable specification) = 0"
+              ]
+            },
+            {
+              "code": 230,
+              "indent": 0,
+              "parameters": [
+                10
+              ]
+            },
+            {
+              "code": 205,
+              "indent": 0,
+              "parameters": [
+                0,
+                {
+                  "list": [
+                    {
+                      "code": 45,
+                      "parameters": [
+                        "this.moveToTarget(this._realX + 3, this._realY + 1);"
+                      ],
+                      "indent": null
+                    },
+                    {
+                      "code": 0
+                    }
+                  ],
+                  "repeat": false,
+                  "skippable": false,
+                  "wait": true
+                }
+              ]
+            },
+            {
+              "code": 505,
+              "indent": 0,
+              "parameters": [
+                {
+                  "code": 45,
+                  "parameters": [
+                    "this.moveToTarget(this._realX + 3, this._realY + 1);"
+                  ],
+                  "indent": null
+                }
+              ]
+            },
+            {
+              "code": 357,
+              "indent": 0,
+              "parameters": [
+                "build/ARPG_Core",
+                "UseSkill",
+                "Use Skill",
+                {
+                  "SkillId": "6",
+                  "SkillByName": "",
+                  "SkillIdByVariable": "0"
+                }
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Skill ID = 6"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Skill (specify name) = "
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Skill ID (variable specification) = 0"
+              ]
+            },
+            {
+              "code": 230,
+              "indent": 0,
+              "parameters": [
+                60
+              ]
+            },
+            {
+              "code": 205,
+              "indent": 0,
+              "parameters": [
+                0,
+                {
+                  "list": [
+                    {
+                      "code": 45,
+                      "parameters": [
+                        "this.moveToTarget(this._realX + 3, this._realY - 1);"
+                      ],
+                      "indent": null
+                    },
+                    {
+                      "code": 0
+                    }
+                  ],
+                  "repeat": false,
+                  "skippable": false,
+                  "wait": true
+                }
+              ]
+            },
+            {
+              "code": 505,
+              "indent": 0,
+              "parameters": [
+                {
+                  "code": 45,
+                  "parameters": [
+                    "this.moveToTarget(this._realX + 3, this._realY - 1);"
+                  ],
+                  "indent": null
+                }
+              ]
+            },
+            {
+              "code": 357,
+              "indent": 0,
+              "parameters": [
+                "build/ARPG_Core",
+                "UseSkill",
+                "Use Skill",
+                {
+                  "SkillId": "6",
+                  "SkillByName": "",
+                  "SkillIdByVariable": "0"
+                }
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Skill ID = 6"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Skill (specify name) = "
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Skill ID (variable specification) = 0"
+              ]
+            },
+            {
+              "code": 230,
+              "indent": 0,
+              "parameters": [
+                10
+              ]
+            },
+            {
+              "code": 205,
+              "indent": 0,
+              "parameters": [
+                0,
+                {
+                  "list": [
+                    {
+                      "code": 45,
+                      "parameters": [
+                        "this.moveToTarget(this._realX - 3, this._realY - 1);"
+                      ],
+                      "indent": null
+                    },
+                    {
+                      "code": 0
+                    }
+                  ],
+                  "repeat": false,
+                  "skippable": false,
+                  "wait": true
+                }
+              ]
+            },
+            {
+              "code": 505,
+              "indent": 0,
+              "parameters": [
+                {
+                  "code": 45,
+                  "parameters": [
+                    "this.moveToTarget(this._realX - 3, this._realY - 1);"
+                  ],
+                  "indent": null
+                }
+              ]
+            },
+            {
+              "code": 357,
+              "indent": 0,
+              "parameters": [
+                "build/ARPG_Core",
+                "UseSkill",
+                "Use Skill",
+                {
+                  "SkillId": "7",
+                  "SkillByName": "",
+                  "SkillIdByVariable": "0"
+                }
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Skill ID = 7"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Skill (specify name) = "
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Skill ID (variable specification) = 0"
+              ]
+            },
+            {
+              "code": 230,
+              "indent": 0,
+              "parameters": [
+                120
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 0,
+              "parameters": [
+                43,
+                43,
+                0,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 0,
+              "parameters": []
+            }
+          ],
+          "moveFrequency": 5,
+          "moveRoute": {
+            "list": [
+              {
+                "code": 0,
+                "parameters": []
+              }
+            ],
+            "repeat": true,
+            "skippable": false,
+            "wait": false
+          },
+          "moveSpeed": 3,
+          "moveType": 0,
+          "priorityType": 1,
+          "stepAnime": true,
+          "through": false,
+          "trigger": 4,
+          "walkAnime": true
+        },
+        {
+          "conditions": {
+            "actorId": 1,
+            "actorValid": false,
+            "itemId": 1,
+            "itemValid": false,
+            "selfSwitchCh": "A",
+            "selfSwitchValid": false,
+            "switch1Id": 21,
+            "switch1Valid": true,
+            "switch2Id": 1,
+            "switch2Valid": false,
+            "variableId": 43,
+            "variableValid": true,
+            "variableValue": 1
+          },
+          "directionFix": true,
+          "image": {
+            "tileId": 0,
+            "characterName": "$BigMonster1",
+            "direction": 8,
+            "pattern": 1,
+            "characterIndex": 0
+          },
+          "list": [
+            {
+              "code": 205,
+              "indent": 0,
+              "parameters": [
+                0,
+                {
+                  "list": [
+                    {
+                      "code": 45,
+                      "parameters": [
+                        "this.moveToTarget(this._realX + 3, this._realY + 1);"
+                      ],
+                      "indent": null
+                    },
+                    {
+                      "code": 0
+                    }
+                  ],
+                  "repeat": false,
+                  "skippable": false,
+                  "wait": true
+                }
+              ]
+            },
+            {
+              "code": 505,
+              "indent": 0,
+              "parameters": [
+                {
+                  "code": 45,
+                  "parameters": [
+                    "this.moveToTarget(this._realX + 3, this._realY + 1);"
+                  ],
+                  "indent": null
+                }
+              ]
+            },
+            {
+              "code": 357,
+              "indent": 0,
+              "parameters": [
+                "build/ARPG_Core",
+                "UseSkill",
+                "Use Skill",
+                {
+                  "SkillId": "6",
+                  "SkillByName": "",
+                  "SkillIdByVariable": "0"
+                }
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Skill ID = 6"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Skill (specify name) = "
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Skill ID (variable specification) = 0"
+              ]
+            },
+            {
+              "code": 230,
+              "indent": 0,
+              "parameters": [
+                10
+              ]
+            },
+            {
+              "code": 205,
+              "indent": 0,
+              "parameters": [
+                0,
+                {
+                  "list": [
+                    {
+                      "code": 45,
+                      "parameters": [
+                        "this.moveToTarget(this._realX - 3, this._realY + 1);"
+                      ],
+                      "indent": null
+                    },
+                    {
+                      "code": 0
+                    }
+                  ],
+                  "repeat": false,
+                  "skippable": false,
+                  "wait": true
+                }
+              ]
+            },
+            {
+              "code": 505,
+              "indent": 0,
+              "parameters": [
+                {
+                  "code": 45,
+                  "parameters": [
+                    "this.moveToTarget(this._realX - 3, this._realY + 1);"
+                  ],
+                  "indent": null
+                }
+              ]
+            },
+            {
+              "code": 357,
+              "indent": 0,
+              "parameters": [
+                "build/ARPG_Core",
+                "UseSkill",
+                "Use Skill",
+                {
+                  "SkillId": "6",
+                  "SkillByName": "",
+                  "SkillIdByVariable": "0"
+                }
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Skill ID = 6"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Skill (specify name) = "
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Skill ID (variable specification) = 0"
+              ]
+            },
+            {
+              "code": 230,
+              "indent": 0,
+              "parameters": [
+                60
+              ]
+            },
+            {
+              "code": 205,
+              "indent": 0,
+              "parameters": [
+                0,
+                {
+                  "list": [
+                    {
+                      "code": 45,
+                      "parameters": [
+                        "this.moveToTarget(this._realX - 3, this._realY - 1);"
+                      ],
+                      "indent": null
+                    },
+                    {
+                      "code": 0
+                    }
+                  ],
+                  "repeat": false,
+                  "skippable": false,
+                  "wait": true
+                }
+              ]
+            },
+            {
+              "code": 505,
+              "indent": 0,
+              "parameters": [
+                {
+                  "code": 45,
+                  "parameters": [
+                    "this.moveToTarget(this._realX - 3, this._realY - 1);"
+                  ],
+                  "indent": null
+                }
+              ]
+            },
+            {
+              "code": 357,
+              "indent": 0,
+              "parameters": [
+                "build/ARPG_Core",
+                "UseSkill",
+                "Use Skill",
+                {
+                  "SkillId": "6",
+                  "SkillByName": "",
+                  "SkillIdByVariable": "0"
+                }
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Skill ID = 6"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Skill (specify name) = "
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Skill ID (variable specification) = 0"
+              ]
+            },
+            {
+              "code": 230,
+              "indent": 0,
+              "parameters": [
+                10
+              ]
+            },
+            {
+              "code": 205,
+              "indent": 0,
+              "parameters": [
+                0,
+                {
+                  "list": [
+                    {
+                      "code": 45,
+                      "parameters": [
+                        "this.moveToTarget(this._realX + 3, this._realY - 1);"
+                      ],
+                      "indent": null
+                    },
+                    {
+                      "code": 0
+                    }
+                  ],
+                  "repeat": false,
+                  "skippable": false,
+                  "wait": true
+                }
+              ]
+            },
+            {
+              "code": 505,
+              "indent": 0,
+              "parameters": [
+                {
+                  "code": 45,
+                  "parameters": [
+                    "this.moveToTarget(this._realX + 3, this._realY - 1);"
+                  ],
+                  "indent": null
+                }
+              ]
+            },
+            {
+              "code": 357,
+              "indent": 0,
+              "parameters": [
+                "build/ARPG_Core",
+                "UseSkill",
+                "Use Skill",
+                {
+                  "SkillId": "7",
+                  "SkillByName": "",
+                  "SkillIdByVariable": "0"
+                }
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Skill ID = 7"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Skill (specify name) = "
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Skill ID (variable specification) = 0"
+              ]
+            },
+            {
+              "code": 230,
+              "indent": 0,
+              "parameters": [
+                120
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 0,
+              "parameters": [
+                43,
+                43,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 0,
+              "parameters": []
+            }
+          ],
+          "moveFrequency": 5,
+          "moveRoute": {
+            "list": [
+              {
+                "code": 0,
+                "parameters": []
+              }
+            ],
+            "repeat": true,
+            "skippable": false,
+            "wait": false
+          },
+          "moveSpeed": 3,
+          "moveType": 0,
+          "priorityType": 1,
+          "stepAnime": true,
+          "through": false,
+          "trigger": 4,
+          "walkAnime": true
+        },
+        {
+          "conditions": {
+            "actorId": 1,
+            "actorValid": false,
+            "itemId": 1,
+            "itemValid": false,
+            "selfSwitchCh": "C",
+            "selfSwitchValid": false,
+            "switch1Id": 23,
+            "switch1Valid": true,
+            "switch2Id": 1,
+            "switch2Valid": false,
+            "variableId": 1,
+            "variableValid": false,
+            "variableValue": 0
+          },
+          "directionFix": false,
+          "image": {
+            "characterIndex": 0,
+            "characterName": "",
+            "direction": 2,
+            "pattern": 0,
+            "tileId": 0
+          },
+          "list": [
+            {
+              "code": 214,
+              "indent": 0,
+              "parameters": []
+            },
+            {
+              "code": 0,
+              "indent": 0,
+              "parameters": []
+            }
+          ],
+          "moveFrequency": 3,
+          "moveRoute": {
+            "list": [
+              {
+                "code": 0,
+                "parameters": []
+              }
+            ],
+            "repeat": true,
+            "skippable": false,
+            "wait": false
+          },
+          "moveSpeed": 3,
+          "moveType": 0,
+          "priorityType": 0,
+          "stepAnime": false,
+          "through": false,
+          "trigger": 3,
+          "walkAnime": true
+        }
+      ],
+      "x": 1,
+      "y": 5
+    },
+    null,
+    {
+      "id": 10,
+      "name": "enemy2",
+      "note": "",
+      "pages": [
+        {
+          "conditions": {
+            "actorId": 1,
+            "actorValid": false,
+            "itemId": 1,
+            "itemValid": false,
+            "selfSwitchCh": "A",
+            "selfSwitchValid": false,
+            "switch1Id": 2,
+            "switch1Valid": true,
+            "switch2Id": 1,
+            "switch2Valid": false,
+            "variableId": 1,
+            "variableValid": false,
+            "variableValue": 0
+          },
+          "directionFix": false,
+          "image": {
+            "tileId": 0,
+            "characterName": "Monster",
+            "direction": 2,
+            "pattern": 1,
+            "characterIndex": 4
+          },
+          "list": [
+            {
+              "code": 108,
+              "indent": 0,
+              "parameters": [
+                "<imageExAllPagesApply>"
+              ]
+            },
+            {
+              "code": 408,
+              "indent": 0,
+              "parameters": [
+                "<subpri: 110>"
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 0,
+              "parameters": [
+                "<et: enemy>"
+              ]
+            },
+            {
+              "code": 357,
+              "indent": 0,
+              "parameters": [
+                "build/ARPG_Core",
+                "SetupEnemy",
+                "Setup Enemy",
+                {
+                  "CharacterSpecification": "{\"CharacterKind\":\"thisEvent\",\"EventIdOrName\":\"1\",\"EventIdByVariable\":\"0\",\"FollowerIndex\":\"1\",\"VehicleKind\":\"boat\"}",
+                  "EnemyId": "2",
+                  "CollideAttackSkillId": "0",
+                  "DamageCommonEventId": "0",
+                  "DefeatEnemyCommonEventId": "0",
+                  "HpGauge": "normal"
+                }
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Character specification = {\"CharacterKind\":\"thisEvent\",\"Eve…"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Enemy ID = 2"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Collision Attack Skill ID = 0"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Enemy damage common event ID = 0"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Defeat Enemy Common Event ID = 0"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "HP gauge = normal"
+              ]
+            },
+            {
+              "code": 357,
+              "indent": 0,
+              "parameters": [
+                "build/ARPG_Core",
+                "SetHitBox",
+                "SetHitBox",
+                {
+                  "CharacterSpecification": "{\"CharacterKind\":\"thisEvent\",\"EventIdOrName\":\"1\",\"EventIdByVariable\":\"0\",\"FollowerIndex\":\"1\",\"VehicleKind\":\"boat\"}",
+                  "HitBoxType": "attack",
+                  "CustomHitBoxTag": "",
+                  "HitBoxList": "[\"{\\\"X\\\":\\\"0\\\",\\\"Y\\\":\\\"0\\\",\\\"Width\\\":\\\"1\\\",\\\"Height\\\":\\\"1\\\"}\"]"
+                }
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Character specification = {\"CharacterKind\":\"thisEvent\",\"Eve…"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "HitBoxType = attack"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "custom hit box tag = "
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "HitBoxList = [\"{\\\"X\\\":\\\"0\\\",\\\"Y\\\":\\\"0\\\",\\\"Width\\\":\\\"1\\\",\\\"H…"
+              ]
+            },
+            {
+              "code": 357,
+              "indent": 0,
+              "parameters": [
+                "build/ARPG_Core",
+                "SetHitBox",
+                "SetHitBox",
+                {
+                  "CharacterSpecification": "{\"CharacterKind\":\"thisEvent\",\"EventIdOrName\":\"1\",\"EventIdByVariable\":\"0\",\"FollowerIndex\":\"1\",\"VehicleKind\":\"boat\"}",
+                  "HitBoxType": "damage",
+                  "CustomHitBoxTag": "",
+                  "HitBoxList": "[\"{\\\"X\\\":\\\"0.25\\\",\\\"Y\\\":\\\"0.25\\\",\\\"Width\\\":\\\"0.50\\\",\\\"Height\\\":\\\"0.50\\\"}\"]"
+                }
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Character specification = {\"CharacterKind\":\"thisEvent\",\"Eve…"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "HitBoxType = damage"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "custom hit box tag = "
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "HitBoxList = [\"{\\\"X\\\":\\\"0.25\\\",\\\"Y\\\":\\\"0.25\\\",\\\"Width\\\":\\\"0…"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 0,
+              "parameters": [
+                "this.event().setMoveUnit(0.5);"
+              ]
+            },
+            {
+              "code": 357,
+              "indent": 0,
+              "parameters": [
+                "build/CharacterCollisionEx",
+                "SetThroughPlayer",
+                "SetThroughPlayer",
+                {
+                  "CharacterSpecification": "{\"CharacterKind\":\"thisEvent\",\"EventIdOrName\":\"1\",\"EventIdByVariable\":\"0\",\"FollowerIndex\":\"1\",\"VehicleKind\":\"boat\"}",
+                  "EnableOrDisable": "true"
+                }
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Character specification = {\"CharacterKind\":\"thisEvent\",\"Eve…"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "enable/disable = true"
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 0,
+              "parameters": [
+                21,
+                21,
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 0,
+              "parameters": []
+            }
+          ],
+          "moveFrequency": 3,
+          "moveRoute": {
+            "list": [
+              {
+                "code": 0,
+                "parameters": []
+              }
+            ],
+            "repeat": true,
+            "skippable": false,
+            "wait": false
+          },
+          "moveSpeed": 3,
+          "moveType": 0,
+          "priorityType": 1,
+          "stepAnime": false,
+          "through": false,
+          "trigger": 3,
+          "walkAnime": true
+        },
+        {
+          "conditions": {
+            "actorId": 1,
+            "actorValid": false,
+            "itemId": 1,
+            "itemValid": false,
+            "selfSwitchCh": "A",
+            "selfSwitchValid": false,
+            "switch1Id": 21,
+            "switch1Valid": true,
+            "switch2Id": 1,
+            "switch2Valid": false,
+            "variableId": 1,
+            "variableValid": false,
+            "variableValue": 0
+          },
+          "directionFix": false,
+          "image": {
+            "tileId": 0,
+            "characterName": "Monster",
+            "direction": 2,
+            "pattern": 1,
+            "characterIndex": 4
+          },
+          "list": [
+            {
+              "code": 357,
+              "indent": 0,
+              "parameters": [
+                "build/ARPG_Core",
+                "CheckInTheScreen",
+                "Check if the character is in the screen",
+                {
+                  "CharacterSpecification": "{\"CharacterKind\":\"thisEvent\",\"CharacterKindByVariable\":\"0\",\"EventIdOrName\":\"1\",\"EventIdByVariable\":\"0\",\"FollowerIndex\":\"1\",\"FollowerIndexByVariable\":\"0\",\"VehicleKind\":\"boat\",\"VehicleKindByVariable\":\"0\"}",
+                  "XMargin": "2",
+                  "YMargin": "2",
+                  "StoreResultSwitchId": "5"
+                }
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Character specification = {\"CharacterKind\":\"thisEvent\",\"Cha…"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "X-axis margin = 2"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Y-axis margin = 2"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Result store switch ID = 5"
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 0,
+              "parameters": [
+                0,
+                5,
+                0
+              ]
+            },
+            {
+              "code": 357,
+              "indent": 1,
+              "parameters": [
+                "build/ARPG_Core",
+                "CalcFar",
+                "Get distance between characters",
+                {
+                  "SubjectCharacterSpecification": "{\"CharacterKind\":\"thisEvent\",\"EventIdOrName\":\"1\",\"EventIdByVariable\":\"0\",\"FollowerIndex\":\"1\",\"VehicleKind\":\"boat\"}",
+                  "TargetCharacterSpecification": "{\"CharacterKind\":\"player\",\"EventIdOrName\":\"1\",\"EventIdByVariable\":\"0\",\"FollowerIndex\":\"1\",\"VehicleKind\":\"boat\"}",
+                  "StoreFarVariableId": "28"
+                }
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 1,
+              "parameters": [
+                "Subject character specification = {\"CharacterKind\":\"thisEve…"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 1,
+              "parameters": [
+                "Target character specification = {\"CharacterKind\":\"player\",…"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 1,
+              "parameters": [
+                "Distance store variable ID = 28"
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 1,
+              "parameters": [
+                1,
+                28,
+                0,
+                3,
+                2
+              ]
+            },
+            {
+              "code": 205,
+              "indent": 2,
+              "parameters": [
+                0,
+                {
+                  "list": [
+                    {
+                      "code": 11,
+                      "indent": null
+                    },
+                    {
+                      "code": 0
+                    }
+                  ],
+                  "repeat": false,
+                  "skippable": true,
+                  "wait": true
+                }
+              ]
+            },
+            {
+              "code": 505,
+              "indent": 2,
+              "parameters": [
+                {
+                  "code": 11,
+                  "indent": null
+                }
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": []
+            },
+            {
+              "code": 411,
+              "indent": 1,
+              "parameters": []
+            },
+            {
+              "code": 205,
+              "indent": 2,
+              "parameters": [
+                0,
+                {
+                  "list": [
+                    {
+                      "code": 10,
+                      "indent": null
+                    },
+                    {
+                      "code": 0
+                    }
+                  ],
+                  "repeat": false,
+                  "skippable": true,
+                  "wait": true
+                }
+              ]
+            },
+            {
+              "code": 505,
+              "indent": 2,
+              "parameters": [
+                {
+                  "code": 10,
+                  "indent": null
+                }
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 2,
+              "parameters": [
+                36,
+                36,
+                0,
+                2,
+                0,
+                99
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 2,
+              "parameters": [
+                1,
+                36,
+                0,
+                50,
+                4
+              ]
+            },
+            {
+              "code": 205,
+              "indent": 3,
+              "parameters": [
+                0,
+                {
+                  "list": [
+                    {
+                      "code": 45,
+                      "parameters": [
+                        "this.smartJump(0, 0);"
+                      ],
+                      "indent": null
+                    },
+                    {
+                      "code": 0
+                    }
+                  ],
+                  "repeat": false,
+                  "skippable": false,
+                  "wait": true
+                }
+              ]
+            },
+            {
+              "code": 505,
+              "indent": 3,
+              "parameters": [
+                {
+                  "code": 45,
+                  "parameters": [
+                    "this.smartJump(0, 0);"
+                  ],
+                  "indent": null
+                }
+              ]
+            },
+            {
+              "code": 357,
+              "indent": 3,
+              "parameters": [
+                "build/ARPG_Core",
+                "UseSkill",
+                "Use Skill",
+                {
+                  "SkillId": "10",
+                  "SkillByName": "",
+                  "SkillIdByVariable": "0"
+                }
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 3,
+              "parameters": [
+                "Skill ID = 10"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 3,
+              "parameters": [
+                "Skill (specify name) = "
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 3,
+              "parameters": [
+                "Skill ID (variable specification) = 0"
+              ]
+            },
+            {
+              "code": 230,
+              "indent": 3,
+              "parameters": [
+                10
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 3,
+              "parameters": []
+            },
+            {
+              "code": 412,
+              "indent": 2,
+              "parameters": []
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": []
+            },
+            {
+              "code": 412,
+              "indent": 1,
+              "parameters": []
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": []
+            },
+            {
+              "code": 412,
+              "indent": 0,
+              "parameters": []
+            },
+            {
+              "code": 0,
+              "indent": 0,
+              "parameters": []
+            }
+          ],
+          "moveFrequency": 5,
+          "moveRoute": {
+            "list": [
+              {
+                "code": 0,
+                "parameters": []
+              }
+            ],
+            "repeat": true,
+            "skippable": false,
+            "wait": false
+          },
+          "moveSpeed": 3,
+          "moveType": 0,
+          "priorityType": 1,
+          "stepAnime": true,
+          "through": false,
+          "trigger": 4,
+          "walkAnime": true
+        },
+        {
+          "conditions": {
+            "actorId": 1,
+            "actorValid": false,
+            "itemId": 1,
+            "itemValid": false,
+            "selfSwitchCh": "A",
+            "selfSwitchValid": false,
+            "switch1Id": 24,
+            "switch1Valid": true,
+            "switch2Id": 1,
+            "switch2Valid": false,
+            "variableId": 1,
+            "variableValid": false,
+            "variableValue": 0
+          },
+          "directionFix": false,
+          "image": {
+            "tileId": 0,
+            "characterName": "Monster",
+            "direction": 2,
+            "pattern": 1,
+            "characterIndex": 4
+          },
+          "list": [
+            {
+              "code": 0,
+              "indent": 0,
+              "parameters": []
+            }
+          ],
+          "moveFrequency": 5,
+          "moveRoute": {
+            "list": [
+              {
+                "code": 0,
+                "parameters": []
+              }
+            ],
+            "repeat": true,
+            "skippable": false,
+            "wait": false
+          },
+          "moveSpeed": 3,
+          "moveType": 0,
+          "priorityType": 1,
+          "stepAnime": true,
+          "through": false,
+          "trigger": 4,
+          "walkAnime": true
+        },
+        {
+          "conditions": {
+            "actorId": 1,
+            "actorValid": false,
+            "itemId": 1,
+            "itemValid": false,
+            "selfSwitchCh": "D",
+            "selfSwitchValid": false,
+            "switch1Id": 23,
+            "switch1Valid": true,
+            "switch2Id": 1,
+            "switch2Valid": false,
+            "variableId": 1,
+            "variableValid": false,
+            "variableValue": 0
+          },
+          "directionFix": false,
+          "image": {
+            "characterIndex": 0,
+            "characterName": "",
+            "direction": 2,
+            "pattern": 0,
+            "tileId": 0
+          },
+          "list": [
+            {
+              "code": 214,
+              "indent": 0,
+              "parameters": []
+            },
+            {
+              "code": 0,
+              "indent": 0,
+              "parameters": []
+            }
+          ],
+          "moveFrequency": 3,
+          "moveRoute": {
+            "list": [
+              {
+                "code": 0,
+                "parameters": []
+              }
+            ],
+            "repeat": true,
+            "skippable": false,
+            "wait": false
+          },
+          "moveSpeed": 3,
+          "moveType": 0,
+          "priorityType": 0,
+          "stepAnime": false,
+          "through": false,
+          "trigger": 4,
+          "walkAnime": true
+        },
+        {
+          "conditions": {
+            "actorId": 1,
+            "actorValid": false,
+            "itemId": 1,
+            "itemValid": false,
+            "selfSwitchCh": "D",
+            "selfSwitchValid": false,
+            "switch1Id": 22,
+            "switch1Valid": true,
+            "switch2Id": 1,
+            "switch2Valid": false,
+            "variableId": 12,
+            "variableValid": false,
+            "variableValue": 1
+          },
+          "directionFix": false,
+          "image": {
+            "characterIndex": 0,
+            "characterName": "",
+            "direction": 2,
+            "pattern": 0,
+            "tileId": 0
+          },
+          "list": [
+            {
+              "code": 121,
+              "indent": 0,
+              "parameters": [
+                24,
+                24,
+                1
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 0,
+              "parameters": [
+                21,
+                21,
+                1
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 0,
+              "parameters": [
+                22,
+                22,
+                1
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 0,
+              "parameters": []
+            }
+          ],
+          "moveFrequency": 3,
+          "moveRoute": {
+            "list": [
+              {
+                "code": 0,
+                "parameters": []
+              }
+            ],
+            "repeat": true,
+            "skippable": false,
+            "wait": false
+          },
+          "moveSpeed": 3,
+          "moveType": 0,
+          "priorityType": 0,
+          "stepAnime": false,
+          "through": false,
+          "trigger": 3,
+          "walkAnime": true
+        }
+      ],
+      "x": 3,
+      "y": 3
+    },
+    {
+      "id": 11,
+      "name": "enemy4",
+      "note": "",
+      "pages": [
+        {
+          "conditions": {
+            "actorId": 1,
+            "actorValid": false,
+            "itemId": 1,
+            "itemValid": false,
+            "selfSwitchCh": "A",
+            "selfSwitchValid": false,
+            "switch1Id": 2,
+            "switch1Valid": true,
+            "switch2Id": 1,
+            "switch2Valid": false,
+            "variableId": 1,
+            "variableValid": false,
+            "variableValue": 0
+          },
+          "directionFix": false,
+          "image": {
+            "tileId": 0,
+            "characterName": "Monster",
+            "direction": 2,
+            "pattern": 1,
+            "characterIndex": 2
+          },
+          "list": [
+            {
+              "code": 108,
+              "indent": 0,
+              "parameters": [
+                "<imageExAllPagesApply>"
+              ]
+            },
+            {
+              "code": 408,
+              "indent": 0,
+              "parameters": [
+                "<subpri: 110>"
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 0,
+              "parameters": [
+                "<tone: 0, 0, 0, 255>"
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 0,
+              "parameters": [
+                "<et: enemy>"
+              ]
+            },
+            {
+              "code": 357,
+              "indent": 0,
+              "parameters": [
+                "build/ARPG_Core",
+                "SetupEnemy",
+                "Setup Enemy",
+                {
+                  "CharacterSpecification": "{\"CharacterKind\":\"thisEvent\",\"EventIdOrName\":\"1\",\"EventIdByVariable\":\"0\",\"FollowerIndex\":\"1\",\"VehicleKind\":\"boat\"}",
+                  "EnemyId": "4",
+                  "CollideAttackSkillId": "0",
+                  "DamageCommonEventId": "0",
+                  "DefeatEnemyCommonEventId": "0",
+                  "HpGauge": "normal"
+                }
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Character specification = {\"CharacterKind\":\"thisEvent\",\"Eve…"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Enemy ID = 4"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Collision Attack Skill ID = 0"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Enemy damage common event ID = 0"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Defeat Enemy Common Event ID = 0"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "HP gauge = normal"
+              ]
+            },
+            {
+              "code": 357,
+              "indent": 0,
+              "parameters": [
+                "build/ARPG_Core",
+                "SetHitBox",
+                "SetHitBox",
+                {
+                  "CharacterSpecification": "{\"CharacterKind\":\"thisEvent\",\"EventIdOrName\":\"1\",\"EventIdByVariable\":\"0\",\"FollowerIndex\":\"1\",\"VehicleKind\":\"boat\"}",
+                  "HitBoxType": "attack",
+                  "CustomHitBoxTag": "",
+                  "HitBoxList": "[\"{\\\"X\\\":\\\"0\\\",\\\"Y\\\":\\\"0\\\",\\\"Width\\\":\\\"1\\\",\\\"Height\\\":\\\"1\\\"}\"]"
+                }
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Character specification = {\"CharacterKind\":\"thisEvent\",\"Eve…"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "HitBoxType = attack"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "custom hit box tag = "
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "HitBoxList = [\"{\\\"X\\\":\\\"0\\\",\\\"Y\\\":\\\"0\\\",\\\"Width\\\":\\\"1\\\",\\\"H…"
+              ]
+            },
+            {
+              "code": 357,
+              "indent": 0,
+              "parameters": [
+                "build/ARPG_Core",
+                "SetHitBox",
+                "SetHitBox",
+                {
+                  "CharacterSpecification": "{\"CharacterKind\":\"thisEvent\",\"EventIdOrName\":\"1\",\"EventIdByVariable\":\"0\",\"FollowerIndex\":\"1\",\"VehicleKind\":\"boat\"}",
+                  "HitBoxType": "damage",
+                  "CustomHitBoxTag": "",
+                  "HitBoxList": "[\"{\\\"X\\\":\\\"0.25\\\",\\\"Y\\\":\\\"0.25\\\",\\\"Width\\\":\\\"0.50\\\",\\\"Height\\\":\\\"0.50\\\"}\"]"
+                }
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Character specification = {\"CharacterKind\":\"thisEvent\",\"Eve…"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "HitBoxType = damage"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "custom hit box tag = "
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "HitBoxList = [\"{\\\"X\\\":\\\"0.25\\\",\\\"Y\\\":\\\"0.25\\\",\\\"Width\\\":\\\"0…"
+              ]
+            },
+            {
+              "code": 357,
+              "indent": 0,
+              "parameters": [
+                "build/CharacterCollisionEx",
+                "SetThroughPlayer",
+                "SetThroughPlayer",
+                {
+                  "CharacterSpecification": "{\"CharacterKind\":\"thisEvent\",\"EventIdOrName\":\"1\",\"EventIdByVariable\":\"0\",\"FollowerIndex\":\"1\",\"VehicleKind\":\"boat\"}",
+                  "EnableOrDisable": "true"
+                }
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Character specification = {\"CharacterKind\":\"thisEvent\",\"Eve…"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "enable/disable = true"
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 0,
+              "parameters": [
+                21,
+                21,
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 0,
+              "parameters": []
+            }
+          ],
+          "moveFrequency": 3,
+          "moveRoute": {
+            "list": [
+              {
+                "code": 0,
+                "parameters": []
+              }
+            ],
+            "repeat": true,
+            "skippable": false,
+            "wait": false
+          },
+          "moveSpeed": 3,
+          "moveType": 0,
+          "priorityType": 1,
+          "stepAnime": true,
+          "through": false,
+          "trigger": 3,
+          "walkAnime": true
+        },
+        {
+          "conditions": {
+            "actorId": 1,
+            "actorValid": false,
+            "itemId": 1,
+            "itemValid": false,
+            "selfSwitchCh": "A",
+            "selfSwitchValid": false,
+            "switch1Id": 21,
+            "switch1Valid": true,
+            "switch2Id": 1,
+            "switch2Valid": false,
+            "variableId": 1,
+            "variableValid": false,
+            "variableValue": 0
+          },
+          "directionFix": false,
+          "image": {
+            "tileId": 0,
+            "characterName": "Monster",
+            "direction": 2,
+            "pattern": 1,
+            "characterIndex": 2
+          },
+          "list": [
+            {
+              "code": 357,
+              "indent": 0,
+              "parameters": [
+                "build/ARPG_Core",
+                "CalcFar",
+                "Get distance between characters",
+                {
+                  "SubjectCharacterSpecification": "{\"CharacterKind\":\"thisEvent\",\"CharacterKindByVariable\":\"0\",\"EventIdOrName\":\"1\",\"EventIdByVariable\":\"0\",\"FollowerIndex\":\"1\",\"FollowerIndexByVariable\":\"0\",\"VehicleKind\":\"boat\",\"VehicleKindByVariable\":\"0\"}",
+                  "TargetCharacterSpecification": "{\"CharacterKind\":\"player\",\"CharacterKindByVariable\":\"0\",\"EventIdOrName\":\"1\",\"EventIdByVariable\":\"0\",\"FollowerIndex\":\"1\",\"FollowerIndexByVariable\":\"0\",\"VehicleKind\":\"boat\",\"VehicleKindByVariable\":\"0\"}",
+                  "StoreFarVariableId": "28"
+                }
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Subject character specification = {\"CharacterKind\":\"thisEve…"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Target character specification = {\"CharacterKind\":\"player\",…"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 0,
+              "parameters": [
+                "Distance store variable ID = 28"
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 0,
+              "parameters": [
+                1,
+                28,
+                0,
+                3,
+                2
+              ]
+            },
+            {
+              "code": 357,
+              "indent": 1,
+              "parameters": [
+                "build/ARPG_Core",
+                "UseSkill",
+                "Use Skill",
+                {
+                  "SkillId": "4",
+                  "SkillByName": "",
+                  "SkillIdByVariable": "0"
+                }
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 1,
+              "parameters": [
+                "Skill ID = 4"
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 1,
+              "parameters": [
+                "Skill (specify name) = "
+              ]
+            },
+            {
+              "code": 657,
+              "indent": 1,
+              "parameters": [
+                "Skill ID (variable specification) = 0"
+              ]
+            },
+            {
+              "code": 205,
+              "indent": 1,
+              "parameters": [
+                0,
+                {
+                  "list": [
+                    {
+                      "code": 11,
+                      "indent": null
+                    },
+                    {
+                      "code": 11,
+                      "indent": null
+                    },
+                    {
+                      "code": 0
+                    }
+                  ],
+                  "repeat": false,
+                  "skippable": false,
+                  "wait": true
+                }
+              ]
+            },
+            {
+              "code": 505,
+              "indent": 1,
+              "parameters": [
+                {
+                  "code": 11,
+                  "indent": null
+                }
+              ]
+            },
+            {
+              "code": 505,
+              "indent": 1,
+              "parameters": [
+                {
+                  "code": 11,
+                  "indent": null
+                }
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": []
+            },
+            {
+              "code": 411,
+              "indent": 0,
+              "parameters": []
+            },
+            {
+              "code": 205,
+              "indent": 1,
+              "parameters": [
+                0,
+                {
+                  "list": [
+                    {
+                      "code": 9,
+                      "indent": null
+                    },
+                    {
+                      "code": 10,
+                      "indent": null
+                    },
+                    {
+                      "code": 0
+                    }
+                  ],
+                  "repeat": false,
+                  "skippable": false,
+                  "wait": true
+                }
+              ]
+            },
+            {
+              "code": 505,
+              "indent": 1,
+              "parameters": [
+                {
+                  "code": 9,
+                  "indent": null
+                }
+              ]
+            },
+            {
+              "code": 505,
+              "indent": 1,
+              "parameters": [
+                {
+                  "code": 10,
+                  "indent": null
+                }
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": []
+            },
+            {
+              "code": 412,
+              "indent": 0,
+              "parameters": []
+            },
+            {
+              "code": 0,
+              "indent": 0,
+              "parameters": []
+            }
+          ],
+          "moveFrequency": 5,
+          "moveRoute": {
+            "list": [
+              {
+                "code": 0,
+                "parameters": []
+              }
+            ],
+            "repeat": true,
+            "skippable": false,
+            "wait": false
+          },
+          "moveSpeed": 3,
+          "moveType": 0,
+          "priorityType": 1,
+          "stepAnime": true,
+          "through": false,
+          "trigger": 4,
+          "walkAnime": true
+        },
+        {
+          "conditions": {
+            "actorId": 1,
+            "actorValid": false,
+            "itemId": 1,
+            "itemValid": false,
+            "selfSwitchCh": "A",
+            "selfSwitchValid": false,
+            "switch1Id": 24,
+            "switch1Valid": true,
+            "switch2Id": 1,
+            "switch2Valid": false,
+            "variableId": 1,
+            "variableValid": false,
+            "variableValue": 0
+          },
+          "directionFix": false,
+          "image": {
+            "tileId": 0,
+            "characterName": "Monster",
+            "direction": 2,
+            "pattern": 1,
+            "characterIndex": 2
+          },
+          "list": [
+            {
+              "code": 0,
+              "indent": 0,
+              "parameters": []
+            }
+          ],
+          "moveFrequency": 5,
+          "moveRoute": {
+            "list": [
+              {
+                "code": 0,
+                "parameters": []
+              }
+            ],
+            "repeat": true,
+            "skippable": false,
+            "wait": false
+          },
+          "moveSpeed": 3,
+          "moveType": 0,
+          "priorityType": 1,
+          "stepAnime": true,
+          "through": false,
+          "trigger": 4,
+          "walkAnime": true
+        },
+        {
+          "conditions": {
+            "actorId": 1,
+            "actorValid": false,
+            "itemId": 1,
+            "itemValid": false,
+            "selfSwitchCh": "D",
+            "selfSwitchValid": false,
+            "switch1Id": 23,
+            "switch1Valid": true,
+            "switch2Id": 1,
+            "switch2Valid": false,
+            "variableId": 12,
+            "variableValid": false,
+            "variableValue": 1
+          },
+          "directionFix": false,
+          "image": {
+            "characterIndex": 0,
+            "characterName": "",
+            "direction": 2,
+            "pattern": 0,
+            "tileId": 0
+          },
+          "list": [
+            {
+              "code": 214,
+              "indent": 0,
+              "parameters": []
+            },
+            {
+              "code": 0,
+              "indent": 0,
+              "parameters": []
+            }
+          ],
+          "moveFrequency": 3,
+          "moveRoute": {
+            "list": [
+              {
+                "code": 0,
+                "parameters": []
+              }
+            ],
+            "repeat": true,
+            "skippable": false,
+            "wait": false
+          },
+          "moveSpeed": 3,
+          "moveType": 0,
+          "priorityType": 0,
+          "stepAnime": false,
+          "through": false,
+          "trigger": 4,
+          "walkAnime": true
+        },
+        {
+          "conditions": {
+            "actorId": 1,
+            "actorValid": false,
+            "itemId": 1,
+            "itemValid": false,
+            "selfSwitchCh": "D",
+            "selfSwitchValid": false,
+            "switch1Id": 22,
+            "switch1Valid": true,
+            "switch2Id": 1,
+            "switch2Valid": false,
+            "variableId": 12,
+            "variableValid": false,
+            "variableValue": 1
+          },
+          "directionFix": false,
+          "image": {
+            "characterIndex": 0,
+            "characterName": "",
+            "direction": 2,
+            "pattern": 0,
+            "tileId": 0
+          },
+          "list": [
+            {
+              "code": 121,
+              "indent": 0,
+              "parameters": [
+                24,
+                24,
+                1
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 0,
+              "parameters": [
+                21,
+                21,
+                1
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 0,
+              "parameters": [
+                22,
+                22,
+                1
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 0,
+              "parameters": []
+            }
+          ],
+          "moveFrequency": 3,
+          "moveRoute": {
+            "list": [
+              {
+                "code": 0,
+                "parameters": []
+              }
+            ],
+            "repeat": true,
+            "skippable": false,
+            "wait": false
+          },
+          "moveSpeed": 3,
+          "moveType": 0,
+          "priorityType": 0,
+          "stepAnime": false,
+          "through": false,
+          "trigger": 3,
+          "walkAnime": true
+        }
+      ],
+      "x": 7,
+      "y": 3
+    },
+    null
+  ]
+}

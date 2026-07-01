@@ -1,0 +1,36 @@
+<RCC>
+  <qresource prefix="img">
+    <file>bupt.jpg</file>
+    <file>end_page.png</file>
+    <file>Start.PNG</file>
+    <file>End.PNG</file>
+    <file>empty.png</file>
+    <file>步数：.PNG</file>
+    <file>P1 (2).PNG</file>
+    <file>P2 (2).PNG</file>
+    <file>Win.PNG</file>
+    <file>LOSE.PNG</file>
+    <file>end.png</file>
+    <file>箭头.png</file>
+    <file>start_end_setting.png</file>
+    <file>img_setting.png</file>
+    <file>设置页-pvp.png</file>
+    <file>round.png</file>
+    <file>push.png</file>
+    <file>touch.png</file>
+    <file>x_1.png</file>
+    <file>P1.png</file>
+    <file>P2.png</file>
+    <file>设置页-pve.png</file>
+    <file>步数.png</file>
+    <file>箭头.png</file>
+    <file>set.png</file>
+    <file>x.png</file>
+    <file>1.PNG</file>
+    <file>2.PNG</file>
+    <file>3.PNG</file>
+    <file>GO.PNG</file>
+    <file>vs.png</file>
+    <file>background.jpg</file>
+  </qresource>
+</RCC>

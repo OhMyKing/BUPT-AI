@@ -1,0 +1,207 @@
+<svg viewBox="0 0 1400 1000" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.2"/>
+    </filter>
+    <linearGradient id="navMainGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#E8F5E9;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#C8E6C9;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="planGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#E3F2FD;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#BBDEFB;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="execGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFF3E0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFE0B2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="monitorGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#F3E5F5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E1BEE7;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="dataGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ECEFF1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#CFD8DC;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <style>
+    .title { font-family: Arial, sans-serif; font-size: 24px; font-weight: bold; }
+    .subtitle { font-family: Arial, sans-serif; font-size: 18px; font-weight: bold; }
+    .component { font-family: Arial, sans-serif; font-size: 14px; }
+    .small { font-family: Arial, sans-serif; font-size: 12px; }
+    .layer-title { font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; }
+    .code { font-family: monospace; font-size: 11px; fill: #333; }
+  </style>
+  
+  <!-- 标题 -->
+  <text x="700" y="40" text-anchor="middle" class="title">导航子系统架构图</text>
+  
+  <!-- 外部接口层 -->
+  <rect x="50" y="80" width="1300" height="100" fill="#E0F2F1" stroke="#00796B" stroke-width="2" rx="10" filter="url(#shadow)"/>
+  <text x="100" y="110" class="layer-title">外部接口层</text>
+  
+  <!-- 智能体系统接口 -->
+  <rect x="100" y="120" width="200" height="40" fill="#B2DFDB" stroke="#00695C" stroke-width="1" rx="5"/>
+  <text x="200" y="145" text-anchor="middle" class="component">智能体系统接口</text>
+  
+  <!-- 管理系统接口 -->
+  <rect x="350" y="120" width="200" height="40" fill="#B2DFDB" stroke="#00695C" stroke-width="1" rx="5"/>
+  <text x="450" y="145" text-anchor="middle" class="component">管理系统接口</text>
+  
+  <!-- 机器人控制接口 -->
+  <rect x="600" y="120" width="200" height="40" fill="#B2DFDB" stroke="#00695C" stroke-width="1" rx="5"/>
+  <text x="700" y="145" text-anchor="middle" class="component">机器人控制接口</text>
+  
+  <!-- Web可视化接口 -->
+  <rect x="850" y="120" width="200" height="40" fill="#B2DFDB" stroke="#00695C" stroke-width="1" rx="5"/>
+  <text x="950" y="145" text-anchor="middle" class="component">Web可视化接口</text>
+  
+  <!-- 百度地图API -->
+  <rect x="1100" y="120" width="200" height="40" fill="#B2DFDB" stroke="#00695C" stroke-width="1" rx="5"/>
+  <text x="1200" y="145" text-anchor="middle" class="component">百度地图API</text>
+  
+  <!-- 路径规划层 -->
+  <rect x="50" y="210" width="640" height="200" fill="url(#planGrad)" stroke="#1976D2" stroke-width="2" rx="10" filter="url(#shadow)"/>
+  <text x="100" y="240" class="layer-title">路径规划层</text>
+  
+  <!-- 全局路径规划 -->
+  <rect x="100" y="260" width="250" height="120" fill="#E3F2FD" stroke="#1565C0" stroke-width="1" rx="5"/>
+  <text x="225" y="285" text-anchor="middle" class="component">全局路径规划</text>
+  <text x="225" y="305" text-anchor="middle" class="small">search_walking_route()</text>
+  <text x="225" y="325" text-anchor="middle" class="small">• 步行路线优化</text>
+  <text x="225" y="345" text-anchor="middle" class="small">• 多路径点提取</text>
+  <text x="225" y="365" text-anchor="middle" class="small">• 距离/时间估算</text>
+  
+  <!-- 路径优化算法 -->
+  <rect x="390" y="260" width="250" height="120" fill="#E3F2FD" stroke="#1565C0" stroke-width="1" rx="5"/>
+  <text x="515" y="285" text-anchor="middle" class="component">路径优化算法</text>
+  <text x="515" y="305" text-anchor="middle" class="small">_should_replan_path()</text>
+  <text x="515" y="325" text-anchor="middle" class="small">• 人流密集区域检测</text>
+  <text x="515" y="345" text-anchor="middle" class="small">• 自适应速度控制</text>
+  <text x="515" y="365" text-anchor="middle" class="small">• 动态路径重规划</text>
+  
+  <!-- 任务调度层 -->
+  <rect x="710" y="210" width="640" height="200" fill="url(#execGrad)" stroke="#F57C00" stroke-width="2" rx="10" filter="url(#shadow)"/>
+  <text x="760" y="240" class="layer-title">任务调度层</text>
+  
+  <!-- 多机器人调度 -->
+  <rect x="760" y="260" width="250" height="120" fill="#FFF3E0" stroke="#E65100" stroke-width="1" rx="5"/>
+  <text x="885" y="285" text-anchor="middle" class="component">多机器人调度</text>
+  <text x="885" y="305" text-anchor="middle" class="small">DatabaseRobotNavigator</text>
+  <text x="885" y="325" text-anchor="middle" class="small">• 任务分配算法</text>
+  <text x="885" y="345" text-anchor="middle" class="small">• 最近机器人选择</text>
+  <text x="885" y="365" text-anchor="middle" class="small">• 负载均衡</text>
+  
+  <!-- 虚实同步控制 -->
+  <rect x="1050" y="260" width="250" height="120" fill="#FFF3E0" stroke="#E65100" stroke-width="1" rx="5"/>
+  <text x="1175" y="285" text-anchor="middle" class="component">虚实同步控制</text>
+  <text x="1175" y="305" text-anchor="middle" class="small">send_navigation_command()</text>
+  <text x="1175" y="325" text-anchor="middle" class="small">• 机器人4特殊处理</text>
+  <text x="1175" y="345" text-anchor="middle" class="small">• 实体机器人指令</text>
+  <text x="1175" y="365" text-anchor="middle" class="small">• 状态同步机制</text>
+  
+  <!-- 执行控制层 -->
+  <rect x="50" y="440" width="640" height="200" fill="url(#navMainGrad)" stroke="#388E3C" stroke-width="2" rx="10" filter="url(#shadow)"/>
+  <text x="100" y="470" class="layer-title">执行控制层</text>
+  
+  <!-- 导航执行器 -->
+  <rect x="100" y="490" width="250" height="120" fill="#E8F5E9" stroke="#2E7D32" stroke-width="1" rx="5"/>
+  <text x="225" y="515" text-anchor="middle" class="component">导航执行器</text>
+  <text x="225" y="535" text-anchor="middle" class="small">move_robot_along_path()</text>
+  <text x="225" y="555" text-anchor="middle" class="small">• GPS定位跟踪</text>
+  <text x="225" y="575" text-anchor="middle" class="small">• 路径点导航</text>
+  <text x="225" y="595" text-anchor="middle" class="small">• 速度控制(1.39m/s)</text>
+  
+  <!-- 避障控制 -->
+  <rect x="390" y="490" width="250" height="120" fill="#E8F5E9" stroke="#2E7D32" stroke-width="1" rx="5"/>
+  <text x="515" y="515" text-anchor="middle" class="component">避障控制</text>
+  <text x="515" y="535" text-anchor="middle" class="small">ObstacleAvoidanceNavigator</text>
+  <text x="515" y="555" text-anchor="middle" class="small">• 深度相机检测</text>
+  <text x="515" y="575" text-anchor="middle" class="small">• 分级避障策略</text>
+  <text x="515" y="595" text-anchor="middle" class="small">• 紧急停止机制</text>
+  
+  <!-- 监控可视化层 -->
+  <rect x="710" y="440" width="640" height="200" fill="url(#monitorGrad)" stroke="#7B1FA2" stroke-width="2" rx="10" filter="url(#shadow)"/>
+  <text x="760" y="470" class="layer-title">监控可视化层</text>
+  
+  <!-- 实时地图展示 -->
+  <rect x="760" y="490" width="250" height="120" fill="#F3E5F5" stroke="#6A1B9A" stroke-width="1" rx="5"/>
+  <text x="885" y="515" text-anchor="middle" class="component">实时地图展示</text>
+  <text x="885" y="535" text-anchor="middle" class="small">Vue.js + 百度地图</text>
+  <text x="885" y="555" text-anchor="middle" class="small">• 机器人位置标注</text>
+  <text x="885" y="575" text-anchor="middle" class="small">• 路径轨迹显示</text>
+  <text x="885" y="595" text-anchor="middle" class="small">• 状态色彩编码</text>
+  
+  <!-- WebSocket推送 -->
+  <rect x="1050" y="490" width="250" height="120" fill="#F3E5F5" stroke="#6A1B9A" stroke-width="1" rx="5"/>
+  <text x="1175" y="515" text-anchor="middle" class="component">WebSocket推送</text>
+  <text x="1175" y="535" text-anchor="middle" class="small">/api/robots接口</text>
+  <text x="1175" y="555" text-anchor="middle" class="small">• 实时位置更新</text>
+  <text x="1175" y="575" text-anchor="middle" class="small">• 任务状态推送</text>
+  <text x="1175" y="595" text-anchor="middle" class="small">• 异常告警通知</text>
+  
+  <!-- 数据存储层 -->
+  <rect x="50" y="670" width="1300" height="140" fill="url(#dataGrad)" stroke="#455A64" stroke-width="2" rx="10" filter="url(#shadow)"/>
+  <text x="100" y="700" class="layer-title">数据存储层</text>
+  
+  <!-- 机器人状态表 -->
+  <rect x="100" y="720" width="300" height="70" fill="#ECEFF1" stroke="#37474F" stroke-width="1" rx="5"/>
+  <text x="250" y="745" text-anchor="middle" class="component">机器人状态表 (robots)</text>
+  <text x="250" y="765" text-anchor="middle" class="small">位置信息 | 目标地点 | 电量状态</text>
+  <text x="250" y="780" text-anchor="middle" class="small">任务状态 | 跟随学生ID</text>
+  
+  <!-- 路径记录表 -->
+  <rect x="450" y="720" width="300" height="70" fill="#ECEFF1" stroke="#37474F" stroke-width="1" rx="5"/>
+  <text x="600" y="745" text-anchor="middle" class="component">路径记录表</text>
+  <text x="600" y="765" text-anchor="middle" class="small">历史轨迹 | 路径点序列</text>
+  <text x="600" y="780" text-anchor="middle" class="small">执行时间 | 完成状态</text>
+  
+  <!-- 关键位置表 -->
+  <rect x="800" y="720" width="250" height="70" fill="#ECEFF1" stroke="#37474F" stroke-width="1" rx="5"/>
+  <text x="925" y="745" text-anchor="middle" class="component">关键位置表</text>
+  <text x="925" y="765" text-anchor="middle" class="small">预设地点坐标</text>
+  <text x="925" y="780" text-anchor="middle" class="small">建筑物信息</text>
+  
+  <!-- 任务日志表 -->
+  <rect x="1100" y="720" width="200" height="70" fill="#ECEFF1" stroke="#37474F" stroke-width="1" rx="5"/>
+  <text x="1200" y="745" text-anchor="middle" class="component">任务日志表</text>
+  <text x="1200" y="765" text-anchor="middle" class="small">任务分配记录</text>
+  <text x="1200" y="780" text-anchor="middle" class="small">执行结果</text>
+  
+  <!-- 核心算法说明 -->
+  <rect x="50" y="840" width="640" height="120" fill="#FFFDE7" stroke="#F57F17" stroke-width="2" rx="10" filter="url(#shadow)"/>
+  <text x="100" y="870" class="subtitle">核心算法特性</text>
+  <text x="100" y="895" class="small">• 中心化调度：所有机器人任务通过数据库统一管理</text>
+  <text x="100" y="915" class="small">• 自适应导航：根据环境动态调整速度和路径</text>
+  <text x="100" y="935" class="small">• 协同避让：多机器人相遇时的智能避让机制</text>
+  <text x="100" y="950" class="small">• 故障恢复：单点故障时的任务重分配</text>
+  
+  <!-- 性能指标 -->
+  <rect x="710" y="840" width="640" height="120" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2" rx="10" filter="url(#shadow)"/>
+  <text x="760" y="870" class="subtitle">性能指标</text>
+  <text x="760" y="895" class="small">• 路径规划响应时间：&lt; 500ms</text>
+  <text x="760" y="915" class="small">• 位置更新频率：5Hz</text>
+  <text x="760" y="935" class="small">• 避障响应时间：&lt; 100ms</text>
+  <text x="760" y="950" class="small">• 多机器人支持数量：10+</text>
+  
+  <!-- 数据流箭头 -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+    </marker>
+  </defs>
+  
+  <!-- 垂直数据流 -->
+  <line x1="200" y1="160" x2="225" y2="260" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="700" y1="160" x2="885" y2="260" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="1200" y1="160" x2="515" y2="260" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <line x1="225" y1="380" x2="225" y2="490" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="515" y1="380" x2="515" y2="490" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="885" y1="380" x2="885" y2="490" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="1175" y1="380" x2="1175" y2="490" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <line x1="370" y1="610" x2="250" y2="720" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="885" y1="610" x2="600" y2="720" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+</svg>

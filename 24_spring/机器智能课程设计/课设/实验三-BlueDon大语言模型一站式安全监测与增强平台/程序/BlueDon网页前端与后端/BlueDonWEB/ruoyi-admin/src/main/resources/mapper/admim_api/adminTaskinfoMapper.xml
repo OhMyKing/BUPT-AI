@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.admim_api.mapper.adminTaskinfoMapper">
+    
+    <resultMap type="adminTaskinfo" id="adminTaskinfoResult">
+        <result property="taskId"    column="task_id"    />
+        <result property="modelName"    column="model_name"    />
+        <result property="modelParams"    column="model_params"    />
+        <result property="modelVendor"    column="model_vendor"    />
+        <result property="additionalInfo"    column="additional_info"    />
+        <result property="apiKey"    column="api_key"    />
+        <result property="taskCreatedAt"    column="task_created_at"    />
+        <result property="taskStatus"    column="task_status"    />
+        <result property="taskReportPdf"    column="task_report_pdf"    />
+    </resultMap>
+
+    <sql id="selectadminTaskinfoVo">
+        select task_id, model_name, model_params, model_vendor, additional_info, api_key, task_created_at, task_status, task_report_pdf from taskinfo
+    </sql>
+
+    <select id="selectadminTaskinfoList" parameterType="adminTaskinfo" resultMap="adminTaskinfoResult">
+        <include refid="selectadminTaskinfoVo"/>
+        <where>  
+            <if test="modelName != null  and modelName != ''"> and model_name like concat('%', #{modelName}, '%')</if>
+            <if test="modelParams != null  and modelParams != ''"> and model_params like concat('%', #{modelParams}, '%')</if>
+            <if test="modelVendor != null  and modelVendor != ''"> and model_vendor like concat('%', #{modelVendor}, '%')</if>
+            <if test="additionalInfo != null  and additionalInfo != ''"> and additional_info like concat('%', #{additionalInfo}, '%')</if>
+            <if test="taskCreatedAt != null "> and task_created_at = #{taskCreatedAt}</if>
+            <if test="taskStatus != null "> and task_status = #{taskStatus}</if>
+        </where>
+    </select>
+    
+    <select id="selectadminTaskinfoByTaskId" parameterType="Long" resultMap="adminTaskinfoResult">
+        <include refid="selectadminTaskinfoVo"/>
+        where task_id = #{taskId}
+    </select>
+        
+    <insert id="insertadminTaskinfo" parameterType="adminTaskinfo" useGeneratedKeys="true" keyProperty="taskId">
+        insert into taskinfo
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="modelName != null and modelName != ''">model_name,</if>
+            <if test="modelParams != null and modelParams != ''">model_params,</if>
+            <if test="modelVendor != null">model_vendor,</if>
+            <if test="additionalInfo != null">additional_info,</if>
+            <if test="apiKey != null and apiKey != ''">api_key,</if>
+            <if test="taskCreatedAt != null">task_created_at,</if>
+            <if test="taskStatus != null">task_status,</if>
+            <if test="taskReportPdf != null">task_report_pdf,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="modelName != null and modelName != ''">#{modelName},</if>
+            <if test="modelParams != null and modelParams != ''">#{modelParams},</if>
+            <if test="modelVendor != null">#{modelVendor},</if>
+            <if test="additionalInfo != null">#{additionalInfo},</if>
+            <if test="apiKey != null and apiKey != ''">#{apiKey},</if>
+            <if test="taskCreatedAt != null">#{taskCreatedAt},</if>
+            <if test="taskStatus != null">#{taskStatus},</if>
+            <if test="taskReportPdf != null">#{taskReportPdf},</if>
+         </trim>
+    </insert>
+
+    <update id="updateadminTaskinfo" parameterType="adminTaskinfo">
+        update taskinfo
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="modelName != null and modelName != ''">model_name = #{modelName},</if>
+            <if test="modelParams != null and modelParams != ''">model_params = #{modelParams},</if>
+            <if test="modelVendor != null">model_vendor = #{modelVendor},</if>
+            <if test="additionalInfo != null">additional_info = #{additionalInfo},</if>
+            <if test="apiKey != null and apiKey != ''">api_key = #{apiKey},</if>
+            <if test="taskCreatedAt != null">task_created_at = #{taskCreatedAt},</if>
+            <if test="taskStatus != null">task_status = #{taskStatus},</if>
+            <if test="taskReportPdf != null">task_report_pdf = #{taskReportPdf},</if>
+        </trim>
+        where task_id = #{taskId}
+    </update>
+
+    <delete id="deleteadminTaskinfoByTaskId" parameterType="Long">
+        delete from taskinfo where task_id = #{taskId}
+    </delete>
+
+    <delete id="deleteadminTaskinfoByTaskIds" parameterType="String">
+        delete from taskinfo where task_id in 
+        <foreach item="taskId" collection="array" open="(" separator="," close=")">
+            #{taskId}
+        </foreach>
+    </delete>
+</mapper>

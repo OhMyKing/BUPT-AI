@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>机器人导航管理系统 - 北京邮电大学沙河校区</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <style>
+    body,
+    html,
+    #container {
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        font-family: "微软雅黑";
+    }
+    
+    /* 控制面板样式 */
+    .control-panel {
+        position: fixed;
+        right: 20px;
+        top: 20px;
+        background: white;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        width: 350px;
+        max-height: 90vh;
+        overflow-y: auto;
+        z-index: 1000;
+        pointer-events: auto;
+    }
+    
+    .panel-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid #f0f0f0;
+    }
+    
+    .panel-header h2 {
+        margin: 0;
+        color: #333;
+        font-size: 20px;
+    }
+    
+    .panel-header div {
+        display: flex;
+        gap: 5px;
+    }
+    
+    .refresh-btn {
+        background: #4CAF50;
+        color: white;
+        border: none;
+        padding: 8px 12px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 12px;
+        white-space: nowrap;
+    }
+    
+    .refresh-btn:hover {
+        background: #45a049;
+    }
+    
+    .refresh-btn[style*="background: #ff9800"]:hover {
+        background: #e67e00 !important;
+    }
+    
+    /* 机器人列表样式 */
+    .robot-list {
+        margin-top: 20px;
+    }
+    
+    .robot-item {
+        background: #f8f9fa;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        padding: 15px;
+        margin-bottom: 15px;
+        transition: all 0.3s ease;
+    }
+    
+    .robot-item:hover {
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        transform: translateY(-2px);
+    }
+    
+    .robot-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    
+    .robot-name {
+        font-weight: bold;
+        color: #333;
+        font-size: 16px;
+    }
+    
+    .robot-status {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .status-indicator {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+    }
+    
+    .status-normal { background: #4CAF50; }
+    .status-low-battery { background: #ff9800; }
+    .status-fault { background: #f44336; }
+    
+    .battery-level {
+        font-size: 14px;
+        color: #666;
+    }
+    
+    .robot-info {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-bottom: 10px;
+        font-size: 14px;
+        color: #666;
+    }
+    
+    .info-item {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .info-label {
+        font-size: 12px;
+        color: #999;
+        margin-bottom: 2px;
+    }
+    
+    .info-value {
+        color: #333;
+        font-weight: 500;
+    }
+    
+    /* 导航控制 */
+    .navigation-control {
+        margin-top: 10px;
+        padding-top: 10px;
+        border-top: 1px solid #e0e0e0;
+    }
+    
+    .nav-form {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+    
+    .nav-select {
+        flex: 1;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+    
+    .nav-btn {
+        padding: 8px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: all 0.3s;
+    }
+    
+    .nav-start {
+        background: #2196F3;
+        color: white;
+    }
+    
+    .nav-start:hover {
+        background: #1976D2;
+    }
+    
+    .nav-stop {
+        background: #f44336;
+        color: white;
+    }
+    
+    .nav-stop:hover {
+        background: #d32f2f;
+    }
+    
+    /* 图例 */
+    .legend {
+        position: fixed;
+        left: 20px;
+        top: 20px;
+        background: white;
+        border-radius: 8px;
+        padding: 15px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        z-index: 1000;
+        pointer-events: auto;
+    }
+    
+    .legend-title {
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #333;
+    }
+    
+    .legend-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+        font-size: 14px;
+    }
+    
+    .legend-icon {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        border-radius: 50%;
+    }
+    
+    /* 自定义标记图标样式 */
+    .marker-icon {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        display: inline-block;
+    }
+    
+    .marker-robot {
+        background: #f44336;
+        border-radius: 50% 50% 50% 0;
+        transform: rotate(-45deg);
+        position: relative;
+    }
+    
+    .marker-robot::after {
+        content: '';
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        background: white;
+        border-radius: 50%;
+        top: 6px;
+        left: 6px;
+    }
+    
+    .marker-position {
+        background: #2196F3;
+        border-radius: 50% 50% 50% 0;
+        transform: rotate(-45deg);
+        position: relative;
+    }
+    
+    .marker-position::after {
+        content: '';
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        background: white;
+        border-radius: 50%;
+        top: 6px;
+        left: 6px;
+    }
+    
+    .loading {
+        text-align: center;
+        padding: 20px;
+        color: #666;
+    }
+    
+    /* 清除状态提示 */
+    .clear-status {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(0,0,0,0.8);
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        z-index: 2000;
+        display: none;
+    }
+    .BMap_cpyCtrl {
+        display: none;
+    }
+    .anchorBL {
+        display: none;
+    }
+    /* 响应式设计 */
+    @media (max-width: 768px) {
+        .control-panel {
+            width: 300px;
+            right: 10px;
+            top: 10px;
+            z-index: 1000;
+        }
+        
+        .legend {
+            left: 10px;
+            top: 10px;
+            z-index: 1000;
+        }
+    }
+    
+    /* 确保地图容器在最底层 */
+    #container {
+        z-index: 1;
+        position: relative;
+    }
+    </style>
+    <script src="https://api.map.baidu.com/api?type=webgl&v=1.0&ak=dWgPPlGtio3URDeJlFsxOkpiDrqU406S"></script>
+</head>
+<body>
+    <div id="container"></div>
+    
+    <!-- 清除状态提示 -->
+    <div id="clearStatus" class="clear-status">正在清除路径...</div>
+    
+    <!-- 图例 -->
+    <div class="legend">
+        <div class="legend-title">图例</div>
+        <div class="legend-item">
+            <div class="marker-icon marker-robot"></div>
+            <span>机器人位置</span>
+        </div>
+        <div class="legend-item">
+            <div class="marker-icon marker-position"></div>
+            <span>关键位置</span>
+        </div>
+        <div class="legend-item">
+            <div style="width: 20px; height: 3px; background: #4CAF50; margin-right: 10px;"></div>
+            <span>导航路径</span>
+        </div>
+    </div>
+    
+    <!-- 控制面板 -->
+    <div class="control-panel">
+        <div class="panel-header">
+            <h2>机器人状态</h2>
+            <div>
+                <button class="refresh-btn" onclick="refreshData()">刷新数据</button>
+                <button class="refresh-btn" onclick="clearAllPaths()" style="margin-left: 5px; background: #ff9800;">清除路径</button>
+            </div>
+        </div>
+        
+        <div id="robotList" class="robot-list">
+            <div class="loading">正在加载机器人数据...</div>
+        </div>
+    </div>
+
+    <script>
+    // 全局变量
+    let map;
+    let robots = [];
+    let keyPositions = [];
+    let robotMarkers = {};
+    let positionMarkers = {};
+    let navigationRoutes = {};
+    let routePolylines = {}; // 新增：存储路径线条对象
+    let refreshInterval;
+
+    // 创建自定义覆盖物类（机器人标记）
+    function RobotMarker(point, robot) {
+        this._point = point;
+        this._robot = robot;
+    }
+
+    RobotMarker.prototype = new BMapGL.Overlay();
+
+    RobotMarker.prototype.initialize = function(map) {
+        this._map = map;
+        const div = this._div = document.createElement("div");
+        div.style.position = "absolute";
+        div.style.zIndex = BMapGL.Overlay.getZIndex(this._point.lat);
+        div.style.width = "30px";
+        div.style.height = "30px";
+        div.style.cursor = "pointer";
+        
+        // 创建标记元素
+        div.innerHTML = `
+            <div style="position: relative; width: 30px; height: 30px;">
+                <div style="position: absolute; width: 24px; height: 24px; background: #f44336; 
+                            border-radius: 50% 50% 50% 0; transform: rotate(-45deg); 
+                            box-shadow: 0 2px 4px rgba(0,0,0,0.3);">
+                    <div style="position: absolute; width: 10px; height: 10px; background: white; 
+                               border-radius: 50%; top: 7px; left: 7px;"></div>
+                </div>
+                <div style="position: absolute; top: -35px; left: 50%; transform: translateX(-50%); 
+                            background: rgba(0,0,0,0.8); color: white; padding: 2px 8px; 
+                            border-radius: 3px; font-size: 12px; white-space: nowrap;">
+                    机器人 #${this._robot.robot_id}
+                </div>
+            </div>
+        `;
+        
+        // 添加点击事件
+        const self = this;
+        div.onclick = function() {
+            const infoWindow = new BMapGL.InfoWindow(
+                `<div style="padding: 10px;">
+                    <h4>机器人 #${self._robot.robot_id}</h4>
+                    <p>类型: ${self._robot.robot_type || '未知'}</p>
+                    <p>电量: ${self._robot.battery_level.toFixed(1)}%</p>
+                    <p>状态: ${self._robot.health_state || '未知'}</p>
+                    <p>当前位置: ${self._robot.current_latitude.toFixed(6)}, ${self._robot.current_longitude.toFixed(6)}</p>
+                    ${self._robot.target_name ? `<p>目标: ${self._robot.target_name}</p>` : '<p>目标: 无</p>'}
+                </div>`,
+                {
+                    width: 220,
+                    height: 150,
+                    title: `机器人 #${self._robot.robot_id}`
+                }
+            );
+            map.openInfoWindow(infoWindow, self._point);
+        };
+        
+        map.getPanes().labelPane.appendChild(div);
+        return div;
+    };
+
+    RobotMarker.prototype.draw = function() {
+        const position = this._map.pointToOverlayPixel(this._point);
+        this._div.style.left = position.x - 15 + "px";
+        this._div.style.top = position.y - 30 + "px";
+    };
+
+    RobotMarker.prototype.setPosition = function(point) {
+        this._point = point;
+        this.draw();
+    };
+
+    // 创建自定义覆盖物类（位置标记）
+    function PositionMarker(point, position) {
+        this._point = point;
+        this._position = position;
+    }
+
+    PositionMarker.prototype = new BMapGL.Overlay();
+
+    PositionMarker.prototype.initialize = function(map) {
+        this._map = map;
+        const div = this._div = document.createElement("div");
+        div.style.position = "absolute";
+        div.style.zIndex = BMapGL.Overlay.getZIndex(this._point.lat);
+        div.style.width = "30px";
+        div.style.height = "30px";
+        div.style.cursor = "pointer";
+        
+        // 创建标记元素
+        div.innerHTML = `
+            <div style="position: relative; width: 30px; height: 30px;">
+                <div style="position: absolute; width: 24px; height: 24px; background: #2196F3; 
+                            border-radius: 50% 50% 50% 0; transform: rotate(-45deg); 
+                            box-shadow: 0 2px 4px rgba(0,0,0,0.3);">
+                    <div style="position: absolute; width: 10px; height: 10px; background: white; 
+                               border-radius: 50%; top: 7px; left: 7px;"></div>
+                </div>
+                <div style="position: absolute; top: -35px; left: 50%; transform: translateX(-50%); 
+                            background: rgba(0,0,0,0.8); color: white; padding: 2px 8px; 
+                            border-radius: 3px; font-size: 12px; white-space: nowrap;">
+                    ${this._position.name}
+                </div>
+            </div>
+        `;
+        
+        // 添加点击事件
+        const self = this;
+        div.onclick = function() {
+            const infoWindow = new BMapGL.InfoWindow(
+                `<div style="padding: -1px;">
+                    <p>经度: ${self._position.longitude.toFixed(6)}</p>
+                    <p>纬度: ${self._position.latitude.toFixed(6)}</p>
+                    <p>类型: 关键位置</p>
+                </div>`,
+                {
+                    width: 200,
+                    height: 120,
+                    title: self._position.name
+                }
+            );
+            map.openInfoWindow(infoWindow, self._point);
+        };
+        
+        map.getPanes().labelPane.appendChild(div);
+        return div;
+    };
+
+    PositionMarker.prototype.draw = function() {
+        const position = this._map.pointToOverlayPixel(this._point);
+        this._div.style.left = position.x - 15 + "px";
+        this._div.style.top = position.y - 30 + "px";
+    };
+
+    // 显示清除状态
+    function showClearStatus(message) {
+        const statusEl = document.getElementById('clearStatus');
+        statusEl.textContent = message;
+        statusEl.style.display = 'block';
+    }
+
+    // 隐藏清除状态
+    function hideClearStatus() {
+        const statusEl = document.getElementById('clearStatus');
+        statusEl.style.display = 'none';
+    }
+
+    // 改进的清除所有路径函数
+    async function clearAllPaths() {
+        showClearStatus('正在清除路径...');
+        
+        try {
+            // 方法1：清除所有导航路线规划器
+            Object.keys(navigationRoutes).forEach(robotId => {
+                const route = navigationRoutes[robotId];
+                if (route) {
+                    if (typeof route.clearResults === 'function') {
+                        route.clearResults();
+                    }
+                    if (typeof route.clear === 'function') {
+                        route.clear();
+                    }
+                }
+            });
+
+            // 方法2：清除所有路径线条
+            Object.keys(routePolylines).forEach(robotId => {
+                const polyline = routePolylines[robotId];
+                if (polyline) {
+                    map.removeOverlay(polyline);
+                }
+            });
+
+            // 方法3：获取所有覆盖物并清除路径相关的
+            const allOverlays = map.getOverlays();
+            allOverlays.forEach(overlay => {
+                // 检查是否是路径线条（Polyline）
+                if (overlay instanceof BMapGL.Polyline) {
+                    // 通过样式判断是否为导航路径
+                    const strokeColor = overlay.getStrokeColor();
+                    if (strokeColor === '#4CAF50' || strokeColor === '#ff9800') {
+                        map.removeOverlay(overlay);
+                    }
+                }
+            });
+
+            // 清空存储对象
+            navigationRoutes = {};
+            routePolylines = {};
+
+            showClearStatus('路径清除完成');
+            
+            // 延迟隐藏状态提示
+            setTimeout(() => {
+                hideClearStatus();
+            }, 1000);
+
+            console.log('所有导航路径已清除');
+        } catch (error) {
+            console.error('清除路径时出错:', error);
+            showClearStatus('清除路径失败');
+            setTimeout(hideClearStatus, 2000);
+        }
+    }
+
+    // 清除所有地图覆盖物（仅清除机器人标记和路径）
+    function clearMapOverlays() {
+        // 清除机器人标记
+        Object.values(robotMarkers).forEach(marker => {
+            map.removeOverlay(marker);
+        });
+        
+        // 使用改进的路径清除方法
+        clearAllPaths();
+        
+        // 重置机器人标记存储对象
+        robotMarkers = {};
+    }
+
+    // 刷新地图显示
+    function refreshMapDisplay() {
+        clearMapOverlays();
+        updateRobotMarkers();
+        console.log('地图显示已刷新');
+    }
+
+    // 初始化地图
+    function initMap() {
+        map = new BMapGL.Map('container');
+        
+        // 北京邮电大学沙河校区中心点
+        const shaheCenter = new BMapGL.Point(116.297025, 40.164338);
+        map.centerAndZoom(shaheCenter, 18);
+        map.enableScrollWheelZoom(true);
+        
+        // 设置3D视角
+        map.setHeading(45);
+        map.setTilt(55);
+        
+        // 添加地图控件
+        // map.addControl(new BMapGL.NavigationControl3D());
+        map.addControl(new BMapGL.ScaleControl());
+        
+        // 确保控制面板不被地图事件影响
+        const controlPanel = document.querySelector('.control-panel');
+        const legend = document.querySelector('.legend');
+        
+        if (controlPanel) {
+            controlPanel.addEventListener('mousedown', function(e) {
+                e.stopPropagation();
+            });
+            controlPanel.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+        }
+        
+        if (legend) {
+            legend.addEventListener('mousedown', function(e) {
+                e.stopPropagation();
+            });
+            legend.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+        }
+        
+        // 定义校区边界
+        const saheBoundary = [
+            new BMapGL.Point(116.290116, 40.163528),
+            new BMapGL.Point(116.291984, 40.163983),
+            new BMapGL.Point(116.29105, 40.165844),
+            new BMapGL.Point(116.293251, 40.166127),
+            new BMapGL.Point(116.295119, 40.166347),
+            new BMapGL.Point(116.299921, 40.167415),
+            new BMapGL.Point(116.30253, 40.162674),
+            new BMapGL.Point(116.295869, 40.160844),
+            new BMapGL.Point(116.295838, 40.161164),
+            new BMapGL.Point(116.29458, 40.163397),
+            new BMapGL.Point(116.293718, 40.163783),
+            new BMapGL.Point(116.290232, 40.162984),
+            new BMapGL.Point(116.290116, 40.163528)
+        ];
+        
+        const mapMask = new BMapGL.MapMask(saheBoundary, {
+            isBuildingMask: true,      // 遮罩建筑物
+            isPoiMask: true,           // 遮罩POI点
+            isMapMask: true,           // 遮罩地图
+            showRegion: 'inside',      // 显示内部区域
+            topFillColor: '#f0f0f0',   // 顶部填充颜色（可以调整为更浅的颜色）
+            topFillOpacity: 0.7,       // 顶部填充透明度
+            sideFillColor: '#cccccc',  // 侧面填充颜色
+            sideFillOpacity: 0.9       // 侧面填充透明度
+        });
+        map.addOverlay(mapMask);
+        
+        // 添加校区边界
+        const border = new BMapGL.Polyline(saheBoundary, {
+            strokeColor: '#ff0000',
+            strokeWeight: 3,
+            strokeOpacity: 0.8
+        });
+        map.addOverlay(border);
+    }
+
+    // 加载关键位置
+    async function loadKeyPositions() {
+        try {
+            const response = await fetch('/api/key_positions');
+            keyPositions = await response.json();
+            
+            // 在地图上添加关键位置标记
+            keyPositions.forEach(position => {
+                const point = new BMapGL.Point(position.longitude, position.latitude);
+                
+                // 使用自定义覆盖物
+                const marker = new PositionMarker(point, position);
+                
+                map.addOverlay(marker);
+                positionMarkers[position.id] = marker;
+            });
+        } catch (error) {
+            console.error('加载关键位置失败:', error);
+        }
+    }
+
+    // 加载机器人数据
+    async function loadRobots() {
+        try {
+            const response = await fetch('/api/robots');
+            robots = await response.json();
+            updateRobotList();
+            updateRobotMarkers();
+        } catch (error) {
+            console.error('加载机器人数据失败:', error);
+        }
+    }
+
+    // 更新机器人列表UI
+    function updateRobotList() {
+        const robotListEl = document.getElementById('robotList');
+        
+        if (robots.length === 0) {
+            robotListEl.innerHTML = '<div class="loading">暂无机器人数据</div>';
+            return;
+        }
+        
+        robotListEl.innerHTML = robots.map(robot => `
+            <div class="robot-item">
+                <div class="robot-header">
+                    <span class="robot-name">机器人 #${robot.robot_id}</span>
+                    <div class="robot-status">
+                        <span class="status-indicator status-${getStatusClass(robot.health_state_id)}"></span>
+                        <span class="battery-level">${robot.battery_level.toFixed(1)}%</span>
+                    </div>
+                </div>
+                
+                <div class="robot-info">
+                    <div class="info-item">
+                        <span class="info-label">类型</span>
+                        <span class="info-value">${robot.robot_type || '未知'}</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">状态</span>
+                        <span class="info-value">${robot.health_state || '未知'}</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">当前位置</span>
+                        <span class="info-value">${formatCoordinate(robot.current_latitude, robot.current_longitude)}</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">目标位置</span>
+                        <span class="info-value">${robot.target_name || '无'}</span>
+                    </div>
+                </div>
+                
+                ${robot.robot_type === '引导机器人' ? 
+                    `<div class="navigation-control">
+                        ${robot.target_position_id ? 
+                            `<button class="nav-btn nav-stop" onclick="stopNavigation(${robot.robot_id})">停止导航</button>` :
+                            `<form class="nav-form" onsubmit="startNavigation(event, ${robot.robot_id})">
+                                <select class="nav-select" id="target-${robot.robot_id}" required>
+                                    <option value="">选择目标位置</option>
+                                    ${keyPositions.map(pos => 
+                                        `<option value="${pos.id}">${pos.name}</option>`
+                                    ).join('')}
+                                </select>
+                                <button type="submit" class="nav-btn nav-start">开始导航</button>
+                            </form>`
+                        }
+                    </div>` : ''
+                }
+            </div>
+        `).join('');
+    }
+
+    // 更新机器人在地图上的标记
+    function updateRobotMarkers() {
+        robots.forEach(robot => {
+            const point = new BMapGL.Point(robot.current_longitude, robot.current_latitude);
+            
+            if (robotMarkers[robot.robot_id]) {
+                // 更新现有标记位置
+                robotMarkers[robot.robot_id].setPosition(point);
+            } else {
+                // 创建新的自定义标记
+                const marker = new RobotMarker(point, robot);
+                map.addOverlay(marker);
+                robotMarkers[robot.robot_id] = marker;
+            }
+            
+            // 更新导航路径
+            if (robot.target_latitude && robot.target_longitude) {
+                updateNavigationRoute(robot);
+            } else {
+                // 清除该机器人的路径
+                clearRobotRoute(robot.robot_id);
+            }
+        });
+    }
+
+    // 清除特定机器人的路径
+    function clearRobotRoute(robotId) {
+        // 清除路线规划器
+        if (navigationRoutes[robotId]) {
+            const route = navigationRoutes[robotId];
+            if (typeof route.clearResults === 'function') {
+                route.clearResults();
+            }
+            if (typeof route.clear === 'function') {
+                route.clear();
+            }
+            delete navigationRoutes[robotId];
+        }
+
+        // 清除路径线条
+        if (routePolylines[robotId]) {
+            map.removeOverlay(routePolylines[robotId]);
+            delete routePolylines[robotId];
+        }
+    }
+
+    // 改进的更新导航路径函数
+    function updateNavigationRoute(robot) {
+        const startPoint = new BMapGL.Point(robot.current_longitude, robot.current_latitude);
+        const endPoint = new BMapGL.Point(robot.target_longitude, robot.target_latitude);
+        
+        // 先清除该机器人的旧路径
+        clearRobotRoute(robot.robot_id);
+        
+        // 创建步行路线规划实例
+        const walking = new BMapGL.WalkingRoute(map, {
+            renderOptions: {
+                map: map,
+                autoViewport: false, // 不自动调整视野
+                walkingOptions: {
+                    strokeColor: '#4CAF50',
+                    strokeWeight: 4,
+                    strokeOpacity: 0.8
+                }
+            },
+            onSearchComplete: function(results) {
+                if (walking.getStatus() === BMAP_STATUS_SUCCESS) {
+                    console.log(`机器人 #${robot.robot_id} 路径规划成功`);
+                    
+                    // 获取路径并存储到routePolylines中以便后续清除
+                    const plan = results.getPlan(0);
+                    const route = plan.getRoute(0);
+                    if (route) {
+                        // 这里可以获取到实际的路径线条，但百度地图API可能不直接暴露
+                        // 我们通过其他方式来标记这条路径
+                    }
+                } else {
+                    console.log(`机器人 #${robot.robot_id} 路径规划失败，使用直线路径`);
+                    // 如果路径规划失败，显示直线作为备选方案
+                    const polyline = new BMapGL.Polyline([startPoint, endPoint], {
+                        strokeColor: '#ff9800',
+                        strokeWeight: 4,
+                        strokeOpacity: 0.8,
+                        strokeStyle: 'dashed'
+                    });
+                    map.addOverlay(polyline);
+                    routePolylines[robot.robot_id] = polyline;
+                }
+            }
+        });
+        
+        // 开始路径搜索
+        walking.search(startPoint, endPoint);
+        navigationRoutes[robot.robot_id] = walking;
+    }
+
+    // 开始导航
+    async function startNavigation(event, robotId) {
+        event.preventDefault();
+        const targetId = document.getElementById(`target-${robotId}`).value;
+        
+        if (!targetId) {
+            alert('请选择目标位置');
+            return;
+        }
+        
+        try {
+            const response = await fetch(`/api/robot/${robotId}/navigate`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    target_position_id: parseInt(targetId)
+                })
+            });
+            
+            const result = await response.json();
+            if (result.success) {
+                alert('导航任务已设置');
+                await loadRobots();
+            } else {
+                alert('设置导航失败: ' + result.error);
+            }
+        } catch (error) {
+            console.error('设置导航失败:', error);
+            alert('设置导航失败');
+        }
+    }
+
+    // 停止导航
+    async function stopNavigation(robotId) {
+        try {
+            const response = await fetch(`/api/robot/${robotId}/stop`, {
+                method: 'POST'
+            });
+            
+            const result = await response.json();
+            if (result.success) {
+                alert('导航已停止');
+                // 立即清除该机器人的路径
+                clearRobotRoute(robotId);
+                await loadRobots();
+            } else {
+                alert('停止导航失败: ' + result.error);
+            }
+        } catch (error) {
+            console.error('停止导航失败:', error);
+            alert('停止导航失败');
+        }
+    }
+
+    // 刷新数据
+    async function refreshData() {
+        await loadRobots();
+        console.log('数据已刷新');
+    }
+
+    // 辅助函数
+    function getStatusClass(healthStateId) {
+        switch(healthStateId) {
+            case 1: return 'normal';
+            case 2: return 'low-battery';
+            case 3: return 'fault';
+            default: return 'normal';
+        }
+    }
+
+    function formatCoordinate(lat, lng) {
+        if (!lat || !lng) return '未知';
+        return `${lat.toFixed(6)}, ${lng.toFixed(6)}`;
+    }
+
+    // 初始化
+    window.onload = async function() {
+        initMap();
+        await loadKeyPositions();
+        await loadRobots();
+        
+        // 设置5秒自动刷新
+        refreshInterval = setInterval(refreshData, 5000);
+    };
+
+    // 清理
+    window.onbeforeunload = function() {
+        if (refreshInterval) {
+            clearInterval(refreshInterval);
+        }
+    };
+    </script>
+</body>
+</html>

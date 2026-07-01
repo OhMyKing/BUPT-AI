@@ -1,0 +1,5 @@
+*.mp4 filter=lfs diff=lfs merge=lfs -text
+*.mov filter=lfs diff=lfs merge=lfs -text
+*.webm filter=lfs diff=lfs merge=lfs -text
+24_fall/软件工程/教材/软件工程模型与方法[[:space:]][[:space:]]第2版_13669954.pdf filter=lfs diff=lfs merge=lfs -text
+24_spring/机器智能课程设计/课设/实验三-BlueDon大语言模型一站式安全监测与增强平台/项目PPT/BlueDon.pptx filter=lfs diff=lfs merge=lfs -text

@@ -1,0 +1,30 @@
+identity:
+  author: ohmyking
+  name: robot_actions
+  label:
+    en_US: Robot Actions Controller
+    zh_Hans: 机器人动作控制器
+    pt_BR: Controlador de Ações do Robô
+  description:
+    en_US: A plugin for controlling robot actions through HTTP API
+    zh_Hans: 通过 HTTP API 控制机器人动作的插件
+    pt_BR: Um plugin para controlar ações do robô através de API HTTP
+  icon: icon.svg
+credentials_for_provider:
+  base_url:
+    type: text-input
+    required: true
+    label:
+      en_US: Server Base URL
+      zh_Hans: 服务器基础 URL
+    placeholder:
+      en_US: http://10.129.174.189:5000
+      zh_Hans: http://10.129.174.189:5000
+    help:
+      en_US: The base URL of the robot control server
+      zh_Hans: 机器人控制服务器的基础 URL
+tools:
+  - tools/robot_actions.yaml
+extra:
+  python:
+    source: provider/robot_actions.py

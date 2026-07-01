@@ -1,0 +1,55 @@
+version: 0.0.1
+type: plugin
+author: ohmyking
+name: robot_actions
+label:
+  en_US: Robot Actions Controller
+  ja_JP: ロボットアクションコントローラー
+  zh_Hans: 机器人动作控制器
+  pt_BR: Controlador de Ações do Robô
+description:
+  en_US: Control robot actions through HTTP API, enabling interactive robot movements during conversations
+  ja_JP: HTTP APIを通じてロボットの動作を制御し、会話中のインタラクティブなロボットの動きを可能にします
+  zh_Hans: 通过 HTTP API 控制机器人动作，在对话中实现交互式的机器人动作
+  pt_BR: Controlar ações do robô através de API HTTP, permitindo movimentos interativos do robô durante conversas
+icon: icon.svg
+tags:
+  - utilities
+resource:
+  memory: 268435456
+  permission:
+    tool:
+      enabled: false
+    model:
+      enabled: false
+      llm: false
+      text_embedding: false
+      rerank: false
+      tts: false
+      speech2text: false
+      moderation: false
+    node:
+      enabled: false
+    endpoint:
+      enabled: false
+    app:
+      enabled: false
+    storage:
+      enabled: false
+      size: 1024
+plugins:
+  tools:
+    - provider/robot_actions.yaml
+meta:
+  version: 0.0.1
+  arch:
+    - amd64
+    - arm64
+  runner:
+    language: python
+    version: "3.12"
+    entrypoint: main
+  minimum_dify_version: 0.0.1
+created_at: 2025-06-13T17:33:22.007879+08:00
+privacy: PRIVACY.md
+verified: false

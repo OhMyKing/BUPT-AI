@@ -1,0 +1,384 @@
+%%
+%% Chapter 2: 问题建模
+%%
+
+\chapter{问题建模}
+
+本章围绕零样本跨被试 fMRI 视觉重建任务展开问题建模。首先对视觉刺激与脑响应之间的映射关系进行形式化描述，其次给出零样本跨被试视觉重建任务的严格定义，并分析该任务面临的核心挑战，为后续方法设计奠定基础。
+
+\section{视觉刺激与脑响应的形式化表示}
+
+在视觉脑解码问题中，研究对象可以形式化为视觉刺激与脑响应之间的映射关系。设视觉刺激空间为 $\mathcal{Y}$，其中任意输入图像表示为
+\begin{align}
+  y \in \mathcal{Y}.
+\end{align}
+
+对于被试集合 $\mathcal{S}=\{s_1,s_2,\dots,s_N\}$，每个被试 $s \in \mathcal{S}$ 在视觉刺激 $y$ 下产生的功能性磁共振成像（fMRI）响应可以表示为
+\begin{align}
+  x^{(s)} \in \mathbb{R}^{V},
+\end{align}
+其中 $V$ 表示经过预处理后统一到标准皮层表面空间中的顶点（vertex）数量。
+
+在实际数据采集过程中，fMRI 信号最初以体素（voxel）形式记录，具有三维空间结构和时间序列特性。由于不同被试之间存在显著的脑结构差异，通常需要通过空间配准与表面映射技术，将体素级数据转换为皮层表面上的顶点表示，并对不同被试进行对齐。通过这一过程，可以获得具有统一拓扑结构和维度的神经响应表示，从而使跨被试建模成为可能。
+
+在时间维度上，由于单个刺激通常对应多个时间点的 BOLD 响应，实际处理中往往通过时间窗口平均或回归建模，将其压缩为一个静态向量表示。因此，本文中的 $x^{(s)}$ 表示为对刺激响应的时间整合结果。
+
+整个数据集可以形式化表示为
+\begin{align}
+  \mathcal{D} = \{(x_i^{(s)}, y_i, s)\}_{i=1}^{M},
+\end{align}
+其中每个样本由视觉刺激 $y_i$、对应脑响应 $x_i^{(s)}$ 以及被试标识 $s$ 组成。需要注意的是，同一视觉刺激在不同被试下可能对应不同的脑响应，即
+\begin{align}
+  x^{(s_i)} \neq x^{(s_j)}, \qquad s_i \neq s_j,
+\end{align}
+这为后续跨被试建模带来了额外挑战。
+
+由于直接从高维脑信号回归像素级图像空间具有较大难度，近年来研究通常采用“语义中间空间”作为桥梁。具体而言，引入预训练视觉编码器
+\begin{align}
+  E_{\mathrm{img}}: \mathcal{Y} \rightarrow \mathcal{Z},
+\end{align}
+将图像映射到语义表示空间
+\begin{align}
+  z = E_{\mathrm{img}}(y), \qquad z \in \mathbb{R}^{d}.
+\end{align}
+
+该语义空间通常由大规模视觉—语言模型（如 CLIP）或视觉编码模型构建，具有良好的语义结构与判别能力。在此基础上，视觉重建任务可以分解为两个子问题：
+
+\begin{enumerate}
+  \item 脑信号到语义表示的映射：
+  \begin{align}
+    f: \mathbb{R}^{V} \rightarrow \mathcal{Z};
+  \end{align}
+  \item 语义表示到图像的生成：
+  \begin{align}
+    g: \mathcal{Z} \rightarrow \mathcal{Y}.
+  \end{align}
+\end{enumerate}
+
+因此，整体流程可以表示为
+\begin{align}
+  x^{(s)} \xrightarrow{\ f\ } z \xrightarrow{\ g\ } \hat{y}.
+\end{align}
+
+该分解具有两方面优势：一方面，语义空间维度较低且结构稳定，有助于降低学习难度；另一方面，生成模型可以利用预训练先验，提高重建图像的视觉质量与语义一致性。
+
+\section{零样本跨被试视觉重建任务定义}
+
+在上述形式化表示基础上，本文关注更具挑战性的零样本跨被试视觉重建问题。该问题要求模型在训练阶段仅利用部分被试的数据，在测试阶段能够直接泛化到完全未见的被试。
+
+设训练被试集合为
+\begin{align}
+  \mathcal{S}_{\mathrm{tr}} = \{s_1,s_2,\dots,s_n\},
+\end{align}
+测试被试集合为
+\begin{align}
+  \mathcal{S}_{\mathrm{te}} = \{s_{n+1},\dots,s_N\},
+\end{align}
+并满足
+\begin{align}
+  \mathcal{S}_{\mathrm{tr}} \cap \mathcal{S}_{\mathrm{te}} = \varnothing.
+\end{align}
+
+训练数据定义为
+\begin{align}
+  \mathcal{D}_{\mathrm{tr}} = \{(x_i^{(s)}, y_i, s) \mid s \in \mathcal{S}_{\mathrm{tr}}\}.
+\end{align}
+
+在测试阶段，仅给定未见被试 $s' \in \mathcal{S}_{\mathrm{te}}$ 的脑响应
+\begin{align}
+  x^{(s')} \in \mathbb{R}^{V},
+\end{align}
+模型需要预测对应的语义表示
+\begin{align}
+  \hat{z} = f(x^{(s')}),
+\end{align}
+并进一步通过生成模型得到重建图像
+\begin{align}
+  \hat{y} = g(\hat{z}).
+\end{align}
+
+与传统设置相比，该问题具有严格约束，即在测试阶段不允许进行任何形式的适配操作：无微调（No fine-tuning）、无校准（No calibration）以及无测试时自适应（No test-time adaptation）。
+
+为更清晰地理解该问题的难度，可以将其与其他常见设置进行对比，如表~\ref{tab:task_compare} 所示。
+
+\begin{table}[htbp]
+  \centering
+  \caption{不同视觉重建任务设置对比}
+  \label{tab:task_compare}
+  \begin{tabular}{ccc}
+    \toprule
+    任务设置 & 是否使用目标被试数据 & 泛化难度 \\
+    \midrule
+    单被试重建 & 是 & 低 \\
+    跨被试（少样本） & 少量 & 中 \\
+    零样本跨被试 & 否 & 高 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+可以看出，零样本跨被试问题要求模型完全依赖于源被试数据学习通用表示，因此对模型的泛化能力提出了更高要求。
+
+从优化角度来看，该任务的目标可以表示为
+\begin{align}
+  \mathcal{L} = \mathcal{L}_{\mathrm{sem}}\bigl(f(x^{(s)}), z\bigr) + \mathcal{L}_{\mathrm{rec}}\bigl(g(f(x^{(s)})), y\bigr),
+\end{align}
+其中：$\mathcal{L}_{\mathrm{sem}}$ 表示语义对齐损失，用于约束预测语义与真实语义一致；$\mathcal{L}_{\mathrm{rec}}$ 表示图像重建损失，用于评估生成图像与原图之间的差异。
+
+然而，在零样本设置下，模型面临一个关键问题：训练数据与测试数据来自不同被试，其输入分布存在显著差异。形式上可以表示为：
+
+训练分布为
+\begin{align}
+  p_{\mathrm{tr}}(x,y) = \sum_{s \in \mathcal{S}_{\mathrm{tr}}} p(x,y \mid s) \, p(s),
+\end{align}
+测试分布为
+\begin{align}
+  p_{\mathrm{te}}(x,y) = \sum_{s \in \mathcal{S}_{\mathrm{te}}} p(x,y \mid s) \, p(s).
+\end{align}
+
+由于被试集合不同，通常有
+\begin{align}
+  p_{\mathrm{tr}}(x) \neq p_{\mathrm{te}}(x),
+\end{align}
+从而导致模型在测试阶段性能下降。
+
+尽管输入空间存在分布偏移，但对于相同视觉刺激，其高层语义表示应保持一致，即理想情况下应满足
+\begin{align}
+  p_{\mathrm{tr}}(z \mid y) \approx p_{\mathrm{te}}(z \mid y).
+\end{align}
+
+因此，该问题的本质可以表述为：在输入空间存在跨被试分布偏移的条件下，学习一个在语义空间中保持稳定的映射函数。
+
+进一步来看，该问题同时涉及以下三个核心挑战：
+\begin{enumerate}
+  \item 分布偏移问题：不同被试导致输入空间分布变化；
+  \item 表示纠缠问题：语义信息与被试特征混合；
+  \item 监督不足问题：缺乏跨被试一致的配对数据。
+\end{enumerate}
+
+这些问题共同构成了零样本跨被试视觉重建的难点，也为后续方法设计提供了重要依据。
+
+\section{跨被试神经表征的组成分析}
+
+在零样本跨被试视觉重建任务中，模型泛化能力的核心瓶颈来源于不同被试之间神经表征的差异性。为更好地理解这一问题，有必要对 fMRI 响应的组成结构进行形式化分析。
+
+对于任意视觉刺激 $y$，其在被试 $s$ 下产生的脑响应 $x^{(s)}$ 可以从生成机制角度分解为
+\begin{align}
+  x^{(s)} = F_{\mathrm{sem}}(y) + F_{\mathrm{subj}}(s,y) + \epsilon,
+\end{align}
+其中：$F_{\mathrm{sem}}(y)$ 表示由视觉刺激本身决定的共享语义成分；$F_{\mathrm{subj}}(s,y)$ 表示由个体差异引入的被试特异性成分；$\epsilon$ 表示测量噪声及未建模因素。
+
+上述分解反映了一个关键事实：相同视觉刺激在不同被试中具有一致的语义本质，但其神经表达形式存在显著差异。例如，对于包含“人物骑自行车”的图像，不同被试的视觉皮层可能在空间位置或激活强度上存在差异，但其高层语义理解应保持一致。
+
+从表示学习角度，可以进一步将神经响应建模为潜在变量驱动的生成过程：
+\begin{align}
+  x^{(s)} \sim p\bigl(x \mid z_{\mathrm{sem}}, z_{\mathrm{subj}}^{(s)}\bigr),
+\end{align}
+其中
+\begin{align}
+  z_{\mathrm{sem}} = E_{\mathrm{sem}}(y), \qquad z_{\mathrm{subj}}^{(s)} = E_{\mathrm{subj}}(s).
+\end{align}
+
+在理想情况下，语义变量 $z_{\mathrm{sem}}$ 应仅依赖于视觉刺激，而被试变量 $z_{\mathrm{subj}}^{(s)}$ 则刻画个体差异。对应地，模型希望学习到如下结构化表示：
+\begin{align}
+  z = (z_{\mathrm{sem}}, z_{\mathrm{subj}}),
+\end{align}
+并满足
+\begin{align}
+  z_{\mathrm{sem}} \perp s,
+\end{align}
+即语义表示不包含被试身份信息。
+
+然而，在实际训练过程中，由于缺乏显式约束，模型往往学习到混合表示：
+\begin{align}
+  z = h(x^{(s)}) = z_{\mathrm{sem}} + \alpha z_{\mathrm{subj}},
+\end{align}
+其中 $\alpha$ 表示语义与被试信息的耦合程度。当 $\alpha$ 较大时，语义表示中包含较多被试特征，从而降低其跨被试泛化能力。
+
+这种“表示纠缠（representation entanglement）”问题在零样本设置下尤为严重。由于测试阶段被试未参与训练，其对应的 $z_{\mathrm{subj}}$ 分布发生变化，导致模型输出偏离真实语义空间，进而影响重建质量。
+
+进一步地，从函数映射角度分析，传统解码模型通常学习如下映射：
+\begin{align}
+  f: x^{(s)} \rightarrow z,
+\end{align}
+但由于输入 $x^{(s)}$ 同时包含语义与被试信息，若模型未能显式分离两者，则实际学习到的映射为
+\begin{align}
+  f(x^{(s)}) \approx f_{\mathrm{sem}}(x) + f_{\mathrm{subj}}(x),
+\end{align}
+其中 $f_{\mathrm{subj}}$ 部分在训练被试上可能有助于拟合，但在测试被试上会产生负迁移效应。
+
+因此，从理论上看，实现跨被试泛化的关键在于构建满足以下条件的表示：
+\begin{align}
+  f(x^{(s)}) \approx z_{\mathrm{sem}},
+\end{align}
+即仅保留与刺激相关的共享语义信息，而去除被试特异性成分。
+
+综上所述，跨被试神经表征问题的本质可以归结为：在多源信息混合的观测信号中，提取具有跨个体一致性的语义表示。这一分析为后续引入表示解耦与对抗学习机制提供了理论依据。
+
+\section{零样本跨被试中的分布偏移问题}
+
+除表示纠缠外，零样本跨被试视觉重建还面临显著的分布偏移问题。从统计学习角度来看，该任务可以视为一种典型的跨域泛化（domain generalization）问题。
+
+在训练阶段，模型观测到的数据分布为
+\begin{align}
+  p_{\mathrm{tr}}(x,y) = \sum_{s \in \mathcal{S}_{\mathrm{tr}}} p(x,y \mid s) \, p(s),
+\end{align}
+而在测试阶段，数据分布为
+\begin{align}
+  p_{\mathrm{te}}(x,y) = \sum_{s \in \mathcal{S}_{\mathrm{te}}} p(x,y \mid s) \, p(s).
+\end{align}
+
+由于训练与测试被试集合互不重叠，即
+\begin{align}
+  \mathcal{S}_{\mathrm{tr}} \cap \mathcal{S}_{\mathrm{te}} = \varnothing,
+\end{align}
+因此通常有
+\begin{align}
+  p_{\mathrm{tr}}(x) \neq p_{\mathrm{te}}(x),
+\end{align}
+即输入空间存在显著分布偏移。
+
+这种分布偏移主要体现在以下两个方面。
+
+\subsection{被试分布偏移}
+
+不同被试之间的神经响应分布存在系统性差异，即使面对相同刺激，其响应模式也可能发生变化。这种差异来源于脑结构、功能组织以及个体认知差异等因素。形式上，对于固定刺激 $y$，不同被试的条件分布满足
+\begin{align}
+  p(x \mid y, s_i) \neq p(x \mid y, s_j), \qquad s_i \neq s_j.
+\end{align}
+
+这意味着模型在训练阶段学习到的输入分布仅覆盖部分被试空间，难以直接推广至未见被试。
+
+\subsection{表征分布偏移}
+
+由于神经响应结构差异，经过编码器映射后的潜在表示分布也会发生变化：
+\begin{align}
+  p_{\mathrm{tr}}(z) \neq p_{\mathrm{te}}(z),
+\end{align}
+其中
+\begin{align}
+  z = f(x).
+\end{align}
+
+当模型未能学习到被试不变表示时，该分布偏移会进一步放大，从而影响语义预测与图像重建。
+
+尽管输入空间存在显著差异，但对于相同视觉刺激，其高层语义应保持一致。即理想情况下应满足
+\begin{align}
+  p_{\mathrm{tr}}(z_{\mathrm{sem}} \mid y) \approx p_{\mathrm{te}}(z_{\mathrm{sem}} \mid y).
+\end{align}
+
+因此，零样本跨被试问题可以重新表述为：在输入空间存在显著分布偏移的条件下，学习一个在语义空间中具有稳定性的映射函数。
+
+从机器学习角度来看，该问题与域泛化（domain generalization）问题密切相关。不同被试可以视为不同“域（domain）”，而模型的目标是在多个源域上学习到具有泛化能力的表示，并在未见域上保持性能稳定。
+
+然而，与传统域泛化问题相比，零样本跨被试视觉重建具有更高难度，其主要原因在于：
+\begin{enumerate}
+  \item 输入空间为高维神经信号，结构复杂且噪声较大；
+  \item 不同域之间差异显著，且难以通过简单对齐消除；
+  \item 训练数据规模有限，难以覆盖所有可能的被试变化。
+\end{enumerate}
+
+此外，该问题还受到刺激分布限制的影响。在实际数据中，训练阶段所覆盖的视觉刺激有限，导致语义空间的覆盖不完整。这进一步加剧了模型在测试阶段的泛化难度。
+
+因此，仅依赖数据规模扩展或模型容量提升，难以有效解决该问题。需要在模型设计中引入显式机制，使其能够在分布偏移条件下仍保持语义表示的稳定性。
+
+\section{神经响应支撑域与数据稀缺问题}
+
+在跨被试视觉重建任务中，数据稀缺通常被认为是限制模型性能的重要因素。然而，从更本质的角度来看，问题的关键并不仅在于样本数量有限，而在于语义一致但神经表达多样的监督样本不足，即神经响应支撑域（support of neural responses）的覆盖不充分。
+
+对于任意视觉刺激 $y$，理想情况下，其在所有被试下对应的神经响应集合可以表示为
+\begin{align}
+  \mathcal{X}(y) = \{x^{(s)} \mid s \in \mathcal{S}\},
+\end{align}
+该集合刻画了同一语义在不同个体中的多种神经表达形式。如果模型能够充分观测该集合，则有助于学习到稳定且具有泛化能力的语义表示。
+
+然而，在实际数据采集中，由于实验成本高昂、扫描时间受限以及被试数量有限，通常仅能观测到该集合的一个稀疏子集：
+\begin{align}
+  \tilde{\mathcal{X}}(y) \subset \mathcal{X}(y), \qquad |\tilde{\mathcal{X}}(y)| \ll |\mathcal{X}(y)|.
+\end{align}
+
+这种支撑域不足带来了两个方面的影响。首先，模型难以区分语义变化与被试差异。由于缺乏同一刺激在多被试条件下的充分观测，模型容易将个体差异误判为语义特征，从而加剧表示纠缠问题。其次，训练分布覆盖范围有限，使得模型在面对未见被试时容易出现输入分布外推，进而导致性能下降。
+
+从概率角度来看，跨被试神经响应可以表示为条件分布的混合形式：
+\begin{align}
+  p(x \mid y) = \int p(x \mid y,s)\, p(s) \, \mathrm{d}s,
+\end{align}
+其中 $p(x \mid y,s)$ 描述在给定被试条件下的神经响应分布。在有限数据条件下，模型仅能获得该分布的有限采样，从而难以准确刻画其整体结构。这意味着模型无法充分学习“同一语义对应多种神经表达”的统计规律。
+
+为缓解上述问题，一个自然的思路是引入条件生成建模，学习神经响应的生成机制：
+\begin{align}
+  \hat{x}^{(s)} \sim p(x \mid y,s),
+\end{align}
+从而在训练阶段构造额外的神经响应样本，扩展原有支撑域。
+
+通过这种方式，可以在保持语义一致性的前提下，引入多样的被试条件变化，使模型能够观测到更加丰富的神经响应模式。这不仅有助于提升模型对跨被试变化的适应能力，还能够为后续表示解耦提供更充分的监督信息。
+
+因此，从建模角度来看，解决零样本跨被试问题不仅依赖于解码模型本身的能力，还需要通过扩展神经响应支撑域，使模型在训练阶段接触到更加多样化的输入分布。
+
+\section{方法设计的理论基础}
+
+基于前述问题建模分析，零样本跨被试视觉重建的有效解决依赖于若干关键理论基础，包括条件生成建模、表示解耦学习以及不变性约束机制。本节对这些核心思想进行阐述，并为后续方法设计提供理论支撑。
+
+\subsection{条件生成建模}
+
+为扩展有限观测到的神经响应支撑域，本文引入条件生成建模思想，目标是学习视觉刺激与被试条件下的神经响应分布：
+\begin{align}
+  p(x \mid y,s).
+\end{align}
+
+通过构建生成模型
+\begin{align}
+  G:(y,s) \rightarrow \hat{x}^{(s)},
+\end{align}
+可以对该条件分布进行近似建模。与传统生成模型不同，这里的生成目标并非生成视觉内容，而是生成在不同被试条件下的神经响应模式。
+
+该过程可以视为一种隐式的数据增强方式，通过生成“同一语义、多种神经表达”的样本，弥补真实数据中支撑域覆盖不足的问题，从而为跨被试表示学习提供更加充分的训练信号。
+
+\subsection{表示解耦与结构化表示学习}
+
+为解决神经响应中语义信息与被试特征相互纠缠的问题，本文采用表示解耦思想，将潜在表示分解为具有明确语义的多个子空间。
+
+设编码器为
+\begin{align}
+  B = E(x),
+\end{align}
+则进一步定义
+\begin{align}
+  z_{\mathrm{sem}} = \Psi_{\mathrm{sem}}(B), \qquad z_{\mathrm{subj}} = \Psi_{\mathrm{subj}}(B),
+\end{align}
+其中 $z_{\mathrm{sem}}$ 表示共享语义信息，$z_{\mathrm{subj}}$ 表示被试特异性信息。
+
+理想情况下，该分解应满足
+\begin{align}
+  I(z_{\mathrm{sem}};s) \to 0, \qquad I(z_{\mathrm{sem}};y) \to \max,
+\end{align}
+即语义表示应尽可能独立于被试身份，同时保留与视觉刺激相关的信息。
+
+通过这种结构化表示建模，模型能够在不同被试之间提取稳定的语义信息，从而提高跨被试泛化能力。
+
+\subsection{对抗不变性学习}
+
+为了进一步抑制语义表示中的被试信息，本文引入对抗学习机制。设分类器 $C$ 用于预测被试身份，则通过最小—最大优化目标实现不变性约束：
+\begin{align}
+  \min_{\Psi_{\mathrm{sem}}} \max_{C} \, \mathcal{L}_{\mathrm{adv}}\bigl(C(z_{\mathrm{sem}}), s\bigr).
+\end{align}
+
+在实际实现中，可以通过梯度反转层（Gradient Reversal Layer, GRL）实现该过程，即在反向传播时对梯度进行符号反转：
+\begin{align}
+  \tilde{g} = -\lambda g,
+\end{align}
+从而使编码器倾向于生成难以区分被试身份的语义表示。
+
+该机制能够有效降低语义空间中的被试信息含量，使其更加接近理想的被试不变表示。
+
+\subsection{跨被试语义一致性约束}
+
+在实现被试不变表示的同时，还需要显式增强不同被试之间的语义一致性。对于相同视觉刺激 $y$，不同被试的语义表示应满足
+\begin{align}
+  z_{\mathrm{sem}}^{(s_i)} \approx z_{\mathrm{sem}}^{(s_j)}, \qquad \forall s_i,s_j.
+\end{align}
+
+为此，可以引入一致性约束或跨重建机制，使模型在不同被试之间共享语义表示，同时保持对各自神经结构的表达能力。这种约束有助于减少语义空间中的不必要自由度，从而提升模型在未见被试上的稳定性。
+
+基于上述理论基础，下一章将进一步介绍本文提出的 MINDMELD 框架及其具体实现方法。
+
+\chapterbib

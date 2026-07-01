@@ -1,0 +1,39 @@
+{
+  "coins": [
+    {
+      "center_x": 172,
+      "center_y": 244,
+      "radius": 39
+    },
+    {
+      "center_x": 263,
+      "center_y": 280,
+      "radius": 31
+    },
+    {
+      "center_x": 257,
+      "center_y": 203,
+      "radius": 28
+    },
+    {
+      "center_x": 119,
+      "center_y": 149,
+      "radius": 28
+    },
+    {
+      "center_x": 164,
+      "center_y": 110,
+      "radius": 29
+    },
+    {
+      "center_x": 250,
+      "center_y": 89,
+      "radius": 29
+    }
+  ],
+  "performance": {
+    "total_time": 0.0026960372924804688,
+    "canny_time": 0.0003910064697265625,
+    "hough_time": 0.0005881786346435547
+  }
+}

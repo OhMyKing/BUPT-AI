@@ -1,0 +1,44 @@
+identity:
+  author: ohmyking
+  name: face_recognition_student
+  label:
+    en_US: Face Recognition Student Info
+    zh_Hans: 人脸识别学生信息
+    pt_BR: Face Recognition Student Info
+  description:
+    en_US: A tool to help LLM recognize face and get student information
+    zh_Hans: 帮助LLM进行人脸识别并获取学生信息的工具
+    pt_BR: A tool to help LLM recognize face and get student information
+  icon: icon.svg
+credentials_for_provider:
+  face_recognition_url:
+    type: text-input
+    required: true
+    label:
+      en_US: Face Recognition Server URL
+      zh_Hans: 人脸识别服务器地址
+    placeholder:
+      en_US: http://ip:port/recognize
+      zh_Hans: http://ip:port/recognize
+    help:
+      en_US: The URL of face recognition API endpoint
+      zh_Hans: 人脸识别API接口地址
+    default: http://10.129.174.189:5000/recognize
+  student_info_url:
+    type: text-input
+    required: true
+    label:
+      en_US: Student Info Server URL
+      zh_Hans: 学生信息服务器地址
+    placeholder:
+      en_US: http://ip:port/api/student_info
+      zh_Hans: http://ip:port/api/student_info
+    help:
+      en_US: The URL of student information API endpoint
+      zh_Hans: 学生信息API接口地址
+    default: http://10.129.134.141:8007/api/student_info
+tools:
+  - tools/face_recognition_student.yaml
+extra:
+  python:
+    source: provider/face_recognition_student.py

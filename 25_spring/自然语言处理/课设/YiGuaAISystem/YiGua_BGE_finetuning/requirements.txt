@@ -1,0 +1,5 @@
+transformers
+seaborn
+sentence_transformers
+tqdm
+torch>2.6

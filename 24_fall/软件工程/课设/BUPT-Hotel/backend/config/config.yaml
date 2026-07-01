@@ -1,0 +1,25 @@
+db:
+  host: 127.0.0.1
+  port: 3306
+  user: root
+  password: ""
+  name: BUPT_Hotel
+  charset: utf8mb4
+pool:
+  max-connections: 100
+  min_cached: 10
+  max_cached: 50
+  blocking: True
+  timeout: 60
+  max_usage: 100
+  reset: True
+  ping: 0        # 改为手动ping
+  retry_count: 3
+  retry_delay: 1
+jwt:
+  secret_key: ""
+  algorithm: HS256
+  expiration_min: 30
+secret:
+  pcrypt_rounds: 12
+

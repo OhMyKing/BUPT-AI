@@ -1,0 +1,97 @@
+identity:
+  name: book_search
+  author: ohmyking
+  label:
+    en_US: Book Search
+    zh_Hans: 书目检索
+    pt_BR: Pesquisa de Livros
+description:
+  human:
+    en_US: Search for ancient Chinese metaphysics books by dynasties and domains
+    zh_Hans: 根据朝代和领域检索易学古籍书目
+    pt_BR: Pesquisar livros antigos de metafísica chinesa por dinastias e domínios
+  llm: |
+    Search for ancient Chinese metaphysics books. This tool helps you find relevant books based on dynasties and domains.
+    
+    使用指南：
+    1. 当用户询问易学、占卜、风水、命理等相关问题时，首先使用此工具查找相关书目
+    2. 根据问题内容选择合适的朝代和领域
+    3. 获得书目后，使用text_search工具检索具体内容
+    
+    可用朝代：东晋（实成于唐宋）、东汉、唐、宋、战国、明、清、近代
+    可用领域：三式、中医、六壬、医学、卜卦、占星、命理、哲学、易学、星命、相术、象数、道家、风水
+parameters:
+  - name: dynasties
+    type: string
+    required: false
+    label:
+      en_US: Dynasties
+      zh_Hans: 朝代
+      pt_BR: Dinastias
+    human_description:
+      en_US: Comma-separated list of dynasties to search
+      zh_Hans: 要检索的朝代列表，用逗号分隔
+      pt_BR: Lista de dinastias para pesquisar, separadas por vírgula
+    llm_description: |
+      朝代列表，用逗号分隔。可选值：东晋（实成于唐宋）、东汉、唐、宋、战国、明、清、近代。
+      如果用户没有明确指定朝代，可以根据问题内容推断。例如：
+      - 问《周易》相关：可选择"战国"或不指定
+      - 问风水相关：可选择"唐"、"宋"、"明"、"清"
+      - 问命理相关：可选择"唐"、"宋"、"明"
+    form: llm
+  - name: domains
+    type: string
+    required: false
+    label:
+      en_US: Domains
+      zh_Hans: 领域
+      pt_BR: Domínios
+    human_description:
+      en_US: Comma-separated list of domains to search
+      zh_Hans: 要检索的领域列表，用逗号分隔
+      pt_BR: Lista de domínios para pesquisar, separados por vírgula
+    llm_description: |
+      领域列表，用逗号分隔。可选值：三式、中医、六壬、医学、卜卦、占星、命理、哲学、易学、星命、相术、象数、道家、风水。
+      根据用户问题选择相关领域：
+      - 问卦象、爻辞：选择"卜卦"、"易学"
+      - 问八字、紫微斗数：选择"命理"、"星命"
+      - 问风水、堪舆：选择"风水"
+      - 问奇门遁甲、大六壬：选择"三式"、"六壬"
+    form: llm
+  - name: limit
+    type: number
+    required: false
+    label:
+      en_US: Result Limit
+      zh_Hans: 结果数量限制
+      pt_BR: Limite de Resultados
+    human_description:
+      en_US: Maximum number of results to return (default： 10)
+      zh_Hans: 返回结果的最大数量（默认：10）
+      pt_BR: Número máximo de resultados a retornar (padrão： 10)
+    llm_description: 返回结果的最大数量，默认为10。建议初次检索使用5-10个结果。
+    form: llm
+extra:
+  python:
+    source: tools/book_search.py
+output_schema:
+  type: object
+  properties:
+    books:
+      type: array
+      description: List of books matching the search criteria
+      items:
+        type: object
+        properties:
+          title:
+            type: string
+            description: Book title
+          dynasty:
+            type: string
+            description: Dynasty of the book
+          domain:
+            type: string
+            description: Domain of the book
+          author:
+            type: string
+            description: Author of the book

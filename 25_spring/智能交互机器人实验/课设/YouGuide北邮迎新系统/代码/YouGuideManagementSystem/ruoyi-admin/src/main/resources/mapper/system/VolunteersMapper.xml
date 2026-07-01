@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.VolunteersMapper">
+    
+    <resultMap type="Volunteers" id="VolunteersResult">
+        <result property="volunteerId"    column="volunteer_id"    />
+        <result property="name"    column="name"    />
+        <result property="gender"    column="gender"    />
+        <result property="currentLatitude"    column="current_latitude"    />
+        <result property="currentLongitude"    column="current_longitude"    />
+    </resultMap>
+
+    <sql id="selectVolunteersVo">
+        select volunteer_id, name, gender, current_latitude, current_longitude from volunteers
+    </sql>
+
+    <select id="selectVolunteersList" parameterType="Volunteers" resultMap="VolunteersResult">
+        <include refid="selectVolunteersVo"/>
+        <where>  
+            <if test="name != null  and name != ''"> and name like concat('%', #{name}, '%')</if>
+            <if test="gender != null  and gender != ''"> and gender = #{gender}</if>
+            <if test="currentLatitude != null "> and current_latitude = #{currentLatitude}</if>
+            <if test="currentLongitude != null "> and current_longitude = #{currentLongitude}</if>
+        </where>
+    </select>
+    
+    <select id="selectVolunteersByVolunteerId" parameterType="String" resultMap="VolunteersResult">
+        <include refid="selectVolunteersVo"/>
+        where volunteer_id = #{volunteerId}
+    </select>
+
+    <insert id="insertVolunteers" parameterType="Volunteers">
+        insert into volunteers
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="volunteerId != null">volunteer_id,</if>
+            <if test="name != null and name != ''">name,</if>
+            <if test="gender != null and gender != ''">gender,</if>
+            <if test="currentLatitude != null">current_latitude,</if>
+            <if test="currentLongitude != null">current_longitude,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="volunteerId != null">#{volunteerId},</if>
+            <if test="name != null and name != ''">#{name},</if>
+            <if test="gender != null and gender != ''">#{gender},</if>
+            <if test="currentLatitude != null">#{currentLatitude},</if>
+            <if test="currentLongitude != null">#{currentLongitude},</if>
+         </trim>
+    </insert>
+
+    <update id="updateVolunteers" parameterType="Volunteers">
+        update volunteers
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="name != null and name != ''">name = #{name},</if>
+            <if test="gender != null and gender != ''">gender = #{gender},</if>
+            <if test="currentLatitude != null">current_latitude = #{currentLatitude},</if>
+            <if test="currentLongitude != null">current_longitude = #{currentLongitude},</if>
+        </trim>
+        where volunteer_id = #{volunteerId}
+    </update>
+
+    <delete id="deleteVolunteersByVolunteerId" parameterType="String">
+        delete from volunteers where volunteer_id = #{volunteerId}
+    </delete>
+
+    <delete id="deleteVolunteersByVolunteerIds" parameterType="String">
+        delete from volunteers where volunteer_id in 
+        <foreach item="volunteerId" collection="array" open="(" separator="," close=")">
+            #{volunteerId}
+        </foreach>
+    </delete>
+</mapper>

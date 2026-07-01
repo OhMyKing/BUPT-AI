@@ -1,0 +1,59 @@
+% !TEX program = xelatex
+%%
+%% This is file `bare_thesis.tex',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% install/buptgraduatethesis.dtx  (with options: `bare-thesis')
+%% 
+%% This file is a part of the example of BUPTGraduateThesis.
+%% 
+
+
+\documentclass[xits]{BUPTthesis}
+\usepackage{cjkfakebold}
+\setCJKmainfont[BoldFont={Noto Serif CJK SC Bold}]{Noto Serif CJK SC}
+\setCJKsansfont[BoldFont={Noto Sans CJK SC Bold}]{Noto Sans CJK SC}
+\setCJKmonofont[BoldFont={Noto Sans Mono CJK SC Bold}]{Noto Sans Mono CJK SC}
+\setCJKfamilyfont{zhhei}[BoldFont={Noto Sans CJK SC Bold}]{Noto Sans CJK SC}
+\renewcommand{\heiti}{\CJKfamily{zhhei}}
+
+\addbibresource{bare_thesis.bib}
+
+\input{metadata}
+
+\begin{document}
+\maketitle
+
+\include{abstract}
+
+\frontmatter     % only in book class (roman page #s)
+\tableofcontents
+% \listoffigures
+% \listoftables
+% \include{notations}
+
+\mainmatter
+\include{ch_intro}
+\include{ch_model}
+\include{ch_method}
+\include{ch_exp}
+\include{ch_concln}
+
+\mainbib
+
+\nottoggle{review}{\include{thanks}}{}
+
+\appendix
+\setappendixformat
+
+\input{app_abbreviation}
+\input{app_lhospital}
+
+\unsetappendixformat
+\backmatter
+% %% 在读期间论文发表情况
+% \include{pubs}
+
+\end{document}

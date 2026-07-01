@@ -1,0 +1,33 @@
+identity:
+  author: ohmyking
+  name: get_navigation
+  label:
+    en_US: Navigation Assistant
+    zh_Hans: 导航助手
+    pt_BR: Assistente de Navegação
+  description:
+    en_US: A tool for obtaining a walking plan from the current GPS to the specified GPS location
+    zh_Hans: 一个从当前GPS位置到指定目的地的步行导航工具
+    pt_BR: Uma ferramenta para obter um plano de caminhada do GPS atual para o GPS especificado
+  icon: icon.svg
+credentials_for_provider:
+  base_url:
+    type: text-input
+    required: true
+    label:
+      en_US: Base URL
+      zh_Hans: 基础URL
+      pt_BR: URL Base
+    placeholder:
+      en_US: Enter the navigation API base URL (e.g., http://127.0.0.1:5005)
+      zh_Hans: 输入导航API的基础URL（例如：http://127.0.0.1:5005）
+      pt_BR: Digite a URL base da API de navegação (ex http://127.0.0.1:5005)
+    help:
+      en_US: The base URL of the navigation API service
+      zh_Hans: 导航API服务的基础URL
+      pt_BR: A URL base do serviço de API de navegação
+tools:
+  - tools/get_navigation.yaml
+extra:
+  python:
+    source: provider/get_navigation.py

@@ -1,0 +1,57 @@
+identity:
+  name: get_navigation
+  author: ohmyking
+  label:
+    en_US: Get Navigation from South Gate
+    zh_Hans: 从南门获取导航
+    pt_BR: Obter Navegação do Portão Sul
+description:
+  human:
+    en_US: Get walking navigation from South Gate (南门) to a predefined destination
+    zh_Hans: 获取从南门到预定义目的地的步行导航
+    pt_BR: Obter navegação a pé do Portão Sul para um destino predefinido
+  llm: Get walking navigation suggestions from South Gate (南门) at coordinates (40.161826, 116.298965) to a predefined destination. The tool provides detailed route information including distance, estimated time, and step-by-step directions.
+parameters:
+  - name: destination
+    type: string
+    required: true
+    label:
+      en_US: Destination
+      zh_Hans: 目的地
+      pt_BR: Destino
+    human_description:
+      en_US: The destination name from the predefined list
+      zh_Hans: 预定义列表中的目的地名称
+      pt_BR: O nome do destino da lista predefinida
+    llm_description: |
+      The destination name. Must be one of the following predefined locations:
+      - 雁北A, 雁北C, 雁北D1, 雁北D2
+      - 雁南S2, 雁南S3, 雁南S4, 雁南S5, 雁南S6
+      - 南门, 西门
+      - 人工智能学院资料领取点, 计算机学院资料领取点, 通信学院资料领取点
+      - 现代邮政学院资料领取点, 电子学院资料领取点
+    form: llm
+extra:
+  python:
+    source: tools/get_navigation.py
+output_schema:
+  type: object
+  properties:
+    destination:
+      type: string
+      description: The destination name
+    total_distance:
+      type: number
+      description: Total walking distance in meters
+    estimated_time:
+      type: number
+      description: Estimated walking time in seconds
+    steps_count:
+      type: number
+      description: Number of navigation steps
+    route_suggestion:
+      type: string
+      description: Detailed route suggestion with step-by-step directions
+    success:
+      type: boolean
+      description: Whether the navigation request was successful

@@ -1,0 +1,634 @@
+\chapter{MINDMELD框架与方法设计}
+
+为解决第 2 章中分析的零样本跨被试视觉重建问题，本文从神经响应建模与跨被试表示学习的角度出发，提出了一种统一的端到端重建框架——MINDMELD。该框架围绕神经响应支撑域不足、语义与被试信息纠缠以及跨被试分布偏移等关键挑战，通过引入神经响应合成、语义解耦以及跨被试一致性约束等机制，实现对未见被试的稳定语义解码与视觉重建。
+
+总体而言，MINDMELD 通过构建“数据扩展—表示建模—语义对齐”的协同机制，在扩展训练阶段神经响应分布的同时，学习具有良好泛化能力的被试不变语义表示，从而提升模型在零样本跨被试条件下的重建性能。本章将对该框架的整体结构及各组成模块进行详细介绍。
+
+\section{方法总体框架}
+
+本节从整体角度介绍 MINDMELD 框架的设计思路与结构组成，为后续各模块的详细展开提供统一视角。
+
+\subsection{问题设定与方法目标}
+
+在零样本跨被试视觉重建任务中，模型需要在训练阶段仅利用源被试集合 $\mathcal{S}_{\mathrm{tr}}$ 的数据，在测试阶段直接泛化到未见被试 $s' \in \mathcal{S}_{\mathrm{te}}$。给定目标被试的神经响应
+\begin{align}
+  x^{(s')} \in \mathbb{R}^{V},
+\end{align}
+模型需预测对应的视觉内容。
+
+如第 2 章所述，直接从脑信号回归图像空间难度较高，因此本文采用语义中间空间作为桥梁，将任务分解为
+\begin{align}
+  x^{(s')} \xrightarrow{\ f\ } z \xrightarrow{\ g\ } \hat{y},
+\end{align}
+其中：$f$ 为神经响应到语义表示的映射函数，$g$ 为语义到图像的生成模型。
+
+在该设定下，方法设计的核心目标可以归纳为：
+\begin{enumerate}
+  \item 在存在跨被试分布偏移的情况下，学习稳定的语义映射 $f$；
+  \item 从混合的神经信号中提取被试不变的语义表示 $z$；
+  \item 在有限数据条件下提升模型对未见被试的泛化能力。
+\end{enumerate}
+
+为实现上述目标，本文从数据层与表示层两个方面进行建模：一方面通过扩展神经响应分布缓解监督不足问题，另一方面通过结构化表示学习与一致性约束实现跨被试语义对齐。
+
+\subsection{MINDMELD整体框架}
+
+MINDMELD 的整体结构如图所示（此处对应论文框架图）。该框架由多个相互协作的模块组成，其核心流程可以描述为
+\begin{align}
+  y \rightarrow \hat{x}^{(s)} \rightarrow B \rightarrow (z_{\mathrm{sem}}, z_{\mathrm{subj}}) \rightarrow \hat{y}.
+\end{align}
+
+具体而言，在训练阶段，首先利用视觉刺激 $y$ 通过神经响应合成模块生成不同被试条件下的神经响应 $\hat{x}^{(s)}$，从而扩展原始训练数据的分布范围。随后，将真实或合成的神经响应输入编码器，得到潜在表示 $B$，并进一步分解为语义表示 $z_{\mathrm{sem}}$ 与被试表示 $z_{\mathrm{subj}}$。
+
+在语义空间中，通过引入对抗学习机制抑制被试信息，使得 $z_{\mathrm{sem}}$ 更加接近被试不变表示。同时，结合跨被试语义一致性约束，使不同被试在相同刺激下的语义表示保持一致，从而增强模型的跨被试泛化能力。最终，语义表示 $z_{\mathrm{sem}}$ 被用于驱动生成模型，得到重建图像 $\hat{y}$。
+
+在测试阶段，模型仅接收未见被试的神经响应 $x^{(s')}$，并通过已训练好的语义解码与生成模块完成重建，无需任何额外适配操作。
+
+\subsection{核心模块组成}
+
+基于上述整体流程，MINDMELD 框架主要由以下三个核心模块构成：
+
+\begin{enumerate}
+  \item \textbf{被试感知神经响应合成模块：}该模块以视觉刺激与被试信息为输入，学习条件分布 $p(x \mid y,s)$，生成多被试条件下的神经响应样本，从而扩展训练阶段的神经响应支撑域。该模块主要用于缓解数据稀缺问题，并为后续表示学习提供多样化监督信号。
+  \item \textbf{被试不变语义解码模块：}该模块对神经响应进行编码，并通过结构化分解将潜在表示划分为语义表示与被试表示两个部分。通过引入语义对齐、自重建约束及对抗学习机制，实现语义信息与被试特征的有效分离，从而学习具有跨被试泛化能力的语义表示。
+  \item \textbf{跨被试语义一致性机制：}该模块针对不同被试在相同刺激下语义表示不一致的问题，通过构建跨重建目标或一致性约束，使不同被试的语义表示在共享空间中对齐，从而进一步提升模型在零样本场景下的稳定性与鲁棒性。
+\end{enumerate}
+
+上述三个模块分别从数据扩展、表示建模与语义对齐三个层面协同作用，共同构成 MINDMELD 框架的核心。
+
+\subsection{整体方法设计思路}
+
+从整体设计角度来看，MINDMELD 的核心思想可以概括为“生成—解耦—对齐”的协同建模过程：
+
+\begin{itemize}
+  \item 通过神经响应合成模块扩展数据分布，缓解支撑域不足问题；
+  \item 通过语义解耦模块分离语义与被试信息，提升表示的可迁移性；
+  \item 通过一致性约束强化跨被试语义对齐，提升泛化稳定性。
+\end{itemize}
+
+这三个过程相互配合，使模型能够在有限数据条件下学习到具有良好泛化能力的语义表示，从而实现零样本跨被试视觉重建。
+
+在此基础上，后续各节将分别对上述三个核心模块的具体实现方法进行详细介绍。
+
+\section{被试感知神经响应预测模块}
+
+\subsection{模块设计动机}
+
+如第 2 章所述，零样本跨被试视觉重建的一个关键难点在于：不同被试在面对相同视觉刺激时，往往会表现出差异显著的神经响应模式。这种差异既来源于视觉皮层功能组织的个体差别，也受到感受野分布、空间响应偏好等因素的影响。因此，若仅依赖共享的视觉特征进行统一预测，通常难以充分刻画被试间的个体差异。
+
+为此，本文在视觉刺激到神经响应的建模过程中显式引入被试条件信息，构建被试感知的神经响应预测模块。该模块的目标是在共享视觉语义的基础上，结合被试相关的结构信息，对不同被试的顶点响应进行条件化建模，从而学习图像刺激与个体化神经响应之间的映射关系。
+
+与将被试信息直接拼接到图像特征上的简单方式不同，本文采用“被试编码—特征调制—顶点预测”的建模思路：首先从 pRF 数据中提取被试全局特征；随后利用该特征对顶点表示进行 FiLM 调制；最后在调制后的顶点查询与图像 patch 特征之间建立空间注意力关系，从而输出每个顶点的响应预测。该设计能够在保留共享视觉语义的同时，引入对个体差异的显式刻画。
+
+\subsection{问题建模与整体流程}
+
+设输入视觉刺激为 $y$，被试标识为 $s$，对应被试的 pRF 数据记为
+\begin{align}
+  R^{(s)} \in \mathbb{R}^{V \times d_r},
+\end{align}
+其中 $V$ 表示皮层顶点数，$d_r$ 表示每个顶点的 pRF 特征维度。在本文实现中，$d_r=5$。
+
+该模块的目标是学习如下映射：
+\begin{align}
+  \hat{x}^{(s)} = G(y,s),
+\end{align}
+其中
+\begin{align}
+  \hat{x}^{(s)} \in \mathbb{R}^{V}
+\end{align}
+表示在被试 $s$ 条件下对所有皮层顶点响应的预测结果。
+
+进一步地，结合具体实现，整个过程可分解为以下几个步骤：
+\begin{align}
+  y &\xrightarrow{\ E_{\mathrm{img}}\ } H, \\
+  R^{(s)} &\xrightarrow{\ E_{\mathrm{subj}}\ } z_s, \\
+  (v_i, z_s) &\xrightarrow{\ \mathrm{FiLM}\ } \tilde{v}_i, \\
+  (\tilde{v}_i, H) &\xrightarrow{\ \mathrm{Attention}\ } f_i, \\
+  (f_i, \tilde{v}_i) &\xrightarrow{\ \mathrm{MLP}\ } \hat{x}_i^{(s)}.
+\end{align}
+
+其中，$v_i$ 表示第 $i$ 个顶点的可学习表示，$\tilde{v}_i$ 表示经过被试条件调制后的顶点表示，$f_i$ 表示针对该顶点从图像特征中聚合得到的视觉表征，$\hat{x}_i^{(s)}$ 表示第 $i$ 个顶点的预测响应。
+
+因此，该模块并非直接使用 pRF 作为每个顶点的输入特征，而是将 pRF 数据压缩为被试级全局条件，用于调制共享顶点表示。这一设计使 pRF 的作用更加集中：它只负责提供个体条件，而不直接参与顶点特征构造。
+
+\subsection{图像多层特征提取}
+
+为了充分利用视觉刺激中的层次化语义信息，本文首先采用预训练视觉骨干网络提取图像的多层 patch 特征。设图像编码器为 $E_{\mathrm{img}}$，则输入图像 $y$ 经编码后可得到：
+\begin{align}
+  H = E_{\mathrm{img}}(y) \in \mathbb{R}^{L \times P \times C},
+\end{align}
+其中：$L$ 表示选取的中间层数量；$P$ 表示每层特征中的 patch 数量；$C$ 表示每个 patch 的特征维度。
+
+在本文实现中，视觉骨干网络采用 RADIOv4，并从指定中间层提取 patch-level 表征，形成堆叠后的多层特征张量：
+\begin{align}
+  H = \{H^{(1)}, H^{(2)}, \dots, H^{(L)}\}, \qquad H^{(l)} \in \mathbb{R}^{P \times C}.
+\end{align}
+
+这种多层特征表示具有两个优势。其一，不同层特征包含从低层纹理到高层语义的多尺度信息，有利于刻画脑皮层不同区域对视觉刺激的响应偏好；其二，后续可以通过顶点级层权重自适应选择更相关的视觉层，从而提高顶点预测的表达能力。
+
+\subsection{顶点表示与层偏好建模}
+
+考虑到不同皮层顶点对视觉信息的响应模式存在差异，本文为每个顶点引入独立的可学习嵌入表示。设顶点编号为 $i \in \{1, \dots, V\}$，则其基础表示定义为：
+\begin{align}
+  v_i = E_{\mathrm{vert}}(i), \qquad v_i \in \mathbb{R}^{d_v},
+\end{align}
+其中 $E_{\mathrm{vert}}$ 表示顶点嵌入矩阵，$d_v$ 为顶点嵌入维度。
+
+在此基础上，为描述不同顶点对图像不同语义层级的偏好，进一步通过一个小型前馈网络为每个顶点预测跨层融合权重：
+\begin{align}
+  a_i = W_2\,\sigma(W_1 v_i) \in \mathbb{R}^{L},
+\end{align}
+其中 $\sigma(\cdot)$ 为非线性激活函数。经 softmax 归一化后，可得顶点 $i$ 对各层特征的偏好分布：
+\begin{align}
+  \omega_i = \mathrm{softmax}\!\left(\frac{a_i}{\tau}\right),
+\end{align}
+其中 $\tau$ 为温度系数。
+
+因此，对于不同顶点，模型能够自适应地选择更重要的图像层特征，从而建立顶点级的多层语义对齐关系。需要指出的是，这里的层偏好仅由顶点嵌入决定，不依赖具体图像或被试，因此其表达的是顶点固有的层级响应倾向。
+
+\subsection{基于 pRF 的被试全局条件编码}
+
+为了引入被试相关的个体差异信息，本文利用每个被试对应的 pRF 数据构建被试级条件表示。设被试 $s$ 的 pRF 数据为
+\begin{align}
+  R^{(s)} \in \mathbb{R}^{V \times d_r},
+\end{align}
+其中每个顶点包含 $d_r$ 维 pRF 描述。
+
+本文采用一维卷积编码器对其进行压缩，得到被试的全局表示：
+\begin{align}
+  z_s = E_{\mathrm{subj}}\bigl(R^{(s)}\bigr), \qquad z_s \in \mathbb{R}^{d_s}.
+\end{align}
+
+该过程的本质是将高维顶点级 pRF 描述整合为一个被试级全局嵌入，使其能够概括该被试整体的感受野组织特征。与将 pRF 直接作为顶点输入不同，这种建模方式将 pRF 的作用明确限定为个体条件编码，从而避免 pRF 信息与顶点可学习表示之间产生冗余耦合。
+
+从实现角度看，该编码器由多层一维卷积、归一化、非线性激活以及全局池化组成，能够从长序列 pRF 数据中提取稳定的全局特征。
+
+\subsection{FiLM 条件调制机制}
+
+在获得被试全局表示 $z_s$ 后，本文采用 Feature-wise Linear Modulation（FiLM）机制对顶点嵌入进行条件调制。具体而言，先根据被试表示生成调制参数：
+\begin{align}
+  [\gamma_s, \beta_s] = F_{\mathrm{film}}(z_s),
+\end{align}
+其中
+\begin{align}
+  \gamma_s, \beta_s \in \mathbb{R}^{d_v}.
+\end{align}
+
+随后，对每个顶点的基础表示 $v_i$ 进行调制，得到被试条件下的顶点表示：
+\begin{align}
+  \tilde{v}_i^{(s)} = (1 + \gamma_s) \odot v_i + \beta_s,
+\end{align}
+其中 $\odot$ 表示逐元素乘法。
+
+这一调制方式具有两个特点。首先，调制参数由被试级全局表示生成，因此同一被试下所有顶点共享统一的条件偏移；其次，调制作用发生在顶点表示空间，而非原始图像特征空间，这使得个体差异主要影响“神经查询方式”，而不是视觉特征本身，从而更符合“共享视觉输入 + 个体响应差异”的建模逻辑。
+
+\subsection{顶点中心的空间注意力响应预测}
+
+在得到被试调制后的顶点表示 $\tilde{v}_i^{(s)}$ 后，本文进一步构建顶点中心的空间注意力机制，使每个顶点能够从图像 patch 特征中自适应聚合与自身最相关的视觉信息。
+
+首先，将顶点表示映射为查询向量：
+\begin{align}
+  q_i = W_q \tilde{v}_i^{(s)} \in \mathbb{R}^{d_v}.
+\end{align}
+
+对于第 $l$ 层图像 patch 特征 $H^{(l)} = \{h_p^{(l)}\}_{p=1}^{P}$，通过线性映射得到键向量：
+\begin{align}
+  k_p^{(l)} = W_k^{(l)} h_p^{(l)} + e_p,
+\end{align}
+其中 $e_p$ 表示二维 patch 位置编码。
+
+随后，计算顶点 $i$ 对该层 patch 的注意力分数：
+\begin{align}
+  \alpha_{ip}^{(l)} = \mathrm{softmax}\!\left(\frac{q_i^{\top} k_p^{(l)}}{\sqrt{d_v}}\right).
+\end{align}
+
+基于注意力权重，对 patch 特征进行加权求和，可得第 $l$ 层对应的顶点特征：
+\begin{align}
+  f_i^{(l)} = \sum_{p=1}^{P} \alpha_{ip}^{(l)} h_p^{(l)}.
+\end{align}
+
+接着，结合前述顶点级层偏好权重 $\omega_i^{(l)}$，对多层顶点特征进行融合：
+\begin{align}
+  f_i = \sum_{l=1}^{L} \omega_i^{(l)} f_i^{(l)}.
+\end{align}
+
+最后，将融合后的视觉特征 $f_i$ 与调制后的顶点表示 $\tilde{v}_i^{(s)}$ 拼接，并输入预测头，得到顶点响应预测值：
+\begin{align}
+  \hat{x}_i^{(s)} = \mathrm{MLP}\bigl([f_i; \tilde{v}_i^{(s)}]\bigr).
+\end{align}
+
+对所有顶点同时计算，即可得到完整的预测响应向量：
+\begin{align}
+  \hat{x}^{(s)} = [\hat{x}_1^{(s)}, \hat{x}_2^{(s)}, \dots, \hat{x}_V^{(s)}].
+\end{align}
+
+\subsection{模块训练目标}
+
+为使预测结果在数值幅度与方向上同时接近真实神经响应，本文采用均方误差损失与余弦相似度损失的加权组合作为训练目标。设真实响应为 $x^{(s)}$，预测响应为 $\hat{x}^{(s)}$，则损失函数定义为：
+\begin{align}
+  \mathcal{L}_{\mathrm{synth}} = \alpha \, \mathcal{L}_{\mathrm{mse}} + (1-\alpha) \, \mathcal{L}_{\mathrm{cos}},
+\end{align}
+其中
+\begin{align}
+  \mathcal{L}_{\mathrm{mse}} &= \lVert \hat{x}^{(s)} - x^{(s)} \rVert_2^2, \\
+  \mathcal{L}_{\mathrm{cos}} &= 1 - \cos\bigl(\hat{x}^{(s)}, x^{(s)}\bigr).
+\end{align}
+
+其中，均方误差约束预测值在幅度上的逼近，余弦损失则鼓励预测响应与真实响应在整体方向上保持一致。两者结合有助于提升顶点响应预测的稳定性与判别性。
+
+\subsection{模块作用分析}
+
+该模块在整体框架中主要承担两方面作用。
+
+首先，它建立了从视觉刺激到被试条件神经响应的映射关系，为后续跨被试语义建模提供了基础的神经响应预测能力。通过显式引入被试条件，该模块能够在共享视觉输入的基础上刻画个体差异，从而提高模型对不同被试响应模式的适应能力。
+
+其次，该模块也为后续语义解码模块提供了更加结构化的输入基础。具体而言，顶点嵌入、层偏好、被试调制以及空间注意力共同构成了一个“顶点中心”的响应建模框架，使模型能够从不同层级、不同空间区域的视觉特征中提取与各顶点最相关的信息。这种设计不仅增强了神经响应预测能力，也为后续学习被试不变语义表示奠定了表示基础。
+
+综上，本文提出的被试感知神经响应预测模块本质上是一种基于 pRF 条件调制和顶点中心注意力的个体化神经响应建模方法，其核心作用在于将共享视觉语义与个体差异信息有机结合，为零样本跨被试视觉重建提供更有效的底层表示支持。
+
+\section{被试不变语义解码模块}
+
+\subsection{模块设计动机}
+
+在获得被试条件下的神经响应后，下一步目标是从高维脑信号中提取能够驱动图像重建的稳定语义表示。然而，零样本跨被试场景下的困难在于：原始神经响应中同时混合了视觉语义、个体差异以及噪声因素，若直接将其整体映射到生成模型所需的语义空间，模型往往容易过拟合训练被试的特定模式，从而削弱对未见被试的泛化能力。
+
+为此，本文设计被试不变语义解码模块，旨在将神经响应逐步编码为一组结构化潜变量，并在共享表征空间中显式分离语义信息与被试信息。其核心思想是：先利用顶点级 token 化与层级注意力聚合，将高维神经响应压缩为少量高信息密度的潜在 token；再通过双分支结构分别得到语义表示与被试表示；最后借助对抗约束和重建机制抑制语义表示中残留的被试成分。
+
+与直接对整体脑信号做单向回归不同，该模块强调“分层编码—结构解耦—受约束重建”的设计逻辑。一方面，分层编码能够提升对高维顶点响应的建模效率；另一方面，结构化解耦使模型能够在保留视觉语义的同时，将与被试身份相关的变化显式分配到独立分支中，为后续跨被试一致性建模提供基础。
+
+\subsection{问题建模与整体流程}
+
+设输入神经响应为 $x^{(s)} \in \mathbb{R}^{V}$，其中 $V$ 表示皮层顶点数。被试不变语义解码模块的目标是学习映射
+\begin{align}
+  x^{(s)} \xrightarrow{\ D\ } \bigl(z_{\mathrm{sem}}, z_{\mathrm{subj}}\bigr),
+\end{align}
+其中 $z_{\mathrm{sem}}$ 表示与视觉内容相关的语义表示，$z_{\mathrm{subj}}$ 表示与个体差异相关的被试表示。
+
+结合具体实现，整体过程可写为
+\begin{align}
+  x^{(s)} &\xrightarrow{\ E_{\mathrm{tok}}\ } U, \\
+  U &\xrightarrow{\ E_{\mathrm{lat}}\ } H, \\
+  H &\xrightarrow{\ E_{\mathrm{base}}\ } B, \\
+  B &\xrightarrow{\ D_{\mathrm{sem}}\ } z_{\mathrm{sem}}, \\
+  B &\xrightarrow{\ D_{\mathrm{subj}}\ } z_{\mathrm{subj}}, \\
+  (z_{\mathrm{sem}}, z_{\mathrm{subj}}) &\xrightarrow{\ R\ } \hat{B}.
+\end{align}
+
+其中，$U$ 表示顶点 token 序列，$H$ 表示第一阶段压缩得到的潜在 token，$B$ 表示进一步抽取得到的基础语义 token，$\hat{B}$ 表示由语义与被试编码共同重建得到的基础 token 近似。由此可见，该模块不是直接从原始响应回归最终语义，而是通过多阶段 token 压缩与结构化解耦逐步逼近被试不变语义空间。
+
+\subsection{顶点响应的 token 化表示}
+
+原始脑信号以顶点响应向量形式给出，其维度较高且缺乏显式的序列结构。为了便于后续使用注意力机制进行建模，本文首先将每个顶点的响应值映射为 token 表示。对于第 $i$ 个顶点的响应 $x_i^{(s)}$，定义其 token 为
+\begin{align}
+  u_i = \mathrm{MLP}_{\mathrm{amp}}\bigl(x_i^{(s)}\bigr) + e_i,
+\end{align}
+其中 $\mathrm{MLP}_{\mathrm{amp}}(\cdot)$ 表示对标量响应幅值进行非线性映射的前馈网络，$e_i$ 表示第 $i$ 个顶点对应的可学习嵌入。对全部顶点同时处理后，可得
+\begin{align}
+  U = [u_1, u_2, \dots, u_V] \in \mathbb{R}^{V \times d_t},
+\end{align}
+其中 $d_t$ 为 token 维度。
+
+这种表示方式将“响应强度”与“顶点身份”结合起来：前者提供当前样本的神经激活信息，后者则刻画顶点在整体皮层拓扑中的相对角色。相比仅使用数值响应向量，token 化表示更适合后续基于注意力的全局建模，也更有利于在不同样本之间共享参数。
+
+\subsection{分层潜在 token 压缩编码}
+
+在得到顶点 token 后，本文采用两阶段的潜在 token 编码结构，逐步将高维顶点序列压缩为更紧凑、更抽象的语义表示。
+
+第一阶段中，引入一组可学习潜在查询向量，通过交叉注意力从顶点 token 序列中聚合信息，得到第一层潜在表示：
+\begin{align}
+  H = E_{\mathrm{lat}}(U) \in \mathbb{R}^{T_1 \times d_h},
+\end{align}
+其中 $T_1$ 表示第一阶段潜在 token 数量，$d_h$ 表示潜在特征维度。在本文实现中，$T_1=64$。交叉注意力之后，模型进一步叠加多层自注意力块，对潜在 token 间的关系进行建模，以增强全局依赖表达能力。
+
+第二阶段中，进一步利用固定数量的基础查询向量对第一阶段潜在 token 做再次重采样，得到更紧凑的基础 token 表示：
+\begin{align}
+  B = E_{\mathrm{base}}(H) \in \mathbb{R}^{T_2 \times d_b},
+\end{align}
+其中 $T_2$ 表示基础 token 数量，$d_b$ 表示基础 token 维度。在本文实现中，$T_2=16$。这一过程本质上相当于将高维脑信号投影到一组固定容量的共享潜在槽位中，从而为后续语义/被试分离提供统一输入接口。
+
+两阶段压缩具有明显优势：一方面，它避免直接在极长的顶点序列上执行高成本全局建模；另一方面，它使最终基础 token 具有较强的信息汇聚能力与结构一致性，便于与下游目标语义空间对齐。
+
+\subsection{语义分支与被试分支的结构解耦}
+
+在基础 token 表示 $B$ 上，本文构建语义分支与被试分支，对共享潜变量进行结构化解耦。
+
+对于语义分支，模型对每个基础 token 独立投影，得到语义 token 序列：
+\begin{align}
+  z_{\mathrm{sem}} = D_{\mathrm{sem}}(B) \in \mathbb{R}^{T_2 \times d_{\mathrm{sem}}},
+\end{align}
+其中 $d_{\mathrm{sem}}$ 表示语义 token 的维度。在本文实现中，语义分支输出与外部视觉语义目标对齐的高维 token 表示。
+
+对于被试分支，首先对基础 token 沿 token 维进行平均池化，得到全局基础表示
+\begin{align}
+  \bar{b} = \frac{1}{T_2} \sum_{t=1}^{T_2} b_t,
+\end{align}
+然后将其输入前馈网络，得到被试表示：
+\begin{align}
+  z_{\mathrm{subj}} = D_{\mathrm{subj}}(\bar{b}) \in \mathbb{R}^{d_{\mathrm{subj}}}.
+\end{align}
+
+这一结构体现出明确的功能分工：语义分支保留细粒度 token 级信息，用于表达图像语义内容；被试分支则从全局角度提取个体特征，用于刻画整体响应模式中的被试差异。通过这种 token 级语义 + 全局级被试的分层设计，模型能够更自然地实现两类信息的解耦。
+
+\subsection{基于对抗学习的被试信息抑制}
+
+尽管语义分支与被试分支在结构上已经分离，但仅依赖网络结构本身并不能保证语义表示中不再包含被试身份信息。为进一步提升语义表示的被试不变性，本文引入基于梯度反转层的对抗学习机制。
+
+具体而言，首先对语义 token 做平均池化，得到全局语义表示
+\begin{align}
+  \bar{z}_{\mathrm{sem}} = \frac{1}{T_2} \sum_{t=1}^{T_2} z_{\mathrm{sem},t}.
+\end{align}
+随后，将其经过梯度反转层后输入被试分类器，得到被试预测结果：
+\begin{align}
+  \hat{s}_{\mathrm{adv}} = C_{\mathrm{subj}}\bigl(\mathrm{GRL}(\bar{z}_{\mathrm{sem}})\bigr).
+\end{align}
+
+在前向传播中，梯度反转层不改变输入；而在反向传播时，其将来自被试分类器的梯度乘以负系数后再传回语义分支，从而迫使语义编码器学习对被试身份不敏感的表示。换言之，被试分类器试图从语义表示中识别个体身份，而语义分支则被优化为尽可能“欺骗”该分类器，二者形成对抗博弈，最终达到抑制语义空间中被试信息残留的目的。
+
+\subsection{语义—被试联合重建机制}
+
+为避免语义解耦过程中出现信息坍缩，本文进一步在基础 token 空间引入重建约束。具体做法是：利用语义 token $z_{\mathrm{sem}}$ 和被试向量 $z_{\mathrm{subj}}$ 共同重建原始基础 token $B$，从而要求两类表示在解耦的同时保留足够信息。
+
+在实现中，首先将语义 token 从高维语义空间映射回基础 token 空间，得到
+\begin{align}
+  B_{\mathrm{sem}} = P_{\mathrm{down}}(z_{\mathrm{sem}}).
+\end{align}
+随后，根据被试表示生成 FiLM 调制参数
+\begin{align}
+  \gamma_{\mathrm{subj}} = G_{\gamma}(z_{\mathrm{subj}}), \qquad
+  \beta_{\mathrm{subj}} = G_{\beta}(z_{\mathrm{subj}}),
+\end{align}
+并对语义基础 token 进行条件调制：
+\begin{align}
+  \tilde{B}_{\mathrm{sem}} = \gamma_{\mathrm{subj}} \odot \mathrm{LN}(B_{\mathrm{sem}}) + \beta_{\mathrm{subj}}.
+\end{align}
+最后，经由残差式前馈网络细化，得到重建结果：
+\begin{align}
+  \hat{B} = \tilde{B}_{\mathrm{sem}} + R_{\mathrm{refine}}\bigl(\tilde{B}_{\mathrm{sem}}\bigr).
+\end{align}
+
+这一机制具有两重作用：其一，它要求语义分支保留与视觉内容相关的核心信息；其二，它要求被试分支承担与个体差异相关的补偿作用。只有当两者功能分工合理时，模型才能较好地恢复基础 token 表示，因此该重建约束能够有效促进语义与被试的可辨识分离。
+
+\subsection{模块训练目标}
+
+针对被试不变语义解码模块，本文综合考虑语义对齐、被试对抗以及自重建约束，构建如下训练目标。
+
+首先，设外部目标语义 token 为 $z_{\mathrm{tar}}$，模型预测的语义 token 为 $z_{\mathrm{sem}}$，则语义对齐损失定义为均方误差与 token 级余弦损失的加权组合：
+\begin{align}
+  \mathcal{L}_{\mathrm{sem}} = \lambda_{\mathrm{mse}} \mathcal{L}_{\mathrm{mse}}^{\mathrm{sem}} + \lambda_{\mathrm{cos}} \mathcal{L}_{\mathrm{cos}}^{\mathrm{sem}},
+\end{align}
+其中
+\begin{align}
+  \mathcal{L}_{\mathrm{mse}}^{\mathrm{sem}} &= \lVert z_{\mathrm{sem}} - z_{\mathrm{tar}} \rVert_2^2, \\
+  \mathcal{L}_{\mathrm{cos}}^{\mathrm{sem}} &= 1 - \frac{1}{T_2} \sum_{t=1}^{T_2} \cos\bigl(z_{\mathrm{sem},t}, z_{\mathrm{tar},t}\bigr).
+\end{align}
+
+其次，对抗被试分类损失写为
+\begin{align}
+  \mathcal{L}_{\mathrm{adv}} = \mathrm{CE}(\hat{s}_{\mathrm{adv}}, s),
+\end{align}
+其中 $\mathrm{CE}(\cdot)$ 表示交叉熵损失。
+
+再次，自重建损失用于约束由当前样本的语义表示与被试表示恢复出的基础 token 与原始基础 token 保持一致：
+\begin{align}
+  \mathcal{L}_{\mathrm{self}} = 1 - \frac{1}{T_2} \sum_{t=1}^{T_2} \cos\bigl(\hat{b}_t, b_t\bigr).
+\end{align}
+
+综合上述项，可得该模块的基本训练目标：
+\begin{align}
+  \mathcal{L}_{\mathrm{dis}} = \mathcal{L}_{\mathrm{sem}} + \lambda_{\mathrm{adv}} \mathcal{L}_{\mathrm{adv}} + \lambda_{\mathrm{self}} \mathcal{L}_{\mathrm{self}}.
+\end{align}
+
+\subsection{模块作用分析}
+
+该模块在整体框架中承担从神经响应到共享语义空间映射的核心职责。一方面，通过顶点 token 化和两阶段潜在压缩，模型能够在保持关键信息的同时显著降低神经响应表示的复杂度；另一方面，通过语义/被试双分支、对抗约束和联合重建，模型能够在结构层面与优化层面共同推动语义信息和个体差异的分离。
+
+更重要的是，该模块输出的语义 token 不仅能够直接与外部视觉语义监督对齐，还能够作为后续图像生成或重建模型的条件输入。因此，它既是连接脑信号与视觉生成空间的桥梁，也是实现零样本跨被试泛化的关键表示学习单元。
+
+\section{跨被试语义一致性机制与整体优化目标}
+
+\subsection{机制设计动机}
+
+尽管经过语义解耦与对抗抑制后，模型已经能够提取较为稳定的语义表示，但在跨被试场景下，同一视觉刺激对应的语义 token 仍可能因个体差异而产生残余偏移。换言之，不同被试对同一图像的神经响应虽然在语义层面应当一致，但模型学习到的语义表示未必天然收敛到同一共享位置。若不对这种偏移进行额外约束，则模型在未见被试上的语义映射仍可能不够稳定。
+
+因此，本文进一步引入跨被试语义一致性机制。其核心思想是：对于同一视觉刺激对应的多被试样本，先在语义空间构造共享原型表示，再结合各被试自身的个体编码恢复基础 token，并通过跨被试重建约束促使不同被试的语义表示朝向共同原型对齐。该机制不仅强化了“同刺激同语义”的归纳偏置，也使被试相关变化更多地由被试分支承担，从而进一步提升语义空间的共享性与稳定性。
+
+\subsection{同刺激多被试分组建模}
+
+设一个训练组由同一图像对应的 $S$ 个被试样本构成，对应的语义 token 和被试表示分别记为
+\begin{align}
+  \{z_{\mathrm{sem}}^{(1)}, z_{\mathrm{sem}}^{(2)}, \dots, z_{\mathrm{sem}}^{(S)}\}, \\
+  \{z_{\mathrm{subj}}^{(1)}, z_{\mathrm{subj}}^{(2)}, \dots, z_{\mathrm{subj}}^{(S)}\}.
+\end{align}
+
+为了提取共享语义中心，本文对同组内的语义 token 按被试维求平均，构造语义原型：
+\begin{align}
+  z_{\mathrm{proto}} = \frac{1}{S} \sum_{j=1}^{S} z_{\mathrm{sem}}^{(j)}.
+\end{align}
+
+该原型可以视为同一刺激在共享语义空间中的群体中心表示。与单一样本语义编码相比，原型表示能够在一定程度上削弱个体特有扰动，更集中地保留由视觉刺激决定的公共语义成分。
+
+\subsection{基于语义原型的跨被试重建}
+
+在得到语义原型后，本文不直接要求各被试语义 token 完全相同，而是将共享语义原型与每个被试自身的被试表示组合，用于恢复对应被试下的基础 token。对于第 $j$ 个被试，其跨被试重建结果写为
+\begin{align}
+  \hat{B}_{\mathrm{proto}}^{(j)} = R\bigl(z_{\mathrm{proto}}, z_{\mathrm{subj}}^{(j)}\bigr).
+\end{align}
+
+对应地，以该被试原始基础 token $B^{(j)}$ 作为监督，定义原型重建损失：
+\begin{align}
+  \mathcal{L}_{\mathrm{proto}} = 1 - \frac{1}{S T_2} \sum_{j=1}^{S} \sum_{t=1}^{T_2} \cos\bigl(\hat{b}_{\mathrm{proto},t}^{(j)}, b_t^{(j)}\bigr).
+\end{align}
+
+这一约束的含义在于：若共享语义原型确实保留了视觉刺激的公共语义，而被试表示又有效承载了个体差异，那么二者组合后应能够恢复各被试自身的基础 token。因而，跨被试重建实际上构成了对“共享语义 + 个体差异”分工假设的直接检验。
+
+\subsection{语义一致性度量}
+
+除利用跨被试重建损失进行显式优化外，本文还引入语义一致性指标来衡量组内不同被试语义表示与原型表示的接近程度。具体地，可定义为
+\begin{align}
+  \mathcal{C}_{\mathrm{proto}} = \frac{1}{S T_2} \sum_{j=1}^{S} \sum_{t=1}^{T_2} \cos\bigl(z_{\mathrm{proto},t}, z_{\mathrm{sem},t}^{(j)}\bigr).
+\end{align}
+
+该指标反映同一刺激在不同被试下语义表示的一致水平。$\mathcal{C}_{\mathrm{proto}}$ 越高，说明模型越能够在共享语义空间中对齐多被试样本。虽然该项在实现中主要作为分析指标记录，但它能够直观揭示语义原型机制是否有效提升了跨被试表示稳定性。
+
+\subsection{整体训练目标}
+
+结合前述各模块，本文最终采用由神经响应预测损失、语义解耦损失和跨被试原型重建损失共同构成的整体优化目标。若将第 3.2 节中的被试感知神经响应预测损失记为 $\mathcal{L}_{\mathrm{synth}}$，则整体目标可写为
+\begin{align}
+  \mathcal{L}_{\mathrm{total}} = \mathcal{L}_{\mathrm{synth}} + \mathcal{L}_{\mathrm{dis}} + \lambda_{\mathrm{proto}} \mathcal{L}_{\mathrm{proto}}.
+\end{align}
+
+展开后，即
+\begin{align}
+  \mathcal{L}_{\mathrm{total}} ={}& \mathcal{L}_{\mathrm{synth}} + \mathcal{L}_{\mathrm{sem}} + \lambda_{\mathrm{adv}} \mathcal{L}_{\mathrm{adv}} \\
+  &+ \lambda_{\mathrm{self}} \mathcal{L}_{\mathrm{self}} + \lambda_{\mathrm{proto}} \mathcal{L}_{\mathrm{proto}}.
+\end{align}
+
+其中，$\mathcal{L}_{\mathrm{synth}}$ 负责学习视觉刺激到个体化神经响应的映射；$\mathcal{L}_{\mathrm{sem}}$ 负责将脑信号语义编码对齐到目标视觉语义空间；$\mathcal{L}_{\mathrm{adv}}$ 用于抑制语义表示中的被试信息；$\mathcal{L}_{\mathrm{self}}$ 保证解耦后表示仍保有充分信息；$\mathcal{L}_{\mathrm{proto}}$ 则进一步强化跨被试条件下的共享语义一致性。
+
+\subsection{训练策略与参数分组}
+
+从实现角度看，本文将模型参数划分为两组进行优化。第一组为从神经响应到潜在 token 的编码部分，包括顶点 token 化模块、第一阶段潜在编码器以及基础 token 重采样器；第二组为零样本跨被试表示学习部分，包括语义分支、被试分支、对抗分类器以及重建器。这样的参数分组允许对不同子模块设置不同学习率与权重衰减系数，从而更灵活地平衡底层神经编码建模与高层语义对齐学习。
+
+此外，在训练过程中还可以根据需要对不同参数组执行冻结与解冻操作。例如，在已有较稳定的神经编码器时，可以优先优化解耦与一致性相关模块；在需要联合微调整体表示时，再对编码器部分解冻。该训练策略有助于稳定优化过程，并降低多目标联合训练时的相互干扰。
+
+\subsection{机制作用分析}
+
+跨被试语义一致性机制在整体框架中的作用主要体现在两个方面。首先，它通过构造语义原型并进行跨被试重建，将“同一刺激应具有一致语义表示”的先验直接注入训练目标，从而有效缓解因个体差异导致的语义空间漂移问题。其次，它与前述语义解耦模块形成互补：前者强调不同被试语义表示之间的聚合与对齐，后者强调语义信息与被试信息之间的分离与分工，二者共同促进模型学习兼具判别性与泛化性的共享语义表征。
+
+综上，本文通过引入基于语义原型的跨被试一致性机制，并将其与语义对齐、对抗抑制和重建约束统一到同一优化框架中，进一步提升了模型在零样本跨被试视觉重建任务中的稳定性与鲁棒性。
+
+
+\section{模型训练与优化目标}
+
+在前述各模块基础上，本文进一步给出 MINDMELD 框架的整体训练方式与优化目标。由于本文方法由被试感知神经响应建模模块和被试不变语义解码模块两部分构成，且两者在功能上分别承担“神经响应预测”和“跨被试语义建模”的任务，因此在训练过程中采用模块化建模与分组优化的策略，以保证各子模块能够在各自目标约束下稳定学习。
+
+从整体上看，本文模型的训练过程可以分为两个层面：其一是被试感知神经响应预测模块的监督训练，其二是被试不变语义解码与跨被试一致性约束下的联合优化。前者主要学习从视觉刺激到顶点响应的个体化预测能力，后者则围绕语义表示学习、被试对抗约束以及重建一致性约束展开。
+
+\subsection{被试感知神经响应预测模块的训练目标}
+
+对于第 3.2 节中的被试感知神经响应预测模块，设给定图像刺激 $y$、被试标识 $s$ 以及真实顶点响应 $x^{(s)}$，模型输出对应的预测响应为：
+\begin{align}
+  \hat{x}^{(s)} = G(y,s).
+\end{align}
+
+为了同时约束预测响应在数值幅度与方向结构上接近真实神经响应，本文采用均方误差损失与余弦相似度损失的加权组合作为训练目标：
+\begin{align}
+  \mathcal{L}_{\mathrm{resp}} = \alpha \mathcal{L}_{\mathrm{mse}} + (1-\alpha) \mathcal{L}_{\mathrm{cos}},
+\end{align}
+其中
+\begin{align}
+  \mathcal{L}_{\mathrm{mse}} &= \frac{1}{BV} \sum_{b=1}^{B} \sum_{i=1}^{V} \bigl(\hat{x}_{b,i}^{(s)} - x_{b,i}^{(s)}\bigr)^2, \\
+  \mathcal{L}_{\mathrm{cos}} &= 1 - \frac{1}{B} \sum_{b=1}^{B} \cos\bigl(\hat{x}_{b}^{(s)}, x_{b}^{(s)}\bigr).
+\end{align}
+
+其中，$\mathcal{L}_{\mathrm{mse}}$ 用于约束预测值与真实响应在逐顶点幅值上的一致性，$\mathcal{L}_{\mathrm{cos}}$ 则从整体向量方向上衡量预测响应与真实响应的相似程度。两者结合能够使模型既关注局部数值拟合，又保持神经响应整体结构的一致性。
+
+\subsection{语义解码模块的监督目标}
+
+在第 3.3 节中，模型从输入脑响应中提取语义 token 表示 $Z_{\mathrm{sem}}$，其目标是逼近图像侧提供的语义监督信号。设目标语义 token 序列记为：
+\begin{align}
+  T_{\mathrm{sem}} \in \mathbb{R}^{B \times N_b \times d_{\mathrm{sem}}},
+\end{align}
+模型预测得到的语义 token 为：
+\begin{align}
+  Z_{\mathrm{sem}} \in \mathbb{R}^{B \times N_b \times d_{\mathrm{sem}}}.
+\end{align}
+
+为同时约束语义 token 的数值逼近与方向对齐，本文采用 token 级均方误差损失与 token 级余弦损失的加权组合作为语义监督目标：
+\begin{align}
+  \mathcal{L}_{\mathrm{sem}} = \lambda_{\mathrm{mse}} \mathcal{L}_{\mathrm{sem}}^{\mathrm{mse}} + \lambda_{\mathrm{cos}} \mathcal{L}_{\mathrm{sem}}^{\mathrm{cos}},
+\end{align}
+其中
+\begin{align}
+  \mathcal{L}_{\mathrm{sem}}^{\mathrm{mse}} &= \frac{1}{B N_b d_{\mathrm{sem}}} \lVert Z_{\mathrm{sem}} - T_{\mathrm{sem}} \rVert_2^2, \\
+  \mathcal{L}_{\mathrm{sem}}^{\mathrm{cos}} &= 1 - \frac{1}{B N_b} \sum_{b=1}^{B} \sum_{t=1}^{N_b} \cos\bigl(Z_{\mathrm{sem}}^{(b,t)}, T_{\mathrm{sem}}^{(b,t)}\bigr).
+\end{align}
+
+该损失直接约束脑信号解码得到的语义 token 与图像语义空间中的目标 token 保持一致，从而为后续视觉重建提供稳定且具有判别力的语义表示。
+
+\subsection{被试对抗约束与重建约束}
+
+为了增强语义表示的被试不变性，本文在语义解码监督之外，还进一步引入被试对抗约束、自重建约束以及原型重建约束。
+
+\subsubsection{被试对抗约束}
+
+设由语义 token 平均池化得到全局语义向量：
+\begin{align}
+  z_{\mathrm{sem}}^{\mathrm{pool}} = \frac{1}{N_b} \sum_{t=1}^{N_b} Z_{\mathrm{sem}}^{(t)}.
+\end{align}
+通过梯度反转层与被试分类器，可得到被试预测结果 $\hat{s}$。相应的对抗分类损失定义为：
+\begin{align}
+  \mathcal{L}_{\mathrm{adv}} = \mathrm{CE}(\hat{s}, s),
+\end{align}
+其中 $\mathrm{CE}(\cdot)$ 表示交叉熵损失，$s$ 为真实被试标签。
+
+该损失的目的不是提高语义表示中的被试判别能力，而是通过梯度反转机制迫使编码器学习更难被区分被试身份的语义特征，从而提高语义分支的被试不变性。
+
+\subsubsection{自重建约束}
+
+设 base token 表示为
+\begin{align}
+  B \in \mathbb{R}^{B \times N_b \times d_b},
+\end{align}
+语义 token 与被试向量经重建器后可得到自重建结果：
+\begin{align}
+  \hat{B}_{\mathrm{self}} = R\bigl(Z_{\mathrm{sem}}, z_{\mathrm{subj}}\bigr).
+\end{align}
+
+本文采用 token 级余弦重建损失衡量两者相似程度：
+\begin{align}
+  \mathcal{L}_{\mathrm{self}} = 1 - \frac{1}{B N_b} \sum_{b=1}^{B} \sum_{t=1}^{N_b} \cos\bigl(\hat{B}_{\mathrm{self}}^{(b,t)}, B^{(b,t)}\bigr).
+\end{align}
+
+该约束要求语义分支与被试分支的组合能够有效恢复原始中间表示，从而保证表示解耦后各分支仍保留足够的信息表达能力。
+
+\subsubsection{原型重建约束}
+
+在训练阶段，若 batch 组织方式为“同一图像对应多个被试响应”，则可以进一步在 batch 内构造同图跨被试语义原型。设一个图像样本对应 $S$ 个被试，其语义 token 为：
+\begin{align}
+  \{Z_{\mathrm{sem}}^{(1)}, Z_{\mathrm{sem}}^{(2)}, \dots, Z_{\mathrm{sem}}^{(S)}\}.
+\end{align}
+
+定义其共享语义原型为：
+\begin{align}
+  Z_{\mathrm{proto}} = \frac{1}{S} \sum_{j=1}^{S} Z_{\mathrm{sem}}^{(j)}.
+\end{align}
+
+随后，将该语义原型与每个被试对应的被试向量 $z_{\mathrm{subj}}^{(j)}$ 一同送入重建器，得到原型重建结果：
+\begin{align}
+  \hat{B}_{\mathrm{proto}}^{(j)} = R\bigl(Z_{\mathrm{proto}}, z_{\mathrm{subj}}^{(j)}\bigr).
+\end{align}
+
+相应地，原型重建损失定义为：
+\begin{align}
+  \mathcal{L}_{\mathrm{proto}} = 1 - \frac{1}{S N_b} \sum_{j=1}^{S} \sum_{t=1}^{N_b} \cos\bigl(\hat{B}_{\mathrm{proto}}^{(j,t)}, B^{(j,t)}\bigr).
+\end{align}
+
+该约束要求不同被试在面对同一刺激时，其共享语义原型应能够与各自的被试向量结合，重建各自的 base token 表示，从而显式强化跨被试共享语义的一致性。
+
+\subsection{语义解码模型的整体损失函数}
+
+综合语义监督、被试对抗约束、自重建约束与原型重建约束，本文将语义解码模块的总体损失定义为：
+\begin{align}
+  \mathcal{L}_{\mathrm{brain}} = \mathcal{L}_{\mathrm{sem}} + \lambda_{\mathrm{adv}} \mathcal{L}_{\mathrm{adv}} + \lambda_{\mathrm{self}} \mathcal{L}_{\mathrm{self}} + \lambda_{\mathrm{proto}} \mathcal{L}_{\mathrm{proto}}.
+\end{align}
+
+其中：$\mathcal{L}_{\mathrm{sem}}$ 保证语义 token 与图像语义目标一致；$\mathcal{L}_{\mathrm{adv}}$ 用于抑制语义分支中的被试身份信息；$\mathcal{L}_{\mathrm{self}}$ 保证语义与被试分支具有合理的信息保持能力；$\mathcal{L}_{\mathrm{proto}}$ 强化同图跨被试样本间的共享语义一致性。通过上述多目标联合优化，模型能够在语义表达能力、被试不变性以及跨被试一致性之间取得平衡。
+
+\subsection{参数分组与优化策略}
+
+考虑到模型不同部分在功能与训练稳定性上的差异，本文对参数采用分组优化策略。具体而言，将模型参数划分为两组：
+\begin{enumerate}
+  \item \textbf{fMRI-to-latent 参数组：}包括顶点 tokenizer、第一阶段 latent encoder 以及 base token resampler，对应从脑响应到潜在表示的映射部分；
+  \item \textbf{zero-shot semantic 参数组：}包括语义分支、被试分支、对抗分类器以及重建器，对应跨被试语义解耦与一致性建模部分。
+\end{enumerate}
+
+设两组参数分别记为 $\Theta_{\mathrm{enc}}$ 与 $\Theta_{\mathrm{head}}$，则优化器参数组可表示为：
+\begin{align}
+  \Theta = \{\Theta_{\mathrm{enc}}, \Theta_{\mathrm{head}}\}.
+\end{align}
+
+本文为两组参数分别设置不同学习率与权重衰减系数，以适应不同模块的训练需求。其中，fMRI-to-latent 部分采用较小学习率以保证底层表示学习的稳定性，而语义解耦与一致性建模部分采用相对较大的学习率，以提高高层语义分支的收敛速度。
+
+这种分组优化策略能够更好地协调模型不同层次的训练节奏，提高整体训练的稳定性与性能。
+
+\subsection{训练流程}
+
+结合上述损失定义与参数优化方式，本文模型的训练流程如下：首先，将输入的脑响应数据送入语义解码模型，依次经过顶点 token 化、两阶段潜在表示压缩与双分支解耦，得到语义 token、被试向量以及中间 base token 表示。随后，利用图像侧语义 token 作为监督目标，计算语义损失；同时结合被试标签、自重建结果以及同图跨被试样本构造的语义原型，分别计算对抗损失、自重建损失与原型重建损失。最后，对总损失进行反向传播，并根据参数分组更新模型各部分参数。
+
+对于被试感知神经响应预测模块，则在对应图像—被试—顶点响应三元组监督下独立优化，使其学习个体化响应建模能力。
+
+从实现上看，本文支持对不同参数组进行冻结与解冻操作，从而能够根据实验需求灵活采用阶段式训练或联合训练策略。例如，在初始阶段可优先稳定训练从脑响应到潜在表示的映射，再进一步优化高层语义与一致性约束部分；也可以在模型稳定后进行整体联合微调，以进一步提升跨被试泛化性能。
+
+\subsection{推理阶段流程}
+
+在测试阶段，模型仅接收未见被试的脑响应输入，不依赖任何目标被试微调、校准或测试时适配。具体流程为：
+\begin{align}
+  x^{(s')} \rightarrow Z_{\mathrm{sem}} \rightarrow \hat{y}.
+\end{align}
+
+其中，首先将目标被试的脑响应输入语义解码模型，得到预测语义 token 表示 $Z_{\mathrm{sem}}$；随后，将得到的语义表示送入后续视觉生成模型，输出最终重建图像 $\hat{y}$。
+
+需要说明的是，在推理阶段，对抗分类器、重建约束及原型构造等仅用于训练阶段的表示约束，不参与最终推理过程。因此，模型在测试时的推理路径保持相对简洁，仅依赖于训练阶段已经学到的被试不变语义表示。
+
+\chapterbib

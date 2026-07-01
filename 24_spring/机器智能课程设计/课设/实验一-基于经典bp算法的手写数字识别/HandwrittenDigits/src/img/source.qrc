@@ -1,0 +1,19 @@
+<RCC>
+  <qresource prefix="img">
+    <file>清空.png</file>
+    <file>开始识别.png</file>
+    <file>开始.png</file>
+    <file>主页.png</file>
+    <file>箭头.png</file>
+    <file>上传.png</file>
+    <file>重新上传.png</file>
+    <file>background1.png</file>
+    <file>x.png</file>
+    <file>多字识别.png</file>
+    <file>手迹识别.png</file>
+    <file>相机识别.png</file>
+    <file>单字识别.png</file>
+    <file>background.png</file>
+    <file>digit.png</file>
+  </qresource>
+</RCC>

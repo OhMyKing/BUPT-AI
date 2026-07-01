@@ -1,0 +1,58 @@
+identity:
+  name: publish_guide_task
+  author: ohmyking
+  label:
+    en_US: Publish Guide Task
+    zh_Hans: 发布引导任务
+    pt_BR: Publicar Tarefa de Orientação
+description:
+  human:
+    en_US: Publish a guidance task to the nearest guidance robot to help users reach their destination
+    zh_Hans: 向距离最近的引导机器人发布引导任务，帮助用户到达目的地
+    pt_BR: Publicar uma tarefa de orientação para o robô guia mais próximo para ajudar os usuários a chegar ao destino
+  llm: A tool for posting guidance tasks to the nearest guidance robot when the user needs navigation assistance. The robot will guide users to predefined destinations within Beijing University of Posts and Telecommunications campus.
+parameters:
+  - name: destination
+    type: string
+    required: true
+    label:
+      en_US: Destination
+      zh_Hans: 目的地
+      pt_BR: Destino
+    human_description:
+      en_US: The destination where the user wants to go
+      zh_Hans: 用户想要前往的目的地
+      pt_BR: O destino para onde o usuário deseja ir
+    llm_description: The destination where the user wants to go. Must be one of the predefined destinations： 雁北A, 雁北C, 雁北D1, 雁北D2, 雁南S2, 雁南S3, 雁南S4, 雁南S5, 雁南S6, 南门, 西门, 人工智能学院资料领取点, 计算机学院资料领取点, 通信学院资料领取点, 现代邮政学院资料领取点, 电子学院资料领取点
+    form: llm
+extra:
+  python:
+    source: tools/publish_guide_task.py
+output_schema:
+  type: object
+  properties:
+    success:
+      type: boolean
+      description: Whether the guide task was published successfully
+    message:
+      type: string
+      description: Response message
+    task_details:
+      type: object
+      description: Details of the published guide task
+      properties:
+        destination:
+          type: string
+          description: The destination name
+        destination_id:
+          type: number
+          description: The destination ID
+        distance_to_guide:
+          type: number
+          description: Distance to the guide robot in meters
+        guide_robot_id:
+          type: number
+          description: ID of the assigned guide robot
+        source_robot_id:
+          type: number
+          description: ID of the requesting robot

@@ -1,0 +1,35 @@
+# 音频配置
+audio:
+  sample_rate: 16000
+  channels: 1
+  chunk_size: 2048
+  device_index: null  # null表示使用默认设备
+
+# ASR配置
+asr:
+  engine: "whisper"  # 可选: whisper, google, azure
+  model_size: "base"  # whisper模型大小
+  language: "zh"
+
+# VAD配置
+vad:
+  aggressiveness: 3  # 0-3，越高越严格
+  silence_duration: 2.0  # 静音检测时长（秒）
+  min_speech_duration: 0.5  # 最小语音时长（秒）
+  energy_threshold: 500  # 能量阈值
+
+# LLM配置
+llm:
+  provider: "openai"  # 可选: openai, azure, custom
+  api_key: "${OPENAI_API_KEY}"  # 从环境变量读取
+  base_url: "https://api.openai.com/v1"
+  model: "gpt-3.5-turbo"
+  max_tokens: 500
+  temperature: 0.7
+
+# TTS配置
+tts:
+  engine: "edge-tts"  # 可选: edge-tts, gtts, azure
+  voice: "zh-CN-XiaoxiaoNeural"  # edge-tts语音
+  speed: 1.0
+  pitch: 1.0

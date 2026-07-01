@@ -1,0 +1,199 @@
+[
+  null,
+  {
+    "id": 1,
+    "animationId": 0,
+    "consumable": true,
+    "damage": {
+      "critical": false,
+      "elementId": 0,
+      "formula": "",
+      "type": 0,
+      "variance": 0
+    },
+    "description": "Restores HP by 500 points.",
+    "effects": [
+      {
+        "code": 11,
+        "dataId": 0,
+        "value1": 0,
+        "value2": 500
+      }
+    ],
+    "hitType": 0,
+    "iconIndex": 176,
+    "itypeId": 1,
+    "name": "Potion",
+    "note": "<action: Recovery item>",
+    "occasion": 0,
+    "price": 100,
+    "repeats": 1,
+    "scope": 7,
+    "speed": 0,
+    "successRate": 100,
+    "tpGain": 0
+  },
+  {
+    "id": 2,
+    "animationId": 0,
+    "consumable": true,
+    "damage": {
+      "critical": false,
+      "elementId": 0,
+      "formula": "0",
+      "type": 0,
+      "variance": 20
+    },
+    "description": "Restores MP by 300 points.",
+    "effects": [
+      {
+        "code": 12,
+        "dataId": 0,
+        "value1": 0,
+        "value2": 300
+      }
+    ],
+    "hitType": 0,
+    "iconIndex": 176,
+    "itypeId": 1,
+    "name": "Magic Water",
+    "note": "<action: Recovery item>",
+    "occasion": 0,
+    "price": 300,
+    "repeats": 1,
+    "scope": 7,
+    "speed": 0,
+    "successRate": 100,
+    "tpGain": 0
+  },
+  {
+    "id": 3,
+    "animationId": 0,
+    "consumable": true,
+    "damage": {
+      "critical": false,
+      "elementId": 0,
+      "formula": "100",
+      "type": 1,
+      "variance": 20
+    },
+    "description": "It explodes after a while of being placed.",
+    "effects": [],
+    "hitType": 0,
+    "iconIndex": 161,
+    "itypeId": 1,
+    "name": "Bomb",
+    "note": "<action: Bomb>",
+    "occasion": 3,
+    "price": 0,
+    "repeats": 1,
+    "scope": 14,
+    "speed": 0,
+    "successRate": 100,
+    "tpGain": 0
+  },
+  {
+    "id": 4,
+    "animationId": 0,
+    "consumable": true,
+    "damage": {
+      "critical": false,
+      "elementId": 0,
+      "formula": "0",
+      "type": 0,
+      "variance": 20
+    },
+    "description": "",
+    "effects": [],
+    "hitType": 0,
+    "iconIndex": 65,
+    "itypeId": 2,
+    "name": "冰之精髓",
+    "note": "",
+    "occasion": 3,
+    "price": 0,
+    "repeats": 1,
+    "scope": 7,
+    "speed": 0,
+    "successRate": 100,
+    "tpGain": 0
+  },
+  {
+    "id": 5,
+    "animationId": 0,
+    "consumable": false,
+    "damage": {
+      "critical": false,
+      "elementId": 0,
+      "formula": "0",
+      "type": 0,
+      "variance": 20
+    },
+    "description": "",
+    "effects": [],
+    "hitType": 0,
+    "iconIndex": 72,
+    "itypeId": 2,
+    "name": "木之精髓",
+    "note": "",
+    "occasion": 0,
+    "price": 0,
+    "repeats": 1,
+    "scope": 7,
+    "speed": 0,
+    "successRate": 100,
+    "tpGain": 0
+  },
+  {
+    "id": 6,
+    "animationId": 0,
+    "consumable": true,
+    "damage": {
+      "critical": false,
+      "elementId": 0,
+      "formula": "0",
+      "type": 0,
+      "variance": 20
+    },
+    "description": "",
+    "effects": [],
+    "hitType": 0,
+    "iconIndex": 64,
+    "itypeId": 2,
+    "name": "火之精髓",
+    "note": "",
+    "occasion": 0,
+    "price": 0,
+    "repeats": 1,
+    "scope": 7,
+    "speed": 0,
+    "successRate": 100,
+    "tpGain": 0
+  },
+  {
+    "id": 7,
+    "animationId": 0,
+    "consumable": true,
+    "damage": {
+      "critical": false,
+      "elementId": 0,
+      "formula": "0",
+      "type": 0,
+      "variance": 20
+    },
+    "description": "",
+    "effects": [],
+    "hitType": 0,
+    "iconIndex": 0,
+    "itypeId": 1,
+    "name": "",
+    "note": "",
+    "occasion": 0,
+    "price": 0,
+    "repeats": 1,
+    "scope": 7,
+    "speed": 0,
+    "successRate": 100,
+    "tpGain": 0
+  }
+]

@@ -1,0 +1,50 @@
+identity:
+  name: robot_actions
+  author: ohmyking
+  label:
+    en_US: Execute Robot Action
+    zh_Hans: 执行机器人动作
+    pt_BR: Executar Ação do Robô
+description:
+  human:
+    en_US: Execute a specific action on the robot, such as nodding, waving, or moving
+    zh_Hans: 执行机器人的特定动作，如点头、挥手或移动
+    pt_BR: Executar uma ação específica no robô, como acenar, acenar ou mover
+  llm: >
+    Execute robot actions like 举手, 伸展手臂, 点头, 摇头, 鞠躬, 下蹲, 前进一步, 后退一步, 左移一步, 右移一步.
+    This tool sends HTTP requests to control physical robot movements.
+parameters:
+  - name: action
+    type: string
+    required: true
+    label:
+      en_US: Action Name
+      zh_Hans: 动作名称
+      pt_BR: Nome da Ação
+    human_description:
+      en_US: >
+        The action to execute. Available actions: 举手, 伸展手臂, 点头, 摇头, 鞠躬, 下蹲, 前进一步, 后退一步, 左移一步, 右移一步
+      zh_Hans: >
+        要执行的动作。可用动作：举手, 伸展手臂, 点头, 摇头, 鞠躬, 下蹲, 前进一步, 后退一步, 左移一步, 右移一步
+      pt_BR: >
+        A ação a executar. Ações disponíveis: 举手, 伸展手臂, 点头, 摇头, 鞠躬, 下蹲, 前进一步, 后退一步, 左移一步, 右移一步
+    llm_description: >
+      The robot action to execute. Must be one of the following Chinese action names:
+      举手 (raise hand), 伸展手臂 (stretch arms), 点头 (nod), 摇头 (shake head), 鞠躬 (bow), 下蹲 (squat),
+      前进一步 (step forward), 后退一步 (step backward), 左移一步 (step left), 右移一步 (step right)
+    form: llm
+extra:
+  python:
+    source: tools/robot_actions.py
+output_schema:
+  type: object
+  properties:
+    status:
+      type: string
+      description: Execution status, either 'success' or 'fail'
+    message:
+      type: string
+      description: Detailed message about the execution result
+    action:
+      type: string
+      description: The action that was executed

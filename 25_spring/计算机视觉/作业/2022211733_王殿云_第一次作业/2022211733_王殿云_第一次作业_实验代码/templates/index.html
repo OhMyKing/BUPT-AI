@@ -1,0 +1,413 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>硬币检测参数调优</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .slider-container {
+            margin: 10px 0;
+        }
+        .result-image {
+            max-width: 100%;
+            height: auto;
+            margin-top: 10px;
+            border: 1px solid #ddd;
+        }
+        .param-group {
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+        .param-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .performance-info {
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
+        #loadingIndicator {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+        .preset-btn {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <h1>硬币检测参数调优</h1>
+
+        <div class="row">
+            <div class="col-md-12 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">上传图像</h5>
+                        <input type="file" id="imageUpload" class="form-control" accept=".jpg,.jpeg,.png">
+                        <button id="uploadBtn" class="btn btn-primary mt-2">上传</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="loadingIndicator" class="alert alert-info">
+            正在处理图像...请稍候。
+        </div>
+
+        <div class="row" id="tuningSection" style="display: none;">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">参数设置</h5>
+
+                        <div class="mb-3">
+                            <h6>参数预设</h6>
+                            <button class="btn btn-sm btn-outline-primary preset-btn" data-preset="default">默认设置</button>
+                            <button class="btn btn-sm btn-outline-success preset-btn" data-preset="highSensitivity">高灵敏度</button>
+                            <button class="btn btn-sm btn-outline-warning preset-btn" data-preset="lowNoise">低噪声</button>
+                            <button class="btn btn-sm btn-outline-danger preset-btn" data-preset="largeCoins">大硬币</button>
+                        </div>
+
+                        <div class="param-group">
+                            <div class="param-title">Canny边缘检测</div>
+
+                            <div class="slider-container">
+                                <label for="cannyThreshold1">阈值1: <span id="cannyThreshold1Value">50</span></label>
+                                <input type="range" class="form-range" id="cannyThreshold1" min="0" max="255" value="50">
+                            </div>
+
+                            <div class="slider-container">
+                                <label for="cannyThreshold2">阈值2: <span id="cannyThreshold2Value">150</span></label>
+                                <input type="range" class="form-range" id="cannyThreshold2" min="0" max="255" value="150">
+                            </div>
+
+                            <div class="slider-container">
+                                <label for="cannyApertureSize">孔径大小:</label>
+                                <select class="form-select" id="cannyApertureSize">
+                                    <option value="3">3</option>
+                                    <option value="5">5</option>
+                                    <option value="7">7</option>
+                                </select>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="cannyL2Gradient">
+                                <label class="form-check-label" for="cannyL2Gradient">
+                                    L2梯度
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="param-group">
+                            <div class="param-title">Hough圆形检测</div>
+
+                            <div class="slider-container">
+                                <label for="houghDp">DP (累加器分辨率): <span id="houghDpValue">1</span></label>
+                                <input type="range" class="form-range" id="houghDp" min="0.5" max="5" step="0.1" value="1">
+                            </div>
+
+                            <div class="slider-container">
+                                <label for="houghMinDist">圆之间的最小距离: <span id="houghMinDistValue">30</span></label>
+                                <input type="range" class="form-range" id="houghMinDist" min="1" max="200" value="30">
+                            </div>
+
+                            <div class="slider-container">
+                                <label for="houghParam1">参数1 (Canny高阈值): <span id="houghParam1Value">50</span></label>
+                                <input type="range" class="form-range" id="houghParam1" min="1" max="255" value="50">
+                            </div>
+
+                            <div class="slider-container">
+                                <label for="houghParam2">参数2 (累加器阈值): <span id="houghParam2Value">30</span></label>
+                                <input type="range" class="form-range" id="houghParam2" min="1" max="150" value="30">
+                            </div>
+
+                            <div class="slider-container">
+                                <label for="houghMinRadius">最小半径: <span id="houghMinRadiusValue">10</span></label>
+                                <input type="range" class="form-range" id="houghMinRadius" min="1" max="150" value="10">
+                            </div>
+
+                            <div class="slider-container">
+                                <label for="houghMaxRadius">最大半径: <span id="houghMaxRadiusValue">100</span></label>
+                                <input type="range" class="form-range" id="houghMaxRadius" min="10" max="300" value="100">
+                            </div>
+                        </div>
+
+                        <button id="processBtn" class="btn btn-success w-100">处理图像</button>
+                        <button id="saveParamsBtn" class="btn btn-outline-primary w-100 mt-2">保存参数</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">结果</h5>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h6>原始图像</h6>
+                                <img id="originalImage" class="result-image" alt="原始图像">
+                            </div>
+                            <div class="col-md-4">
+                                <h6>边缘检测</h6>
+                                <img id="edgesImage" class="result-image" alt="边缘检测">
+                            </div>
+                            <div class="col-md-4">
+                                <h6>圆形检测</h6>
+                                <img id="circlesImage" class="result-image" alt="圆形检测">
+                            </div>
+                        </div>
+
+                        <div class="performance-info">
+                            <div class="alert alert-info">
+                                <div><strong>检测到的硬币数:</strong> <span id="coinCount">0</span></div>
+                                <div><strong>Canny耗时:</strong> <span id="cannyTime">0</span> 毫秒</div>
+                                <div><strong>Hough耗时:</strong> <span id="houghTime">0</span> 毫秒</div>
+                                <div><strong>总耗时:</strong> <span id="totalTime">0</span> 毫秒</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let currentFileName = null;
+
+        // 参数预设
+        const presets = {
+            default: {
+                canny_threshold1: 50,
+                canny_threshold2: 150,
+                canny_aperture_size: 3,
+                canny_l2gradient: false,
+                hough_dp: 1,
+                hough_minDist: 30,
+                hough_param1: 50,
+                hough_param2: 30,
+                hough_minRadius: 10,
+                hough_maxRadius: 100
+            },
+            highSensitivity: {
+                canny_threshold1: 30,
+                canny_threshold2: 100,
+                canny_aperture_size: 3,
+                canny_l2gradient: true,
+                hough_dp: 1,
+                hough_minDist: 20,
+                hough_param1: 40,
+                hough_param2: 15,
+                hough_minRadius: 5,
+                hough_maxRadius: 100
+            },
+            lowNoise: {
+                canny_threshold1: 80,
+                canny_threshold2: 200,
+                canny_aperture_size: 5,
+                canny_l2gradient: false,
+                hough_dp: 1.5,
+                hough_minDist: 40,
+                hough_param1: 70,
+                hough_param2: 40,
+                hough_minRadius: 15,
+                hough_maxRadius: 120
+            },
+            largeCoins: {
+                canny_threshold1: 50,
+                canny_threshold2: 150,
+                canny_aperture_size: 3,
+                canny_l2gradient: false,
+                hough_dp: 1.5,
+                hough_minDist: 60,
+                hough_param1: 50,
+                hough_param2: 30,
+                hough_minRadius: 30,
+                hough_maxRadius: 200
+            }
+        };
+
+        document.querySelectorAll('input[type="range"]').forEach(input => {
+            input.addEventListener('input', () => {
+                document.getElementById(input.id + 'Value').textContent = input.value;
+            });
+        });
+
+        document.querySelectorAll('.preset-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const presetName = button.getAttribute('data-preset');
+                if (presets[presetName]) {
+                    applyPreset(presets[presetName]);
+                    processImage();
+                }
+            });
+        });
+
+        function applyPreset(preset) {
+            document.getElementById('cannyThreshold1').value = preset.canny_threshold1;
+            document.getElementById('cannyThreshold1Value').textContent = preset.canny_threshold1;
+
+            document.getElementById('cannyThreshold2').value = preset.canny_threshold2;
+            document.getElementById('cannyThreshold2Value').textContent = preset.canny_threshold2;
+
+            document.getElementById('cannyApertureSize').value = preset.canny_aperture_size;
+
+            document.getElementById('cannyL2Gradient').checked = preset.canny_l2gradient;
+
+            document.getElementById('houghDp').value = preset.hough_dp;
+            document.getElementById('houghDpValue').textContent = preset.hough_dp;
+
+            document.getElementById('houghMinDist').value = preset.hough_minDist;
+            document.getElementById('houghMinDistValue').textContent = preset.hough_minDist;
+
+            document.getElementById('houghParam1').value = preset.hough_param1;
+            document.getElementById('houghParam1Value').textContent = preset.hough_param1;
+
+            document.getElementById('houghParam2').value = preset.hough_param2;
+            document.getElementById('houghParam2Value').textContent = preset.hough_param2;
+
+            document.getElementById('houghMinRadius').value = preset.hough_minRadius;
+            document.getElementById('houghMinRadiusValue').textContent = preset.hough_minRadius;
+
+            document.getElementById('houghMaxRadius').value = preset.hough_maxRadius;
+            document.getElementById('houghMaxRadiusValue').textContent = preset.hough_maxRadius;
+        }
+
+        document.getElementById('uploadBtn').addEventListener('click', () => {
+            const fileInput = document.getElementById('imageUpload');
+            const file = fileInput.files[0];
+
+            if (!file) {
+                alert('请先选择一个文件！');
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('file', file);
+
+            document.getElementById('loadingIndicator').style.display = 'block';
+
+            fetch('/upload', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('loadingIndicator').style.display = 'none';
+
+                if (data.success) {
+                    currentFileName = data.filename;
+                    document.getElementById('tuningSection').style.display = 'flex';
+                    processImage();
+                } else {
+                    alert('错误: ' + data.error);
+                }
+            })
+            .catch(error => {
+                document.getElementById('loadingIndicator').style.display = 'none';
+                console.error('错误:', error);
+                alert('上传失败。请重试。');
+            });
+        });
+
+        function processImage() {
+            if (!currentFileName) {
+                alert('请先上传一张图像！');
+                return;
+            }
+
+            document.getElementById('loadingIndicator').style.display = 'block';
+
+            const params = {
+                filename: currentFileName,
+                canny_threshold1: document.getElementById('cannyThreshold1').value,
+                canny_threshold2: document.getElementById('cannyThreshold2').value,
+                canny_aperture_size: document.getElementById('cannyApertureSize').value,
+                canny_l2gradient: document.getElementById('cannyL2Gradient').checked,
+                hough_dp: document.getElementById('houghDp').value,
+                hough_minDist: document.getElementById('houghMinDist').value,
+                hough_param1: document.getElementById('houghParam1').value,
+                hough_param2: document.getElementById('houghParam2').value,
+                hough_minRadius: document.getElementById('houghMinRadius').value,
+                hough_maxRadius: document.getElementById('houghMaxRadius').value
+            };
+
+            fetch('/process', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(params)
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('loadingIndicator').style.display = 'none';
+
+                if (data.success) {
+                    // 更新图像并添加时间戳防止浏览器缓存
+                    const timestamp = new Date().getTime();
+                    document.getElementById('originalImage').src = '/results/' + data.orig_image + '?t=' + timestamp;
+                    document.getElementById('edgesImage').src = '/results/' + data.edges_image + '?t=' + timestamp;
+                    document.getElementById('circlesImage').src = '/results/' + data.circles_image + '?t=' + timestamp;
+
+                    // 更新性能信息
+                    document.getElementById('coinCount').textContent = data.coin_count;
+                    document.getElementById('cannyTime').textContent = (data.performance.canny_time * 1000).toFixed(2);
+                    document.getElementById('houghTime').textContent = (data.performance.hough_time * 1000).toFixed(2);
+                    document.getElementById('totalTime').textContent = (data.performance.total_time * 1000).toFixed(2);
+                } else {
+                    alert('错误: ' + data.error);
+                }
+            })
+            .catch(error => {
+                document.getElementById('loadingIndicator').style.display = 'none';
+                console.error('错误:', error);
+                alert('处理失败。请重试。');
+            });
+        }
+
+        document.getElementById('saveParamsBtn').addEventListener('click', () => {
+            const params = {
+                canny_threshold1: document.getElementById('cannyThreshold1').value,
+                canny_threshold2: document.getElementById('cannyThreshold2').value,
+                canny_aperture_size: document.getElementById('cannyApertureSize').value,
+                canny_l2gradient: document.getElementById('cannyL2Gradient').checked,
+                hough_dp: document.getElementById('houghDp').value,
+                hough_minDist: document.getElementById('houghMinDist').value,
+                hough_param1: document.getElementById('houghParam1').value,
+                hough_param2: document.getElementById('houghParam2').value,
+                hough_minRadius: document.getElementById('houghMinRadius').value,
+                hough_maxRadius: document.getElementById('houghMaxRadius').value
+            };
+
+            localStorage.setItem('coinDetectionParams', JSON.stringify(params));
+            alert('参数保存成功！');
+        });
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedParams = localStorage.getItem('coinDetectionParams');
+            if (savedParams) {
+                const params = JSON.parse(savedParams);
+                applyPreset(params);
+            }
+        });
+
+        document.getElementById('processBtn').addEventListener('click', processImage);
+
+        let debounceTimer;
+        const paramInputs = document.querySelectorAll('input[type="range"], input[type="checkbox"], select');
+        paramInputs.forEach(input => {
+            input.addEventListener('input', () => {
+                clearTimeout(debounceTimer);
+                debounceTimer = setTimeout(processImage, 500);
+            });
+        });
+    </script>
+</body>
+</html>

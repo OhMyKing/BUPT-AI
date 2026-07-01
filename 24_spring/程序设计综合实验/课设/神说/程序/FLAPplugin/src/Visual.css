@@ -1,0 +1,101 @@
+
+
+#button-hold{
+    height: 100px;
+    min-height: 20px;
+}
+
+#graph-display{
+    /* overflow:hidden; */
+    outline:none;
+    border:black !important;
+}
+#graph-display > {outline:none};
+
+
+canvas{
+    outline:black;
+    border:black;
+
+}
+.vis-network{
+
+    outline:black;
+    border: black,
+}
+
+.visual-button:active{
+    border: 2px solid yellow;
+
+}
+
+.visual-button{
+    border: 2px solid yellow;
+}
+#group-holder{
+    /*border: 50px solid black;*/
+
+    margin-top: 1em;
+    margin-bottom:  1em;
+}
+.btn.btn-info{
+    box-shadow: 2px 2px 1px 1px  black ;
+    border: 1px solid black;
+}
+.btn.btn-info:active{
+
+    border: 1px solid black;
+    box-shadow: 2px 2px 1px 1px  black ;
+}
+/* #non-header-div{
+    display:inline-block;
+} */
+#bar_holder{
+    /* justify-content: space-evenly; */
+    display: inline-block;
+}
+#bar_layout{
+    /* margin-top: 100em; */
+    
+}
+.div-inline-group-below-header{
+    display: inline;
+}
+#remove_bar{
+    top: -50px;
+    left: 50px;
+}
+#trash-button{
+    /* bottom: -30px; */
+    position: absolute;
+    right: -20px;
+}
+#trash_button_actual{
+    /* position: absolute; */
+
+}
+#trash_button,#add_button_image, #trash_button_image{
+ /* float:right; */
+ outline:none;
+
+}
+#add_button_visual{
+    position: relative;
+    top: .65em;
+    left: -.83em;
+    outline:none;
+
+}
+#trash_button_input{
+    position: relative;
+    top: .7em;
+    left: -2.3em;
+    outline:none;
+}
+
+font {
+
+    text-shadow: 0 0 2px #000; /* horizontal-offset vertical-offset 'blur' colour */
+    -moz-text-shadow: 0 0 2px #000;
+    -webkit-text-shadow: 0 0 2px #000;
+  }

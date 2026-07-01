@@ -1,0 +1,191 @@
+{
+  "8.jpg": {
+    "path": "images/8.jpg",
+    "coin_count": 6,
+    "performance": {
+      "total_time": 0.28125524520874023,
+      "canny_time": 0.0007181167602539062,
+      "hough_time": 0.27896904945373535
+    }
+  },
+  "9.jpg": {
+    "path": "images/9.jpg",
+    "coin_count": 5,
+    "performance": {
+      "total_time": 0.28125524520874023,
+      "canny_time": 0.0007181167602539062,
+      "hough_time": 0.27896904945373535
+    }
+  },
+  "14.jpg": {
+    "path": "images/14.jpg",
+    "coin_count": 4,
+    "performance": {
+      "total_time": 0.28125524520874023,
+      "canny_time": 0.0007181167602539062,
+      "hough_time": 0.27896904945373535
+    }
+  },
+  "15.jpg": {
+    "path": "images/15.jpg",
+    "coin_count": 4,
+    "performance": {
+      "total_time": 0.28125524520874023,
+      "canny_time": 0.0007181167602539062,
+      "hough_time": 0.27896904945373535
+    }
+  },
+  "17.jpg": {
+    "path": "images/17.jpg",
+    "coin_count": 6,
+    "performance": {
+      "total_time": 0.28125524520874023,
+      "canny_time": 0.0007181167602539062,
+      "hough_time": 0.27896904945373535
+    }
+  },
+  "16.jpg": {
+    "path": "images/16.jpg",
+    "coin_count": 6,
+    "performance": {
+      "total_time": 0.28125524520874023,
+      "canny_time": 0.0007181167602539062,
+      "hough_time": 0.27896904945373535
+    }
+  },
+  "12.jpg": {
+    "path": "images/12.jpg",
+    "coin_count": 9,
+    "performance": {
+      "total_time": 0.28125524520874023,
+      "canny_time": 0.0007181167602539062,
+      "hough_time": 0.27896904945373535
+    }
+  },
+  "13.jpg": {
+    "path": "images/13.jpg",
+    "coin_count": 6,
+    "performance": {
+      "total_time": 0.28125524520874023,
+      "canny_time": 0.0007181167602539062,
+      "hough_time": 0.27896904945373535
+    }
+  },
+  "11.jpg": {
+    "path": "images/11.jpg",
+    "coin_count": 4,
+    "performance": {
+      "total_time": 0.28125524520874023,
+      "canny_time": 0.0007181167602539062,
+      "hough_time": 0.27896904945373535
+    }
+  },
+  "10.jpg": {
+    "path": "images/10.jpg",
+    "coin_count": 7,
+    "performance": {
+      "total_time": 0.28125524520874023,
+      "canny_time": 0.0007181167602539062,
+      "hough_time": 0.27896904945373535
+    }
+  },
+  "18.jpg": {
+    "path": "images/18.jpg",
+    "coin_count": 4,
+    "performance": {
+      "total_time": 0.28125524520874023,
+      "canny_time": 0.0007181167602539062,
+      "hough_time": 0.27896904945373535
+    }
+  },
+  "4.jpg": {
+    "path": "images/4.jpg",
+    "coin_count": 7,
+    "performance": {
+      "total_time": 0.28125524520874023,
+      "canny_time": 0.0007181167602539062,
+      "hough_time": 0.27896904945373535
+    }
+  },
+  "5.jpg": {
+    "path": "images/5.jpg",
+    "coin_count": 6,
+    "performance": {
+      "total_time": 0.28125524520874023,
+      "canny_time": 0.0007181167602539062,
+      "hough_time": 0.27896904945373535
+    }
+  },
+  "7.jpg": {
+    "path": "images/7.jpg",
+    "coin_count": 6,
+    "performance": {
+      "total_time": 0.28125524520874023,
+      "canny_time": 0.0007181167602539062,
+      "hough_time": 0.27896904945373535
+    }
+  },
+  "6.jpg": {
+    "path": "images/6.jpg",
+    "coin_count": 6,
+    "performance": {
+      "total_time": 0.28125524520874023,
+      "canny_time": 0.0007181167602539062,
+      "hough_time": 0.27896904945373535
+    }
+  },
+  "2.jpg": {
+    "path": "images/2.jpg",
+    "coin_count": 5,
+    "performance": {
+      "total_time": 0.28125524520874023,
+      "canny_time": 0.0007181167602539062,
+      "hough_time": 0.27896904945373535
+    }
+  },
+  "3.jpg": {
+    "path": "images/3.jpg",
+    "coin_count": 10,
+    "performance": {
+      "total_time": 0.28125524520874023,
+      "canny_time": 0.0007181167602539062,
+      "hough_time": 0.27896904945373535
+    }
+  },
+  "1.jpg": {
+    "path": "images/1.jpg",
+    "coin_count": 7,
+    "performance": {
+      "total_time": 0.28125524520874023,
+      "canny_time": 0.0007181167602539062,
+      "hough_time": 0.27896904945373535
+    }
+  },
+  "summary": {
+    "total_images": 18,
+    "total_coins": 108,
+    "average_coins_per_image": 6.0,
+    "average_performance": {
+      "total_time": 0.28125524520874023,
+      "canny_time": 0.0007181167602539062,
+      "hough_time": 0.27896904945373535
+    },
+    "algorithm_params": {
+      "canny": {
+        "threshold1": 20,
+        "threshold2": 30,
+        "aperture_size": 5,
+        "L2gradient": true
+      },
+      "hough": {
+        "method": 3,
+        "dp": 1.5,
+        "minDist": 30,
+        "param1": 30,
+        "param2": 20,
+        "minRadius": 10,
+        "maxRadius": 100
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+identity:
+  author: ohmyking
+  name: publish_guide_task
+  label:
+    en_US: Publish Guide Task
+    zh_Hans: 发布引导任务
+    pt_BR: Publicar Tarefa de Orientação
+  description:
+    en_US: A tool for posting guidance tasks to the nearest guidance robot when the user needs guidance
+    zh_Hans: 当用户需要引导时，向距离最近的引导机器人发布引导任务的工具
+    pt_BR: Uma ferramenta para publicar tarefas de orientação para o robô guia mais próximo quando o usuário precisa de orientação
+  icon: icon.svg
+credentials_for_provider:
+  base_url:
+    type: text-input
+    required: true
+    label:
+      en_US: Base URL
+      zh_Hans: 基础URL
+      pt_BR: URL Base
+    placeholder:
+      en_US: Enter the base URL for the API (e.g., http://127.0.0.1:5005)
+      zh_Hans: 输入API的基础URL (例如 http://127.0.0.1:5005)
+      pt_BR: Digite a URL base para a API (por exemplo, http://127.0.0.1:5005)
+    help:
+      en_US: The base URL for the guide robot API server
+      zh_Hans: 引导机器人API服务器的基础URL
+      pt_BR: A URL base para o servidor da API do robô guia
+    default: http://127.0.0.1:5005
+tools:
+  - tools/publish_guide_task.yaml
+extra:
+  python:
+    source: provider/publish_guide_task.py

@@ -1,0 +1,91 @@
+%%
+%% This is file `example/ch_concln.tex',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% install/buptgraduatethesis.dtx  (with options: `ch-concln')
+%%
+%% This file is a part of the example of BUPTGraduateThesis.
+%%
+
+\chapter{功能测试}
+
+\section{测试章节标题}
+
+\subsection{长坂坡}
+京剧《长坂坡》是依据《三国演义》改编的京剧传统剧目。
+
+故事叙述：刘备自烧屯新野之后，弃樊城，阻襄阳，一路率引军民，流离败走，穷促万分。
+关羽、诸葛亮，已先后遣往夏口，乞救于刘琦未返，刘备等往投江陵暂驻，中途经过当阳，驻扎景山之下。
+忽然曹操大兵，漫山遍野追至，夤夜厮杀，刘备众大败，及天明检点随从只余百余骑，刘备家眷及赵云、简雍、二糜等将，均不知下落，其余百姓，亦均散失殆尽。
+此时赵云因于阿斗及甘、糜二夫人等失散，遂单骑冲突，四处找寻主眷，沓无下落。
+往回三数次，遇见简雍被创卧地，始略知失踪处所。
+赵云先救出简雍，令回，再往军中及百姓中搜访，先救甘夫人于难民队，同时又救糜竺，亲自护送至长坂坡，令糜竺保甘嫂先行，折身再回，觅糜嫂及阿斗。
+途中刺落夏侯恩，收获青釭宝剑，七次冲入重围，方得百姓指引，得见糜夫人抱阿斗坐于坍墙枯井之旁啼哭。
+夫人身受数创，不能行走。
+赵云叩见，极力请夫人上马，欲保护而出。
+夫人深知大义，惟以阿斗为托，己则以愿死报主，免累赵云，赵云再三安慰催行，力任无妨，夫人再三不可，亦促赵云速行。
+继见赵云坚待不去，恐且迟延遇寇，乃跳身入井，以速赵云之行。
+赵云大惊，尚踌躇设法营救，则曹军人马已至，不得已推墙掩井，解甲藏阿斗于胸前，忽忽上马，厮杀夺围欲出。
+此时曹操大兵云集，群矢于赵云一身，赵云在核心，东斩西杀，虽不败辱，而屡濒于厄。
+幸曹操爱勇将，赖徐庶乘间说曹操，以生擒勿伤，传令全军，始得完肤而返。
+
+\subsection{测试图片}
+
+\begin{figure}
+    \begin{subfigure}[b]{.5\linewidth}
+        % \centering\large A
+        \centering
+        \includegraphics[width=.5\linewidth]{example-image-a}
+        \caption{一个子图}\label{fig:1a}
+    \end{subfigure}%
+    \begin{subfigure}[b]{.5\linewidth}
+        \centering
+        \includegraphics[width=.5\linewidth]{example-image-b}
+        \caption{另一个子图}\label{fig:1b}
+    \end{subfigure}
+    \caption[A figure 图片测试]{A figure 图片测试\cite{CITATION_ARTICLE}}\label{fig:1}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \begin{subfigure}{0.45\linewidth}
+        \phantomsubcaption % 创建子图编号而不显示子图图题，该命令是必要的
+        \label{fig:2a} % \label需要在\subfigwithlabel前设置，使得\subfigwithlabel命令能够获取到当前子图编号
+        \centering
+        \subfigwithlabel{%
+            \includegraphics[width=\linewidth]{example-image-a} % 这里插入你需要的图片
+        }
+    \end{subfigure}
+    \begin{subfigure}{0.45\linewidth} % 同上
+        \phantomsubcaption
+        \label{fig:2b}
+        \centering
+        \subfigwithlabel{%
+            \includegraphics[width=\linewidth]{example-image-b}
+        }
+    \end{subfigure}
+    \caption{
+        \centering
+        A figure 图片测试
+        \\
+        \subref{fig:2a} 一个子图；
+        \subref{fig:2b} 另一个子图
+    }
+    \label{fig:2} % 这里设置主图的标签
+\end{figure}
+
+本文档类提供两桶插入子图的方式，一种是传统的样式，如包含\cref{fig:1a,fig:1b}的\cref{fig:1}所示。
+但是学校根据统一要求的说明，子图的序号应标注在对应子图的左上角，子图名称因与图名一起在caption中列出，对此本文档类提供如\cref{fig:2}所示的样式。
+我看到之前师兄们的文章并没有遵循这个要求，原 buptgraduatethesis 文档类中似乎也没有对应的实现，不知是否是新引进的要求。
+
+\subsection{测试定理环境}
+\begin{theorem}[定理名称]
+    定理环境测试
+\end{theorem}
+
+\begin{proof}
+    使用 \verb|proof| 环境可以得到使用\textbf{黑体}作为标题的证明
+\end{proof}
+

@@ -1,0 +1,1652 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="background">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>130</y>
+      <width>691</width>
+      <height>391</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/img/background.jpg);
+border-radius: 30px;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="p1_board">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>230</y>
+      <width>231</width>
+      <height>231</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(103, 137, 163);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="p2_board">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>230</y>
+      <width>231</width>
+      <height>231</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(103, 137, 163);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="vs">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>250</y>
+      <width>171</width>
+      <height>181</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">image: url(:/img/vs.png);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="ready">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>290</y>
+      <width>91</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">image: url(:/img/1.PNG);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="close">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>150</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    border-radius: 20px;
+    image: url(:/img/x.png);
+    border: none; 
+}
+
+QPushButton:hover {
+	border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.2); /* 添加半透明遮罩 */
+}
+
+QPushButton:pressed {
+    margin: 2px; /* 调整边距，模拟按钮缩小效果 */
+    background-color: rgba(255, 255, 255, 0.2); /* 保持悬停效果并应用于按下状态 */
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="set">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>150</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    border-radius: 20px;
+    image: url(:/img/set.png);
+    border: none; 
+}
+
+QPushButton:hover {
+	border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.2); /* 添加半透明遮罩 */
+}
+
+QPushButton:pressed {
+    margin: 2px; /* 调整边距，模拟按钮缩小效果 */
+    background-color: rgba(255, 255, 255, 0.2); /* 保持悬停效果并应用于按下状态 */
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>310</y>
+      <width>101</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    image: url(:/img/箭头.png);
+    border: none; 
+}
+
+QPushButton:hover {
+	border-radius: 3px;
+    background-color: rgba(255, 255, 255, 0.2); /* 添加半透明遮罩 */
+}
+
+QPushButton:pressed {
+    margin: 2px; /* 调整边距，模拟按钮缩小效果 */
+    background-color: rgba(255, 255, 255, 0.2); /* 保持悬停效果并应用于按下状态 */
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="count_1">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>470</y>
+      <width>141</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">image: url(:/img/步数.png);
+background-color: rgba(255, 255, 255, 0);
+font: 75 30pt &quot;Berlin Sans FB&quot;;
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="count_2">
+    <property name="geometry">
+     <rect>
+      <x>460</x>
+      <y>470</y>
+      <width>141</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">image: url(:/img/步数.png);
+background-color: rgba(255, 255, 255, 0);
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="P1">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>190</y>
+      <width>71</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">image: url(:/img/P1.png);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="P2">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>190</y>
+      <width>71</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">image: url(:/img/P2.png);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QStackedWidget" name="inside_window">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>160</y>
+      <width>341</width>
+      <height>341</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(255, 255, 255, 0);
+</string>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="pve_setting">
+     <property name="styleSheet">
+      <string notr="true">image: url(:/img/设置页-pve.png);
+</string>
+     </property>
+     <widget class="QPushButton" name="close_1">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>31</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    border-radius: 20px;
+    image: url(:/img/x_1.png);
+    border: none; 
+}
+
+QPushButton:hover {
+	border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.2); /* 添加半透明遮罩 */
+}
+
+QPushButton:pressed {
+    margin: 2px; /* 调整边距，模拟按钮缩小效果 */
+    background-color: rgba(255, 255, 255, 0.2); /* 保持悬停效果并应用于按下状态 */
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pvp">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>80</y>
+        <width>31</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    border-radius: 20px;
+    image: url(:/img/round.png);
+    border: none; 
+}
+
+QPushButton:hover {
+	image: url(:/img/touch.png);
+    background-color: rgba(255, 255, 255，000); /* 添加半透明遮罩 */
+}
+
+QPushButton:pressed {
+    image: url(:/img/push.png);
+    background-color: rgba(255, 255, 255，000); /* 保持悬停效果并应用于按下状态 */
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pve">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>80</y>
+        <width>31</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    border-radius: 20px;
+    image: url(:/img/push.png);
+    border: none; 
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="difficult">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>140</y>
+        <width>31</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    border-radius: 20px;
+    image: url(:/img/round.png);
+    border: none; 
+}
+
+QPushButton:hover {
+	image: url(:/img/touch.png);
+    background-color: rgba(255, 255, 255，000); /* 添加半透明遮罩 */
+}
+
+QPushButton:pressed {
+    image: url(:/img/push.png);
+    background-color: rgba(255, 255, 255，000); /* 保持悬停效果并应用于按下状态 */
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="normal">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>140</y>
+        <width>31</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    border-radius: 20px;
+    image: url(:/img/round.png);
+    border: none; 
+}
+
+QPushButton:hover {
+	image: url(:/img/touch.png);
+    background-color: rgba(255, 255, 255，000); /* 添加半透明遮罩 */
+}
+
+QPushButton:pressed {
+    image: url(:/img/push.png);
+    background-color: rgba(255, 255, 255，000); /* 保持悬停效果并应用于按下状态 */
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="easy">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>140</y>
+        <width>31</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    border-radius: 20px;
+    image: url(:/img/round.png);
+    border: none; 
+}
+
+QPushButton:hover {
+	image: url(:/img/touch.png);
+    background-color: rgba(255, 255, 255，000); /* 添加半透明遮罩 */
+}
+
+QPushButton:pressed {
+    image: url(:/img/push.png);
+    background-color: rgba(255, 255, 255，000); /* 保持悬停效果并应用于按下状态 */
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="DFS">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>200</y>
+        <width>31</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    border-radius: 20px;
+    image: url(:/img/round.png);
+    border: none; 
+}
+
+QPushButton:hover {
+	image: url(:/img/touch.png);
+    background-color: rgba(255, 255, 255，000); /* 添加半透明遮罩 */
+}
+
+QPushButton:pressed {
+    image: url(:/img/push.png);
+    background-color: rgba(255, 255, 255，000); /* 保持悬停效果并应用于按下状态 */
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="BFS">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>200</y>
+        <width>31</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    border-radius: 20px;
+    image: url(:/img/round.png);
+    border: none; 
+}
+
+QPushButton:hover {
+	image: url(:/img/touch.png);
+    background-color: rgba(255, 255, 255，000); /* 添加半透明遮罩 */
+}
+
+QPushButton:pressed {
+    image: url(:/img/push.png);
+    background-color: rgba(255, 255, 255，000); /* 保持悬停效果并应用于按下状态 */
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="A_star">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>240</y>
+        <width>31</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    border-radius: 20px;
+    image: url(:/img/round.png);
+    border: none; 
+}
+
+QPushButton:hover {
+	image: url(:/img/touch.png);
+    background-color: rgba(255, 255, 255，000); /* 添加半透明遮罩 */
+}
+
+QPushButton:pressed {
+    image: url(:/img/push.png);
+    background-color: rgba(255, 255, 255，000); /* 保持悬停效果并应用于按下状态 */
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="DL">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>240</y>
+        <width>31</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    border-radius: 20px;
+    image: url(:/img/round.png);
+    border: none; 
+}
+
+QPushButton:hover {
+	image: url(:/img/touch.png);
+    background-color: rgba(255, 255, 255，000); /* 添加半透明遮罩 */
+}
+
+QPushButton:pressed {
+    image: url(:/img/push.png);
+    background-color: rgba(255, 255, 255，000); /* 保持悬停效果并应用于按下状态 */
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_2">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>270</y>
+        <width>101</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    border-radius: 20px;
+    image: url(:/img/start_end_setting.png);
+    border: none; 
+}
+
+QPushButton:hover {
+	border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.2); /* 添加半透明遮罩 */
+}
+
+QPushButton:pressed {
+    margin: 2px; /* 调整边距，模拟按钮缩小效果 */
+    background-color: rgba(255, 255, 255, 0.2); /* 保持悬停效果并应用于按下状态 */
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_3">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>270</y>
+        <width>101</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    border-radius: 20px;
+    image: url(:/img/img_setting.png);
+    border: none; 
+}
+
+QPushButton:hover {
+	border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.2); /* 添加半透明遮罩 */
+}
+
+QPushButton:pressed {
+    margin: 2px; /* 调整边距，模拟按钮缩小效果 */
+    background-color: rgba(255, 255, 255, 0.2); /* 保持悬停效果并应用于按下状态 */
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="pvp_setting">
+     <property name="styleSheet">
+      <string notr="true">image: url(:/img/设置页-pvp.png);</string>
+     </property>
+     <widget class="QPushButton" name="pvp_2">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>80</y>
+        <width>31</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    border-radius: 20px;
+    image: url(:/img/push.png);
+    border: none; 
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pve_2">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>80</y>
+        <width>31</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    border-radius: 20px;
+    image: url(:/img/round.png);
+    border: none; 
+}
+
+QPushButton:hover {
+	image: url(:/img/touch.png);
+    background-color: rgba(255, 255, 255，000); /* 添加半透明遮罩 */
+}
+
+QPushButton:pressed {
+    image: url(:/img/push.png);
+    background-color: rgba(255, 255, 255，000); /* 保持悬停效果并应用于按下状态 */
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="close_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>31</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    border-radius: 20px;
+    image: url(:/img/x_1.png);
+    border: none; 
+}
+
+QPushButton:hover {
+	border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.2); /* 添加半透明遮罩 */
+}
+
+QPushButton:pressed {
+    margin: 2px; /* 调整边距，模拟按钮缩小效果 */
+    background-color: rgba(255, 255, 255, 0.2); /* 保持悬停效果并应用于按下状态 */
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_4">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>270</y>
+        <width>101</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    border-radius: 20px;
+    image: url(:/img/start_end_setting.png);
+    border: none; 
+}
+
+QPushButton:hover {
+	border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.2); /* 添加半透明遮罩 */
+}
+
+QPushButton:pressed {
+    margin: 2px; /* 调整边距，模拟按钮缩小效果 */
+    background-color: rgba(255, 255, 255, 0.2); /* 保持悬停效果并应用于按下状态 */
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_5">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>270</y>
+        <width>101</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    border-radius: 20px;
+    image: url(:/img/img_setting.png);
+    border: none; 
+}
+
+QPushButton:hover {
+	border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.2); /* 添加半透明遮罩 */
+}
+
+QPushButton:pressed {
+    margin: 2px; /* 调整边距，模拟按钮缩小效果 */
+    background-color: rgba(255, 255, 255, 0.2); /* 保持悬停效果并应用于按下状态 */
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="start_end_setting">
+     <property name="styleSheet">
+      <string notr="true">QWidget#start_end_setting{
+	image: url(:/img/end_page.png);
+}</string>
+     </property>
+     <widget class="QSpinBox" name="start11">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>120</y>
+        <width>41</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QSpinBox {
+    background-color: #9dd7ff; /* 设置背景色为#9dd7ff */
+    color: #333333; /* 设置文字颜色 */
+    border: 2px solid #9dd7ff; /* 设置边框颜色为#9dd7ff和宽度 */
+    padding: 5px; /* 设置内边距 */
+}
+
+QSpinBox:hover {
+    border: 2px solid #4caff2; /* 鼠标悬浮时边框颜色为#9dd7ff */
+}
+
+QSpinBox::up-button {
+    subcontrol-origin: border;
+    subcontrol-position: top right; /* 设置上按钮的位置 */
+}
+
+QSpinBox::down-button {
+    subcontrol-origin: border;
+    subcontrol-position: bottom right; /* 设置下按钮的位置 */
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="start12">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>120</y>
+        <width>41</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QSpinBox {
+    background-color: #9dd7ff; /* 设置背景色为#9dd7ff */
+    color: #333333; /* 设置文字颜色 */
+    border: 2px solid #9dd7ff; /* 设置边框颜色为#9dd7ff和宽度 */
+    padding: 5px; /* 设置内边距 */
+}
+
+QSpinBox:hover {
+    border: 2px solid #4caff2; /* 鼠标悬浮时边框颜色为#9dd7ff */
+}
+
+QSpinBox::up-button {
+    subcontrol-origin: border;
+    subcontrol-position: top right; /* 设置上按钮的位置 */
+}
+
+QSpinBox::down-button {
+    subcontrol-origin: border;
+    subcontrol-position: bottom right; /* 设置下按钮的位置 */
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="start13">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>120</y>
+        <width>41</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QSpinBox {
+    background-color: #9dd7ff; /* 设置背景色为#9dd7ff */
+    color: #333333; /* 设置文字颜色 */
+    border: 2px solid #9dd7ff; /* 设置边框颜色为#9dd7ff和宽度 */
+    padding: 5px; /* 设置内边距 */
+}
+
+QSpinBox:hover {
+    border: 2px solid #4caff2; /* 鼠标悬浮时边框颜色为#9dd7ff */
+}
+
+QSpinBox::up-button {
+    subcontrol-origin: border;
+    subcontrol-position: top right; /* 设置上按钮的位置 */
+}
+
+QSpinBox::down-button {
+    subcontrol-origin: border;
+    subcontrol-position: bottom right; /* 设置下按钮的位置 */
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="start21">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>170</y>
+        <width>41</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QSpinBox {
+    background-color: #9dd7ff; /* 设置背景色为#9dd7ff */
+    color: #333333; /* 设置文字颜色 */
+    border: 2px solid #9dd7ff; /* 设置边框颜色为#9dd7ff和宽度 */
+    padding: 5px; /* 设置内边距 */
+}
+
+QSpinBox:hover {
+    border: 2px solid #4caff2; /* 鼠标悬浮时边框颜色为#9dd7ff */
+}
+
+QSpinBox::up-button {
+    subcontrol-origin: border;
+    subcontrol-position: top right; /* 设置上按钮的位置 */
+}
+
+QSpinBox::down-button {
+    subcontrol-origin: border;
+    subcontrol-position: bottom right; /* 设置下按钮的位置 */
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="start22">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>170</y>
+        <width>41</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QSpinBox {
+    background-color: #9dd7ff; /* 设置背景色为#9dd7ff */
+    color: #333333; /* 设置文字颜色 */
+    border: 2px solid #9dd7ff; /* 设置边框颜色为#9dd7ff和宽度 */
+    padding: 5px; /* 设置内边距 */
+}
+
+QSpinBox:hover {
+    border: 2px solid #4caff2; /* 鼠标悬浮时边框颜色为#9dd7ff */
+}
+
+QSpinBox::up-button {
+    subcontrol-origin: border;
+    subcontrol-position: top right; /* 设置上按钮的位置 */
+}
+
+QSpinBox::down-button {
+    subcontrol-origin: border;
+    subcontrol-position: bottom right; /* 设置下按钮的位置 */
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="start23">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>170</y>
+        <width>41</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QSpinBox {
+    background-color: #9dd7ff; /* 设置背景色为#9dd7ff */
+    color: #333333; /* 设置文字颜色 */
+    border: 2px solid #9dd7ff; /* 设置边框颜色为#9dd7ff和宽度 */
+    padding: 5px; /* 设置内边距 */
+}
+
+QSpinBox:hover {
+    border: 2px solid #4caff2; /* 鼠标悬浮时边框颜色为#9dd7ff */
+}
+
+QSpinBox::up-button {
+    subcontrol-origin: border;
+    subcontrol-position: top right; /* 设置上按钮的位置 */
+}
+
+QSpinBox::down-button {
+    subcontrol-origin: border;
+    subcontrol-position: bottom right; /* 设置下按钮的位置 */
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="start31">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>220</y>
+        <width>41</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QSpinBox {
+    background-color: #9dd7ff; /* 设置背景色为#9dd7ff */
+    color: #333333; /* 设置文字颜色 */
+    border: 2px solid #9dd7ff; /* 设置边框颜色为#9dd7ff和宽度 */
+    padding: 5px; /* 设置内边距 */
+}
+
+QSpinBox:hover {
+    border: 2px solid #4caff2; /* 鼠标悬浮时边框颜色为#9dd7ff */
+}
+
+QSpinBox::up-button {
+    subcontrol-origin: border;
+    subcontrol-position: top right; /* 设置上按钮的位置 */
+}
+
+QSpinBox::down-button {
+    subcontrol-origin: border;
+    subcontrol-position: bottom right; /* 设置下按钮的位置 */
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="start32">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>220</y>
+        <width>41</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QSpinBox {
+    background-color: #9dd7ff; /* 设置背景色为#9dd7ff */
+    color: #333333; /* 设置文字颜色 */
+    border: 2px solid #9dd7ff; /* 设置边框颜色为#9dd7ff和宽度 */
+    padding: 5px; /* 设置内边距 */
+}
+
+QSpinBox:hover {
+    border: 2px solid #4caff2; /* 鼠标悬浮时边框颜色为#9dd7ff */
+}
+
+QSpinBox::up-button {
+    subcontrol-origin: border;
+    subcontrol-position: top right; /* 设置上按钮的位置 */
+}
+
+QSpinBox::down-button {
+    subcontrol-origin: border;
+    subcontrol-position: bottom right; /* 设置下按钮的位置 */
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="start33">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>220</y>
+        <width>41</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QSpinBox {
+    background-color: #9dd7ff; /* 设置背景色为#9dd7ff */
+    color: #333333; /* 设置文字颜色 */
+    border: 2px solid #9dd7ff; /* 设置边框颜色为#9dd7ff和宽度 */
+    padding: 5px; /* 设置内边距 */
+}
+
+QSpinBox:hover {
+    border: 2px solid #4caff2; /* 鼠标悬浮时边框颜色为#9dd7ff */
+}
+
+QSpinBox::up-button {
+    subcontrol-origin: border;
+    subcontrol-position: top right; /* 设置上按钮的位置 */
+}
+
+QSpinBox::down-button {
+    subcontrol-origin: border;
+    subcontrol-position: bottom right; /* 设置下按钮的位置 */
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="end11">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>120</y>
+        <width>41</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QSpinBox {
+    background-color: #9dd7ff; /* 设置背景色为#9dd7ff */
+    color: #333333; /* 设置文字颜色 */
+    border: 2px solid #9dd7ff; /* 设置边框颜色为#9dd7ff和宽度 */
+    padding: 5px; /* 设置内边距 */
+}
+
+QSpinBox:hover {
+    border: 2px solid #4caff2; /* 鼠标悬浮时边框颜色为#9dd7ff */
+}
+
+QSpinBox::up-button {
+    subcontrol-origin: border;
+    subcontrol-position: top right; /* 设置上按钮的位置 */
+}
+
+QSpinBox::down-button {
+    subcontrol-origin: border;
+    subcontrol-position: bottom right; /* 设置下按钮的位置 */
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="end21">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>170</y>
+        <width>41</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QSpinBox {
+    background-color: #9dd7ff; /* 设置背景色为#9dd7ff */
+    color: #333333; /* 设置文字颜色 */
+    border: 2px solid #9dd7ff; /* 设置边框颜色为#9dd7ff和宽度 */
+    padding: 5px; /* 设置内边距 */
+}
+
+QSpinBox:hover {
+    border: 2px solid #4caff2; /* 鼠标悬浮时边框颜色为#9dd7ff */
+}
+
+QSpinBox::up-button {
+    subcontrol-origin: border;
+    subcontrol-position: top right; /* 设置上按钮的位置 */
+}
+
+QSpinBox::down-button {
+    subcontrol-origin: border;
+    subcontrol-position: bottom right; /* 设置下按钮的位置 */
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="end31">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>220</y>
+        <width>41</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QSpinBox {
+    background-color: #9dd7ff; /* 设置背景色为#9dd7ff */
+    color: #333333; /* 设置文字颜色 */
+    border: 2px solid #9dd7ff; /* 设置边框颜色为#9dd7ff和宽度 */
+    padding: 5px; /* 设置内边距 */
+}
+
+QSpinBox:hover {
+    border: 2px solid #4caff2; /* 鼠标悬浮时边框颜色为#9dd7ff */
+}
+
+QSpinBox::up-button {
+    subcontrol-origin: border;
+    subcontrol-position: top right; /* 设置上按钮的位置 */
+}
+
+QSpinBox::down-button {
+    subcontrol-origin: border;
+    subcontrol-position: bottom right; /* 设置下按钮的位置 */
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="end12">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>120</y>
+        <width>41</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QSpinBox {
+    background-color: #9dd7ff; /* 设置背景色为#9dd7ff */
+    color: #333333; /* 设置文字颜色 */
+    border: 2px solid #9dd7ff; /* 设置边框颜色为#9dd7ff和宽度 */
+    padding: 5px; /* 设置内边距 */
+}
+
+QSpinBox:hover {
+    border: 2px solid #4caff2; /* 鼠标悬浮时边框颜色为#9dd7ff */
+}
+
+QSpinBox::up-button {
+    subcontrol-origin: border;
+    subcontrol-position: top right; /* 设置上按钮的位置 */
+}
+
+QSpinBox::down-button {
+    subcontrol-origin: border;
+    subcontrol-position: bottom right; /* 设置下按钮的位置 */
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="end22">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>170</y>
+        <width>41</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QSpinBox {
+    background-color: #9dd7ff; /* 设置背景色为#9dd7ff */
+    color: #333333; /* 设置文字颜色 */
+    border: 2px solid #9dd7ff; /* 设置边框颜色为#9dd7ff和宽度 */
+    padding: 5px; /* 设置内边距 */
+}
+
+QSpinBox:hover {
+    border: 2px solid #4caff2; /* 鼠标悬浮时边框颜色为#9dd7ff */
+}
+
+QSpinBox::up-button {
+    subcontrol-origin: border;
+    subcontrol-position: top right; /* 设置上按钮的位置 */
+}
+
+QSpinBox::down-button {
+    subcontrol-origin: border;
+    subcontrol-position: bottom right; /* 设置下按钮的位置 */
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="end32">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>220</y>
+        <width>41</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QSpinBox {
+    background-color: #9dd7ff; /* 设置背景色为#9dd7ff */
+    color: #333333; /* 设置文字颜色 */
+    border: 2px solid #9dd7ff; /* 设置边框颜色为#9dd7ff和宽度 */
+    padding: 5px; /* 设置内边距 */
+}
+
+QSpinBox:hover {
+    border: 2px solid #4caff2; /* 鼠标悬浮时边框颜色为#9dd7ff */
+}
+
+QSpinBox::up-button {
+    subcontrol-origin: border;
+    subcontrol-position: top right; /* 设置上按钮的位置 */
+}
+
+QSpinBox::down-button {
+    subcontrol-origin: border;
+    subcontrol-position: bottom right; /* 设置下按钮的位置 */
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="end33">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>220</y>
+        <width>41</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QSpinBox {
+    background-color: #9dd7ff; /* 设置背景色为#9dd7ff */
+    color: #333333; /* 设置文字颜色 */
+    border: 2px solid #9dd7ff; /* 设置边框颜色为#9dd7ff和宽度 */
+    padding: 5px; /* 设置内边距 */
+}
+
+QSpinBox:hover {
+    border: 2px solid #4caff2; /* 鼠标悬浮时边框颜色为#9dd7ff */
+}
+
+QSpinBox::up-button {
+    subcontrol-origin: border;
+    subcontrol-position: top right; /* 设置上按钮的位置 */
+}
+
+QSpinBox::down-button {
+    subcontrol-origin: border;
+    subcontrol-position: bottom right; /* 设置下按钮的位置 */
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="end23">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>170</y>
+        <width>41</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QSpinBox {
+    background-color: #9dd7ff; /* 设置背景色为#9dd7ff */
+    color: #333333; /* 设置文字颜色 */
+    border: 2px solid #9dd7ff; /* 设置边框颜色为#9dd7ff和宽度 */
+    padding: 5px; /* 设置内边距 */
+}
+
+QSpinBox:hover {
+    border: 2px solid #4caff2; /* 鼠标悬浮时边框颜色为#9dd7ff */
+}
+
+QSpinBox::up-button {
+    subcontrol-origin: border;
+    subcontrol-position: top right; /* 设置上按钮的位置 */
+}
+
+QSpinBox::down-button {
+    subcontrol-origin: border;
+    subcontrol-position: bottom right; /* 设置下按钮的位置 */
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="end13">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>120</y>
+        <width>41</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QSpinBox {
+    background-color: #9dd7ff; /* 设置背景色为#9dd7ff */
+    color: #333333; /* 设置文字颜色 */
+    border: 2px solid #9dd7ff; /* 设置边框颜色为#9dd7ff和宽度 */
+    padding: 5px; /* 设置内边距 */
+}
+
+QSpinBox:hover {
+    border: 2px solid #4caff2; /* 鼠标悬浮时边框颜色为#9dd7ff */
+}
+
+QSpinBox::up-button {
+    subcontrol-origin: border;
+    subcontrol-position: top right; /* 设置上按钮的位置 */
+}
+
+QSpinBox::down-button {
+    subcontrol-origin: border;
+    subcontrol-position: bottom right; /* 设置下按钮的位置 */
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>0</y>
+        <width>141</width>
+        <height>161</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">image: url(:/img/Start.PNG);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>0</y>
+        <width>211</width>
+        <height>161</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">image: url(:/img/End.PNG);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="close_4">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>31</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    border-radius: 20px;
+    image: url(:/img/x_1.png);
+    border: none; 
+}
+
+QPushButton:hover {
+	border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.2); /* 添加半透明遮罩 */
+}
+
+QPushButton:pressed {
+    margin: 2px; /* 调整边距，模拟按钮缩小效果 */
+    background-color: rgba(255, 255, 255, 0.2); /* 保持悬停效果并应用于按下状态 */
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <zorder>label_6</zorder>
+     <zorder>label_5</zorder>
+     <zorder>start11</zorder>
+     <zorder>start12</zorder>
+     <zorder>start13</zorder>
+     <zorder>start21</zorder>
+     <zorder>start22</zorder>
+     <zorder>start23</zorder>
+     <zorder>start31</zorder>
+     <zorder>start32</zorder>
+     <zorder>start33</zorder>
+     <zorder>end11</zorder>
+     <zorder>end21</zorder>
+     <zorder>end31</zorder>
+     <zorder>end12</zorder>
+     <zorder>end22</zorder>
+     <zorder>end32</zorder>
+     <zorder>end33</zorder>
+     <zorder>end23</zorder>
+     <zorder>end13</zorder>
+     <zorder>close_4</zorder>
+    </widget>
+    <widget class="QWidget" name="end">
+     <property name="styleSheet">
+      <string notr="true">QWidget#end{
+	image: url(:/img/end_page.png);
+}</string>
+     </property>
+     <widget class="QPushButton" name="close_3">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>31</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    border-radius: 20px;
+    image: url(:/img/x_1.png);
+    border: none; 
+}
+
+QPushButton:hover {
+	border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.2); /* 添加半透明遮罩 */
+}
+
+QPushButton:pressed {
+    margin: 2px; /* 调整边距，模拟按钮缩小效果 */
+    background-color: rgba(255, 255, 255, 0.2); /* 保持悬停效果并应用于按下状态 */
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="P1_end">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>70</y>
+        <width>141</width>
+        <height>141</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">image: url(:/img/Win.PNG);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="P2_end">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>70</y>
+        <width>141</width>
+        <height>141</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">image: url(:/img/LOSE.PNG);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>10</y>
+        <width>71</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">image: url(:/img/P1 (2).PNG);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>10</y>
+        <width>71</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">image: url(:/img/P2 (2).PNG);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>180</y>
+        <width>121</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">image: url(:/img/步数：.PNG);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>180</y>
+        <width>121</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">image: url(:/img/步数：.PNG);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="p1_count">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>240</y>
+        <width>91</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel#p1_count{
+font: 40pt &quot;Showcard Gothic&quot;;
+color: rgb(157, 215, 255);
+}</string>
+      </property>
+      <property name="text">
+       <string>108</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="p2_count">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>240</y>
+        <width>91</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel#p2_count{
+font: 40pt &quot;Showcard Gothic&quot;;
+color: rgb(157, 215, 255);
+}</string>
+      </property>
+      <property name="text">
+       <string>108</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../img/img.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>close</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>64</x>
+     <y>162</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>31</x>
+     <y>95</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

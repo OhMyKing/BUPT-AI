@@ -1,0 +1,166 @@
+import numpy as np
+from collections import Counter
+from sklearn import datasets
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
+from libsvm.svmutil import svm_train, svm_predict, svm_problem, svm_parameter
+from nltk.classify import MaxentClassifier
+def entropy(y):
+    counter = Counter(y)
+    probabilities = [count / len(y) for count in counter.values()]
+    return -sum(p * np.log2(p) for p in probabilities)
+
+def information_gain_ratio(X_column, y, threshold):
+    parent_entropy = entropy(y)
+
+    left_indices = X_column <= threshold
+    right_indices = X_column > threshold
+
+    if sum(left_indices) == 0 or sum(right_indices) == 0:
+        return 0
+
+    n = len(y)
+    n_left, n_right = sum(left_indices), sum(right_indices)
+
+    e_left, e_right = entropy(y[left_indices]), entropy(y[right_indices])
+
+    child_entropy = (n_left / n) * e_left + (n_right / n) * e_right
+
+    gain = parent_entropy - child_entropy
+
+    split_info = -((n_left / n) * np.log2(n_left / n) + (n_right / n) * np.log2(n_right / n))
+
+    return gain / split_info if split_info != 0 else 0
+
+def best_split(X, y):
+    best_gain_ratio = -1
+    best_split = None
+    n_features = X.shape[1]
+
+    for feature_index in range(n_features):
+        X_column = X[:, feature_index]
+        thresholds = np.unique(X_column)
+
+        for threshold in thresholds:
+            gain_ratio = information_gain_ratio(X_column, y, threshold)
+            if gain_ratio > best_gain_ratio:
+                best_gain_ratio = gain_ratio
+                best_split = {
+                    "feature_index": feature_index,
+                    "threshold": threshold,
+                    "gain_ratio": gain_ratio
+                }
+
+    return best_split
+
+class DecisionTree:
+    def __init__(self, min_samples_split=2, max_depth=float("inf")):
+        self.min_samples_split = min_samples_split
+        self.max_depth = max_depth
+        self.tree = None
+
+    def fit(self, X, y):
+        self.tree = self._grow_tree(X, y)
+
+    def _grow_tree(self, X, y, depth=0):
+        n_samples, n_features = X.shape
+        n_labels = len(np.unique(y))
+
+        if depth >= self.max_depth or n_labels == 1 or n_samples < self.min_samples_split:
+            leaf_value = self._most_common_label(y)
+            return Node(value=leaf_value)
+
+        split = best_split(X, y)
+        if split is None:
+            leaf_value = self._most_common_label(y)
+            return Node(value=leaf_value)
+
+        left_indices = X[:, split["feature_index"]] <= split["threshold"]
+        right_indices = X[:, split["feature_index"]] > split["threshold"]
+
+        left_subtree = self._grow_tree(X[left_indices], y[left_indices], depth + 1)
+        right_subtree = self._grow_tree(X[right_indices], y[right_indices], depth + 1)
+
+        return Node(
+            feature_index=split["feature_index"],
+            threshold=split["threshold"],
+            left=left_subtree,
+            right=right_subtree,
+            value=None
+        )
+
+    def _most_common_label(self, y):
+        counter = Counter(y)
+        most_common = counter.most_common(1)[0][0]
+        return most_common
+
+    def predict(self, X):
+        return np.array([self._traverse_tree(x, self.tree) for x in X])
+
+    def _traverse_tree(self, x, node):
+        if node.is_leaf_node():
+            return node.value
+
+        if x[node.feature_index] <= node.threshold:
+            return self._traverse_tree(x, node.left)
+        return self._traverse_tree(x, node.right)
+
+class Node:
+    def __init__(self, feature_index=None, threshold=None, left=None, right=None, *, value=None):
+        self.feature_index = feature_index
+        self.threshold = threshold
+        self.left = left
+        self.right = right
+        self.value = value
+
+    def is_leaf_node(self):
+        return self.value is not None
+
+def feature_vector(data):
+    return {f'feature_{i}': data[i] for i in range(len(data))}
+
+iris = datasets.load_iris()
+wine = datasets.load_wine()
+
+datasets = [iris, wine]
+
+for dataset in datasets:
+    X = dataset.data
+    y = dataset.target
+    
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+    
+    # Transform data for MaxentClassifier
+    training_set = [(feature_vector(x), y) for x, y in zip(X_train, y_train)]
+    testing_set = [feature_vector(x) for x in X_test]
+
+    # Linear SVM
+    prob = svm_problem(y_train.tolist(), X_train.tolist())
+    param = svm_parameter('-t 0')  # Linear kernel
+    model_linear = svm_train(prob, param)
+    p_label, p_acc, p_val = svm_predict(y_test.tolist(), X_test.tolist(), model_linear)
+    accuracy_linear = p_acc[0]
+    
+    # RBF SVM
+    param = svm_parameter('-t 2')  # Gaussian kernel
+    model_rbf = svm_train(prob, param)
+    p_label, p_acc, p_val = svm_predict(y_test.tolist(), X_test.tolist(), model_rbf)
+    accuracy_rbf = p_acc[0]
+    
+    # C4.5 decision tree
+    tree = DecisionTree()
+    tree.fit(X_train, y_train)
+    y_pred_tree = tree.predict(X_test)
+    accuracy_tree = accuracy_score(y_test, y_pred_tree)
+    
+    # Maxent Classifier
+    maxent = MaxentClassifier.train(training_set, 'IIS', trace=0, max_iter=100)
+    y_pred_maxent = [maxent.classify(x) for x in testing_set]
+    accuracy_maxent = accuracy_score(y_test, y_pred_maxent)
+    
+    dataset_name = dataset.DESCR.split('\n')[0]
+    print(f"\nDataset Name: {dataset_name}:")
+    print(f"Linear SVM Accuracy: {accuracy_linear:.2f}%")
+    print(f"RBF SVM Accuracy: {accuracy_rbf:.2f}%")
+    print(f"accuracy_tree_C4.5: {accuracy_tree*100:.2f}%")
+    print(f"Maxent Model Accuracy: {accuracy_maxent*100:.2f}%")

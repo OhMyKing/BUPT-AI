@@ -1,0 +1,95 @@
+identity:
+  name: text_search
+  author: ohmyking
+  label:
+    en_US: Text Search
+    zh_Hans: 文本检索
+    pt_BR: Pesquisa de Texto
+description:
+  human:
+    en_US: Search for specific text content within ancient Chinese metaphysics books
+    zh_Hans: 在易学古籍中检索具体文本内容
+    pt_BR: Pesquisar conteúdo de texto específico em livros antigos de metafísica chinesa
+  llm: |
+    Search for specific text content within books. This tool retrieves relevant text passages based on book titles and search queries.
+    
+    使用指南：
+    1. 在使用book_search获得相关书目后，使用此工具检索具体内容
+    2. title参数应该是从book_search返回的书名
+    3. queries参数是要在书中查找的关键词或概念
+    4. 可以同时搜索多本书和多个关键词
+    
+    示例：
+    - 搜索《周易》中关于"乾卦"和"元亨利贞"的内容
+    - 搜索《梅花易数》中关于"体用"的论述
+parameters:
+  - name: title
+    type: string
+    required: true
+    label:
+      en_US: Book Titles
+      zh_Hans: 书名
+      pt_BR: Títulos dos Livros
+    human_description:
+      en_US: Comma-separated list of book titles to search within
+      zh_Hans: 要检索的书名列表，用逗号分隔
+      pt_BR: Lista de títulos de livros para pesquisar, separados por vírgula
+    llm_description: |
+      书名列表，用逗号分隔。应该使用book_search返回的准确书名。
+      例如：周易,梅花易数,奇门遁甲
+    form: llm
+  - name: queries
+    type: string
+    required: true
+    label:
+      en_US: Search Queries
+      zh_Hans: 检索关键词
+      pt_BR: Consultas de Pesquisa
+    human_description:
+      en_US: Comma-separated list of keywords or phrases to search for
+      zh_Hans: 要检索的关键词或短语列表，用逗号分隔
+      pt_BR: Lista de palavras-chave ou frases para pesquisar, separadas por vírgula
+    llm_description: |
+      检索关键词列表，用逗号分隔。根据用户问题提取关键概念。
+      例如：
+      - 用户问乾卦的含义：使用"乾卦,元亨利贞,天行健"
+      - 用户问梅花易数起卦：使用"起卦,体用,动爻"
+      - 用户问风水布局：使用"龙脉,明堂,朝向"
+    form: llm
+  - name: top_k
+    type: number
+    required: false
+    label:
+      en_US: Top K Results
+      zh_Hans: 返回前K个结果
+      pt_BR: Top K Resultados
+    human_description:
+      en_US: Number of top relevant results to return (default： 5)
+      zh_Hans: 返回最相关的前K个结果（默认：5）
+      pt_BR: Número de resultados mais relevantes a retornar (padrão： 5)
+    llm_description: 返回最相关的前K个文本片段，默认为5。建议根据问题复杂度调整，简单问题3-5个，复杂问题5-10个。
+    form: llm
+extra:
+  python:
+    source: tools/text_search.py
+output_schema:
+  type: object
+  properties:
+    texts:
+      type: array
+      description: List of text passages matching the search criteria
+      items:
+        type: object
+        properties:
+          text:
+            type: string
+            description: The text content
+          book_title:
+            type: string
+            description: Title of the book containing this text
+          chapter:
+            type: string
+            description: Chapter or section information
+          relevance_score:
+            type: number
+            description: Relevance score of the text

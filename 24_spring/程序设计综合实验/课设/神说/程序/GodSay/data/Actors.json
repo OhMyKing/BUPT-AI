@@ -1,0 +1,118 @@
+[
+  null,
+  {
+    "id": 1,
+    "battlerName": "main_actor_fight",
+    "characterIndex": 0,
+    "characterName": "main_actor",
+    "classId": 1,
+    "equips": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "faceIndex": 0,
+    "faceName": "main_actor",
+    "traits": [],
+    "initialLevel": 1,
+    "maxLevel": 99,
+    "name": "玩家",
+    "nickname": "",
+    "note": "",
+    "profile": ""
+  },
+  {
+    "id": 2,
+    "battlerName": "Actor1_5",
+    "characterIndex": 4,
+    "characterName": "Actor1",
+    "classId": 1,
+    "equips": [
+      1,
+      0,
+      0,
+      1,
+      0
+    ],
+    "faceIndex": 4,
+    "faceName": "Actor1",
+    "traits": [],
+    "initialLevel": 50,
+    "maxLevel": 99,
+    "name": "Main_Man",
+    "nickname": "赛尔",
+    "note": "",
+    "profile": ""
+  },
+  {
+    "id": 3,
+    "battlerName": "SF_Actor2_2",
+    "characterIndex": 2,
+    "characterName": "Nature",
+    "classId": 1,
+    "equips": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "faceIndex": 6,
+    "faceName": "Nature",
+    "traits": [],
+    "initialLevel": 1,
+    "maxLevel": 99,
+    "name": "ChatGPT",
+    "nickname": "",
+    "note": "",
+    "profile": ""
+  },
+  {
+    "id": 4,
+    "battlerName": "",
+    "characterIndex": 0,
+    "characterName": "",
+    "classId": 1,
+    "equips": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "faceIndex": 0,
+    "faceName": "",
+    "traits": [],
+    "initialLevel": 1,
+    "maxLevel": 99,
+    "name": "",
+    "nickname": "",
+    "note": "",
+    "profile": ""
+  },
+  {
+    "id": 5,
+    "battlerName": "",
+    "characterIndex": 0,
+    "characterName": "",
+    "classId": 1,
+    "equips": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "faceIndex": 0,
+    "faceName": "",
+    "traits": [],
+    "initialLevel": 1,
+    "maxLevel": 99,
+    "name": "",
+    "nickname": "",
+    "note": "",
+    "profile": ""
+  }
+]
